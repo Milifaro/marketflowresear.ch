@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Market Flow Research</title>
+  <meta name="description" content="Independent research on crypto market microstructure. We study second-by-second order-book and order-flow data across major coins." />
+
+  <link rel="canonical" href="https://marketflowresear.ch/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Market Flow Research" />
+  <meta property="og:title" content="Market Flow Research" />
+  <meta property="og:description" content="Independent research on crypto market microstructure." />
+  <meta property="og:url" content="https://marketflowresear.ch/" />
+  <meta property="og:image" content="https://marketflowresear.ch/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Market Flow Research — reading order flow, not the hype" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Market Flow Research" />
+  <meta name="twitter:description" content="Independent research on crypto market microstructure." />
+  <meta name="twitter:image" content="https://marketflowresear.ch/og.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Market Flow Research",
+    "url": "https://marketflowresear.ch/",
+    "description": "Independent research on crypto market microstructure. Second-by-second order-book and order-flow data across major coins.",
+    "inLanguage": ["en", "uk"]
+  }
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230b0d12'/><path d='M14 66 L34 46 L48 58 L70 30 L86 30' fill='none' stroke='%2340e0a0' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
+
+  <style>
+    :root{
+      --bg:#0b0d12; --panel:#12151d; --ink:#e8ecf3; --muted:#8a93a6;
+      --line:#232838; --accent:#40e0a0; --accent-dim:#1c3a2f; --shadow:rgba(0,0,0,.35);
+    }
+    body[data-theme="light"]{
+      --bg:#ffffff; --panel:#f6f8fb; --ink:#12151d; --muted:#5b6472;
+      --line:#e4e8ef; --accent:#0a9c69; --accent-dim:#e6f7f0; --shadow:rgba(20,30,50,.08);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      background:var(--bg); color:var(--ink);
+      font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+      -webkit-font-smoothing:antialiased; min-height:100vh; display:flex; flex-direction:column;
+      transition:background .2s,color .2s;
+    }
+    .wrap{width:100%; max-width:860px; margin:0 auto; padding:0 22px; flex:1}
+    a{color:inherit}
+
+    /* top bar */
+    .bar{display:flex; align-items:center; justify-content:space-between; padding:20px 0; gap:14px}
+    .brand{font-weight:800; letter-spacing:.13em; font-size:14px; text-transform:uppercase; display:flex; align-items:center; gap:10px}
+    .brand svg{width:24px;height:24px}
+    .ctrls{display:flex; align-items:center; gap:10px; position:relative}
+    .btn{
+      display:inline-flex; align-items:center; gap:7px; cursor:pointer; user-select:none;
+      border:1px solid var(--line); background:var(--panel); color:var(--ink);
+      border-radius:10px; padding:8px 12px; font-size:13px; font-weight:600; line-height:1;
+    }
+    .btn:hover{border-color:var(--accent)}
+    .menu{
+      position:absolute; top:44px; right:0; background:var(--panel); border:1px solid var(--line);
+      border-radius:12px; padding:6px; min-width:170px; box-shadow:0 12px 30px var(--shadow);
+      display:none; z-index:20;
+    }
+    .menu.open{display:block}
+    .menu button{
+      width:100%; text-align:left; background:none; border:0; color:var(--ink);
+      padding:9px 11px; border-radius:8px; font-size:14px; cursor:pointer; display:flex; justify-content:space-between; gap:10px;
+    }
+    .menu button:hover:not(:disabled){background:var(--accent-dim)}
+    .menu button[aria-current="true"]{color:var(--accent); font-weight:700}
+    .menu button:disabled{color:var(--muted); opacity:.5; cursor:not-allowed}
+    .menu .soon{font-size:11px; border:1px solid var(--line); border-radius:6px; padding:1px 6px}
+
+    /* hero */
+    header.hero{padding:34px 0 8px; text-align:center}
+    h1{font-size:clamp(30px,7vw,52px); line-height:1.05; margin:0 0 18px; font-weight:800; letter-spacing:.02em}
+    .lede{color:var(--muted); font-size:18px; max-width:600px; margin:0 auto}
+
+    .links{display:flex; flex-wrap:wrap; gap:11px; justify-content:center; margin:30px 0 6px}
+    .links a{
+      display:inline-flex; align-items:center; gap:8px; padding:10px 16px; border:1px solid var(--line);
+      border-radius:11px; text-decoration:none; font-weight:600; font-size:14px; background:var(--panel);
+      transition:border-color .15s,transform .15s;
+    }
+    .links a:hover{border-color:var(--accent); transform:translateY(-2px)}
+    .links a .dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+
+    /* articles */
+    section.arts{margin:56px 0 30px}
+    .h2{font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); margin:0 0 20px}
+    .grid{display:grid; grid-template-columns:1fr; gap:18px}
+    @media(min-width:640px){.grid{grid-template-columns:1fr 1fr}}
+    .card{
+      display:block; text-decoration:none; color:inherit; background:var(--panel);
+      border:1px solid var(--line); border-radius:16px; overflow:hidden;
+      transition:border-color .15s,transform .15s,box-shadow .15s;
+    }
+    .card:hover{border-color:var(--accent); transform:translateY(-3px); box-shadow:0 14px 34px var(--shadow)}
+    .thumb{aspect-ratio:16/9; background:linear-gradient(135deg,var(--accent-dim),var(--panel)); display:flex; align-items:flex-end; padding:14px}
+    .thumb .tag{background:var(--bg); border:1px solid var(--line); color:var(--muted); font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; padding:4px 9px; border-radius:999px}
+    .cbody{padding:16px 18px 20px}
+    .cbody h3{margin:0 0 8px; font-size:18px; line-height:1.25}
+    .cbody p{margin:0 0 12px; color:var(--muted); font-size:14px}
+    .cbody .date{color:var(--muted); font-size:12px; letter-spacing:.04em}
+    .card.soon{pointer-events:none; opacity:.55}
+    .card.soon .thumb .tag{color:var(--accent)}
+
+    footer{border-top:1px solid var(--line); margin-top:24px; padding:22px 0 40px}
+    .foot{max-width:860px; margin:0 auto; padding:0 22px; color:var(--muted); font-size:13px; display:flex; flex-wrap:wrap; gap:10px; justify-content:space-between; align-items:center}
+    .badge{display:inline-flex; align-items:center; gap:7px; border:1px solid var(--line); border-radius:999px; padding:5px 11px}
+    .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="wrap">
+    <div class="bar">
+      <span class="brand">
+        <svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="18" fill="#12151d"/><path d="M14 66 L34 46 L48 58 L70 30 L86 30" fill="none" stroke="#40e0a0" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Market Flow Research
+      </span>
+      <div class="ctrls">
+        <span class="btn" id="themeBtn" title="Theme">🌙 <span id="themeLbl">Dark</span></span>
+        <span class="btn" id="langBtn" title="Language">🌐 <span id="langLbl">EN</span> ▾</span>
+        <div class="menu" id="langMenu">
+          <button data-lang="en" aria-current="true">English</button>
+          <button data-lang="uk">Українська</button>
+          <button data-lang="de" disabled>Deutsch <span class="soon">soon</span></button>
+          <button data-lang="es" disabled>Español <span class="soon">soon</span></button>
+          <button data-lang="it" disabled>Italiano <span class="soon">soon</span></button>
+          <button data-lang="fr" disabled>Français <span class="soon">soon</span></button>
+        </div>
+      </div>
+    </div>
+
+    <header class="hero">
+      <h1>MARKET FLOW RESEARCH</h1>
+      <p class="lede" data-i18n="lede">Independent research on crypto market microstructure. We study second-by-second order-book and order-flow data across major coins.</p>
+
+      <!-- TODO: підстав фінальні хендли соцмереж -->
+      <nav class="links">
+        <a href="#" data-net="youtube"><span class="dot"></span>YouTube</a>
+        <a href="#" data-net="x"><span class="dot"></span>X</a>
+        <a href="#" data-net="tiktok"><span class="dot"></span>TikTok</a>
+        <a href="#" data-net="tradingview"><span class="dot"></span>TradingView</a>
+      </nav>
+    </header>
+
+    <section class="arts">
+      <div class="h2" data-i18n="latest">Latest research</div>
+      <div class="grid">
+
+        <!-- РЕАЛЬНА СТАТТЯ: посилання на окрему сторінку -->
+        <a class="card" href="articles/order-flow-predicts-volatility/">
+          <div class="thumb"><span class="tag">Volatility</span></div>
+          <div class="cbody">
+            <h3>Order flow predicts how much, not which way</h3>
+            <p data-i18n="a1">Across six coins, flow surges line up with bigger moves — but not their direction. What that means for anyone trading the tape.</p>
+            <div class="date">2026</div>
+          </div>
+        </a>
+
+        <!-- ЗАГОТОВКА (наступні статті) -->
+        <a class="card soon" href="#">
+          <div class="thumb"><span class="tag" data-i18n="soonTag">Coming soon</span></div>
+          <div class="cbody">
+            <h3 data-i18n="a2t">The wall that goes quiet</h3>
+            <p data-i18n="a2">Thick resting walls tend to precede calm; thinning walls precede turbulence. A look at the pattern coin by coin.</p>
+            <div class="date">—</div>
+          </div>
+        </a>
+
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="foot">
+      <span class="badge"><span class="dot"></span><span data-i18n="ai">AI-assisted research · human-reviewed</span></span>
+      <span>© <span id="yr">2026</span> Market Flow Research</span>
+    </div>
+  </footer>
+
+  <script>
+    // ---- i18n (активні лише EN та UK; решта — disabled у меню) ----
+    var I18N = {
+      en:{
+        lede:"Independent research on crypto market microstructure. We study second-by-second order-book and order-flow data across major coins.",
+        latest:"Latest research",
+        a1:"Across six coins, flow surges line up with bigger moves — but not their direction. What that means for anyone trading the tape.",
+        a2t:"The wall that goes quiet", a2:"Thick resting walls tend to precede calm; thinning walls precede turbulence. A look at the pattern coin by coin.",
+        soonTag:"Coming soon", ai:"AI-assisted research · human-reviewed", theme:"Dark", themeLight:"Light"
+      },
+      uk:{
+        lede:"Незалежне дослідження мікроструктури крипторинку. Вивчаємо посекундні дані стакана й потоку заявок по головних монетах.",
+        latest:"Останні дослідження",
+        a1:"На шести монетах сплески потоку збігаються з більшими рухами — але не з їхнім напрямом. Що це означає для тих, хто читає стрічку.",
+        a2t:"Стіна, що затихає", a2:"Товсті стіни зазвичай передують штилю; тонші — турбулентності. Розбираємо патерн по кожній монеті.",
+        soonTag:"Незабаром", ai:"Дослідження за участі ШІ · перевірено людиною", theme:"Темна", themeLight:"Світла"
+      }
+    };
+    var curLang="en";
+    function applyLang(l){
+      if(!I18N[l]) return; curLang=l;
+      document.documentElement.lang=l;
+      document.getElementById("langLbl").textContent=l.toUpperCase();
+      document.querySelectorAll("[data-i18n]").forEach(function(el){
+        var k=el.getAttribute("data-i18n"); if(I18N[l][k]!=null) el.textContent=I18N[l][k];
+      });
+      document.querySelectorAll("#langMenu button").forEach(function(b){
+        b.setAttribute("aria-current", b.dataset.lang===l ? "true":"false");
+      });
+      relabelTheme();
+      try{localStorage.setItem("mfr_lang",l);}catch(e){}
+    }
+    // ---- theme ----
+    function relabelTheme(){
+      var dark=document.body.getAttribute("data-theme")!=="light";
+      document.getElementById("themeBtn").firstChild.textContent = dark ? "🌙 " : "☀️ ";
+      document.getElementById("themeLbl").textContent = dark ? I18N[curLang].theme : I18N[curLang].themeLight;
+    }
+    function applyTheme(t){
+      document.body.setAttribute("data-theme",t);
+      relabelTheme();
+      try{localStorage.setItem("mfr_theme",t);}catch(e){}
+    }
+    // ---- wire up ----
+    document.getElementById("themeBtn").onclick=function(){
+      applyTheme(document.body.getAttribute("data-theme")==="light" ? "dark":"light");
+    };
+    var lm=document.getElementById("langMenu");
+    document.getElementById("langBtn").onclick=function(e){e.stopPropagation(); lm.classList.toggle("open");};
+    document.addEventListener("click",function(){lm.classList.remove("open");});
+    lm.querySelectorAll("button").forEach(function(b){
+      b.onclick=function(){ if(b.disabled) return; applyLang(b.dataset.lang); lm.classList.remove("open"); };
+    });
+    document.getElementById("yr").textContent=new Date().getFullYear();
+    // restore prefs
+    try{
+      var st=localStorage.getItem("mfr_theme"); if(st) document.body.setAttribute("data-theme",st);
+      var sl=localStorage.getItem("mfr_lang"); applyLang(sl && I18N[sl] ? sl : "en");
+    }catch(e){ applyLang("en"); }
+  </script>
+</body>
+</html>
