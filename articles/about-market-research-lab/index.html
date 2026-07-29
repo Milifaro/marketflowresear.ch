@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Market Research Lab — What We Collect and Why — Market Flow Research</title>
+  <meta name="description" content="Market Flow Research records the Binance order book every second for six coins and tests what it actually predicts. Volatility: yes. Direction: no. Here is what we collect, how we test it, and what we&#x27;ve found." />
+  <meta name="keywords" content="order book research, crypto market microstructure, volatility forecast, walk-forward testing, bitcoin order flow, market research lab" />
+
+  <link rel="canonical" href="https://marketflowresear.ch/articles/about-market-research-lab/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Market Flow Research" />
+  <meta property="og:title" content="About Market Research Lab — What We Collect and Why" />
+  <meta property="og:description" content="Months of second-by-second order-book data, six coins, eight features — and a rule: nothing gets published unless it survives an out-of-sample test." />
+  <meta property="og:url" content="https://marketflowresear.ch/articles/about-market-research-lab/" />
+  <meta property="og:image" content="https://marketflowresear.ch/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="article:published_time" content="2026-07-29" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About Market Research Lab — What We Collect and Why" />
+  <meta name="twitter:description" content="Months of second-by-second order-book data, six coins, eight features — and a rule: nothing gets published unless it survives an out-of-sample test." />
+  <meta name="twitter:image" content="https://marketflowresear.ch/og.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "About Market Research Lab \u2014 What We Collect and Why",
+    "description": "Market Flow Research records the Binance order book every second for six coins and tests what it actually predicts. Volatility: yes. Direction: no. Here is what we collect, how we test it, and what we've found.",
+    "datePublished": "2026-07-29",
+    "inLanguage": "en",
+    "image": "https://marketflowresear.ch/og.png",
+    "author": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "publisher": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "mainEntityOfPage": "https://marketflowresear.ch/articles/about-market-research-lab/",
+    "creativeWorkStatus": "AI-assisted, human-reviewed"
+  }
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230b0d12'/><path d='M14 66 L34 46 L48 58 L70 30 L86 30' fill='none' stroke='%2340e0a0' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
+
+  <style>
+    :root{--bg:#0b0d12;--panel:#12151d;--ink:#e8ecf3;--muted:#8a93a6;--line:#232838;--accent:#40e0a0;--accent-dim:#1c3a2f}
+    body[data-theme="light"]{--bg:#ffffff;--panel:#f6f8fb;--ink:#12151d;--muted:#5b6472;--line:#e4e8ef;--accent:#0a9c69;--accent-dim:#e6f7f0}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{background:var(--bg);color:var(--ink);font:17px/1.72 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:720px;margin:0 auto;padding:0 22px}
+    .bar{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+    .brand{font-weight:800;letter-spacing:.13em;font-size:13px;text-transform:uppercase;text-decoration:none;color:var(--ink)}
+    .btn{cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:10px;padding:7px 11px;font-size:13px;font-weight:600}
+    article{padding:18px 0 40px}
+    .tag{display:inline-block;background:var(--panel);border:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+    h1{font-size:clamp(26px,5vw,38px);line-height:1.15;margin:16px 0 10px;letter-spacing:-.01em}
+    .lede{color:var(--muted);font-size:19px;margin:0 0 18px}
+    .meta{color:var(--muted);font-size:14px;margin-bottom:26px}
+    article h2{font-size:20px;margin:34px 0 10px}
+    article p{margin:0 0 18px}
+    article b{color:var(--ink)}
+    .video{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:8px 0 6px;background:#000}
+    .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    figure{margin:24px 0}
+    figure img{width:100%;border:1px solid var(--line);border-radius:14px;display:block;background:var(--panel)}
+    figcaption{color:var(--muted);font-size:13px;margin-top:8px;text-align:center}
+    .next{margin:40px 0 6px}
+    .next .h2{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+    .ncards{display:grid;grid-template-columns:1fr;gap:14px}
+    @media(min-width:640px){.ncards{grid-template-columns:1fr 1fr}}
+    .ncard{display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;transition:border-color .15s,transform .15s}
+    .ncard:hover{border-color:var(--accent);transform:translateY(-2px)}
+    .ncard h3{margin:0 0 6px;font-size:16px}
+    .ncard p{margin:0;color:var(--muted);font-size:13px}
+    .aibox{margin:34px 0 0;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--muted);font-size:14px}
+    .back{display:inline-block;margin:30px 0 0;color:var(--accent);text-decoration:none;font-weight:600}
+    footer{border-top:1px solid var(--line);margin-top:20px;padding:22px 0 44px;color:var(--muted);font-size:13px}
+    .badge{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:999px;padding:5px 11px}
+    .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="../../">← Market Flow Research</a>
+      <span class="btn" id="themeBtn">🌙</span>
+    </div>
+
+    <article>
+      <span class="tag">Про проект</span>
+      <h1>About Market Research Lab — What We Collect and Why</h1>
+      <p class="lede">Most market commentary is storytelling. We built something testable instead: 166 days of second-by-second order-book data across six coins, and a rule that nothing gets published unless it survives out-of-sample.</p>
+      <div class="meta">Research note · 2026 · AI-assisted, human-reviewed</div>
+
+      
+
+      <h2>① What we collect</h2>
+      <p>Every second, around the clock, we record the Binance order book for six pairs — BTC, ETH, SOL, BNB, XRP and DOGE. For each pair we store eight microstructure features plus price: the resting buy and sell walls, how those walls thicken and thin out, and the raw buy/sell volume hitting them. The collector has been running non-stop since 14 February 2026; the archive is now 166 trading days and more than 11 million second-by-second rows per coin — roughly 60 million rows in total, growing every day.</p>
+      <figure><img src="img/compare_en.png" alt="Average buy vs sell volume per coin across the whole archive" loading="lazy"><figcaption>Average buy vs sell volume per coin across the whole archive</figcaption></figure>
+
+      <h2>② Why we do it</h2>
+      <p>Most crypto commentary is storytelling: a chart, a narrative, no way to check it. We wanted the opposite — claims small enough to be measured and specific enough to be wrong. Every statement we publish has a number behind it, a sample size, and a test on data the model never saw. If a claim can&#x27;t survive that, it doesn&#x27;t get published here. That includes our own favourite ideas: several of them died in testing, and we say so.</p>
+
+      <h2>③ How we dig</h2>
+      <p>First we build baselines: what counts as &#x27;normal&#x27; for this coin at this timeframe. Turnover per second is tiny; aggregate to minutes, hours and days and it grows by orders of magnitude, so a &#x27;spike&#x27; only means anything relative to its own window — never as an absolute number. On top of those baselines we build feature profiles, a market-state oscillator, autocorrelation and event studies around unusual order-book behaviour. Predictions are written down first and scored later. No moving the goalposts.</p>
+      <figure><img src="img/lvl_BTC_en.png" alt="Normal turnover by timeframe for BTC, log scale" loading="lazy"><figcaption>Normal turnover by timeframe for BTC, log scale</figcaption></figure>
+
+      <h2>④ What we test</h2>
+      <p>Three lines of work. Volatility forecasts built from order-book flow. A market-state oscillator that reads the tape&#x27;s temperature. And trading bots — always walk-forward, always benchmarked against simple buy &amp; hold, priced with a realistic 0.15% fee per action, with take-profit deliberately smaller than stop-loss. Live paper bots run a champion-versus-challenger tournament: a fresh candidate is trained after every closed trade and only replaces the incumbent if it actually scores better.</p>
+      <figure><img src="img/vol_sweep_en.png" alt="Correlation of order-book flow with the size of the next move, by horizon" loading="lazy"><figcaption>Correlation of order-book flow with the size of the next move, by horizon</figcaption></figure>
+
+      <h2>⑤ What we&#x27;ve learned: size is forecastable</h2>
+      <p>Order-book flow predicts how <em>big</em> the next move will be. Rank correlation runs around 0.55 in the moment and roughly 0.25–0.30 five minutes ahead — consistently, on all six coins. The cleanest validated pattern is the wall that drains: when resting liquidity is pulled without being replaced, the following window runs ×1.4–1.6 more volatile than usual, while a thick untouched wall precedes calm (×0.84–0.94). The edge is real but short-lived: strong in minutes, essentially gone by a day.</p>
+      <figure><img src="img/bsforecast_en.png" alt="Buy-sell coupling and the forward-volatility forecast" loading="lazy"><figcaption>Buy-sell coupling and the forward-volatility forecast</figcaption></figure>
+
+      <h2>⑥ What we&#x27;ve learned: direction is not</h2>
+      <p>The same data says almost nothing about <em>which way</em>. Forward directional correlation is about zero by every method we tried — imbalance sweeps top out near ρ≈0.2 on BTC and ETH and collapse to zero on SOL, XRP and DOGE. Every purely directional strategy we tested lost out-of-sample: momentum, intraday, move-start detection, fade-the-turbulence. Gross edge came in below the round-trip fee, which is the honest way of saying there was no edge. So we forecast risk, not a guessed side.</p>
+      <figure><img src="img/dir_sweep_en.png" alt="Signed correlation of order-flow imbalance with price direction" loading="lazy"><figcaption>Signed correlation of order-flow imbalance with price direction</figcaption></figure>
+
+      <h2>⑦ Our promise</h2>
+      <p>The moment a strategy shows a positive, validated, out-of-sample result, it gets published here — the method, the numbers and the caveats, including the ones that hurt. Until then we keep digging in the open: each study becomes an article with its charts, and every chart is reproducible from the archive. Data collection, analysis, charts and narration are produced with AI assistance and reviewed by a human before anything goes out.</p>
+
+      <div class="aibox">🤖 This research — data collection, analysis, charts and the narrated
+      video — was produced with the assistance of AI, then reviewed by a human. We forecast
+      volatility, not direction, and log every prediction. <em>Research, not financial advice.</em></div>
+
+      <div class="next">
+        <div class="h2">Read next</div>
+        <div class="ncards"><a class="ncard" href="/articles/volume-is-fuel-not-steering-wheel/"><h3>Volume is the fuel — not the steering wheel</h3><p>Eighteen sections on what volume really predicts: the size of the next move, never its side.</p></a><a class="ncard" href="/articles/order-flow-predicts-volatility/"><h3>Order flow predicts how much, not which way</h3><p>Across six coins, flow surges line up with bigger moves — but not their direction.</p></a></div>
+      </div>
+
+      <h2>Comments</h2>
+      <p style="color:var(--muted)">Discussion is powered by GitHub. Enable it by adding <code>secrets/giscus.json</code> (repo IDs from giscus.app).</p>
+
+      <a class="back" href="../../">← All research</a>
+    </article>
+  </div>
+
+  <footer>
+    <div class="wrap" style="padding:0 22px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center">
+      <span class="badge"><span class="dot"></span>AI-assisted research · human-reviewed</span>
+      <span>© <span id="yr">2026</span> Market Flow Research</span>
+    </div>
+  </footer>
+
+  <script>
+    try{var st=localStorage.getItem("mfr_theme");if(st)document.body.setAttribute("data-theme",st);}catch(e){}
+    document.getElementById("yr").textContent=new Date().getFullYear();
+    function tl(){document.getElementById("themeBtn").textContent=document.body.getAttribute("data-theme")==="light"?"☀️":"🌙";}
+    tl();
+    document.getElementById("themeBtn").onclick=function(){
+      var t=document.body.getAttribute("data-theme")==="light"?"dark":"light";
+      document.body.setAttribute("data-theme",t);try{localStorage.setItem("mfr_theme",t);}catch(e){}tl();
+    };
+  </script>
+</body>
+</html>

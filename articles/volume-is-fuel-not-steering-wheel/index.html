@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Volume Is the Fuel — Not the Steering Wheel — Market Flow Research</title>
+  <meta name="description" content="We recorded the Binance order book every second for six coins and measured what volume actually does next. Volume predicts how big the next move is — not its direction. Walk-forward, six coins, one story." />
+  <meta name="keywords" content="crypto volume, order book, volatility forecast, bitcoin microstructure, order flow, market research, vol_buy, vol_sell" />
+
+  <link rel="canonical" href="https://marketflowresear.ch/articles/volume-is-fuel-not-steering-wheel/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Market Flow Research" />
+  <meta property="og:title" content="Volume Is the Fuel — Not the Steering Wheel" />
+  <meta property="og:description" content="Volume predicts how big the next move is — not which way. Second-by-second evidence on six coins." />
+  <meta property="og:url" content="https://marketflowresear.ch/articles/volume-is-fuel-not-steering-wheel/" />
+  <meta property="og:image" content="https://marketflowresear.ch/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="article:published_time" content="2026-07-25" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Volume Is the Fuel — Not the Steering Wheel" />
+  <meta name="twitter:description" content="Volume predicts how big the next move is — not which way. Second-by-second evidence on six coins." />
+  <meta name="twitter:image" content="https://marketflowresear.ch/og.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Volume Is the Fuel \u2014 Not the Steering Wheel",
+    "description": "We recorded the Binance order book every second for six coins and measured what volume actually does next. Volume predicts how big the next move is \u2014 not its direction. Walk-forward, six coins, one story.",
+    "datePublished": "2026-07-25",
+    "inLanguage": "en",
+    "image": "https://marketflowresear.ch/og.png",
+    "author": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "publisher": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "mainEntityOfPage": "https://marketflowresear.ch/articles/volume-is-fuel-not-steering-wheel/",
+    "creativeWorkStatus": "AI-assisted, human-reviewed"
+  }
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230b0d12'/><path d='M14 66 L34 46 L48 58 L70 30 L86 30' fill='none' stroke='%2340e0a0' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
+
+  <style>
+    :root{--bg:#0b0d12;--panel:#12151d;--ink:#e8ecf3;--muted:#8a93a6;--line:#232838;--accent:#40e0a0;--accent-dim:#1c3a2f}
+    body[data-theme="light"]{--bg:#ffffff;--panel:#f6f8fb;--ink:#12151d;--muted:#5b6472;--line:#e4e8ef;--accent:#0a9c69;--accent-dim:#e6f7f0}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{background:var(--bg);color:var(--ink);font:17px/1.72 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:720px;margin:0 auto;padding:0 22px}
+    .bar{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+    .brand{font-weight:800;letter-spacing:.13em;font-size:13px;text-transform:uppercase;text-decoration:none;color:var(--ink)}
+    .btn{cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:10px;padding:7px 11px;font-size:13px;font-weight:600}
+    article{padding:18px 0 40px}
+    .tag{display:inline-block;background:var(--panel);border:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+    h1{font-size:clamp(26px,5vw,38px);line-height:1.15;margin:16px 0 10px;letter-spacing:-.01em}
+    .lede{color:var(--muted);font-size:19px;margin:0 0 18px}
+    .meta{color:var(--muted);font-size:14px;margin-bottom:26px}
+    article h2{font-size:20px;margin:34px 0 10px}
+    article p{margin:0 0 18px}
+    article b{color:var(--ink)}
+    .video{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:8px 0 6px;background:#000}
+    .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    figure{margin:24px 0}
+    figure img{width:100%;border:1px solid var(--line);border-radius:14px;display:block;background:var(--panel)}
+    figcaption{color:var(--muted);font-size:13px;margin-top:8px;text-align:center}
+    .next{margin:40px 0 6px}
+    .next .h2{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+    .ncards{display:grid;grid-template-columns:1fr;gap:14px}
+    @media(min-width:640px){.ncards{grid-template-columns:1fr 1fr}}
+    .ncard{display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;transition:border-color .15s,transform .15s}
+    .ncard:hover{border-color:var(--accent);transform:translateY(-2px)}
+    .ncard h3{margin:0 0 6px;font-size:16px}
+    .ncard p{margin:0;color:var(--muted);font-size:13px}
+    .aibox{margin:34px 0 0;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--muted);font-size:14px}
+    .back{display:inline-block;margin:30px 0 0;color:var(--accent);text-decoration:none;font-weight:600}
+    footer{border-top:1px solid var(--line);margin-top:20px;padding:22px 0 44px;color:var(--muted);font-size:13px}
+    .badge{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:999px;padding:5px 11px}
+    .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="../../">← Market Flow Research</a>
+      <span class="btn" id="themeBtn">🌙</span>
+    </div>
+
+    <article>
+      <span class="tag">Обʼєми</span>
+      <h1>Volume Is the Fuel — Not the Steering Wheel</h1>
+      <p class="lede">We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does. The through-line: volume tells you how big the next move is — almost never which way.</p>
+      <div class="meta">Research note · 2026 · AI-assisted, human-reviewed</div>
+
+      <div class="video"><iframe src="https://www.youtube.com/embed/_MCSC9fX7fM" title="Full research video" loading="lazy" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe></div>
+      <p style="color:var(--muted);font-size:13px;margin-top:0">Full walkthrough — streamed from YouTube.</p>
+
+      <h2>① Buy vs sell — which side is bigger</h2>
+      <p>Over the full history, buying and selling are almost perfectly matched. Sell-volume is marginally larger on five of six coins — ratios from 1.02× (BTC) to 1.06× (XRP) — while SOL is fractionally buy-led (0.98×). Buy-share sits between 48.5% and 50.5%. No coin is structurally dominated by one side.</p>
+      <figure><img src="img/compare_en.png" alt="Average buy vs sell volume per coin, whole dataset" loading="lazy"><figcaption>Average buy vs sell volume per coin, whole dataset</figcaption></figure>
+
+      <h2>② Does volume predict the size of the move</h2>
+      <p>Yes — clearly. Flow intensity and the size of the next move rise together, strongest on the shortest horizons: rank correlation peaks around 0.22–0.33 within seconds and decays as the window widens. In event terms, an above-normal volume burst is followed by five minutes running ×1.4–1.7 more volatile than usual — on every coin. Volume is a size signal.</p>
+      <figure><img src="img/vol_sweep_en.png" alt="Correlation of volume with the size of the next move, by horizon" loading="lazy"><figcaption>Correlation of volume with the size of the next move, by horizon</figcaption></figure>
+
+      <h2>③ Who moves price more — buying or selling</h2>
+      <p>We measure the price shift per +1σ of volume. Aggressive buying nudges price up (about +0.10 bp/σ on BTC at the low band) while aggressive selling barely moves it (about −0.01 bp/σ) — a small, asymmetric impact ratio. Neither side gives a reliable directional push; buying just leaves a slightly clearer footprint than selling.</p>
+      <figure><img src="img/impact_en.png" alt="Price impact in basis points per +1σ of buy vs sell volume" loading="lazy"><figcaption>Price impact in basis points per +1σ of buy vs sell volume</figcaption></figure>
+
+      <h2>④ What counts as normal volume, by timeframe</h2>
+      <p>&#x27;Normal&#x27; depends entirely on the clock. Per-second turnover is tiny; aggregate to minutes, hours and days and it grows by orders of magnitude (log scale). Establishing this baseline per coin per timeframe is what later lets us call a second &#x27;a spike&#x27; — always relative to its own window, never an absolute number.</p>
+      <figure><img src="img/lvl_BTC_en.png" alt="Normal turnover by timeframe for BTC, log scale" loading="lazy"><figcaption>Normal turnover by timeframe for BTC, log scale</figcaption></figure>
+
+      <h2>⑤ At which horizon volume predicts best</h2>
+      <p>The link is strongest almost immediately. Total flow&#x27;s correlation with the move peaks at the ~5-second window (ρ≈0.33 on BTC) and fades monotonically toward the daily scale. Imbalance peaks much later (~10 min) and even there is tiny (ρ≈0.008). The usable edge is short-horizon, and it is about magnitude — not side.</p>
+      <figure><img src="img/peak_en.png" alt="Peak predictive window per coin" loading="lazy"><figcaption>Peak predictive window per coin</figcaption></figure>
+
+      <h2>⑥ Does imbalance predict direction</h2>
+      <p>Only weakly, and unevenly. Imbalance→direction correlation reaches ρ≈0.18 (BTC) and 0.20 (ETH) but collapses to about zero on SOL, XRP and DOGE. The directional bias is under ~1 bp per σ everywhere. So even the <em>side</em> of the flow — not just its size — is a poor compass for where price goes next.</p>
+      <figure><img src="img/dir_sweep_en.png" alt="Signed correlation of order-flow imbalance with price direction" loading="lazy"><figcaption>Signed correlation of order-flow imbalance with price direction</figcaption></figure>
+
+      <h2>⑦ How long imbalance lasts before it evens out</h2>
+      <p>Imbalance is fleeting. The share that persists falls fast as you widen the window — on BTC from ~84% at one second to ~40% at one minute and ~18% by twenty minutes. Buyers and sellers rebalance quickly; a one-sided burst rarely stays one-sided for long. That short lifetime is exactly why it can&#x27;t steer longer moves.</p>
+      <figure><img src="img/imb_life_en.png" alt="Imbalance persistence by timeframe" loading="lazy"><figcaption>Imbalance persistence by timeframe</figcaption></figure>
+
+      <h2>⑧ Volume has memory (autocorrelation)</h2>
+      <p>Volume has real memory, and it grows with scale. Lag-1 autocorrelation of buy-flow on BTC rises from 0.23 (1s) to 0.36 (5s), 0.51 (1 min) and 0.57 (5 min). Busy seconds cluster into busy minutes — activity is self-reinforcing. This persistence is precisely what makes the size signal, volatility, forecastable at all.</p>
+      <figure><img src="img/autocorr_en.png" alt="Lag-1 autocorrelation of volume by timeframe" loading="lazy"><figcaption>Lag-1 autocorrelation of volume by timeframe</figcaption></figure>
+
+      <h2>⑨ Each coin&#x27;s volume fingerprint</h2>
+      <p>Every coin has its own volume signature across timeframes — BTC and ETH trade in the thousands of coin-equivalents per bucket, XRP and DOGE in the hundreds-to-thousands — with buy and sell curves tracking each other tightly. These per-coin, per-window baselines feed every downstream test, so &#x27;normal&#x27; always means normal for <em>that</em> market.</p>
+      <figure><img src="img/pair_BTC_en.png" alt="Buy and sell volume by timeframe, per coin" loading="lazy"><figcaption>Buy and sell volume by timeframe, per coin</figcaption></figure>
+
+      <h2>⑩ How big a spike really is</h2>
+      <p>A &#x27;spike&#x27; is the top-1% second (above q99) for its coin and window. These peaks tower over the ordinary second — many multiples of the normal level — and they are exactly the moments the size signal fires. Defining them relative to each coin&#x27;s own baseline keeps the comparison fair across very different markets.</p>
+      <figure><img src="img/spikes_en.png" alt="Spike-to-normal volume ratio" loading="lazy"><figcaption>Spike-to-normal volume ratio</figcaption></figure>
+
+      <h2>⑪ Most seconds are quiet</h2>
+      <p>Sorting every second into 20 bands (ten below normal, ten above) shows a heavy concentration around and below the normal line, with a thin, long tail of high-volume seconds — the spikes. Buy and sell distributions mirror each other. The market spends most of its time idling, punctuated by rare bursts.</p>
+      <figure><img src="img/dist_heat_BTC_en.png" alt="Distribution of seconds across volume bands, BTC" loading="lazy"><figcaption>Distribution of seconds across volume bands, BTC</figcaption></figure>
+
+      <h2>⑫ Episodes: spike / normal / lull</h2>
+      <p>Grouping seconds into episodes (spike &gt;q80, normal, lull &lt;q20), the average BTC spike lasts ~60s, moves 0.09% and runs at 0.74 bps/s of volatility — but its net <em>direction</em> is ≈0. Only the extreme-imbalance tails tilt: strongly buy-heavy spikes close +0.065%, strongly sell-heavy −0.069%. Size is large and reliable; direction stays near a coin flip.</p>
+      <figure><img src="img/ep_behavior_BTC_en.png" alt="Behaviour of spike / normal / lull episodes, BTC" loading="lazy"><figcaption>Behaviour of spike / normal / lull episodes, BTC</figcaption></figure>
+
+      <h2>⑬ Long waves (hours…48h): the macro scale</h2>
+      <p>Zoom out and something changes. Macro flow-waves last ~1.5h (median) and carry ~1% moves. Here sustained one-sidedness finally aligns with direction: BTC waves dominated by buying close about +0.89%, those dominated by selling about −0.90%. Over long horizons it is <em>persistent</em> imbalance — not a single burst — that moves price.</p>
+      <figure><img src="img/ep_behavior_long_BTC_en.png" alt="Long macro flow-waves and their price moves, BTC" loading="lazy"><figcaption>Long macro flow-waves and their price moves, BTC</figcaption></figure>
+
+      <h2>⑭ State sequences: which follows which</h2>
+      <p>States are sticky and they chain. Overlaid on a 96-hour ribbon, spike / normal / lull persist and transition in patterns, and the next episode&#x27;s volatility depends on the current state. Reading the <em>sequence</em> — not just the current second — sharpens the volatility forecast, while direction stays unpredictable from the sequence alone.</p>
+      <figure><img src="img/timeline_BTC_en.png" alt="State sequence over a 96-hour window, BTC" loading="lazy"><figcaption>State sequence over a 96-hour window, BTC</figcaption></figure>
+
+      <h2>⑮ Can we read direction as it forms?</h2>
+      <p>We split each episode into a forming half and a later half. Early buy-share correlates strongly with the move happening <em>now</em> (ρ≈0.63 on BTC) — you can read the present. But its correlation with the <em>later</em> move is ≈0 (ρ≈−0.08). You can see what is happening; you cannot use it to predict what comes next.</p>
+      <figure><img src="img/predict_en.png" alt="Early dominance vs the concurrent and later move" loading="lazy"><figcaption>Early dominance vs the concurrent and later move</figcaption></figure>
+
+      <h2>⑯ A spike at the range edge — reversal or continuation?</h2>
+      <p>Does a spike near the top or bottom of the day&#x27;s range signal a reversal or a continuation? Barely either. Position-in-range vs direction correlates ρ≈0.06 on BTC spikes, with buy/sell tilts of a few percent at most. Context helps a little — but a range-edge spike is not a clean directional trade.</p>
+      <figure><img src="img/cond_en.png" alt="Conditional direction by position in the daily range" loading="lazy"><figcaption>Conditional direction by position in the daily range</figcaption></figure>
+
+      <h2>⑰ Spikes come in storms</h2>
+      <p>Spikes are not evenly spaced — they cluster. Intervals between them have CV≈1.5 (well above 1), a median gap of ~5 minutes, and the vast majority arrive within six hours of the previous one. Interestingly, clustered spikes carry slightly <em>smaller</em> moves (0.089%) than isolated ones (0.103%). Turbulence comes in storms — and the first strike is often the biggest.</p>
+      <figure><img src="img/storms_en.png" alt="Clustering of volume spikes over time" loading="lazy"><figcaption>Clustering of volume spikes over time</figcaption></figure>
+
+      <h2>⑱ The forecast: memory, coupling, volatility</h2>
+      <p>Pulling it together: buy and sell flow are nearly independent second-to-second (ρ≈0.13) but become tightly coupled at longer windows (ρ≈0.80 by twenty minutes) — a single &#x27;activity&#x27; factor. That shared, persistent flow is what our models turn into a forward-volatility forecast. We predict how wild, not which way — and we log every call.</p>
+      <p><em>Research, not financial advice.</em></p>
+      <figure><img src="img/bsforecast_en.png" alt="Buy-sell coupling and forward-volatility forecast" loading="lazy"><figcaption>Buy-sell coupling and forward-volatility forecast</figcaption></figure>
+
+      <div class="aibox">🤖 This research — data collection, analysis, charts and the narrated
+      video — was produced with the assistance of AI, then reviewed by a human. We forecast
+      volatility, not direction, and log every prediction. <em>Research, not financial advice.</em></div>
+
+      <div class="next">
+        <div class="h2">Read next</div>
+        <div class="ncards"><a class="ncard" href="/articles/order-flow-predicts-volatility/"><h3>Order flow predicts how much, not which way</h3><p>Across six coins, flow surges line up with bigger moves — but not their direction.</p></a><a class="ncard" href="/"><h3>The wall that goes quiet</h3><p>Thick resting walls precede calm; thinning walls precede turbulence.</p></a></div>
+      </div>
+
+      <h2>Comments</h2>
+      <p style="color:var(--muted)">Discussion is powered by GitHub. Enable it by adding <code>secrets/giscus.json</code> (repo IDs from giscus.app).</p>
+
+      <a class="back" href="../../">← All research</a>
+    </article>
+  </div>
+
+  <footer>
+    <div class="wrap" style="padding:0 22px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center">
+      <span class="badge"><span class="dot"></span>AI-assisted research · human-reviewed</span>
+      <span>© <span id="yr">2026</span> Market Flow Research</span>
+    </div>
+  </footer>
+
+  <script>
+    try{var st=localStorage.getItem("mfr_theme");if(st)document.body.setAttribute("data-theme",st);}catch(e){}
+    document.getElementById("yr").textContent=new Date().getFullYear();
+    function tl(){document.getElementById("themeBtn").textContent=document.body.getAttribute("data-theme")==="light"?"☀️":"🌙";}
+    tl();
+    document.getElementById("themeBtn").onclick=function(){
+      var t=document.body.getAttribute("data-theme")==="light"?"dark":"light";
+      document.body.setAttribute("data-theme",t);try{localStorage.setItem("mfr_theme",t);}catch(e){}tl();
+    };
+  </script>
+</body>
+</html>
