@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Resting Sell Wall, Measured Alone — Market Flow Research</title>
+  <meta name="description" content="We isolated the resting sell wall — one feature, no partner, no composite — and measured what it predicts second by second across six coins. The answer is the size of the next move, never its side." />
+  <meta name="keywords" content="the resting sell wall, order book, crypto microstructure, volatility forecast, bitcoin" />
+
+  <link rel="canonical" href="https://marketflowresear.ch/articles/the-resting-sell-wall-alone/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Market Flow Research" />
+  <meta property="og:title" content="The Resting Sell Wall, Measured Alone" />
+  <meta property="og:description" content="We isolated the resting sell wall — one feature, no partner, no composite — and measured what it predicts second by second across six coins. The answer is the size of the next move, never its side." />
+  <meta property="og:url" content="https://marketflowresear.ch/articles/the-resting-sell-wall-alone/" />
+  <meta property="og:image" content="https://marketflowresear.ch/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="article:published_time" content="2026-07-31" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Resting Sell Wall, Measured Alone" />
+  <meta name="twitter:description" content="We isolated the resting sell wall — one feature, no partner, no composite — and measured what it predicts second by second across six coins. The answer is the size of the next move, never its side." />
+  <meta name="twitter:image" content="https://marketflowresear.ch/og.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "The Resting Sell Wall, Measured Alone",
+    "description": "We isolated the resting sell wall \u2014 one feature, no partner, no composite \u2014 and measured what it predicts second by second across six coins. The answer is the size of the next move, never its side.",
+    "datePublished": "2026-07-31",
+    "inLanguage": "en",
+    "image": "https://marketflowresear.ch/og.png",
+    "author": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "publisher": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "mainEntityOfPage": "https://marketflowresear.ch/articles/the-resting-sell-wall-alone/",
+    "creativeWorkStatus": "AI-assisted, human-reviewed"
+  }
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230b0d12'/><path d='M14 66 L34 46 L48 58 L70 30 L86 30' fill='none' stroke='%2340e0a0' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
+
+  <style>
+    :root{--bg:#0b0d12;--panel:#12151d;--ink:#e8ecf3;--muted:#8a93a6;--line:#232838;--accent:#40e0a0;--accent-dim:#1c3a2f}
+    body[data-theme="light"]{--bg:#ffffff;--panel:#f6f8fb;--ink:#12151d;--muted:#5b6472;--line:#e4e8ef;--accent:#0a9c69;--accent-dim:#e6f7f0}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{background:var(--bg);color:var(--ink);font:17px/1.72 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:720px;margin:0 auto;padding:0 22px}
+    .bar{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+    .brand{font-weight:800;letter-spacing:.13em;font-size:13px;text-transform:uppercase;text-decoration:none;color:var(--ink)}
+    .btn{cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:10px;padding:7px 11px;font-size:13px;font-weight:600}
+    article{padding:18px 0 40px}
+    .tag{display:inline-block;background:var(--panel);border:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+    h1{font-size:clamp(26px,5vw,38px);line-height:1.15;margin:16px 0 10px;letter-spacing:-.01em}
+    .lede{color:var(--muted);font-size:19px;margin:0 0 18px}
+    .meta{color:var(--muted);font-size:14px;margin-bottom:26px}
+    article h2{font-size:20px;margin:34px 0 10px}
+    article p{margin:0 0 18px}
+    article b{color:var(--ink)}
+    .video{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:8px 0 6px;background:#000}
+    .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    figure{margin:24px 0}
+    figure img{width:100%;border:1px solid var(--line);border-radius:14px;display:block;background:var(--panel)}
+    figcaption{color:var(--muted);font-size:13px;margin-top:8px;text-align:center}
+    .next{margin:40px 0 6px}
+    .next .h2{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+    .next .nlead{color:var(--ink);font-size:16px;margin:0 0 16px;line-height:1.6}
+    .next .nlink{color:var(--accent);font-weight:700;text-decoration:none;border-bottom:1px solid var(--accent-dim)}
+    .next .nlink:hover{border-bottom-color:var(--accent)}
+    .next .nall{margin:16px 0 0;font-size:14px}
+    .next .nall a{color:var(--accent);text-decoration:none;font-weight:600}
+    .ncards{display:grid;grid-template-columns:1fr;gap:14px}
+    @media(min-width:640px){.ncards{grid-template-columns:1fr 1fr}}
+    .ncard{display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;transition:border-color .15s,transform .15s}
+    .ncard:hover{border-color:var(--accent);transform:translateY(-2px)}
+    .ncard h3{margin:0 0 6px;font-size:16px}
+    .ncard p{margin:0;color:var(--muted);font-size:13px}
+    .aibox{margin:34px 0 0;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--muted);font-size:14px}
+    .back{display:inline-block;margin:30px 0 0;color:var(--accent);text-decoration:none;font-weight:600}
+    footer{border-top:1px solid var(--line);margin-top:20px;padding:22px 0 44px;color:var(--muted);font-size:13px}
+    .badge{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:999px;padding:5px 11px}
+    .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="../../">← Market Flow Research</a>
+      <span class="btn" id="themeBtn">🌙</span>
+    </div>
+
+    <article>
+      <span class="tag">Sell wall</span>
+      <h1>The Resting Sell Wall, Measured Alone</h1>
+      <p class="lede">We isolated the resting sell wall — one feature, no partner, no composite — and measured what it predicts second by second across six coins. The answer is the size of the next move, never its side.</p>
+      <div class="meta">Research note · 2026 · AI-assisted, human-reviewed</div>
+
+      
+
+      <h2>① The shape of the resting sell wall</h2>
+      <p>Before asking what the resting sell wall predicts, we look at what it is: how the quantity is distributed across its own range, per coin. The profile is heavily skewed — long stretches of very little, punctuated by rare, very large readings. Every threshold later in the study is a quantile of this shape, not a round number picked by hand.</p>
+      <figure><img src="img/solo_profile_en.png" alt="Profile of the resting sell wall per coin" loading="lazy"><figcaption>Profile of the resting sell wall per coin</figcaption></figure>
+
+      <h2>② What it predicts, across horizons</h2>
+      <p>Rank correlation of the resting sell wall with the size of the next move peaks at the fastest horizon (-0.08 on BTC at 5s) and decays monotonically toward the daily scale (-0.04). Direction is a different story: the same sweep against signed returns tops out around 0.29. Size, yes; side, no.</p>
+      <figure><img src="img/solo_sweep_en.png" alt="Link between the resting sell wall and the next move, by horizon" loading="lazy"><figcaption>Link between the resting sell wall and the next move, by horizon</figcaption></figure>
+
+      <h2>③ Where each coin peaks</h2>
+      <p>The best window differs by coin but always sits at the short end — 5s to 86400s. Anything slower than that is reading yesterday&#x27;s news.</p>
+      <figure><img src="img/solo_peak_en.png" alt="Peak predictive window per coin" loading="lazy"><figcaption>Peak predictive window per coin</figcaption></figure>
+
+      <h2>④ Price impact per unit</h2>
+      <p>Per +1σ of the resting sell wall, price moves by a fraction of a basis point, and the sign is not stable across bands. This is the quantitative version of &#x27;it does not push price in a usable direction&#x27;.</p>
+      <figure><img src="img/solo_impact_en.png" alt="Price impact per +1σ of the resting sell wall" loading="lazy"><figcaption>Price impact per +1σ of the resting sell wall</figcaption></figure>
+
+      <h2>⑤ What counts as normal</h2>
+      <p>Normal levels of the resting sell wall grow by orders of magnitude from a second to a day, so &#x27;high&#x27; is always relative to a window. This chart is the baseline every later threshold is measured against.</p>
+      <figure><img src="img/solo_lvl_BTC_en.png" alt="Normal levels of the resting sell wall by timeframe, BTC" loading="lazy"><figcaption>Normal levels of the resting sell wall by timeframe, BTC</figcaption></figure>
+
+      <h2>⑥ Memory</h2>
+      <p>Autocorrelation of the resting sell wall starts at 0.68–0.80 at the finest scale and rises to 0.75–0.86 at intermediate windows. The quantity clusters in time: a busy minute follows a busy minute far more often than chance allows.</p>
+      <figure><img src="img/solo_autocorr_en.png" alt="Autocorrelation of the resting sell wall by timeframe" loading="lazy"><figcaption>Autocorrelation of the resting sell wall by timeframe</figcaption></figure>
+
+      <h2>⑦ Where the seconds live</h2>
+      <p>Most seconds carry almost no the resting sell wall; the interesting behaviour is confined to a thin tail. Working with means here would describe a market that does not exist.</p>
+      <figure><img src="img/solo_dist_heat_BTC_en.png" alt="Distribution of the resting sell wall across bands, BTC" loading="lazy"><figcaption>Distribution of the resting sell wall across bands, BTC</figcaption></figure>
+
+      <h2>⑧ How large the extremes get</h2>
+      <p>A peak second of the resting sell wall runs many times above its own normal. That ratio is what makes threshold rules feasible at all — the extremes are unmistakable once the baseline is right.</p>
+      <figure><img src="img/solo_spikes_en.png" alt="Spike-to-normal ratio for the resting sell wall" loading="lazy"><figcaption>Spike-to-normal ratio for the resting sell wall</figcaption></figure>
+
+      <h2>⑨ Spike, normal, lull</h2>
+      <p>Every moment gets labelled relative to its own baseline. The three states separate cleanly in volatility and poorly in direction — the same result the whole project keeps producing.</p>
+      <figure><img src="img/solo_states_en.png" alt="Behaviour of spike / normal / lull states" loading="lazy"><figcaption>Behaviour of spike / normal / lull states</figcaption></figure>
+
+      <h2>⑩ The states over price</h2>
+      <p>The labelling drawn directly over a BTC price window: where the resting sell wall changes state, and what price does around it.</p>
+      <p><em>Research, not financial advice.</em></p>
+      <figure><img src="img/solo_timeline_BTC_en.png" alt="The resting sell wall states over a price window, BTC" loading="lazy"><figcaption>The resting sell wall states over a price window, BTC</figcaption></figure>
+
+      <div class="aibox">🤖 This research — data collection, analysis, charts and the narrated
+      video — was produced with the assistance of AI, then reviewed by a human. We forecast
+      volatility, not direction, and log every prediction. <em>Research, not financial advice.</em></div>
+
+      <div class="next">
+        <div class="h2">Read next</div>
+        <p class="nlead">If this changed how you read the tape, the natural next step is <a class="nlink" href="/articles/volume-is-fuel-not-steering-wheel/">Volume Is the Fuel — Not the Steering Wheel</a> — We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p>
+        <div class="ncards"><a class="ncard" href="/articles/volume-is-fuel-not-steering-wheel/"><h3>Volume Is the Fuel — Not the Steering Wheel</h3><p>We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p></a><a class="ncard" href="/articles/about-market-research-lab/"><h3>About Market Research Lab — What We Collect and Why</h3><p>Most market commentary is storytelling.</p></a><a class="ncard" href="/articles/resting-walls-what-thick-liquidity-predicts/"><h3>The Wall That Goes Quiet: What Resting Liquidity Predicts</h3><p>We measured resting limit liquidity sitting on both sides of the book second by second across six coins, and asked the only question that matters:….</p></a><a class="ncard" href="/articles/wall-drain-liquidity-pulled-before-the-move/"><h3>Liquidity Pulled: What Happens When a Wall Drains</h3><p>We measured resting liquidity being pulled away from the book second by second across six coins, and asked the only question that matters: does it….</p></a></div>
+        <p class="nall"><a href="../../">Browse every study on Market Flow Research →</a></p>
+      </div>
+
+      <h2>Comments</h2>
+      <p style="color:var(--muted)">Discussion is powered by GitHub. Enable it by adding <code>secrets/giscus.json</code> (repo IDs from giscus.app).</p>
+
+      <a class="back" href="../../">← All research</a>
+    </article>
+  </div>
+
+  <footer>
+    <div class="wrap" style="padding:0 22px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center">
+      <span class="badge"><span class="dot"></span>AI-assisted research · human-reviewed</span>
+      <span>© <span id="yr">2026</span> Market Flow Research</span>
+    </div>
+  </footer>
+
+  <script>
+    try{var st=localStorage.getItem("mfr_theme");if(st)document.body.setAttribute("data-theme",st);}catch(e){}
+    document.getElementById("yr").textContent=new Date().getFullYear();
+    function tl(){document.getElementById("themeBtn").textContent=document.body.getAttribute("data-theme")==="light"?"☀️":"🌙";}
+    tl();
+    document.getElementById("themeBtn").onclick=function(){
+      var t=document.body.getAttribute("data-theme")==="light"?"dark":"light";
+      document.body.setAttribute("data-theme",t);try{localStorage.setItem("mfr_theme",t);}catch(e){}tl();
+    };
+  </script>
+</body>
+</html>
