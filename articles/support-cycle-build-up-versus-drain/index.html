@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Support Cycle: Liquidity Arriving vs Leaving — Market Flow Research</title>
+  <meta name="description" content="We measured the same buy-side wall growing and thinning second by second across six coins, and asked the only question that matters: does it tell you anything about what happens next? It does — about size, not direction." />
+  <meta name="keywords" content="the support cycle, order book, crypto microstructure, volatility forecast, bitcoin, market research" />
+
+  <link rel="canonical" href="https://marketflowresear.ch/articles/support-cycle-build-up-versus-drain/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Market Flow Research" />
+  <meta property="og:title" content="The Support Cycle: Liquidity Arriving vs Leaving" />
+  <meta property="og:description" content="We measured the same buy-side wall growing and thinning second by second across six coins, and asked the only question that matters: does it tell you anything about what happens next? It does — about size, not direction." />
+  <meta property="og:url" content="https://marketflowresear.ch/articles/support-cycle-build-up-versus-drain/" />
+  <meta property="og:image" content="https://marketflowresear.ch/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="article:published_time" content="2026-07-31" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Support Cycle: Liquidity Arriving vs Leaving" />
+  <meta name="twitter:description" content="We measured the same buy-side wall growing and thinning second by second across six coins, and asked the only question that matters: does it tell you anything about what happens next? It does — about size, not direction." />
+  <meta name="twitter:image" content="https://marketflowresear.ch/og.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "The Support Cycle: Liquidity Arriving vs Leaving",
+    "description": "We measured the same buy-side wall growing and thinning second by second across six coins, and asked the only question that matters: does it tell you anything about what happens next? It does \u2014 about size, not direction.",
+    "datePublished": "2026-07-31",
+    "inLanguage": "en",
+    "image": "https://marketflowresear.ch/og.png",
+    "author": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "publisher": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "mainEntityOfPage": "https://marketflowresear.ch/articles/support-cycle-build-up-versus-drain/",
+    "creativeWorkStatus": "AI-assisted, human-reviewed"
+  }
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230b0d12'/><path d='M14 66 L34 46 L48 58 L70 30 L86 30' fill='none' stroke='%2340e0a0' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
+
+  <style>
+    :root{--bg:#0b0d12;--panel:#12151d;--ink:#e8ecf3;--muted:#8a93a6;--line:#232838;--accent:#40e0a0;--accent-dim:#1c3a2f}
+    body[data-theme="light"]{--bg:#ffffff;--panel:#f6f8fb;--ink:#12151d;--muted:#5b6472;--line:#e4e8ef;--accent:#0a9c69;--accent-dim:#e6f7f0}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{background:var(--bg);color:var(--ink);font:17px/1.72 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:720px;margin:0 auto;padding:0 22px}
+    .bar{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+    .brand{font-weight:800;letter-spacing:.13em;font-size:13px;text-transform:uppercase;text-decoration:none;color:var(--ink)}
+    .btn{cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:10px;padding:7px 11px;font-size:13px;font-weight:600}
+    article{padding:18px 0 40px}
+    .tag{display:inline-block;background:var(--panel);border:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+    h1{font-size:clamp(26px,5vw,38px);line-height:1.15;margin:16px 0 10px;letter-spacing:-.01em}
+    .lede{color:var(--muted);font-size:19px;margin:0 0 18px}
+    .meta{color:var(--muted);font-size:14px;margin-bottom:26px}
+    article h2{font-size:20px;margin:34px 0 10px}
+    article p{margin:0 0 18px}
+    article b{color:var(--ink)}
+    .video{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:8px 0 6px;background:#000}
+    .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    figure{margin:24px 0}
+    figure img{width:100%;border:1px solid var(--line);border-radius:14px;display:block;background:var(--panel)}
+    figcaption{color:var(--muted);font-size:13px;margin-top:8px;text-align:center}
+    .next{margin:40px 0 6px}
+    .next .h2{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+    .next .nlead{color:var(--ink);font-size:16px;margin:0 0 16px;line-height:1.6}
+    .next .nlink{color:var(--accent);font-weight:700;text-decoration:none;border-bottom:1px solid var(--accent-dim)}
+    .next .nlink:hover{border-bottom-color:var(--accent)}
+    .next .nall{margin:16px 0 0;font-size:14px}
+    .next .nall a{color:var(--accent);text-decoration:none;font-weight:600}
+    .ncards{display:grid;grid-template-columns:1fr;gap:14px}
+    @media(min-width:640px){.ncards{grid-template-columns:1fr 1fr}}
+    .ncard{display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;transition:border-color .15s,transform .15s}
+    .ncard:hover{border-color:var(--accent);transform:translateY(-2px)}
+    .ncard h3{margin:0 0 6px;font-size:16px}
+    .ncard p{margin:0;color:var(--muted);font-size:13px}
+    .aibox{margin:34px 0 0;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--muted);font-size:14px}
+    .back{display:inline-block;margin:30px 0 0;color:var(--accent);text-decoration:none;font-weight:600}
+    footer{border-top:1px solid var(--line);margin-top:20px;padding:22px 0 44px;color:var(--muted);font-size:13px}
+    .badge{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:999px;padding:5px 11px}
+    .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="../../">← Market Flow Research</a>
+      <span class="btn" id="themeBtn">🌙</span>
+    </div>
+
+    <article>
+      <span class="tag">Support cycle</span>
+      <h1>The Support Cycle: Liquidity Arriving vs Leaving</h1>
+      <p class="lede">We measured the same buy-side wall growing and thinning second by second across six coins, and asked the only question that matters: does it tell you anything about what happens next? It does — about size, not direction.</p>
+      <div class="meta">Research note · 2026 · AI-assisted, human-reviewed</div>
+
+      
+
+      <h2>① Which side carries more of the support cycle</h2>
+      <p>Across the whole archive the two sides sit close together: the ratio between build-up into the buy wall and drain out of the buy wall runs 0.37–0.71× depending on the coin. Neither side structurally dominates the book — which matters, because it means anything we find later is about <em>changes</em> in the support cycle, not about a permanent imbalance between buyers and sellers.</p>
+      <figure><img src="img/compare_en.png" alt="Average build-up into the buy wall vs drain out of the buy wall per coin, whole dataset" loading="lazy"><figcaption>Average build-up into the buy wall vs drain out of the buy wall per coin, whole dataset</figcaption></figure>
+
+      <h2>② Does it predict the size of the next move</h2>
+      <p>This is the core question. Rank correlation with the size of the next move is <b>positive</b> on 6 of 6 coins, and strongest at the shortest horizon — +0.39 on BTC at 5s. By the daily scale it fades to +0.07. In plain terms: when the support cycle runs high, the following window tends to be more volatile than usual, and the effect strengthens as the window widens.</p>
+      <figure><img src="img/vol_sweep_en.png" alt="Link strength to volatility across horizons" loading="lazy"><figcaption>Link strength to volatility across horizons</figcaption></figure>
+
+      <h2>③ How much price actually moves per unit</h2>
+      <p>We measure the price shift per +1σ of the support cycle, split into low, middle and high bands. The effect is small in absolute terms — fractions of a basis point per σ — and asymmetric between the two sides. That asymmetry is worth knowing, but it is nowhere near a tradable directional push on its own.</p>
+      <figure><img src="img/impact_en.png" alt="Price impact in basis points per +1σ, by band" loading="lazy"><figcaption>Price impact in basis points per +1σ, by band</figcaption></figure>
+
+      <h2>④ What counts as normal, by timeframe</h2>
+      <p>&#x27;Normal&#x27; has no absolute value here: the support cycle measured per second is a different quantity from the same thing aggregated over an hour or a day, and the scale grows by orders of magnitude (log axis). Every threshold we use later is therefore relative to its own window and its own coin — never a fixed number carried across timeframes.</p>
+      <figure><img src="img/lvl_BTC_en.png" alt="Normal levels by timeframe for BTC, log scale" loading="lazy"><figcaption>Normal levels by timeframe for BTC, log scale</figcaption></figure>
+
+      <h2>⑤ Where the link peaks</h2>
+      <p>Each coin has a window where the support cycle lines up best with what follows, marked with a star. The peaks cluster at the short end — the information decays quickly, so any use of this signal has to act on the scale of seconds to minutes rather than hours.</p>
+      <figure><img src="img/peak_en.png" alt="Peak predictive window per coin" loading="lazy"><figcaption>Peak predictive window per coin</figcaption></figure>
+
+      <h2>⑥ Does the imbalance predict direction</h2>
+      <p>Barely. Taking the signed difference between build-up into the buy wall and drain out of the buy wall and correlating it with the direction of the next move gives at most ρ≈0.22 anywhere in the grid, and it collapses toward zero on most coins and most horizons. This mirrors what we found with volume: the book tells you how much, not which way.</p>
+      <figure><img src="img/dir_sweep_en.png" alt="Signed correlation of the imbalance with price direction" loading="lazy"><figcaption>Signed correlation of the imbalance with price direction</figcaption></figure>
+
+      <h2>⑦ How long one-sidedness survives</h2>
+      <p>A lopsided book does not stay lopsided. The share of imbalance that persists falls from about 51–63% at one second to roughly 16–45% by the twenty-minute mark. Whatever pushes the support cycle to one side is undone quickly — which is exactly why it cannot steer longer moves.</p>
+      <figure><img src="img/imb_life_en.png" alt="Imbalance persistence by timeframe" loading="lazy"><figcaption>Imbalance persistence by timeframe</figcaption></figure>
+
+      <h2>⑧ Memory: does a busy second predict a busy second</h2>
+      <p>Yes, and this is the most robust property in the whole study. Lag-1 autocorrelation of the support cycle is 0.36–0.49 at the fastest scale and 0.29–0.40 at the slowest, on every coin. The quantity is sticky: its own past is a better predictor of its near future than anything about price.</p>
+      <figure><img src="img/autocorr_en.png" alt="Lag-1 autocorrelation by timeframe" loading="lazy"><figcaption>Lag-1 autocorrelation by timeframe</figcaption></figure>
+
+      <h2>⑨ How extreme the extremes are</h2>
+      <p>Extremes are not mild. A peak second can carry many times the normal level of the support cycle, which is why averages describe this data badly and why we work with quantiles and episodes instead of means.</p>
+      <figure><img src="img/spikes_en.png" alt="Spike-to-normal ratio" loading="lazy"><figcaption>Spike-to-normal ratio</figcaption></figure>
+
+      <h2>⑩ Where the seconds actually live</h2>
+      <p>Most seconds are unremarkable: the distribution of the support cycle is concentrated in the low bands with a long thin tail. The market spends the overwhelming majority of its time doing nothing interesting, and the tail is where every episode we care about comes from.</p>
+      <figure><img src="img/dist_heat_BTC_en.png" alt="Distribution of seconds across bands, BTC" loading="lazy"><figcaption>Distribution of seconds across bands, BTC</figcaption></figure>
+
+      <h2>⑪ Spike, normal, lull — what each looks like</h2>
+      <p>We label every moment as spike, normal or lull relative to its own baseline, then look at how price behaves inside each state. The states differ from each other in volatility far more clearly than in direction — the same asymmetry that runs through the whole project.</p>
+      <figure><img src="img/ep_behavior_BTC_en.png" alt="Behaviour of spike / normal / lull episodes, BTC" loading="lazy"><figcaption>Behaviour of spike / normal / lull episodes, BTC</figcaption></figure>
+
+      <h2>⑫ The same states laid over price</h2>
+      <p>Here the labelling is placed directly on a price window so you can see it rather than trust it: where the support cycle flips state, and what price does around those flips.</p>
+      <figure><img src="img/timeline_BTC_en.png" alt="State sequence over a multi-day window, BTC" loading="lazy"><figcaption>State sequence over a multi-day window, BTC</figcaption></figure>
+
+      <h2>⑬ Extremes arrive in clusters</h2>
+      <p>Spikes in the support cycle are not evenly spaced — they bunch into storms, and a spike inside a cluster is a different animal from an isolated one. Any threshold rule that ignores clustering will fire in bursts and then sit idle for hours.</p>
+      <figure><img src="img/storms_en.png" alt="Clustering of extremes over time" loading="lazy"><figcaption>Clustering of extremes over time</figcaption></figure>
+
+      <h2>⑭ What it forecasts, honestly</h2>
+      <p>Pulling it together: the two sides of the support cycle move together (coupling reaches 0.90–0.98 at the long end), the quantity forecasts its own future well, and it carries a positive signal about the <em>size</em> of the next move. What it does not carry — on any horizon we measured — is the side. That is the honest boundary of this study.</p>
+      <p><em>Research, not financial advice.</em></p>
+      <figure><img src="img/bsforecast_en.png" alt="Coupling of the two sides and the forward forecast" loading="lazy"><figcaption>Coupling of the two sides and the forward forecast</figcaption></figure>
+
+      <div class="aibox">🤖 This research — data collection, analysis, charts and the narrated
+      video — was produced with the assistance of AI, then reviewed by a human. We forecast
+      volatility, not direction, and log every prediction. <em>Research, not financial advice.</em></div>
+
+      <div class="next">
+        <div class="h2">Read next</div>
+        <p class="nlead">If this changed how you read the tape, the natural next step is <a class="nlink" href="/articles/volume-is-fuel-not-steering-wheel/">Volume Is the Fuel — Not the Steering Wheel</a> — We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p>
+        <div class="ncards"><a class="ncard" href="/articles/volume-is-fuel-not-steering-wheel/"><h3>Volume Is the Fuel — Not the Steering Wheel</h3><p>We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p></a><a class="ncard" href="/articles/about-market-research-lab/"><h3>About Market Research Lab — What We Collect and Why</h3><p>Most market commentary is storytelling.</p></a><a class="ncard" href="/articles/resting-walls-what-thick-liquidity-predicts/"><h3>The Wall That Goes Quiet: What Resting Liquidity Predicts</h3><p>We measured resting limit liquidity sitting on both sides of the book second by second across six coins, and asked the only question that matters:….</p></a><a class="ncard" href="/articles/wall-drain-liquidity-pulled-before-the-move/"><h3>Liquidity Pulled: What Happens When a Wall Drains</h3><p>We measured resting liquidity being pulled away from the book second by second across six coins, and asked the only question that matters: does it….</p></a></div>
+        <p class="nall"><a href="../../">Browse every study on Market Flow Research →</a></p>
+      </div>
+
+      <h2>Comments</h2>
+      <p style="color:var(--muted)">Discussion is powered by GitHub. Enable it by adding <code>secrets/giscus.json</code> (repo IDs from giscus.app).</p>
+
+      <a class="back" href="../../">← All research</a>
+    </article>
+  </div>
+
+  <footer>
+    <div class="wrap" style="padding:0 22px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center">
+      <span class="badge"><span class="dot"></span>AI-assisted research · human-reviewed</span>
+      <span>© <span id="yr">2026</span> Market Flow Research</span>
+    </div>
+  </footer>
+
+  <script>
+    try{var st=localStorage.getItem("mfr_theme");if(st)document.body.setAttribute("data-theme",st);}catch(e){}
+    document.getElementById("yr").textContent=new Date().getFullYear();
+    function tl(){document.getElementById("themeBtn").textContent=document.body.getAttribute("data-theme")==="light"?"☀️":"🌙";}
+    tl();
+    document.getElementById("themeBtn").onclick=function(){
+      var t=document.body.getAttribute("data-theme")==="light"?"dark":"light";
+      document.body.setAttribute("data-theme",t);try{localStorage.setItem("mfr_theme",t);}catch(e){}tl();
+    };
+  </script>
+</body>
+</html>
