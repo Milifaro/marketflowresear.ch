@@ -105,7 +105,9 @@
       transition:border-color .15s,transform .15s,box-shadow .15s;
     }
     .card:hover{border-color:var(--accent); transform:translateY(-3px); box-shadow:0 14px 34px var(--shadow)}
-    .thumb{aspect-ratio:16/9; background:linear-gradient(135deg,var(--accent-dim),var(--panel)); display:flex; align-items:flex-end; padding:14px}
+    .thumb{position:relative; aspect-ratio:16/9; background:linear-gradient(135deg,var(--accent-dim),var(--panel)); display:flex; align-items:flex-end; padding:14px; overflow:hidden}
+    .thumb img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; display:block}
+    .thumb .tag{position:relative; z-index:1; backdrop-filter:blur(4px)}
     .thumb .tag{background:var(--bg); border:1px solid var(--line); color:var(--muted); font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; padding:4px 9px; border-radius:999px}
     .cbody{padding:16px 18px 20px}
     .cbody h3{margin:0 0 8px; font-size:18px; line-height:1.25}
@@ -158,8 +160,18 @@
       <div class="h2" data-i18n="latest">Latest research</div>
       <div class="grid">
 
+        <a class="card" href="articles/resting-walls-what-thick-liquidity-predicts/">
+          <div class="thumb"><img src="articles/resting-walls-what-thick-liquidity-predicts/img/compare_en.png" alt="Average the resting sell wall vs the resting buy wall per coin, whole dataset" loading="lazy"><span class="tag">Walls</span></div>
+          <div class="cbody">
+            <h3>The Wall That Goes Quiet: What Resting Liquidity Predicts</h3>
+            <p>We measured resting limit liquidity sitting on both sides of the book second by second across six coins, and asked the only question that matters: does it tell you anything about what happens next? It does — about size, not direction.</p>
+            <div class="date">2026</div>
+          </div>
+        </a>
+
+
         <a class="card" href="articles/about-market-research-lab/">
-          <div class="thumb"><span class="tag">Про проект</span></div>
+          <div class="thumb"><img src="articles/about-market-research-lab/img/compare_en.png" alt="Average buy vs sell volume per coin across the whole archive" loading="lazy"><span class="tag">Про проект</span></div>
           <div class="cbody">
             <h3>About Market Research Lab — What We Collect and Why</h3>
             <p>Most market commentary is storytelling. We built something testable instead: 166 days of second-by-second order-book data across six coins, and a rule that nothing gets published unless it survives out-of-sample.</p>
@@ -169,7 +181,7 @@
 
 
         <a class="card" href="articles/volume-is-fuel-not-steering-wheel/">
-          <div class="thumb"><span class="tag">Обʼєми</span></div>
+          <div class="thumb"><img src="articles/volume-is-fuel-not-steering-wheel/img/compare_en.png" alt="Average buy vs sell volume per coin, whole dataset" loading="lazy"><span class="tag">Обʼєми</span></div>
           <div class="cbody">
             <h3>Volume Is the Fuel — Not the Steering Wheel</h3>
             <p>Everyone asks whether volume pushes price up or down. We measured it second-by-second on six coins. The honest answer surprises people.</p>
