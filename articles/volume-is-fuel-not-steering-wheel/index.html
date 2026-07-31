@@ -65,6 +65,11 @@
     figcaption{color:var(--muted);font-size:13px;margin-top:8px;text-align:center}
     .next{margin:40px 0 6px}
     .next .h2{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+    .next .nlead{color:var(--ink);font-size:16px;margin:0 0 16px;line-height:1.6}
+    .next .nlink{color:var(--accent);font-weight:700;text-decoration:none;border-bottom:1px solid var(--accent-dim)}
+    .next .nlink:hover{border-bottom-color:var(--accent)}
+    .next .nall{margin:16px 0 0;font-size:14px}
+    .next .nall a{color:var(--accent);text-decoration:none;font-weight:600}
     .ncards{display:grid;grid-template-columns:1fr;gap:14px}
     @media(min-width:640px){.ncards{grid-template-columns:1fr 1fr}}
     .ncard{display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;transition:border-color .15s,transform .15s}
@@ -173,7 +178,9 @@
 
       <div class="next">
         <div class="h2">Read next</div>
-        <div class="ncards"><a class="ncard" href="/articles/order-flow-predicts-volatility/"><h3>Order flow predicts how much, not which way</h3><p>Across six coins, flow surges line up with bigger moves — but not their direction.</p></a><a class="ncard" href="/"><h3>The wall that goes quiet</h3><p>Thick resting walls precede calm; thinning walls precede turbulence.</p></a></div>
+        <p class="nlead">If this changed how you read the tape, the natural next step is <a class="nlink" href="/articles/order-flow-predicts-volatility/">Order flow predicts how much, not which way</a> — Across six coins, flow surges line up with bigger moves — but not their direction.</p>
+        <div class="ncards"><a class="ncard" href="/articles/order-flow-predicts-volatility/"><h3>Order flow predicts how much, not which way</h3><p>Across six coins, flow surges line up with bigger moves — but not their direction.</p></a><a class="ncard" href="/"><h3>The wall that goes quiet</h3><p>Thick resting walls precede calm; thinning walls precede turbulence.</p></a><a class="ncard" href="/articles/about-market-research-lab/"><h3>About Market Research Lab — What We Collect and Why</h3><p>Most market commentary is storytelling.</p></a><a class="ncard" href="/articles/resting-walls-what-thick-liquidity-predicts/"><h3>The Wall That Goes Quiet: What Resting Liquidity Predicts</h3><p>We measured resting limit liquidity sitting on both sides of the book second by second across six coins, and asked the only question that matters:….</p></a></div>
+        <p class="nall"><a href="../../">Browse every study on Market Flow Research →</a></p>
       </div>
 
       <h2>Comments</h2>
