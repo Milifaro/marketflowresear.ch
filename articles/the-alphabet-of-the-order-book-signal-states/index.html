@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Alphabet of the Order Book: 6,561 Possible States, 333 Real Ones — Market Flow Research</title>
+  <meta name="description" content="We described the order book as a single word: eight features, three states each. Of the 6,561 words that could exist, only 333 ever occur — and when we tested that alphabet out of sample, it described the market well and predicted it poorly." />
+  <meta name="keywords" content="order book states, signal classification, crypto microstructure, out-of-sample, bitcoin" />
+
+  <link rel="canonical" href="https://marketflowresear.ch/articles/the-alphabet-of-the-order-book-signal-states/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Market Flow Research" />
+  <meta property="og:title" content="The Alphabet of the Order Book" />
+  <meta property="og:description" content="We described the order book as a single word: eight features, three states each. Of the 6,561 words that could exist, only 333 ever occur — and when we tested that alphabet out of sample, it described the market well and predicted it poorly." />
+  <meta property="og:url" content="https://marketflowresear.ch/articles/the-alphabet-of-the-order-book-signal-states/" />
+  <meta property="og:image" content="https://marketflowresear.ch/articles/the-alphabet-of-the-order-book-signal-states/img/classify_en.png" />
+  <meta property="og:image:width" content="990" />
+  <meta property="og:image:height" content="550" />
+  <meta property="article:published_time" content="2026-08-03" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Alphabet of the Order Book" />
+  <meta name="twitter:description" content="We described the order book as a single word: eight features, three states each. Of the 6,561 words that could exist, only 333 ever occur — and when we tested that alphabet out of sample, it described the market well and predicted it poorly." />
+  <meta name="twitter:image" content="https://marketflowresear.ch/articles/the-alphabet-of-the-order-book-signal-states/img/classify_en.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "The Alphabet of the Order Book: 6,561 Possible States, 333 Real Ones",
+    "description": "We described the order book as a single word: eight features, three states each. Of the 6,561 words that could exist, only 333 ever occur \u2014 and when we tested that alphabet out of sample, it described the market well and predicted it poorly.",
+    "datePublished": "2026-08-03",
+    "inLanguage": "en",
+    "image": "https://marketflowresear.ch/articles/the-alphabet-of-the-order-book-signal-states/img/classify_en.png",
+    "author": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "publisher": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "mainEntityOfPage": "https://marketflowresear.ch/articles/the-alphabet-of-the-order-book-signal-states/",
+    "creativeWorkStatus": "AI-assisted, human-reviewed"
+  }
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230b0d12'/><path d='M14 66 L34 46 L48 58 L70 30 L86 30' fill='none' stroke='%2340e0a0' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
+
+  <style>
+    :root{--bg:#0b0d12;--panel:#12151d;--ink:#e8ecf3;--muted:#8a93a6;--line:#232838;--accent:#40e0a0;--accent-dim:#1c3a2f}
+    body[data-theme="light"]{--bg:#ffffff;--panel:#f6f8fb;--ink:#12151d;--muted:#5b6472;--line:#e4e8ef;--accent:#0a9c69;--accent-dim:#e6f7f0}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{background:var(--bg);color:var(--ink);font:17px/1.72 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:720px;margin:0 auto;padding:0 22px}
+    .bar{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+    .brand{font-weight:800;letter-spacing:.13em;font-size:13px;text-transform:uppercase;text-decoration:none;color:var(--ink)}
+    .btn{cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:10px;padding:7px 11px;font-size:13px;font-weight:600}
+    article{padding:18px 0 40px}
+    .tag{display:inline-block;background:var(--panel);border:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+    h1{font-size:clamp(26px,5vw,38px);line-height:1.15;margin:16px 0 10px;letter-spacing:-.01em}
+    .lede{color:var(--muted);font-size:19px;margin:0 0 18px}
+    .meta{color:var(--muted);font-size:14px;margin-bottom:26px}
+    article h2{font-size:20px;margin:34px 0 10px}
+    article p{margin:0 0 18px}
+    article b{color:var(--ink)}
+    .video{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:8px 0 6px;background:#000}
+    .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    figure{margin:24px 0}
+    figure img{width:100%;border:1px solid var(--line);border-radius:14px;display:block;background:var(--panel)}
+    figcaption{color:var(--muted);font-size:13px;margin-top:8px;text-align:center}
+    .next{margin:40px 0 6px}
+    .next .h2{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+    .next .nlead{color:var(--ink);font-size:16px;margin:0 0 16px;line-height:1.6}
+    .next .nlink{color:var(--accent);font-weight:700;text-decoration:none;border-bottom:1px solid var(--accent-dim)}
+    .next .nlink:hover{border-bottom-color:var(--accent)}
+    .next .nall{margin:16px 0 0;font-size:14px}
+    .next .nall a{color:var(--accent);text-decoration:none;font-weight:600}
+    .ncards{display:grid;grid-template-columns:1fr;gap:14px}
+    @media(min-width:640px){.ncards{grid-template-columns:1fr 1fr}}
+    .ncard{display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;transition:border-color .15s,transform .15s}
+    .ncard:hover{border-color:var(--accent);transform:translateY(-2px)}
+    .ncard h3{margin:0 0 6px;font-size:16px}
+    .ncard p{margin:0;color:var(--muted);font-size:13px}
+    .aibox{margin:34px 0 0;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--muted);font-size:14px}
+    .back{display:inline-block;margin:30px 0 0;color:var(--accent);text-decoration:none;font-weight:600}
+    footer{border-top:1px solid var(--line);margin-top:20px;padding:22px 0 44px;color:var(--muted);font-size:13px}
+    .badge{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:999px;padding:5px 11px}
+    .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="../../">← Market Flow Research</a>
+      <span class="btn" id="themeBtn">🌙</span>
+    </div>
+
+    <article>
+      <span class="tag">Signals</span>
+      <h1>The Alphabet of the Order Book: 6,561 Possible States, 333 Real Ones</h1>
+      <p class="lede">We described the order book as a single word: eight features, three states each. Of the 6,561 words that could exist, only 333 ever occur — and when we tested that alphabet out of sample, it described the market well and predicted it poorly.</p>
+      <div class="meta">Research note · 2026 · AI-assisted, human-reviewed</div>
+
+      
+
+      <h2>① A signal is a state of the whole book, not one number</h2>
+      <p>We stopped looking at features one at a time. At every moment each of the 8 order-book features is in one of three states — spike, normal or lull — so the market&#x27;s condition is an eight-character word. That gives 6,561 possible words, of which only <b>333</b> ever actually occur across 12,477 observed windows. The book does not wander freely; it lives in a small corner of its own state space.</p>
+      <figure><img src="img/classify_en.png" alt="Signal types by frequency and forward behaviour" loading="lazy"><figcaption>Signal types by frequency and forward behaviour</figcaption></figure>
+
+      <h2>② Most of the time, nothing is happening</h2>
+      <p>One word dominates everything: all-normal, every feature quiet at once. It covers 6,351 of 12,477 windows — about 51% of the time — and its forward move is the smallest in the set (median 0.097%, up-share 49%). Any rule that fires on &#x27;the market is doing something&#x27; has to first accept that four windows in five, it isn&#x27;t.</p>
+
+      <h2>③ What an active state looks like</h2>
+      <p>The most common non-quiet word is `01101111` — 864 windows. Its median absolute move is 0.142% against 0.097% for the quiet state, i.e. roughly ×1.5 more movement, while its up-share sits at 48% — near a coin flip. The pattern repeats at every level of this project: state tells you the amplitude, not the sign.</p>
+
+      <h2>④ One feature alone versus several at once</h2>
+      <p>An isolated signal is one feature leaving its baseline while the other seven stay normal. They are informative in a narrow way: the strongest directional tilt belongs to <b>executed sell volume</b> (median -0.204%, up-share 18%, n=103), and the largest forward movement to <b>build-up into the buy wall</b> (median 0.250%). When several features fire together the move grows but the direction does not clarify.</p>
+      <figure><img src="img/coincide_en.png" alt="Isolated signals versus coinciding ones" loading="lazy"><figcaption>Isolated signals versus coinciding ones</figcaption></figure>
+
+      <h2>⑤ How fast the information dies</h2>
+      <p>Every signal has a shelf life. Measured across horizons 5с, 60с, 5хв, 1год, the advantage is concentrated in the first minutes and is gone well before the hour mark — consistent with the volatility studies, where flow-based edge decayed on the same clock.</p>
+      <figure><img src="img/decay_en.png" alt="Decay of the signal&#x27;s advantage across horizons" loading="lazy"><figcaption>Decay of the signal&#x27;s advantage across horizons</figcaption></figure>
+
+      <h2>⑥ The states drawn over price</h2>
+      <p>Rather than trusting the labels, look at them: the state sequence laid directly over BTC price. Long stretches of quiet, bursts where several features light up at once, and the price behaviour around those bursts.</p>
+      <figure><img src="img/timeline_en.png" alt="Signal states over the BTC price line" loading="lazy"><figcaption>Signal states over the BTC price line</figcaption></figure>
+
+      <h2>⑦ The honest test: does it survive out of sample?</h2>
+      <p>This is the section that matters. We split the history in half, learned the behaviour of each state on the first part (6,238 windows) and applied it blind to the second (6,239). Direction AUC falls from <b>0.623 in-sample to 0.554 out-of-sample</b>; the &#x27;will it move at all&#x27; model falls from 0.576 to 0.492 — i.e. to a coin flip. And 304 state-words in the test half had never been seen in training at all.\n\nSo the classification is real as a description and weak as a predictor. We publish it because the negative result is the finding: the book&#x27;s state space is small and legible, but knowing today&#x27;s word barely improves tomorrow&#x27;s guess.</p>
+
+      <h2>⑧ What we take from this</h2>
+      <p>Three things. The market&#x27;s state space is far smaller than it could be — 333 words out of 6,561. Quiet dominates, so any live rule spends most of its time doing nothing. And the part that survives out of sample is amplitude, never direction — the same boundary we hit from every other angle in this project.\n\n<em>Research, not financial advice.</em></p>
+
+      <div class="aibox">🤖 This research — data collection, analysis, charts and the narrated
+      video — was produced with the assistance of AI, then reviewed by a human. We forecast
+      volatility, not direction, and log every prediction. <em>Research, not financial advice.</em></div>
+
+      <div class="next">
+        <div class="h2">Read next</div>
+        <p class="nlead">If this changed how you read the tape, the natural next step is <a class="nlink" href="/articles/volume-is-fuel-not-steering-wheel/">Volume Is the Fuel — Not the Steering Wheel</a> — We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p>
+        <div class="ncards"><a class="ncard" href="/articles/volume-is-fuel-not-steering-wheel/"><h3>Volume Is the Fuel — Not the Steering Wheel</h3><p>We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p></a><a class="ncard" href="/articles/about-market-research-lab/"><h3>About Market Research Lab — What We Collect and Why</h3><p>Most market commentary is storytelling.</p></a><a class="ncard" href="/articles/signal-standard-from-calm-to-calm-btc/"><h3>From Calm to Calm: a Standard for What Counts as a Signal (BTC)</h3><p>We stopped defining market signals with a stopwatch.</p></a><a class="ncard" href="/articles/resting-walls-what-thick-liquidity-predicts/"><h3>The Wall That Goes Quiet: What Resting Liquidity Predicts</h3><p>We measured resting limit liquidity sitting on both sides of the book second by second across six coins, and asked the only question that matters:….</p></a></div>
+        <p class="nall"><a href="../../">Browse every study on Market Flow Research →</a></p>
+      </div>
+
+      <h2>Comments</h2>
+      <p style="color:var(--muted)">Discussion is powered by GitHub. Enable it by adding <code>secrets/giscus.json</code> (repo IDs from giscus.app).</p>
+
+      <a class="back" href="../../">← All research</a>
+    </article>
+  </div>
+
+  <footer>
+    <div class="wrap" style="padding:0 22px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center">
+      <span class="badge"><span class="dot"></span>AI-assisted research · human-reviewed</span>
+      <span>© <span id="yr">2026</span> Market Flow Research</span>
+    </div>
+  </footer>
+
+  <script>
+    try{var st=localStorage.getItem("mfr_theme");if(st)document.body.setAttribute("data-theme",st);}catch(e){}
+    document.getElementById("yr").textContent=new Date().getFullYear();
+    function tl(){document.getElementById("themeBtn").textContent=document.body.getAttribute("data-theme")==="light"?"☀️":"🌙";}
+    tl();
+    document.getElementById("themeBtn").onclick=function(){
+      var t=document.body.getAttribute("data-theme")==="light"?"dark":"light";
+      document.body.setAttribute("data-theme",t);try{localStorage.setItem("mfr_theme",t);}catch(e){}tl();
+    };
+  </script>
+</body>
+</html>
