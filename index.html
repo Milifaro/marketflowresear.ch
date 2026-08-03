@@ -28,7 +28,13 @@
     "name": "Market Flow Research",
     "url": "https://marketflowresear.ch/",
     "description": "Independent research on crypto market microstructure. Second-by-second order-book and order-flow data across major coins.",
-    "inLanguage": ["en", "uk"]
+    "inLanguage": ["en", "uk"],
+    "sameAs": [
+      "https://www.youtube.com/@mflowresearch",
+      "https://x.com/CryptoLoreInfo",
+      "https://www.tiktok.com/@marketflowresear.ch",
+      "https://www.tradingview.com/u/MarketFlowResearch/"
+    ]
   }
   </script>
 
@@ -113,8 +119,6 @@
     .cbody h3{margin:0 0 8px; font-size:18px; line-height:1.25}
     .cbody p{margin:0 0 12px; color:var(--muted); font-size:14px}
     .cbody .date{color:var(--muted); font-size:12px; letter-spacing:.04em}
-    .card.soon{pointer-events:none; opacity:.55}
-    .card.soon .thumb .tag{color:var(--accent)}
 
     footer{border-top:1px solid var(--line); margin-top:24px; padding:22px 0 40px}
     .foot{max-width:860px; margin:0 auto; padding:0 22px; color:var(--muted); font-size:13px; display:flex; flex-wrap:wrap; gap:10px; justify-content:space-between; align-items:center}
@@ -147,12 +151,11 @@
       <h1>MARKET FLOW RESEARCH</h1>
       <p class="lede" data-i18n="lede">Independent research on crypto market microstructure. We study second-by-second order-book and order-flow data across major coins.</p>
 
-      <!-- TODO: підстав фінальні хендли соцмереж -->
       <nav class="links">
-        <a href="#" data-net="youtube"><span class="dot"></span>YouTube</a>
-        <a href="#" data-net="x"><span class="dot"></span>X</a>
-        <a href="#" data-net="tiktok"><span class="dot"></span>TikTok</a>
-        <a href="#" data-net="tradingview"><span class="dot"></span>TradingView</a>
+        <a href="https://www.youtube.com/@mflowresearch" data-net="youtube" target="_blank" rel="me noopener"><span class="dot"></span>YouTube</a>
+        <a href="https://x.com/CryptoLoreInfo" data-net="x" target="_blank" rel="me noopener"><span class="dot"></span>X</a>
+        <a href="https://www.tiktok.com/@marketflowresear.ch" data-net="tiktok" target="_blank" rel="me noopener"><span class="dot"></span>TikTok</a>
+        <a href="https://www.tradingview.com/u/MarketFlowResearch/" data-net="tradingview" target="_blank" rel="me noopener"><span class="dot"></span>TradingView</a>
       </nav>
     </header>
 
@@ -181,7 +184,7 @@
 
 
         <a class="card" href="articles/signal-standard-from-calm-to-calm-btc/">
-          <div class="thumb"><img src="articles/signal-standard-from-calm-to-calm-btc/img/BTC_overview_en.png" alt="" loading="lazy"><span class="tag">Стандарт сигналів · BTC</span></div>
+          <div class="thumb"><img src="articles/signal-standard-from-calm-to-calm-btc/img/BTC_overview_en.png" alt="" loading="lazy"><span class="tag">Signal standard · BTC</span></div>
           <div class="cbody">
             <h3>From Calm to Calm: a Standard for What Counts as a Signal (BTC)</h3>
             <p>We stopped defining market signals with a stopwatch. A signal is a continuous departure from calm, bounded by calm on both sides — the market decides where it starts and ends. Here is the standard, applied second by second to 167 days of BTC, with every event classified and located on the price path.</p>
@@ -351,7 +354,7 @@
 
 
         <a class="card" href="articles/about-market-research-lab/">
-          <div class="thumb"><img src="articles/about-market-research-lab/img/dir_sweep_en.png" alt="" loading="lazy"><span class="tag">Про проект</span></div>
+          <div class="thumb"><img src="articles/about-market-research-lab/img/dir_sweep_en.png" alt="" loading="lazy"><span class="tag">About</span></div>
           <div class="cbody">
             <h3>About Market Research Lab — What We Collect and Why</h3>
             <p>Most market commentary is storytelling. We built something testable instead: 166 days of second-by-second order-book data across six coins, and a rule that nothing gets published unless it survives out-of-sample.</p>
@@ -361,7 +364,7 @@
 
 
         <a class="card" href="articles/volume-is-fuel-not-steering-wheel/">
-          <div class="thumb"><img src="articles/volume-is-fuel-not-steering-wheel/img/vol_sweep_en.png" alt="" loading="lazy"><span class="tag">Обʼєми</span></div>
+          <div class="thumb"><img src="articles/volume-is-fuel-not-steering-wheel/img/vol_sweep_en.png" alt="" loading="lazy"><span class="tag">Volume</span></div>
           <div class="cbody">
             <h3>Volume Is the Fuel — Not the Steering Wheel</h3>
             <p>Everyone asks whether volume pushes price up or down. We measured it second-by-second on six coins. The honest answer surprises people.</p>
@@ -377,16 +380,6 @@
             <h3>Order flow predicts how much, not which way</h3>
             <p data-i18n="a1">Across six coins, flow surges line up with bigger moves — but not their direction. What that means for anyone trading the tape.</p>
             <div class="date">2026</div>
-          </div>
-        </a>
-
-        <!-- ЗАГОТОВКА (наступні статті) -->
-        <a class="card soon" href="#">
-          <div class="thumb"><span class="tag" data-i18n="soonTag">Coming soon</span></div>
-          <div class="cbody">
-            <h3 data-i18n="a2t">The wall that goes quiet</h3>
-            <p data-i18n="a2">Thick resting walls tend to precede calm; thinning walls precede turbulence. A look at the pattern coin by coin.</p>
-            <div class="date">—</div>
           </div>
         </a>
 
@@ -408,15 +401,13 @@
         lede:"Independent research on crypto market microstructure. We study second-by-second order-book and order-flow data across major coins.",
         latest:"Latest research",
         a1:"Across six coins, flow surges line up with bigger moves — but not their direction. What that means for anyone trading the tape.",
-        a2t:"The wall that goes quiet", a2:"Thick resting walls tend to precede calm; thinning walls precede turbulence. A look at the pattern coin by coin.",
-        soonTag:"Coming soon", ai:"AI-assisted research · human-reviewed", theme:"Dark", themeLight:"Light"
+        ai:"AI-assisted research · human-reviewed", theme:"Dark", themeLight:"Light"
       },
       uk:{
         lede:"Незалежне дослідження мікроструктури крипторинку. Вивчаємо посекундні дані стакана й потоку заявок по головних монетах.",
         latest:"Останні дослідження",
         a1:"На шести монетах сплески потоку збігаються з більшими рухами — але не з їхнім напрямом. Що це означає для тих, хто читає стрічку.",
-        a2t:"Стіна, що затихає", a2:"Товсті стіни зазвичай передують штилю; тонші — турбулентності. Розбираємо патерн по кожній монеті.",
-        soonTag:"Незабаром", ai:"Дослідження за участі ШІ · перевірено людиною", theme:"Темна", themeLight:"Світла"
+        ai:"Дослідження за участі ШІ · перевірено людиною", theme:"Темна", themeLight:"Світла"
       }
     };
     var curLang="en";
