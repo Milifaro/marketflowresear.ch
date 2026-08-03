@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>From Calm to Calm: a Standard for What Counts as a Signal (BTC) — Market Flow Research</title>
+  <meta name="description" content="A calm-to-calm definition of a market signal, applied to 167 days of per-second BTC order-book data: 897 bursts, classified by duration, intensity and leading feature, then located on a 1.2% ZigZag." />
+  <meta name="keywords" content="order book, market microstructure, signal definition, order flow, zigzag, volatility, bitcoin, event classification" />
+
+  <link rel="canonical" href="https://marketflowresear.ch/articles/signal-standard-from-calm-to-calm-btc/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Market Flow Research" />
+  <meta property="og:title" content="From Calm to Calm: a Standard for What Counts as a Signal (BTC)" />
+  <meta property="og:description" content="The market draws its own signal boundaries: calm, burst, calm." />
+  <meta property="og:url" content="https://marketflowresear.ch/articles/signal-standard-from-calm-to-calm-btc/" />
+  <meta property="og:image" content="https://marketflowresear.ch/articles/signal-standard-from-calm-to-calm-btc/img/BTC_overview_en.png" />
+  <meta property="og:image:width" content="1430" />
+  <meta property="og:image:height" content="1452" />
+  <meta property="article:published_time" content="2026-08-03" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="From Calm to Calm: a Standard for What Counts as a Signal (BTC)" />
+  <meta name="twitter:description" content="The market draws its own signal boundaries: calm, burst, calm." />
+  <meta name="twitter:image" content="https://marketflowresear.ch/articles/signal-standard-from-calm-to-calm-btc/img/BTC_overview_en.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "From Calm to Calm: a Standard for What Counts as a Signal (BTC)",
+    "description": "A calm-to-calm definition of a market signal, applied to 167 days of per-second BTC order-book data: 897 bursts, classified by duration, intensity and leading feature, then located on a 1.2% ZigZag.",
+    "datePublished": "2026-08-03",
+    "inLanguage": "en",
+    "image": "https://marketflowresear.ch/articles/signal-standard-from-calm-to-calm-btc/img/BTC_overview_en.png",
+    "author": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "publisher": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "mainEntityOfPage": "https://marketflowresear.ch/articles/signal-standard-from-calm-to-calm-btc/",
+    "creativeWorkStatus": "AI-assisted, human-reviewed"
+  }
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230b0d12'/><path d='M14 66 L34 46 L48 58 L70 30 L86 30' fill='none' stroke='%2340e0a0' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
+
+  <style>
+    :root{--bg:#0b0d12;--panel:#12151d;--ink:#e8ecf3;--muted:#8a93a6;--line:#232838;--accent:#40e0a0;--accent-dim:#1c3a2f}
+    body[data-theme="light"]{--bg:#ffffff;--panel:#f6f8fb;--ink:#12151d;--muted:#5b6472;--line:#e4e8ef;--accent:#0a9c69;--accent-dim:#e6f7f0}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{background:var(--bg);color:var(--ink);font:17px/1.72 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:720px;margin:0 auto;padding:0 22px}
+    .bar{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+    .brand{font-weight:800;letter-spacing:.13em;font-size:13px;text-transform:uppercase;text-decoration:none;color:var(--ink)}
+    .btn{cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:10px;padding:7px 11px;font-size:13px;font-weight:600}
+    article{padding:18px 0 40px}
+    .tag{display:inline-block;background:var(--panel);border:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+    h1{font-size:clamp(26px,5vw,38px);line-height:1.15;margin:16px 0 10px;letter-spacing:-.01em}
+    .lede{color:var(--muted);font-size:19px;margin:0 0 18px}
+    .meta{color:var(--muted);font-size:14px;margin-bottom:26px}
+    article h2{font-size:20px;margin:34px 0 10px}
+    article p{margin:0 0 18px}
+    article b{color:var(--ink)}
+    .video{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:8px 0 6px;background:#000}
+    .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    figure{margin:24px 0}
+    figure img{width:100%;border:1px solid var(--line);border-radius:14px;display:block;background:var(--panel)}
+    figcaption{color:var(--muted);font-size:13px;margin-top:8px;text-align:center}
+    .next{margin:40px 0 6px}
+    .next .h2{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+    .next .nlead{color:var(--ink);font-size:16px;margin:0 0 16px;line-height:1.6}
+    .next .nlink{color:var(--accent);font-weight:700;text-decoration:none;border-bottom:1px solid var(--accent-dim)}
+    .next .nlink:hover{border-bottom-color:var(--accent)}
+    .next .nall{margin:16px 0 0;font-size:14px}
+    .next .nall a{color:var(--accent);text-decoration:none;font-weight:600}
+    .ncards{display:grid;grid-template-columns:1fr;gap:14px}
+    @media(min-width:640px){.ncards{grid-template-columns:1fr 1fr}}
+    .ncard{display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;transition:border-color .15s,transform .15s}
+    .ncard:hover{border-color:var(--accent);transform:translateY(-2px)}
+    .ncard h3{margin:0 0 6px;font-size:16px}
+    .ncard p{margin:0;color:var(--muted);font-size:13px}
+    .aibox{margin:34px 0 0;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--muted);font-size:14px}
+    .back{display:inline-block;margin:30px 0 0;color:var(--accent);text-decoration:none;font-weight:600}
+    footer{border-top:1px solid var(--line);margin-top:20px;padding:22px 0 44px;color:var(--muted);font-size:13px}
+    .badge{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:999px;padding:5px 11px}
+    .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="../../">← Market Flow Research</a>
+      <span class="btn" id="themeBtn">🌙</span>
+    </div>
+
+    <article>
+      <span class="tag">Стандарт сигналів · BTC</span>
+      <h1>From Calm to Calm: a Standard for What Counts as a Signal (BTC)</h1>
+      <p class="lede">We stopped defining market signals with a stopwatch. A signal is a continuous departure from calm, bounded by calm on both sides — the market decides where it starts and ends. Here is the standard, applied second by second to 167 days of BTC, with every event classified and located on the price path.</p>
+      <div class="meta">Research note · 2026 · AI-assisted, human-reviewed</div>
+
+      
+
+      <h2>① A signal is what sits between two calms</h2>
+      <p>Most signal definitions start with a stopwatch: look at the last fifteen minutes, the last hour, the last day. The market does not run on our clock. So we let it draw its own boundaries. Each of the eight order-book features gets a rolling <b>100-hour norm</b> — its own average over the recent past, nothing forward-looking. The market is <b>calm</b> when no feature is more than 50% above its norm and the aggregate has not collapsed. A <b>signal</b> is everything in between two calms: it starts when the first feature leaves the band and ends only when all of them have been back inside for 5 minutes. One continuous burst, however long it lasts — never a fixed window.</p>
+      <figure><img src="img/BTC_overview_en.png" alt="The whole dataset: price with all eight order-book features, and the two pair differences below" loading="lazy"><figcaption>The whole dataset: price with all eight order-book features, and the two pair differences below</figcaption></figure>
+
+      <h2>② What &quot;normal&quot; actually means</h2>
+      <p>Our first definition of normal was &quot;every feature within ±5% of its 100-hour average&quot;. That band turns out to be empty: it covers <b>0.00%</b> of all time. Order-book features are heavy-tailed — a five-minute level routinely swings tens of percent while nothing notable happens — so the band has to be measured, not assumed. Calibrating on the whole dataset puts the working threshold at <b>+50%</b> over the norm, which leaves the market calm <b>47%</b> of the time. Roughly half the clock is ordinary, half is events. That balance is what makes the two states worth comparing at all.</p>
+      <figure><img src="img/BTC_calib_en.png" alt="Share of time the market stays inside a given band around its 100-hour norm" loading="lazy"><figcaption>Share of time the market stays inside a given band around its 100-hour norm</figcaption></figure>
+
+      <h2>③ The anatomy of one event</h2>
+      <p>Here is a single signal, drawn as multiples of each feature&#x27;s own norm. Everything starts flat near 1×, one or more features lift off, the burst runs, and the event closes only when the whole book has settled back. On BTC we find <b>2788 events</b> over 167 days: <b>897 bursts</b> (a peak of at least 3× the norm), 283 lulls (activity draining below normal) and 1608 minor wobbles that left calm without ever becoming a burst. Bursts alone come at <b>5.37 per day</b>, and all events together occupy 35% of the clock.</p>
+      <figure><img src="img/BTC_ex1_en.png" alt="One event: all eight feature levels as multiples of their norm, with price below" loading="lazy"><figcaption>One event: all eight feature levels as multiples of their norm, with price below</figcaption></figure>
+
+      <h2>④ Duration is the first axis</h2>
+      <p>Event length spans three orders of magnitude, so we cut it into terciles measured on this coin: short (up to 13 min), medium (to 30 min) and long. The distribution is strongly skewed — most signals are minutes, a few run for hours, and the longest class (INFL·L·3) has a median of 186 minutes. Duration is not a cosmetic label: it is the axis that separates a passing flurry from a regime that the book sustains, and later it turns out to matter for where the event sits on the price path.</p>
+      <figure><img src="img/BTC_dur_en.png" alt="Distribution of signal durations, log scale" loading="lazy"><figcaption>Distribution of signal durations, log scale</figcaption></figure>
+
+      <h2>⑤ The class system</h2>
+      <p>Each event is labelled `LEADER-GROUP · DURATION · INTENSITY`. The leader group is whichever family deviated most from its own norm: the resting walls (`WALL`), inflow into them (`INFL`), drain out of them (`DRAIN`), or executed volume (`VOL`). Intensity is the peak over norm, again in terciles. That gives 35 populated burst classes on BTC, led by <b>VOL·S·1</b> with 109 events (median 7 min, peak 3.5× norm). Alongside the label, every event carries its full passport — mean per-second level of all eight features, their peaks, their totals over the event, and which side of each feature pair dominated.</p>
+      <figure><img src="img/BTC_classes_en.png" alt="Events per class, split by rising and falling stretches" loading="lazy"><figcaption>Events per class, split by rising and falling stretches</figcaption></figure>
+
+      <h2>⑥ Who leads the burst</h2>
+      <p>Executed volume leads most events — `VOL` heads 539 bursts against 141 for the walls, 130 for drain and 87 for inflow. That is the expected order: trades move faster than resting liquidity. The more interesting split is inside the volume family. Bursts led by buy volume and bursts led by sell volume are almost equally common, but they are not interchangeable — as the next section shows, they sit in very different places on the price path.</p>
+      <figure><img src="img/BTC_leaders_en.png" alt="Leading feature of each burst, counted separately for rising and falling stretches" loading="lazy"><figcaption>Leading feature of each burst, counted separately for rising and falling stretches</figcaption></figure>
+
+      <h2>⑦ Pair dominance, measured against each feature&#x27;s own norm</h2>
+      <p>Inside each pair we ask who deviated more — but relative to its own norm, not in raw size. Raw comparison would be useless: inflow is nearly always bigger than drain in absolute terms, so the &quot;winner&quot; would be fixed in advance. Normalised, the four pairs split into genuine contests: buy vs sell volume, support wall vs resistance wall, inflow vs drain on each side. This is the part of the passport that carries direction information — the rest of the passport is about size.</p>
+      <figure><img src="img/BTC_pairs_en.png" alt="Share of events won by each side of the four feature pairs, rising vs falling" loading="lazy"><figcaption>Share of events won by each side of the four feature pairs, rising vs falling</figcaption></figure>
+
+      <h2>⑧ Where each class shows up</h2>
+      <p>Now the location test. A ZigZag with a 1.2% reversal threshold splits the history into 213 rising stretches (1986 h) and 214 falling ones (2013 h) — almost exactly balanced, so counts can be compared directly. Every event is assigned to the stretch containing its midpoint, and each class is tested against the share of rising time with a binomial test, Benjamini-Hochberg corrected. Rates are also reported per 100 hours of rising and of falling time, because raw counts would otherwise reward whichever regime lasted longer.</p>
+      <figure><img src="img/BTC_rate_en.png" alt="Class frequency per 100 hours of rising vs falling time" loading="lazy"><figcaption>Class frequency per 100 hours of rising vs falling time</figcaption></figure>
+
+      <h2>⑨ What actually separates rising from falling</h2>
+      <p>The location test is blunt about which parts of the passport carry information: bursts where <b>buy volume</b> deviated more sit in rising stretches 64% of the time (n=373, q=0.000), while <b>sell-dominated</b> bursts sit there only 39% (n=353, q=0.000); the same split by leader: vol<em>buy-led 62% rising vs vol</em>sell-led 39%; <b>long</b> events lean rising (58%, n=299, q=0.008) while short and medium ones are a coin flip; bursts where inflow into the resistance wall outran its drain appear in rising stretches 66% of the time (n=113, q=0.003). Two of these are mechanical and we say so plainly — buy-led bursts live in rising stretches because buying is what makes a stretch rise. The non-obvious ones are duration and the inflow/drain balance: how <em>long</em> the book stays out of calm, and which side of a wall is being built rather than eaten, both separate rising from falling without referring to price at all.</p>
+      <figure><img src="img/BTC_classes_en.png" alt="Class counts split by rising and falling stretches" loading="lazy"><figcaption>Class counts split by rising and falling stretches</figcaption></figure>
+
+      <h2>⑩ The other half: the calm states</h2>
+      <p>Between any two events sits a calm state, and it deserves the same treatment. There are <b>4255</b> of them here, median <b>11 minutes</b>, together 47% of the clock. Each gets its own passport: how long it lasted, whether price drifted up or down while the book was quiet, what price did in the event before and the event after, and what the neighbouring calms did. Classes follow the same logic as events — `CALM · duration · direction` — with &quot;flat&quot; defined as the bottom tercile of absolute drift (0.045%), so a third of calms are flat by construction. Quiet is not empty: even the flat ones drift by hundredths of a percent, and the long ones carry a directional lean of about 0.14%.</p>
+      <figure><img src="img/BTC_calmcls_en.png" alt="Calm classes by duration and price direction, split by rising and falling stretches" loading="lazy"><figcaption>Calm classes by duration and price direction, split by rising and falling stretches</figcaption></figure>
+
+      <h2>⑪ Is there a lull before the storm?</h2>
+      <p>The folklore says a long silence charges the market up. On this data it does not: the correlation between how long the market stayed quiet and how big the next event&#x27;s move turned out to be is ρ = -0.0369 (n = 2788) — indistinguishable from nothing; and grouped by tercile it even leans the wrong way: after the shortest calms (median 6 min) the next event moves 0.073%, after the longest (25 min) only 0.061%, with the share of true bursts flat at 32%; longer calm is also followed by a <em>shorter</em> event (ρ = -0.1346). What the calm state does carry is a weak tendency to reverse rather than continue: price drift during a calm is negatively related to the drift of the next calm (ρ = -0.0583, p = 0.000143) and to the move of the next event (ρ = -0.0686, p = 0.000287), and the transition matrix says the same — after an up-drifting calm the next calm falls 37% of the time against 34% rising, and after a down-drifting calm the next event goes up 39% versus 30% down. Flat is the stickiest state of all: a flat calm is followed by another flat calm 42% of the time. Quiet begets quiet; it does not accumulate pressure.</p>
+      <figure><img src="img/BTC_calmlink_en.png" alt="What follows calms of different length: size, peak and burst share of the next event" loading="lazy"><figcaption>What follows calms of different length: size, peak and burst share of the next event</figcaption></figure>
+
+      <h2>⑫ What this is not</h2>
+      <p>ZigZag pivots are known only after the reversal has happened, so &quot;this class lives in rising stretches&quot; describes the past — it is not a forecast and cannot be traded as one. Class-level skews are thin at the tails and mostly do not survive multiple-comparison correction; the slice-level tests are the honest layer. And this is one symbol. The definition, the calibration table, the passport and the class system are deliberately built to be identical on every market, so the next step is the same run on the remaining five coins — and the real question there is which classes keep their location preference and which turn out to be artefacts of a single market.</p>
+      <figure><img src="img/BTC_zigzag_en.png" alt="The full history with ZigZag stretches and every detected signal" loading="lazy"><figcaption>The full history with ZigZag stretches and every detected signal</figcaption></figure>
+
+      <div class="aibox">🤖 This research — data collection, analysis, charts and the narrated
+      video — was produced with the assistance of AI, then reviewed by a human. We forecast
+      volatility, not direction, and log every prediction. <em>Research, not financial advice.</em></div>
+
+      <div class="next">
+        <div class="h2">Read next</div>
+        <p class="nlead">If this changed how you read the tape, the natural next step is <a class="nlink" href="/articles/volume-is-fuel-not-steering-wheel/">Volume Is the Fuel — Not the Steering Wheel</a> — We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p>
+        <div class="ncards"><a class="ncard" href="/articles/volume-is-fuel-not-steering-wheel/"><h3>Volume Is the Fuel — Not the Steering Wheel</h3><p>We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p></a><a class="ncard" href="/articles/about-market-research-lab/"><h3>About Market Research Lab — What We Collect and Why</h3><p>Most market commentary is storytelling.</p></a><a class="ncard" href="/articles/resting-walls-what-thick-liquidity-predicts/"><h3>The Wall That Goes Quiet: What Resting Liquidity Predicts</h3><p>We measured resting limit liquidity sitting on both sides of the book second by second across six coins, and asked the only question that matters:….</p></a><a class="ncard" href="/articles/wall-drain-liquidity-pulled-before-the-move/"><h3>Liquidity Pulled: What Happens When a Wall Drains</h3><p>We measured resting liquidity being pulled away from the book second by second across six coins, and asked the only question that matters: does it….</p></a></div>
+        <p class="nall"><a href="../../">Browse every study on Market Flow Research →</a></p>
+      </div>
+
+      <h2>Comments</h2>
+      <p style="color:var(--muted)">Discussion is powered by GitHub. Enable it by adding <code>secrets/giscus.json</code> (repo IDs from giscus.app).</p>
+
+      <a class="back" href="../../">← All research</a>
+    </article>
+  </div>
+
+  <footer>
+    <div class="wrap" style="padding:0 22px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center">
+      <span class="badge"><span class="dot"></span>AI-assisted research · human-reviewed</span>
+      <span>© <span id="yr">2026</span> Market Flow Research</span>
+    </div>
+  </footer>
+
+  <script>
+    try{var st=localStorage.getItem("mfr_theme");if(st)document.body.setAttribute("data-theme",st);}catch(e){}
+    document.getElementById("yr").textContent=new Date().getFullYear();
+    function tl(){document.getElementById("themeBtn").textContent=document.body.getAttribute("data-theme")==="light"?"☀️":"🌙";}
+    tl();
+    document.getElementById("themeBtn").onclick=function(){
+      var t=document.body.getAttribute("data-theme")==="light"?"dark":"light";
+      document.body.setAttribute("data-theme",t);try{localStorage.setItem("mfr_theme",t);}catch(e){}tl();
+    };
+  </script>
+</body>
+</html>
