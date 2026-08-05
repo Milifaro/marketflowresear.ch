@@ -398,6 +398,20 @@
   </div>
 
   <footer>
+    <div class="foot" style="display:block;padding-bottom:14px">
+      <b data-i18n="ds_t">Open dataset — BTC order book, one row per second</b><br>
+      <span class="muted" data-i18n="ds_d">12,129,080 rows, 14 Feb – 5 Aug 2026, duplicate timestamps removed.
+      Columns: timestamp, price_avg and the eight order-book features used throughout this research.
+      325 MB zip, split into four parts (GitHub caps a single file at 100 MB).</span><br>
+      <a href="/data/BTC_1s_dataset.zip.part0" download>part 0 · 98 MB</a> ·
+      <a href="/data/BTC_1s_dataset.zip.part1" download>part 1 · 98 MB</a> ·
+      <a href="/data/BTC_1s_dataset.zip.part2" download>part 2 · 98 MB</a> ·
+      <a href="/data/BTC_1s_dataset.zip.part3" download>part 3 · 31 MB</a><br>
+      <span class="muted" data-i18n="ds_j">Join, then unzip —
+      macOS/Linux: <code>cat BTC_1s_dataset.zip.part* &gt; BTC_1s_dataset.zip</code> ·
+      Windows: <code>copy /b BTC_1s_dataset.zip.part0+...part3 BTC_1s_dataset.zip</code>.
+      sha256 of the joined file: <code>18fdcb02848ac1ece7d5a0482c59de9992929995bd1bc82d2dce98f86fb364a2</code></span>
+    </div>
     <div class="foot">
       <span class="badge"><span class="dot"></span><span data-i18n="ai">AI-assisted research · human-reviewed</span></span>
       <span>© <span id="yr">2026</span> Market Flow Research</span>
@@ -411,13 +425,19 @@
         lede:"Independent research on crypto market microstructure. We study second-by-second order-book and order-flow data across major coins.",
         latest:"Latest research",
         a1:"Across six coins, flow surges line up with bigger moves — but not their direction. What that means for anyone trading the tape.",
-        ai:"AI-assisted research · human-reviewed", theme:"Dark", themeLight:"Light"
+        ai:"AI-assisted research · human-reviewed", theme:"Dark", themeLight:"Light",
+        ds_t:"Open dataset — BTC order book, one row per second",
+        ds_d:"12,129,080 rows, 14 Feb – 5 Aug 2026, duplicate timestamps removed. Columns: timestamp, price_avg and the eight order-book features used throughout this research. 325 MB zip, split into four parts (GitHub caps a single file at 100 MB).",
+        ds_j:"Join, then unzip — macOS/Linux: cat BTC_1s_dataset.zip.part* > BTC_1s_dataset.zip · Windows: copy /b BTC_1s_dataset.zip.part0+...part3 BTC_1s_dataset.zip"
       },
       uk:{
         lede:"Незалежне дослідження мікроструктури крипторинку. Вивчаємо посекундні дані стакана й потоку заявок по головних монетах.",
         latest:"Останні дослідження",
         a1:"На шести монетах сплески потоку збігаються з більшими рухами — але не з їхнім напрямом. Що це означає для тих, хто читає стрічку.",
-        ai:"Дослідження за участі ШІ · перевірено людиною", theme:"Темна", themeLight:"Світла"
+        ai:"Дослідження за участі ШІ · перевірено людиною", theme:"Темна", themeLight:"Світла",
+        ds_t:"Відкритий датасет — стакан BTC, один рядок на секунду",
+        ds_d:"12 129 080 рядків, 14 лют – 5 серп 2026, дублікати timestamp прибрано. Колонки: timestamp, price_avg і вісім ордербук-фіч, на яких побудовано все дослідження. ZIP 325 МБ, розрізаний на чотири частини (GitHub не приймає файл понад 100 МБ).",
+        ds_j:"Склеїти й розпакувати — macOS/Linux: cat BTC_1s_dataset.zip.part* > BTC_1s_dataset.zip · Windows: copy /b BTC_1s_dataset.zip.part0+...part3 BTC_1s_dataset.zip"
       }
     };
     var curLang="en";
