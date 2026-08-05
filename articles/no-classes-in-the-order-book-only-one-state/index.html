@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>There Are No Classes in the Order Book — Only One State That Survives — Market Flow Research</title>
+  <meta name="description" content="We locked a 210-second window to its own 1,680 numbers — eight order-book features, no norm, no price, no clock — and asked whether the market falls into classes. It does not: the gap statistic sits at 0.0017, silhouette matches noise, and at some K the shuffled null is more stable than the data. One state survives every check: 9.8% of windows where flows run hot and both walls thin out, followed by ×1.78 the usual hourly range." />
+  <meta name="keywords" content="order book states, unsupervised, null control, gap statistic, convolutional network, bitcoin microstructure" />
+
+  <link rel="canonical" href="https://marketflowresear.ch/articles/no-classes-in-the-order-book-only-one-state/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Market Flow Research" />
+  <meta property="og:title" content="No Classes in the Order Book — Only One State Survives" />
+  <meta property="og:description" content="We locked a 210-second window to its own 1,680 numbers — eight order-book features, no norm, no price, no clock — and asked whether the market falls into classes. It does not: the gap statistic sits at 0.0017, silhouette matches noise, and at some K the shuffled null is more stable than the data. One state survives every check: 9.8% of windows where flows run hot and both walls thin out, followed by ×1.78 the usual hourly range." />
+  <meta property="og:url" content="https://marketflowresear.ch/articles/no-classes-in-the-order-book-only-one-state/" />
+  <meta property="og:image" content="https://marketflowresear.ch/articles/no-classes-in-the-order-book-only-one-state/img/BTC_map_en.png" />
+  <meta property="og:image:width" content="1210" />
+  <meta property="og:image:height" content="484" />
+  <meta property="article:published_time" content="2026-08-05" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="No Classes in the Order Book — Only One State Survives" />
+  <meta name="twitter:description" content="We locked a 210-second window to its own 1,680 numbers — eight order-book features, no norm, no price, no clock — and asked whether the market falls into classes. It does not: the gap statistic sits at 0.0017, silhouette matches noise, and at some K the shuffled null is more stable than the data. One state survives every check: 9.8% of windows where flows run hot and both walls thin out, followed by ×1.78 the usual hourly range." />
+  <meta name="twitter:image" content="https://marketflowresear.ch/articles/no-classes-in-the-order-book-only-one-state/img/BTC_map_en.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "There Are No Classes in the Order Book \u2014 Only One State That Survives",
+    "description": "We locked a 210-second window to its own 1,680 numbers \u2014 eight order-book features, no norm, no price, no clock \u2014 and asked whether the market falls into classes. It does not: the gap statistic sits at 0.0017, silhouette matches noise, and at some K the shuffled null is more stable than the data. One state survives every check: 9.8% of windows where flows run hot and both walls thin out, followed by \u00d71.78 the usual hourly range.",
+    "datePublished": "2026-08-05",
+    "inLanguage": "en",
+    "image": "https://marketflowresear.ch/articles/no-classes-in-the-order-book-only-one-state/img/BTC_map_en.png",
+    "author": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "publisher": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "mainEntityOfPage": "https://marketflowresear.ch/articles/no-classes-in-the-order-book-only-one-state/",
+    "creativeWorkStatus": "AI-assisted, human-reviewed"
+  }
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230b0d12'/><path d='M14 66 L34 46 L48 58 L70 30 L86 30' fill='none' stroke='%2340e0a0' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
+
+  <style>
+    :root{--bg:#0b0d12;--panel:#12151d;--ink:#e8ecf3;--muted:#8a93a6;--line:#232838;--accent:#40e0a0;--accent-dim:#1c3a2f}
+    body[data-theme="light"]{--bg:#ffffff;--panel:#f6f8fb;--ink:#12151d;--muted:#5b6472;--line:#e4e8ef;--accent:#0a9c69;--accent-dim:#e6f7f0}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{background:var(--bg);color:var(--ink);font:17px/1.72 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:720px;margin:0 auto;padding:0 22px}
+    .bar{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+    .brand{font-weight:800;letter-spacing:.13em;font-size:13px;text-transform:uppercase;text-decoration:none;color:var(--ink)}
+    .btn{cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:10px;padding:7px 11px;font-size:13px;font-weight:600}
+    article{padding:18px 0 40px}
+    .tag{display:inline-block;background:var(--panel);border:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+    h1{font-size:clamp(26px,5vw,38px);line-height:1.15;margin:16px 0 10px;letter-spacing:-.01em}
+    .lede{color:var(--muted);font-size:19px;margin:0 0 18px}
+    .meta{color:var(--muted);font-size:14px;margin-bottom:26px}
+    article h2{font-size:20px;margin:34px 0 10px}
+    article p{margin:0 0 18px}
+    article b{color:var(--ink)}
+    .video{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:8px 0 6px;background:#000}
+    .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    figure{margin:24px 0}
+    figure img{width:100%;border:1px solid var(--line);border-radius:14px;display:block;background:var(--panel)}
+    figcaption{color:var(--muted);font-size:13px;margin-top:8px;text-align:center}
+    .next{margin:40px 0 6px}
+    .next .h2{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+    .next .nlead{color:var(--ink);font-size:16px;margin:0 0 16px;line-height:1.6}
+    .next .nlink{color:var(--accent);font-weight:700;text-decoration:none;border-bottom:1px solid var(--accent-dim)}
+    .next .nlink:hover{border-bottom-color:var(--accent)}
+    .next .nall{margin:16px 0 0;font-size:14px}
+    .next .nall a{color:var(--accent);text-decoration:none;font-weight:600}
+    .ncards{display:grid;grid-template-columns:1fr;gap:14px}
+    @media(min-width:640px){.ncards{grid-template-columns:1fr 1fr}}
+    .ncard{display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;transition:border-color .15s,transform .15s}
+    .ncard:hover{border-color:var(--accent);transform:translateY(-2px)}
+    .ncard h3{margin:0 0 6px;font-size:16px}
+    .ncard p{margin:0;color:var(--muted);font-size:13px}
+    .aibox{margin:34px 0 0;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--muted);font-size:14px}
+    .back{display:inline-block;margin:30px 0 0;color:var(--accent);text-decoration:none;font-weight:600}
+    footer{border-top:1px solid var(--line);margin-top:20px;padding:22px 0 44px;color:var(--muted);font-size:13px}
+    .badge{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:999px;padding:5px 11px}
+    .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="../../">← Market Flow Research</a>
+      <span class="btn" id="themeBtn">🌙</span>
+    </div>
+
+    <article>
+      <span class="tag">Window classes</span>
+      <h1>There Are No Classes in the Order Book — Only One State That Survives</h1>
+      <p class="lede">We locked a 210-second window to its own 1,680 numbers — eight order-book features, no norm, no price, no clock — and asked whether the market falls into classes. It does not: the gap statistic sits at 0.0017, silhouette matches noise, and at some K the shuffled null is more stable than the data. One state survives every check: 9.8% of windows where flows run hot and both walls thin out, followed by ×1.78 the usual hourly range.</p>
+      <div class="meta">Research note · 2026 · AI-assisted, human-reviewed</div>
+
+      
+
+      <h2>① One window, 1,680 numbers, nothing else</h2>
+      <p>The constraint came first and everything follows from it: a 210-second window may be classified <b>only by its own 1,680 numbers</b> — eight order-book features across 210 seconds. No multi-day normalisation, no price, no time of day, no neighbouring windows. Anything computed from the dataset as a whole is outside information, and we later measured what dropping it costs — nothing at all.</p>
+      <p>That leaves 54,764 windows cut edge to edge across 171 days. The map on the right is the shuffled null: cells permuted between windows, everything destroyed except the marginals. Note that the null grows its own detached blob — that is how easily a clustering pipeline invents a class.</p>
+      <figure><img src="img/BTC_map_en.png" alt="Windows in descriptor space, real data versus the shuffled null" loading="lazy"><figcaption>Windows in descriptor space, real data versus the shuffled null</figcaption></figure>
+
+      <h2>② Before naming classes, ask whether classes exist</h2>
+      <p>Clustering always returns something, so the first job is to test the premise. Four independent criteria, each with its own null control run through the entire pipeline.</p>
+      <p>The gap statistic at K=2 comes out at <b>0.0017</b> — a partition compresses the data no better than noise does. Silhouette on real data is <b>0.047</b> against <b>0.041</b> on the null. Silverman&#x27;s test finds no second mode on any principal axis (smallest p = 0.19), nor along the direction of maximum separation.</p>
+      <figure><img src="img/BTC_gap_en.png" alt="Does a partition compress the data better than noise?" loading="lazy"><figcaption>Does a partition compress the data better than noise?</figcaption></figure>
+
+      <h2>③ Two respected criteria that lie here</h2>
+      <p>The bootstrap likelihood-ratio test rejects K=1 with LR = 23,673 against a null distribution of 123. Overwhelming — until you run the same test on shuffled cells, where it rejects K=1 just as confidently with LR = 14,117. It measures non-Gaussian marginals, not clusteredness. ICL behaves the same way: it falls monotonically to the largest K with no interior optimum.</p>
+      <p>Stability is no safer. Rebuilding the whole pipeline on two disjoint halves of history gives ARI 0.50 at K=2 — and at K=5, 6 the <b>shuffled null is more stable than the real data</b>. A number that noise can beat is not evidence.</p>
+      <figure><img src="img/BTC_select_en.png" alt="Silhouette and the choice of K" loading="lazy"><figcaption>Silhouette and the choice of K</figcaption></figure>
+
+      <h2>④ The structure is real — it just isn&#x27;t classes</h2>
+      <p>None of this says the data is empty. Sixteen axes capture <b>83%</b> of the descriptor variance against <b>62%</b> on the null; on the raw 1,680-number vector it is 30.6% against 1.2%. The structure is simply continuous rather than discrete.</p>
+      <p>A ladder of nulls locates it. Destroy the joint composition of features while keeping each feature&#x27;s shape inside the window, and variance collapses from 83% to <b>63%</b>. Destroy everything else on top of that and you lose only another 1.0 points of variance. <b>What a window is, is what its features are doing together — not the shape they trace through time.</b></p>
+
+      <h2>⑤ Without an external norm, you classify the calendar</h2>
+      <p>Here is the trap that costs an entire study if missed. With no multi-day normalisation, the loudest signal in the data is the general activity level, and that drifts from month to month. Cramér&#x27;s V between class label and month is <b>0.35</b>; one class holds 63% of the first half of history and a fraction of the second.</p>
+      <p>So every price statement is measured twice: absolutely, and again <b>against the median of the same day</b>. Three of the four groups collapse from ×0.82…×1.15 to ×0.97…×0.98 — they were labels for a period of history. A distance-based forecast of the next hour&#x27;s range drops from ρ = 0.593 to <b>ρ = 0.254</b> under the same correction, while the day&#x27;s own level alone scores 0.605.</p>
+      <figure><img src="img/BTC_calendar_en.png" alt="Is a &#x27;class&#x27; just a slice of history?" loading="lazy"><figcaption>Is a &#x27;class&#x27; just a slice of history?</figcaption></figure>
+
+      <h2>⑥ One state survives everything</h2>
+      <p>What is left is a single genuine state, and it is not subtle: <b>9.8% of windows</b> in which all six flow features run 1.4–1.9× their own scale while both resting walls sit <em>thinner</em> than normal. The book is coming apart while trade keeps running.</p>
+      <p>Next-hour range after those windows is <b>×1.78</b> the typical, and <b>×1.40</b> even against other windows of the same day. On the held-out split alone it reads ×1.83 and ×1.47 — no worse than in training.</p>
+      <p>This is a rediscovery, not a discovery. The same configuration was already validated in this project by two other routes. This pipeline reached it with no norm, no price and no clock.</p>
+      <figure><img src="img/BTC_classes_en.png" alt="Class portraits and what price did afterwards" loading="lazy"><figcaption>Class portraits and what price did afterwards</figcaption></figure>
+
+      <h2>⑦ Three comparisons you can run on any window</h2>
+      <p>The state distils into three thresholds on geometric feature levels — no model, no matrices, eight frozen constants and three numbers:</p>
+      <p><b>√(resist_minus · support_minus) &gt; 1.417</b>, <b>√(resist_plus · support_plus) &gt; 0.909</b>, <b>√(const_resist · const_support) &lt; 1.234</b>.</p>
+      <p>On held-out windows the rule fires 9.3% of the time with precision 0.773 and recall 0.662, and the following hour ranges ×2.08. Applied to 40,000 windows at <b>arbitrary offsets</b> — not aligned to any grid — it fires 8.6% of the time with the same ×1.94. Matching coverage on unaligned windows is the proof that this is a state of the market and not an artefact of how we sliced it.</p>
+
+      <h2>⑧ Teaching a machine to see the same thing</h2>
+      <p>Four targets, input the full 8 × 210 raw matrix, transformed only inside the window. The dataset is cut into ten random parts; each window is scored exactly once by a model that never saw it.</p>
+      <p>The convolutional network wins on every target and every fold — for the sharp state AUC 0.9968 (PR-AUC 0.9746). But the interesting part is the pattern across targets: against a plain linear model the network&#x27;s edge is small on the sharp state and large on the blurred middle one. Sharp states live in levels; blurred ones live in shape.</p>
+      <p>Two engines run in production, a network and gradient boosting. Across the whole dataset they agree on 98% of windows for the sharp state and only ~90% for the blurred ones — an independent confirmation, from a completely different direction, that the boundaries inside the continuum are conventions.</p>
+
+      <h2>⑨ Reproduce it on your own data</h2>
+      <p>Everything above is a procedure, not a table of results. A class here is never a list of windows — it is defined by its rank in feature-flow level, so the same recipe recomputes it on another coin, another period, a longer history.</p>
+      <p>The full research diary is attached: step by step how each class was found, which checks confirm or kill it, how the detectors were trained, plus the complete source of every file in the pipeline. Hand it to a machine together with your data and you get the same classes and working models back.</p>
+      <p><a href="WCLASS_DIARY.md">Download the research diary (WCLASS_DIARY.md)</a></p>
+      <p><em>Research, not financial advice. Written with AI assistance.</em></p>
+
+      <div class="aibox">🤖 This research — data collection, analysis, charts and the narrated
+      video — was produced with the assistance of AI, then reviewed by a human. We forecast
+      volatility, not direction, and log every prediction. <em>Research, not financial advice.</em></div>
+
+      <div class="next">
+        <div class="h2">Read next</div>
+        <p class="nlead">If this changed how you read the tape, the natural next step is <a class="nlink" href="/articles/volume-is-fuel-not-steering-wheel/">Volume Is the Fuel — Not the Steering Wheel</a> — We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p>
+        <div class="ncards"><a class="ncard" href="/articles/volume-is-fuel-not-steering-wheel/"><h3>Volume Is the Fuel — Not the Steering Wheel</h3><p>We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p></a><a class="ncard" href="/articles/about-market-research-lab/"><h3>About Market Research Lab — What We Collect and Why</h3><p>Most market commentary is storytelling.</p></a><a class="ncard" href="/articles/signal-standard-from-calm-to-calm-btc/"><h3>From Calm to Calm: a Standard for What Counts as a Signal (BTC)</h3><p>We stopped defining market signals with a stopwatch.</p></a><a class="ncard" href="/articles/resting-walls-what-thick-liquidity-predicts/"><h3>The Wall That Goes Quiet: What Resting Liquidity Predicts</h3><p>We measured resting limit liquidity sitting on both sides of the book second by second across six coins, and asked the only question that matters:….</p></a></div>
+        <p class="nall"><a href="../../">Browse every study on Market Flow Research →</a></p>
+      </div>
+
+      <h2>Comments</h2>
+      <p style="color:var(--muted)">Discussion is powered by GitHub. Enable it by adding <code>secrets/giscus.json</code> (repo IDs from giscus.app).</p>
+
+      <a class="back" href="../../">← All research</a>
+    </article>
+  </div>
+
+  <footer>
+    <div class="wrap" style="padding:0 22px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center">
+      <span class="badge"><span class="dot"></span>AI-assisted research · human-reviewed</span>
+      <span>© <span id="yr">2026</span> Market Flow Research</span>
+    </div>
+  </footer>
+
+  <script>
+    try{var st=localStorage.getItem("mfr_theme");if(st)document.body.setAttribute("data-theme",st);}catch(e){}
+    document.getElementById("yr").textContent=new Date().getFullYear();
+    function tl(){document.getElementById("themeBtn").textContent=document.body.getAttribute("data-theme")==="light"?"☀️":"🌙";}
+    tl();
+    document.getElementById("themeBtn").onclick=function(){
+      var t=document.body.getAttribute("data-theme")==="light"?"dark":"light";
+      document.body.setAttribute("data-theme",t);try{localStorage.setItem("mfr_theme",t);}catch(e){}tl();
+    };
+  </script>
+</body>
+</html>
