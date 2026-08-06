@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eight Ways to Compress 210 Seconds: the Autoencoder That Lost to PCA — Market Flow Research</title>
+  <meta name="description" content="We cut 170 days of per-second Bitcoin order-book data into 50,143 back-to-back windows and pushed them through eight different compressions — PCA, a convolutional autoencoder, and six variants of both — to see whether a network finds market structure a linear method misses. It does not. Its raw stab" />
+  <meta name="keywords" content="" />
+
+  <link rel="canonical" href="https://marketflowresear.ch/articles/the-autoencoder-that-lost-to-pca/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Market Flow Research" />
+  <meta property="og:title" content="Eight Ways to Compress 210 Seconds: the Autoencoder That Lost to PCA" />
+  <meta property="og:description" content="We cut 170 days of per-second Bitcoin order-book data into 50,143 back-to-back windows and pushed them through eight different compressions — PCA, a convolutional autoencoder, and six variants of both — to see whether a network finds market structure a linear method misses. It does not. Its raw stab" />
+  <meta property="og:url" content="https://marketflowresear.ch/articles/the-autoencoder-that-lost-to-pca/" />
+  <meta property="og:image" content="https://marketflowresear.ch/articles/the-autoencoder-that-lost-to-pca/img/engines_en.png" />
+  <meta property="og:image:width" content="1144" />
+  <meta property="og:image:height" content="505" />
+  <meta property="article:published_time" content="2026-08-06" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Eight Ways to Compress 210 Seconds: the Autoencoder That Lost to PCA" />
+  <meta name="twitter:description" content="We cut 170 days of per-second Bitcoin order-book data into 50,143 back-to-back windows and pushed them through eight different compressions — PCA, a convolutional autoencoder, and six variants of both — to see whether a network finds market structure a linear method misses. It does not. Its raw stab" />
+  <meta name="twitter:image" content="https://marketflowresear.ch/articles/the-autoencoder-that-lost-to-pca/img/engines_en.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Eight Ways to Compress 210 Seconds: the Autoencoder That Lost to PCA",
+    "description": "We cut 170 days of per-second Bitcoin order-book data into 50,143 back-to-back windows and pushed them through eight different compressions \u2014 PCA, a convolutional autoencoder, and six variants of both \u2014 to see whether a network finds market structure a linear method misses. It does not. Its raw stab",
+    "datePublished": "2026-08-06",
+    "inLanguage": "en",
+    "image": "https://marketflowresear.ch/articles/the-autoencoder-that-lost-to-pca/img/engines_en.png",
+    "author": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "publisher": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "mainEntityOfPage": "https://marketflowresear.ch/articles/the-autoencoder-that-lost-to-pca/",
+    "creativeWorkStatus": "AI-assisted, human-reviewed"
+  }
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230b0d12'/><path d='M14 66 L34 46 L48 58 L70 30 L86 30' fill='none' stroke='%2340e0a0' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
+
+  <style>
+    :root{--bg:#0b0d12;--panel:#12151d;--ink:#e8ecf3;--muted:#8a93a6;--line:#232838;--accent:#40e0a0;--accent-dim:#1c3a2f}
+    body[data-theme="light"]{--bg:#ffffff;--panel:#f6f8fb;--ink:#12151d;--muted:#5b6472;--line:#e4e8ef;--accent:#0a9c69;--accent-dim:#e6f7f0}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{background:var(--bg);color:var(--ink);font:17px/1.72 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:720px;margin:0 auto;padding:0 22px}
+    .bar{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+    .brand{font-weight:800;letter-spacing:.13em;font-size:13px;text-transform:uppercase;text-decoration:none;color:var(--ink)}
+    .btn{cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:10px;padding:7px 11px;font-size:13px;font-weight:600}
+    article{padding:18px 0 40px}
+    .tag{display:inline-block;background:var(--panel);border:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+    h1{font-size:clamp(26px,5vw,38px);line-height:1.15;margin:16px 0 10px;letter-spacing:-.01em}
+    .lede{color:var(--muted);font-size:19px;margin:0 0 18px}
+    .meta{color:var(--muted);font-size:14px;margin-bottom:26px}
+    article h2{font-size:20px;margin:34px 0 10px}
+    article p{margin:0 0 18px}
+    article b{color:var(--ink)}
+    .video{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:8px 0 6px;background:#000}
+    .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    figure{margin:24px 0}
+    figure img{width:100%;border:1px solid var(--line);border-radius:14px;display:block;background:var(--panel)}
+    figcaption{color:var(--muted);font-size:13px;margin-top:8px;text-align:center}
+    .next{margin:40px 0 6px}
+    .next .h2{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+    .next .nlead{color:var(--ink);font-size:16px;margin:0 0 16px;line-height:1.6}
+    .next .nlink{color:var(--accent);font-weight:700;text-decoration:none;border-bottom:1px solid var(--accent-dim)}
+    .next .nlink:hover{border-bottom-color:var(--accent)}
+    .next .nall{margin:16px 0 0;font-size:14px}
+    .next .nall a{color:var(--accent);text-decoration:none;font-weight:600}
+    .ncards{display:grid;grid-template-columns:1fr;gap:14px}
+    @media(min-width:640px){.ncards{grid-template-columns:1fr 1fr}}
+    .ncard{display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;transition:border-color .15s,transform .15s}
+    .ncard:hover{border-color:var(--accent);transform:translateY(-2px)}
+    .ncard h3{margin:0 0 6px;font-size:16px}
+    .ncard p{margin:0;color:var(--muted);font-size:13px}
+    .aibox{margin:34px 0 0;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--muted);font-size:14px}
+    .back{display:inline-block;margin:30px 0 0;color:var(--accent);text-decoration:none;font-weight:600}
+    footer{border-top:1px solid var(--line);margin-top:20px;padding:22px 0 44px;color:var(--muted);font-size:13px}
+    .badge{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:999px;padding:5px 11px}
+    .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="../../">← Market Flow Research</a>
+      <span class="btn" id="themeBtn">🌙</span>
+    </div>
+
+    <article>
+      <span class="tag">Autoencoder</span>
+      <h1>Eight Ways to Compress 210 Seconds: the Autoencoder That Lost to PCA</h1>
+      <p class="lede">We cut 170 days of per-second Bitcoin order-book data into 50,143 back-to-back windows and pushed them through eight different compressions — PCA, a convolutional autoencoder, and six variants of both — to see whether a network finds market structure a linear method misses. It does not. Its raw stability is the best in the table and most of that stability survives when the data is shuffled into noise, which means it was never structure at all.</p>
+      <div class="meta">Research note · 2026 · AI-assisted, human-reviewed</div>
+
+      
+
+      <h2>① A dirty tape, cut end to end</h2>
+      <p>This study asks one question: when the whole tape is cut into windows — not just the interesting
+moments — does a neural network find structure that a linear method cannot?</p>
+      <p>Before any model, the data had to be made honest. The raw BTC series is
+<b>12,165,288 rows</b>, and 192,496 of them are duplicate timestamps; left in place they let
+neighbouring windows share seconds, which quietly leaks training data into validation. After
+de-duplication 11,972,792 rows remain.</p>
+      <p>Then the uncomfortable number: laid on a continuous per-second grid the series should hold
+14,691,826 seconds, and <b>18.507% of them are simply not there</b>. Gaps are filled
+by interpolation, but a window is only used if at least 95% of its seconds are
+real. That leaves <b>50,143 windows</b> of 210 seconds, cut back to back with no overlap,
+averaging 99.46% real seconds. Every feature is divided by its own
+14-day norm.</p>
+      <p>The split is blocked, not random: the timeline is cut into 2-hour blocks,
+5,061 windows go to validation, and **2,120 windows within
+30 minutes of a validation block are deleted from training** — because adjacent
+windows are correlated and a random split would let the model read the answer from its neighbour.</p>
+
+      <h2>② Nine configurations, and how little they mattered</h2>
+      <p>The autoencoder is a 1-D convolutional network: eight features as eight channels, convolution along
+time only, trained to reconstruct the window it was given. Nine configurations were trained — three
+bottleneck widths (16, 32, 64), three depths, three noise levels, three
+learning rates.</p>
+      <p>The winner is bottleneck 64, depth 3, input noise
+0.2, learning rate 0.002, with validation loss
+<b>0.10547</b>. The loser scores 0.12453. That is the whole story of the
+grid: <b>the spread across every architecture we tried is 0.019</b>, and the only
+parameter that moves the number at all is the bottleneck width — which is to say, capacity, not
+cleverness.</p>
+      <p>A wider bottleneck reconstructs better. It does not, as we will see, produce better classes. Those
+two things are not the same question, and conflating them is the most common way to fool yourself
+with an autoencoder.</p>
+      <figure><img src="img/grid_en.png" alt="② Nine configurations, and how little they mattered" loading="lazy"><figcaption>② Nine configurations, and how little they mattered</figcaption></figure>
+
+      <h2>③ Where the training actually stopped</h2>
+      <p>The production model was then trained properly: <b>308,808 weights</b>, 72 epochs, and
+the weights kept are those of epoch <b>64</b> — the point where validation loss stopped
+improving while training loss kept falling. Final validation loss 0.10476.</p>
+      <p>This is bookkeeping, not a result, and it is here for one reason: every number in the rest of this
+article comes from that checkpoint, on windows the network never saw, with the embargo enforced. If
+the stopping point were chosen on the same data the classes are measured on, none of what follows
+would mean anything.</p>
+      <figure><img src="img/curve_en.png" alt="③ Where the training actually stopped" loading="lazy"><figcaption>③ Where the training actually stopped</figcaption></figure>
+
+      <h2>④ What the network reproduces — and what it gives up on</h2>
+      <p>Reconstruction loss in a standardised scale is unreadable, so it was converted into something you can
+argue with: by what factor does the reconstruction miss the true value, feature by feature, on
+validation windows.</p>
+      <p>The two resting walls come back at <b>×1.35</b> — nearly exact. The four flows miss by
+×5.08 to ×6.17. Executed volume is
+hopeless: ×12.74 and ×13.60.</p>
+      <p>That single chart explains why a shared latent space is a trap. The walls are smooth and large, the
+flows are spiky and small; a reconstruction loss rewards getting the walls right, so **the walls
+dominate the compressed representation** and the flows — which the neighbouring study shows to be the
+thing that actually distinguishes market states — get compressed away. Training one model per half of
+the book (walls: validation 0.00900; flows: 0.12650) is not a refinement here, it is a
+correction of that bias.</p>
+      <figure><img src="img/recon_en.png" alt="④ What the network reproduces — and what it gives up on" loading="lazy"><figcaption>④ What the network reproduces — and what it gives up on</figcaption></figure>
+
+      <h2>⑤ Eight compressions of the same windows, one rule</h2>
+      <p>The same 50,143 windows were then pushed through eight different compressions — PCA, the
+autoencoder on all eight features, the autoencoder on each half of the book, two coarse-grained
+variants, and the recipe borrowed from the neighbouring
+<a href="/articles/two-poles-of-market-activity-found-on-six-coins/">market-states study</a> — and clustered identically downstream.</p>
+      <p>Every one of them is judged by the same two things. <b>Stability</b>: rerun the pipeline on subsamples
+and measure how much two independent runs agree. <b>The null control</b>: run the identical pipeline on
+data whose cells have been shuffled between windows, so that all structure is destroyed and only the
+marginal distributions survive. The gap between those two is the only quantity that means anything.</p>
+      <p>And a third check, the size rule: a partition where one class swallows more than
+30% of the windows, or where a class holds less than
+8%, is not a partition of the market — it is a rounding error with labels.
+<b>2 of the 8 spaces satisfy it</b> (10-second buckets, per-feature scale, the /states recipe on every window); the other
+6 do not.</p>
+      <p>PCA is the sharpest illustration. Its gap looks magnificent — 0.472 stability against
+a null control of exactly 0.000 — and it is worthless, because
+<b>91.5% of all windows land in a single class</b>. A stable answer and a useful answer
+are different things.</p>
+      <figure><img src="img/engines_en.png" alt="⑤ Eight compressions of the same windows, one rule" loading="lazy"><figcaption>⑤ Eight compressions of the same windows, one rule</figcaption></figure>
+
+      <h2>⑥ The null control eats the network&#x27;s advantage</h2>
+      <p>Read the red bars in the chart above and the case against the autoencoder is finished.</p>
+      <p>On all eight features the network reaches stability 0.709 — the kind of number that
+gets published. Its null control reaches <b>0.599</b>. Almost all of that stability is
+manufactured: the same network, given windows whose contents were shuffled between each other, still
+assembles a partition it can reproduce. The honest gap is +0.110.</p>
+      <p>It is not an isolated case. Across the five spaces built from a trained encoder
+(autoencoder on all 8 features, autoencoder on the 2 walls, autoencoder on the 6 flows, the /states recipe on a 15k subsample, the /states recipe on every window) the null control runs
+<b>0.339 to 0.599</b> — not one
+of them is anywhere near zero. Of the three spaces built without a network, two sit at exactly
+0.000 and the third at 0.359. Put a deep encoder in front of
+UMAP and HDBSCAN and you get beautiful, reproducible, entirely fictional clusters; the only thing
+standing between that and a published &quot;market regime&quot; is a control most people never run.</p>
+      <p>One caveat in our own numbers, in the same spirit. Stability here is measured with the space held
+fixed — the encoder is trained once and only the clustering is rebuilt on subsamples. A full rebuild,
+network included, would score lower, so <b>every stability figure in this article is an upper bound</b>.
+That does not rescue the network: its null control is measured exactly the same way, and it is the
+distance between the two that the verdict rests on.</p>
+      <p>This is the third time this project has reached the same conclusion from a different direction —
+<a href="/articles/event-classes-found-without-a-teacher/">event classes</a> and <a href="/articles/no-classes-in-the-order-book-only-one-state/">window classes</a> both ran into it — and it is the
+single most portable lesson here: <b>if your clustering has no null control, you do not have a result.</b></p>
+
+      <h2>⑦ Where classes do survive</h2>
+      <p>Two spaces come through with both a real gap and a legal partition.</p>
+      <p><b>10-second buckets, per-feature scale</b> — the window coarsened from 210 per-second values to 10-second buckets, each
+feature scaled on its own — gives stability 0.710 against a null control of
+0.359, a gap of <b>+0.351</b>, with the largest class at
+28.2% and the smallest at
+11.4%.</p>
+      <p><b>the /states recipe on every window</b> passes the size rule too, but its gap is only
++0.085 — on this continuous, per-second dataset the recipe that works cleanly
+on the sliding set is much weaker.</p>
+      <p>The pattern across the eight is consistent: on raw per-second windows the splits either degenerate
+into one giant class or ride on a null control that is nearly as stable as the data. Structure appears
+once the window is <b>coarsened</b> — averaged into 10-second buckets, which is roughly the timescale at
+which order-book flow is actually organised. The fine per-second texture is not carrying the classes;
+it is carrying noise that the network is happy to memorise.</p>
+
+      <h2>⑧ What we take from this</h2>
+      <p>The network was given every advantage — its own architecture search, a blocked split with an embargo,
+308,808 weights, and the same downstream clustering as everything else — and it did not earn
+its place. On raw stability it wins; on stability minus what the same pipeline invents from shuffled
+data, it loses to a linear rotation of axes that runs in a fraction of the time.</p>
+      <p>Three things are worth carrying out of here even if you never touch an order book. Reconstruction
+quality is not class quality — a wider bottleneck reconstructed better and clustered no better. A
+shared latent space belongs to whichever feature is largest and smoothest, so the interesting, spiky
+part of your data gets compressed out unless you separate it by hand. And the null control is not
+optional: it is the difference between a finding and a picture.</p>
+      <p>The companion studies: <b><a href="/articles/two-poles-of-market-activity-found-on-six-coins/">Two poles of market activity</a></b>, which is the same question
+asked on non-overlapping sliding windows across six coins and gets a clean answer, and <b><a href="/articles/no-classes-in-the-order-book-only-one-state/">There are no
+classes in the order book</a></b>, which tightens the input constraint until only the
+window&#x27;s own numbers remain.</p>
+
+      <div class="aibox">🤖 This research — data collection, analysis, charts and the narrated
+      video — was produced with the assistance of AI, then reviewed by a human. We forecast
+      volatility, not direction, and log every prediction. <em>Research, not financial advice.</em></div>
+
+      <div class="next">
+        <div class="h2">Read next</div>
+        <p class="nlead">If this changed how you read the tape, the natural next step is <a class="nlink" href="/articles/two-poles-of-market-activity-found-on-six-coins/">Two Poles of Market Activity, Found Without a Teacher on Six Coins</a> — </p>
+        <div class="ncards"><a class="ncard" href="/articles/two-poles-of-market-activity-found-on-six-coins/"><h3>Two Poles of Market Activity, Found Without a Teacher on Six Coins</h3><p></p></a><a class="ncard" href="/articles/no-classes-in-the-order-book-only-one-state/"><h3>There Are No Classes in the Order Book — Only One State That Survives</h3><p></p></a><a class="ncard" href="/articles/volume-is-fuel-not-steering-wheel/"><h3>Volume Is the Fuel — Not the Steering Wheel</h3><p>We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p></a><a class="ncard" href="/articles/about-market-research-lab/"><h3>About Market Research Lab — What We Collect and Why</h3><p>Most market commentary is storytelling.</p></a></div>
+        <p class="nall"><a href="../../">Browse every study on Market Flow Research →</a></p>
+      </div>
+
+      <h2>Comments</h2>
+      <p style="color:var(--muted)">Discussion is powered by GitHub. Enable it by adding <code>secrets/giscus.json</code> (repo IDs from giscus.app).</p>
+
+      <a class="back" href="../../">← All research</a>
+    </article>
+  </div>
+
+  <footer>
+    <div class="wrap" style="padding:0 22px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center">
+      <span class="badge"><span class="dot"></span>AI-assisted research · human-reviewed</span>
+      <span>© <span id="yr">2026</span> Market Flow Research</span>
+    </div>
+  </footer>
+
+  <script>
+    try{var st=localStorage.getItem("mfr_theme");if(st)document.body.setAttribute("data-theme",st);}catch(e){}
+    document.getElementById("yr").textContent=new Date().getFullYear();
+    function tl(){document.getElementById("themeBtn").textContent=document.body.getAttribute("data-theme")==="light"?"☀️":"🌙";}
+    tl();
+    document.getElementById("themeBtn").onclick=function(){
+      var t=document.body.getAttribute("data-theme")==="light"?"dark":"light";
+      document.body.setAttribute("data-theme",t);try{localStorage.setItem("mfr_theme",t);}catch(e){}tl();
+    };
+  </script>
+</body>
+</html>
