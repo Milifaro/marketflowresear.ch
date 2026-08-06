@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Four Market States, Found Twice by Two Independent Pipelines — Market Flow Research</title>
+  <meta name="description" content="Four market states, found twice by two pipelines that share no code. We wrote our research recipe down as an executable diary, then wrote a second implementation from that text alone — different seed, different block split, different network initialisation — and ran it over the same 54,764 windows o" />
+  <meta name="keywords" content="" />
+
+  <link rel="canonical" href="https://marketflowresear.ch/articles/four-market-states-found-twice-by-two-independent-pipelines/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Market Flow Research" />
+  <meta property="og:title" content="Four Market States, Found Twice by Two Independent Pipelines" />
+  <meta property="og:description" content="Four market states, found twice by two pipelines that share no code. We wrote our research recipe down as an executable diary, then wrote a second implementation from that text alone — different seed, different block split, different network initialisation — and ran it over the same 54,764 windows o" />
+  <meta property="og:url" content="https://marketflowresear.ch/articles/four-market-states-found-twice-by-two-independent-pipelines/" />
+  <meta property="og:image" content="https://marketflowresear.ch/articles/four-market-states-found-twice-by-two-independent-pipelines/img/BTC_four_en.png" />
+  <meta property="og:image:width" content="1430" />
+  <meta property="og:image:height" content="1155" />
+  <meta property="article:published_time" content="2026-08-06" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Four Market States, Found Twice by Two Independent Pipelines" />
+  <meta name="twitter:description" content="Four market states, found twice by two pipelines that share no code. We wrote our research recipe down as an executable diary, then wrote a second implementation from that text alone — different seed, different block split, different network initialisation — and ran it over the same 54,764 windows o" />
+  <meta name="twitter:image" content="https://marketflowresear.ch/articles/four-market-states-found-twice-by-two-independent-pipelines/img/BTC_four_en.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Four Market States, Found Twice by Two Independent Pipelines",
+    "description": "Four market states, found twice by two pipelines that share no code. We wrote our research recipe down as an executable diary, then wrote a second implementation from that text alone \u2014 different seed, different block split, different network initialisation \u2014 and ran it over the same 54,764 windows o",
+    "datePublished": "2026-08-06",
+    "inLanguage": "en",
+    "image": "https://marketflowresear.ch/articles/four-market-states-found-twice-by-two-independent-pipelines/img/BTC_four_en.png",
+    "author": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "publisher": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "mainEntityOfPage": "https://marketflowresear.ch/articles/four-market-states-found-twice-by-two-independent-pipelines/",
+    "creativeWorkStatus": "AI-assisted, human-reviewed"
+  }
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230b0d12'/><path d='M14 66 L34 46 L48 58 L70 30 L86 30' fill='none' stroke='%2340e0a0' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
+
+  <style>
+    :root{--bg:#0b0d12;--panel:#12151d;--ink:#e8ecf3;--muted:#8a93a6;--line:#232838;--accent:#40e0a0;--accent-dim:#1c3a2f}
+    body[data-theme="light"]{--bg:#ffffff;--panel:#f6f8fb;--ink:#12151d;--muted:#5b6472;--line:#e4e8ef;--accent:#0a9c69;--accent-dim:#e6f7f0}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{background:var(--bg);color:var(--ink);font:17px/1.72 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:720px;margin:0 auto;padding:0 22px}
+    .bar{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+    .brand{font-weight:800;letter-spacing:.13em;font-size:13px;text-transform:uppercase;text-decoration:none;color:var(--ink)}
+    .btn{cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:10px;padding:7px 11px;font-size:13px;font-weight:600}
+    article{padding:18px 0 40px}
+    .tag{display:inline-block;background:var(--panel);border:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+    h1{font-size:clamp(26px,5vw,38px);line-height:1.15;margin:16px 0 10px;letter-spacing:-.01em}
+    .lede{color:var(--muted);font-size:19px;margin:0 0 18px}
+    .meta{color:var(--muted);font-size:14px;margin-bottom:26px}
+    article h2{font-size:20px;margin:34px 0 10px}
+    article p{margin:0 0 18px}
+    article b{color:var(--ink)}
+    .video{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:8px 0 6px;background:#000}
+    .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    figure{margin:24px 0}
+    figure img{width:100%;border:1px solid var(--line);border-radius:14px;display:block;background:var(--panel)}
+    figcaption{color:var(--muted);font-size:13px;margin-top:8px;text-align:center}
+    .next{margin:40px 0 6px}
+    .next .h2{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+    .next .nlead{color:var(--ink);font-size:16px;margin:0 0 16px;line-height:1.6}
+    .next .nlink{color:var(--accent);font-weight:700;text-decoration:none;border-bottom:1px solid var(--accent-dim)}
+    .next .nlink:hover{border-bottom-color:var(--accent)}
+    .next .nall{margin:16px 0 0;font-size:14px}
+    .next .nall a{color:var(--accent);text-decoration:none;font-weight:600}
+    .ncards{display:grid;grid-template-columns:1fr;gap:14px}
+    @media(min-width:640px){.ncards{grid-template-columns:1fr 1fr}}
+    .ncard{display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;transition:border-color .15s,transform .15s}
+    .ncard:hover{border-color:var(--accent);transform:translateY(-2px)}
+    .ncard h3{margin:0 0 6px;font-size:16px}
+    .ncard p{margin:0;color:var(--muted);font-size:13px}
+    .aibox{margin:34px 0 0;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--muted);font-size:14px}
+    .back{display:inline-block;margin:30px 0 0;color:var(--accent);text-decoration:none;font-weight:600}
+    footer{border-top:1px solid var(--line);margin-top:20px;padding:22px 0 44px;color:var(--muted);font-size:13px}
+    .badge{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:999px;padding:5px 11px}
+    .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="../../">← Market Flow Research</a>
+      <span class="btn" id="themeBtn">🌙</span>
+    </div>
+
+    <article>
+      <span class="tag">Replication</span>
+      <h1>Four Market States, Found Twice by Two Independent Pipelines</h1>
+      <p class="lede">Four market states, found twice by two pipelines that share no code. We wrote our research recipe down as an executable diary, then wrote a second implementation from that text alone — different seed, different block split, different network initialisation — and ran it over the same 54,764 windows of BTC order-book data. The states came back: 93.0% of windows landed in the same one (ARI 0.7726), and two independently trained detectors fire on the same 98.5% of windows. Where both fire, the next hour&#x27;s price range is ×1.432 the median of the same day.</p>
+      <div class="meta">Research note · 2026 · AI-assisted, human-reviewed</div>
+
+      
+
+      <h2>① The data both pipelines saw</h2>
+      <p>Everything below runs on one input: per-second order-book features for a single coin — wall thickness, inflow and drain on each side, and executed buy/sell volume. Eight numbers a second, 171 days of BTC, cut edge to edge into windows of 210 seconds. That gives 54,764 windows, 47,183 for training and 5,394 for validation, split in two-hour blocks with a 30-minute embargo between them — neighbouring windows are correlated, and a naive random split would leak a window&#x27;s neighbour into validation.</p>
+      <p>The rule that shapes the whole construction: <b>a window is classified by its own 1,680 numbers and nothing else</b>. No price, no time of day, no neighbouring windows, no rolling external norm. The only thing entering from outside is a scale constant computed on the training part. The next hour&#x27;s price range is computed too, but it is an envelope opened after the state is already assigned — never an input.</p>
+      <p>18.4% of seconds are missing from the feed, so gaps are interpolated and any window with less than 95% real seconds is dropped. Two things were held identical between the two pipelines, both of them input/output rather than method: the CSV reader and the data boundary, so that both cut windows on exactly the same grid and a window-by-window comparison is possible at all. Everything arbitrary was changed: the seed (20260805 against 20260804), and with it the block split, the k-means initialisation, the fold assignment and every weight in the networks.</p>
+
+      <h2>⑩ Four states: what the algorithm says, what the model says</h2>
+      <p>The line trains four production targets, and this is all four of them on one shared time axis. Green is the state as the algorithm assigned it; red is the state as a model trained on that assignment reads it back out of the raw 8 × 210 matrix. The engine on each panel is whichever of the two won cross-validation on PR-AUC.</p>
+      <p><b>Storm</b> — 10.3% of windows by the algorithm, 10.3% by the convolutional network, agreeing on 98.2% of windows (Jaccard 0.841). <b>Class 2</b> — 38.6% against 38.5%, 88.9% agreement. <b>Calm</b> — 51.1% against 51.0%, 93.5%. <b>PCA-quiet</b>, the fourth and rarest target, defined only where a 28-day norm already exists (hence the empty first four weeks) — 8.7% against 8.6%, 95.4% agreement but a Jaccard of only 0.5828: on a rare target most of that agreement is both sides staying silent, which is why the pair of columns has to be read together.</p>
+      <p>Read this as a check that a model can recover the split from raw numbers, <b>not as a forecast</b>: these are production models, and 98% of the windows were in their training. The honest figures are the held-out 2%, cut as four contiguous chunks with an embargo — AUC 0.9976 and PR-AUC 0.9826 for storm, 0.9468 / 0.9589 for class 2, 0.964 / 0.9234 for calm, 0.9284 / 0.4812 for PCA-quiet.</p>
+      <figure><img src="img/BTC_four_en.png" alt="⑩ Four states: what the algorithm says, what the model says" loading="lazy"><figcaption>⑩ Four states: what the algorithm says, what the model says</figcaption></figure>
+
+      <h2>⑪ Two independent runs across the whole history</h2>
+      <p>The top panel is the storm state as each pipeline assigned it, day by day, over the full 171 days; the bottom panel is the two detectors firing. The two lines track each other closely enough that they are hard to tell apart, which is the result — the second pipeline never saw the first one&#x27;s code, only the text of the diary.</p>
+      <p>In numbers: the states agree on 93.0% of 54,764 windows, ARI 0.7726. The shares match too — calm 51.1% against 51.9%, class 2 38.6% against 38.3%, storm 10.3% against 9.8%. Note that the raw cluster numbers agree far less (ARI 0.6702): k-means numbers its clusters however it likes, so the states must be named from the input side — by rank of total flow level — before anything is compared.</p>
+      <figure><img src="img/BTC_compare_history_en.png" alt="⑪ Two independent runs across the whole history" loading="lazy"><figcaption>⑪ Two independent runs across the whole history</figcaption></figure>
+
+      <h2>⑪ Twelve hours, window by window</h2>
+      <p>Close up, on a slice of history at the natural resolution of the method: four rows — my state, their state, my model&#x27;s probability, their model&#x27;s probability — over the same 210-second windows.</p>
+      <p>This is the view where a replication either survives or falls apart, because agreement averaged over a day can hide two signals that fire at different moments. They don&#x27;t: the two detectors light up on the same windows, with a Spearman correlation of 0.914 between their probabilities, Jaccard 0.856 and Cohen&#x27;s κ 0.9141. Cross-wise it holds as well — my model against <b>their</b> state label agrees on 98.2% of windows, their model against mine on 97.8%.</p>
+      <figure><img src="img/BTC_compare_zoom_en.png" alt="⑪ Twelve hours, window by window" loading="lazy"><figcaption>⑪ Twelve hours, window by window</figcaption></figure>
+
+      <h2>⑪ Where the two runs disagree, and what price did next</h2>
+      <p>The left half is the state matrix — my run&#x27;s rows against the other run&#x27;s columns, as a share of all windows. The diagonal holds 93.0% of them. The right half asks the question a single model cannot answer: what happens in the off-diagonal cells?</p>
+      <p>Where both detectors fire on storm — 8.9% of the time — the next hour&#x27;s price range is ×1.432 the median of the same day (×1.865 in absolute terms, but the within-day correction is the honest one: without it you are measuring which month it is). Where only one fires, the edge mostly evaporates — ×1.143 for my model alone (1.3% of windows) and ×1.277 for theirs alone (0.2%). Where neither fires, ×0.976 — the market&#x27;s own baseline. The useful object is not one detector&#x27;s output; it is the region where two independently built detectors say the same thing.</p>
+      <figure><img src="img/BTC_compare_cells_en.png" alt="⑪ Where the two runs disagree, and what price did next" loading="lazy"><figcaption>⑪ Where the two runs disagree, and what price did next</figcaption></figure>
+
+      <h2>Conclusion: the states are real, and we are going to use them</h2>
+      <p>As we can see, the states are there. Two pipelines with nothing in common but a text file found the same four of them, in the same proportions, on the same windows — 93.0% agreement, ARI 0.7726 — and the detectors trained on those states by two different people-shaped processes fire together on 98.5% of the market&#x27;s history. A structure that survives having its implementation thrown away and rewritten is a property of the order book, not of our code.</p>
+      <p>Two of the states are sharper than the others, and we say so plainly: the boundary between the quiet states is a cut through a continuum — they blend — while <b>storm</b> is the one that stays sharp under every control we throw at it, including the one that matters most, the within-day correction: ×1.401 the next-hour range of its own day (×1.761 absolute). That is the state worth building on.</p>
+      <p>So the work continues. Next we take these states out of the laboratory: a live detector reading the current window, agreement between two independent models as the actual trigger rather than one model&#x27;s probability, and the same recipe run on the other five coins to see which parts travel. The full method — every command, every control, every tolerance and the complete code — is in the <a href="MYWCLASS_DIARY.md">research diary of this replication</a>, published alongside this article next to the <a href="WCLASS_DIARY.md">diary of the original line</a> it was written from. Run it on your own data and tell us what came back.</p>
+
+      <div class="aibox">🤖 This research — data collection, analysis, charts and the narrated
+      video — was produced with the assistance of AI, then reviewed by a human. We forecast
+      volatility, not direction, and log every prediction. <em>Research, not financial advice.</em></div>
+
+      <div class="next">
+        <div class="h2">Read next</div>
+        <p class="nlead">If this changed how you read the tape, the natural next step is <a class="nlink" href="/articles/volume-is-fuel-not-steering-wheel/">Volume Is the Fuel — Not the Steering Wheel</a> — We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p>
+        <div class="ncards"><a class="ncard" href="/articles/volume-is-fuel-not-steering-wheel/"><h3>Volume Is the Fuel — Not the Steering Wheel</h3><p>We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p></a><a class="ncard" href="/articles/about-market-research-lab/"><h3>About Market Research Lab — What We Collect and Why</h3><p>Most market commentary is storytelling.</p></a><a class="ncard" href="/articles/signal-standard-from-calm-to-calm-btc/"><h3>From Calm to Calm: a Standard for What Counts as a Signal (BTC)</h3><p>We stopped defining market signals with a stopwatch.</p></a><a class="ncard" href="/articles/resting-walls-what-thick-liquidity-predicts/"><h3>The Wall That Goes Quiet: What Resting Liquidity Predicts</h3><p>We measured resting limit liquidity sitting on both sides of the book second by second across six coins, and asked the only question that matters:….</p></a></div>
+        <p class="nall"><a href="../../">Browse every study on Market Flow Research →</a></p>
+      </div>
+
+      <h2>Comments</h2>
+      <p style="color:var(--muted)">Discussion is powered by GitHub. Enable it by adding <code>secrets/giscus.json</code> (repo IDs from giscus.app).</p>
+
+      <a class="back" href="../../">← All research</a>
+    </article>
+  </div>
+
+  <footer>
+    <div class="wrap" style="padding:0 22px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center">
+      <span class="badge"><span class="dot"></span>AI-assisted research · human-reviewed</span>
+      <span>© <span id="yr">2026</span> Market Flow Research</span>
+    </div>
+  </footer>
+
+  <script>
+    try{var st=localStorage.getItem("mfr_theme");if(st)document.body.setAttribute("data-theme",st);}catch(e){}
+    document.getElementById("yr").textContent=new Date().getFullYear();
+    function tl(){document.getElementById("themeBtn").textContent=document.body.getAttribute("data-theme")==="light"?"☀️":"🌙";}
+    tl();
+    document.getElementById("themeBtn").onclick=function(){
+      var t=document.body.getAttribute("data-theme")==="light"?"dark":"light";
+      document.body.setAttribute("data-theme",t);try{localStorage.setItem("mfr_theme",t);}catch(e){}tl();
+    };
+  </script>
+</body>
+</html>
