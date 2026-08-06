@@ -2218,6 +2218,20 @@ code{background:#161b22;border:1px solid var(--grid);border-radius:4px;padding:1
 <div class="box verdict" id="verdict"></div>
 
 <div class="box small">
+  <b>Звідки моделі.</b> Ця лінія нічого не навчає сама — вона перевіряє, чи бачать зони
+  чотири детектори станів ринку, навчені в іншій лінії:
+  <a href="/mywclass"><b>/mywclass</b></a> (незалежна репліка) і <a href="/wclass">/wclass</a> (оригінал).
+  Звідти беруться цілі <code>storm</code> · <code>mid</code> · <code>calm</code> · <code>pcaquiet</code>,
+  причому <b>out-of-fold</b> — відповіді моделі, яка цього вікна не бачила.
+  <br>
+  <b>Щоденники:</b>
+  <a href="/media/analyst/pivots/PIVOTS_DIARY.md" download>щоденник цього дослідження (PIVOTS_DIARY.md)</a> ·
+  <a href="/media/analyst/wclass/WCLASS_DIARY.md" download>щоденник моделей (WCLASS_DIARY.md)</a>.
+  Обидва — виконувані рецепти за <code>DIARY_STANDARD.md</code>: береш свій датасет і отримуєш
+  ті самі числа.
+</div>
+
+<div class="box small">
   <b>Як побудовано зони.</b> Екстремум береться ZigZag-ом з порогом <b id="p_thr">1%</b>: нова вершина
   (дно) фіксується лише коли ціна відійшла від неї на цей поріг, тож обидві ноги — до попереднього
   екстремуму і до наступного — за побудовою не менші за поріг. Кожен екстремум ще й перевіряється
@@ -2696,5 +2710,6 @@ fetch('/api/pivots/BTC').then(r=>r.json()).then(j=>{
 `test_pages.js`:
 
 ```javascript
-# запис не знайдено
+{file: 'pivots.html', min_draw: 0,
+   routes: [['/api/pivots/', 'media/analyst/pivots/{C}_tab.json']]},
 ```
