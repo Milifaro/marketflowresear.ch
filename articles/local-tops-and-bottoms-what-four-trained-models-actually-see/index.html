@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Local tops and bottoms in the order book: what four trained models actually see — Market Flow Research</title>
+  <meta name="description" content="We marked every local top and bottom on 171 days of per-second Bitcoin order-book data — 734 of them, defined by a rule rather than by hand — and asked four trained market-state detectors whether they can see them. The zone itself is invisible. The moment of the extremum is not, and neither is &#x27;an e" />
+  <meta name="keywords" content="" />
+
+  <link rel="canonical" href="https://marketflowresear.ch/articles/local-tops-and-bottoms-what-four-trained-models-actually-see/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Market Flow Research" />
+  <meta property="og:title" content="Local tops and bottoms in the order book: what four trained models actually see" />
+  <meta property="og:description" content="We marked every local top and bottom on 171 days of per-second Bitcoin order-book data — 734 of them, defined by a rule rather than by hand — and asked four trained market-state detectors whether they can see them. The zone itself is invisible. The moment of the extremum is not, and neither is &#x27;an e" />
+  <meta property="og:url" content="https://marketflowresear.ch/articles/local-tops-and-bottoms-what-four-trained-models-actually-see/" />
+  <meta property="og:image" content="https://marketflowresear.ch/articles/local-tops-and-bottoms-what-four-trained-models-actually-see/img/BTC_zones_en.png" />
+  <meta property="og:image:width" content="1540" />
+  <meta property="og:image:height" content="1551" />
+  <meta property="article:published_time" content="2026-08-06" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Local tops and bottoms in the order book: what four trained models actually see" />
+  <meta name="twitter:description" content="We marked every local top and bottom on 171 days of per-second Bitcoin order-book data — 734 of them, defined by a rule rather than by hand — and asked four trained market-state detectors whether they can see them. The zone itself is invisible. The moment of the extremum is not, and neither is &#x27;an e" />
+  <meta name="twitter:image" content="https://marketflowresear.ch/articles/local-tops-and-bottoms-what-four-trained-models-actually-see/img/BTC_zones_en.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Local tops and bottoms in the order book: what four trained models actually see",
+    "description": "We marked every local top and bottom on 171 days of per-second Bitcoin order-book data \u2014 734 of them, defined by a rule rather than by hand \u2014 and asked four trained market-state detectors whether they can see them. The zone itself is invisible. The moment of the extremum is not, and neither is 'an e",
+    "datePublished": "2026-08-06",
+    "inLanguage": "en",
+    "image": "https://marketflowresear.ch/articles/local-tops-and-bottoms-what-four-trained-models-actually-see/img/BTC_zones_en.png",
+    "author": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "publisher": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "mainEntityOfPage": "https://marketflowresear.ch/articles/local-tops-and-bottoms-what-four-trained-models-actually-see/",
+    "creativeWorkStatus": "AI-assisted, human-reviewed"
+  }
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230b0d12'/><path d='M14 66 L34 46 L48 58 L70 30 L86 30' fill='none' stroke='%2340e0a0' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
+
+  <style>
+    :root{--bg:#0b0d12;--panel:#12151d;--ink:#e8ecf3;--muted:#8a93a6;--line:#232838;--accent:#40e0a0;--accent-dim:#1c3a2f}
+    body[data-theme="light"]{--bg:#ffffff;--panel:#f6f8fb;--ink:#12151d;--muted:#5b6472;--line:#e4e8ef;--accent:#0a9c69;--accent-dim:#e6f7f0}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{background:var(--bg);color:var(--ink);font:17px/1.72 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:720px;margin:0 auto;padding:0 22px}
+    .bar{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+    .brand{font-weight:800;letter-spacing:.13em;font-size:13px;text-transform:uppercase;text-decoration:none;color:var(--ink)}
+    .btn{cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:10px;padding:7px 11px;font-size:13px;font-weight:600}
+    article{padding:18px 0 40px}
+    .tag{display:inline-block;background:var(--panel);border:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+    h1{font-size:clamp(26px,5vw,38px);line-height:1.15;margin:16px 0 10px;letter-spacing:-.01em}
+    .lede{color:var(--muted);font-size:19px;margin:0 0 18px}
+    .meta{color:var(--muted);font-size:14px;margin-bottom:26px}
+    article h2{font-size:20px;margin:34px 0 10px}
+    article p{margin:0 0 18px}
+    article b{color:var(--ink)}
+    .video{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:8px 0 6px;background:#000}
+    .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    figure{margin:24px 0}
+    figure img{width:100%;border:1px solid var(--line);border-radius:14px;display:block;background:var(--panel)}
+    figcaption{color:var(--muted);font-size:13px;margin-top:8px;text-align:center}
+    .next{margin:40px 0 6px}
+    .next .h2{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+    .next .nlead{color:var(--ink);font-size:16px;margin:0 0 16px;line-height:1.6}
+    .next .nlink{color:var(--accent);font-weight:700;text-decoration:none;border-bottom:1px solid var(--accent-dim)}
+    .next .nlink:hover{border-bottom-color:var(--accent)}
+    .next .nall{margin:16px 0 0;font-size:14px}
+    .next .nall a{color:var(--accent);text-decoration:none;font-weight:600}
+    .ncards{display:grid;grid-template-columns:1fr;gap:14px}
+    @media(min-width:640px){.ncards{grid-template-columns:1fr 1fr}}
+    .ncard{display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;transition:border-color .15s,transform .15s}
+    .ncard:hover{border-color:var(--accent);transform:translateY(-2px)}
+    .ncard h3{margin:0 0 6px;font-size:16px}
+    .ncard p{margin:0;color:var(--muted);font-size:13px}
+    .aibox{margin:34px 0 0;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--muted);font-size:14px}
+    .back{display:inline-block;margin:30px 0 0;color:var(--accent);text-decoration:none;font-weight:600}
+    footer{border-top:1px solid var(--line);margin-top:20px;padding:22px 0 44px;color:var(--muted);font-size:13px}
+    .badge{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:999px;padding:5px 11px}
+    .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="../../">← Market Flow Research</a>
+      <span class="btn" id="themeBtn">🌙</span>
+    </div>
+
+    <article>
+      <span class="tag">/pivots</span>
+      <h1>Local tops and bottoms in the order book: what four trained models actually see</h1>
+      <p class="lede">We marked every local top and bottom on 171 days of per-second Bitcoin order-book data — 734 of them, defined by a rule rather than by hand — and asked four trained market-state detectors whether they can see them. The zone itself is invisible. The moment of the extremum is not, and neither is &#x27;an extremum within the next hour&#x27;. But a plain price range from the same window beats the order book at both, and the honest edge turns out to live somewhere else entirely: in telling a top from a bottom when price itself has nothing to say.</p>
+      <div class="meta">Research note · 2026 · AI-assisted, human-reviewed</div>
+
+      
+
+      <h2>① What we marked, and why exactly this way</h2>
+      <p>A local top is not a point on a chart — it is a place where price stops going up
+and starts going down. To find those places without hand-picking them, we use a ZigZag with a
+1.0% threshold: a new extremum is registered only once price has moved away from it by
+at least that much. By construction, both legs — to the previous extremum and to the next one — are
+at least 1.0% long, and we verify both explicitly, so the first and last pivot (whose
+legs are unfinished) are dropped.</p>
+      <p>A <b>zone</b> is not the pivot itself. It is the longest continuous stretch around the extremum during
+which price stays inside a 0.5% band of it: for a top, not lower; for a bottom, not
+higher. That gives every extremum a duration, and duration turns out to matter more than anything
+else in this study.</p>
+      <p>On our slice — BTC, 171.0 days of per-second order-book data — that produced
+<b>734 zones</b>: 367 tops and 367 bottoms, 4.29
+a day, covering 15.02% of all time. The median zone lasts 1598 seconds;
+the shortest is 0, the longest 59083.</p>
+      <p>Two details that decide whether the whole thing is honest. First, price is taken from **real
+observations only** — 18% of our seconds are missing, and interpolating them manufactures fake local
+extrema exactly inside the gaps. Second, top zones and bottom zones <b>cannot overlap</b>: with legs of
+1% and a band of 0.5%, the upper edge of a bottom zone is always below the lower edge of a top zone.
+That is arithmetic, not luck — but we still checked it, and found 0 overlaps.</p>
+      <figure><img src="img/BTC_zones_en.png" alt="① What we marked, and why exactly this way" loading="lazy"><figcaption>① What we marked, and why exactly this way</figcaption></figure>
+
+      <h2>② What it looks like up close</h2>
+      <p>Zoomed in to a few days, the structure is obvious to the eye: green boxes sit on the
+tops, red boxes on the bottoms, and between them are the legs — the moves of at least 1% that connect
+one extremum to the next.</p>
+      <p>This picture is not decoration. It explains half of the results that follow. In a strong trend there
+are almost no zones, because price never comes back into the band. In a range they cluster into
+grapes. Any statement about &quot;how often the market is at an extremum&quot; is really a statement about how
+trending the period was.</p>
+      <figure><img src="img/BTC_zoom_en.png" alt="② What it looks like up close" loading="lazy"><figcaption>② What it looks like up close</figcaption></figure>
+
+      <h2>③ Can four trained models see a zone?</h2>
+      <p>We have four market-state detectors from a separate line of work: <b>storm</b>, <b>class 2</b>,
+<b>calm</b> and <b>PCA-quiet</b>. Each takes the raw 8x210 matrix of one 210-second window and returns a
+probability. The question of this study: given those four answers — for one window, or for up to eight
+consecutive windows — can you tell that you are standing in a zone?</p>
+      <p>Every number below is measured against two yardsticks, and without them none of it means anything.
+The first is a <b>null control</b>: the model answers are circularly shifted in time, which destroys the
+link to the market but keeps their autocorrelation. The second is <b>plain price from the same window</b>.
+Validation is by 12-hour blocks with a one-hour embargo, because neighbouring windows correlate at
+about 0.76 and a random split would inflate everything.</p>
+      <p>| task | four models | null | price range |
+|---|---|---|---|
+| inside any zone | 0.545 | 0.505 | 0.523 |
+| <b>the moment of the extremum</b> | <b>0.859</b> | 0.526 | 0.872 |
+| extremum within 3.5 minutes | 0.826 | 0.504 | 0.834 |
+| <b>an extremum in the next hour</b> | <b>0.748</b> | 0.506 | 0.715 |
+| top versus bottom | 0.527 | 0.500 | — |</p>
+      <p>The answer splits into three. <b>The zone itself is invisible</b> — it lasts tens of minutes and for most
+of that time the market is simply asleep, so the label smears a short burst over a long stretch. **The
+moment of the extremum is marked sharply**, and there is even a genuinely predictive part: &quot;an extremum
+will happen in the next hour&quot; scores 0.748 against a null of 0.506.</p>
+      <p>And then the honest part. A plain price range from the same window scores 0.872 on that
+same moment — it <b>beats the order book</b> — and putting them together adds about +0.005 AUC. The one
+place where the two are not interchangeable is direction: price <em>position</em> (its percentile over the
+trailing 24 hours) scores 0.689 on &quot;top or bottom&quot; but only 0.566 on
+&quot;is this a zone at all&quot;. Price tells you the side. The order book tells you the moment.</p>
+      <figure><img src="img/BTC_ident_en.png" alt="③ Can four trained models see a zone?" loading="lazy"><figcaption>③ Can four trained models see a zone?</figcaption></figure>
+
+      <h2>④ Where the real hooks are</h2>
+      <p>Instead of one question we asked five, and the useful answers are all in the details.</p>
+      <p><b>The order book marks the edges of a zone, not the zone.</b> Inside a zone the storm probability starts
+high, collapses below baseline in the middle, and rises again at the exit. That makes sense: a zone is
+bounded by two moves of at least 1%, one arriving and one leaving, and those are what the model sees.</p>
+      <p><b>It only works on sharp zones.</b> At the level of whole zones rather than windows, the storm signal
+touched 50% of all 734 extrema in exactly their own window, where chance would give 10%.
+But split by duration: the tercile of short zones (median 462 s) is covered
+<b>57%</b> of the time, while the tercile of long ones (median
+5059 s) is covered only 18% — worse than the
+25% you would get at random. A spike is detectable. A slow plateau is not.</p>
+      <p><b>Sequence beats a single reading.</b> The rule &quot;a storm window, then k quiet ones&quot; fires
+0.5% of the time and multiplies the chance of being in a zone by
+<b>1.208</b>. Calm on its own, without a storm before it, gives 0.997 — nothing. And
+the same sandwich built on price range at the same firing rate gives only 1.02-1.29. This is one of the
+few places in the whole study where the order book is genuinely ahead of price.</p>
+      <p><b>One trap worth naming.</b> Ninety within-window descriptors predict &quot;top or bottom&quot; at AUC 0.91, which
+looks like a breakthrough until you check price: price alone gives 0.994, and price plus order book
+gives the same 0.994. The descriptors were re-reading the direction of the impulse from flow asymmetry.
+Every apparent edge in this field needs a price yardstick standing next to it.</p>
+      <figure><img src="img/BTC_hooks_en.png" alt="④ Where the real hooks are" loading="lazy"><figcaption>④ Where the real hooks are</figcaption></figure>
+
+      <h2>⑤ Two chains: everything after which price fell, against everything after which it rose</h2>
+      <p>We stitched all the top pieces into one chain and all the bottom pieces into another, then
+compared them feature by feature. The trap here is that feature levels drift across months far more than
+they differ between tops and bottoms, so every comparison is done <b>pairwise</b> — each top against its
+neighbouring bottom, which sits hours away rather than months — with a Benjamini-Hochberg correction on
+top.</p>
+      <p>The strongest difference is trade volume: buys dominate at tops, sells at bottoms, by a wide margin. And
+it is worth <b>nothing</b>, which we only learned from a second control: for every piece we took a piece of
+equal length from the middle of the leg that led into it. Against that control the volume asymmetry at a
+top does not move at all (delta +0.001, p=0.96). Buyers at the top are buying exactly as they were on the
+whole way up. There is no exhaustion; the asymmetry is a shadow of the trend.</p>
+      <p>What does survive the control is the <b>walls</b>. Inflow to the resistance side runs at +0.010 in the body
+of a rise and jumps to +0.079 inside the top zone; on the way down it runs at +0.065 and drops to +0.021
+inside the bottom zone. Two shifts in <b>opposite</b> directions, both significant. The mechanism is the
+plainest one imaginable: at a top the sellers&#x27; wall grows, at a bottom the buyers&#x27; wall does. Something
+gets in the way, and the move stops.</p>
+      <p>Size, honestly: about a 7% shift in log ratio. On the task of telling an extremum piece from a mid-leg
+piece it is worth 0.579, while price (move plus range) is worth 0.919 — and price plus order book is
+still 0.919. This is a confirming feature, not a signal on its own. Tops also last measurably longer
+than bottoms: a paired difference of +91 seconds.</p>
+      <figure><img src="img/BTC_chains_en.png" alt="⑤ Two chains: everything after which price fell, against everything after which it rose" loading="lazy"><figcaption>⑤ Two chains: everything after which price fell, against everything after which it rose</figcaption></figure>
+
+      <h2>⑥ The same signal in four different market states</h2>
+      <p>Every 210-second window belongs, by its midpoint, to one of four states: a top zone, a
+bottom zone, the body of an up leg, or the body of a down leg. The distribution of the storm probability
+is strongly bimodal — the median is near zero everywhere and the mass sits at the edges — so what has to
+be compared is the firing rate, not the median.</p>
+      <p>| state | share of time | storm fires | vs base |
+|---|---|---|---|
+| bottom zone | 7.2% | 11.9% | x1.274 |
+| top zone | 7.9% | 11.7% | x1.257 |
+| down leg | 39.9% | 10.0% | x1.069 |
+| up leg | 44.6% | 8.0% | x0.852 |</p>
+      <p>Tops and bottoms are indistinguishable — that is now the fourth independent way we have got the same
+result. Down legs against up legs, however, differ significantly and survive the within-day correction:
+falls are stormier than rises. Note where that directional tilt lives — in the <b>body of the move</b>, not
+at its ends.</p>
+      <p>Along a leg the profile is U-shaped: the storm sits at both ends of a move and goes quiet in the middle,
+and on the way down it ramps up earlier and more steeply than on the way up.</p>
+      <p>Read backwards, this is the entire practical value of the signal. When the storm detector fires, the
+chance of being in an extremum zone rises from 15.1% to
+19.1%, and among legs the share of &quot;down&quot; rises from
+47.2% to 52.8%.
+Three percentage points of directional tilt, against a round-trip fee of 0.30%, is not tradeable — and
+saying so is more useful than dressing it up.</p>
+      <figure><img src="img/BTC_storm4_en.png" alt="⑥ The same signal in four different market states" loading="lazy"><figcaption>⑥ The same signal in four different market states</figcaption></figure>
+
+      <h2>⑦ Inside the classes: the 1680 numbers the network actually sees</h2>
+      <p>So far we compared what the network <em>said</em>. Here we compare what it <em>saw</em>: the 8x210 matrix
+in exactly the form it is fed in. For each of the four targets we take only its own windows and ask
+whether a storm at a top differs from a storm at a bottom — and whether the difference is in <b>levels</b>
+or in the <b>shape</b> inside the window.</p>
+      <p>Each class answers differently, and that is the point:</p>
+      <p>- <b>storm</b> separates tops from bottoms only by its walls: const_support +0.25, const_resist +0.17;
+- <b>class 2</b> has all six flows <em>lower</em> at tops — the book is busier at bottoms;
+- <b>calm</b> shows vol_sell +0.27 together with const_resist +0.23: in a quiet window at a top there is
+  simultaneously a thicker sellers&#x27; wall and more selling;
+- <b>PCA-quiet</b> pushes that same signature to vol_sell <b>+0.67</b>, the largest effect in the entire study,
+  though on only a few hundred windows.</p>
+      <p>Shape works in exactly one class. Inside storm windows the slope of vol_buy differs at d = -0.23: at a
+top, buying <b>fades</b> across the 210 seconds; at a bottom it <b>builds</b>. In the quiet classes the slopes
+are empty — in a still window there is nothing to tilt, and all the information is in the level.</p>
+      <p>And the single most important number in this article: on &quot;top or bottom&quot;, price inside the same window
+scores 0.498 for storm,
+0.459 for class 2,
+0.484 for calm and
+0.419 for PCA-quiet — nothing at all, in
+all four. The order book scores 0.52 to 0.59. It is modest, but it is not a shadow of price, and it now
+replicates across four independent subsamples. In an extremum price does not move for 210 seconds, so it
+has nothing to say; the book still does.</p>
+      <figure><img src="img/BTC_inside_sum_en.png" alt="⑦ Inside the classes: the 1680 numbers the network actually sees" loading="lazy"><figcaption>⑦ Inside the classes: the 1680 numbers the network actually sees</figcaption></figure>
+
+      <h2>⑧ What this adds up to, and what comes next</h2>
+      <p>We have found classes, and they are real: found without supervision, reproduced by a second
+independently written pipeline, and detectable by trained models with out-of-fold AUC in the high 0.9s.
+That is the foundation for something practical — an <b>automated system for analysing the market state</b>,
+which is what all of this was leading to.</p>
+      <p>We also see, plainly, that the classes behave differently in different market periods. The share of each
+class drifts across months; the same detector fires 3.8% of the time in one month and 17% in another. That
+is not a defect. It means the classes can be split into <b>subclasses</b> that describe the <em>current</em> state
+of the market — not forecasting anything, but making change itself observable. That drift is visible right
+on the charts of this study: the class-share panels move together with the regime of the market, and the
+last figures make it unmistakable.</p>
+      <p>Everything in this project so far was done to learn — to find out what is in this data and, just as often,
+what is not. That part can now acquire a practical side: an <b>automatic market state detector</b>, running
+continuously, telling you which state you are in and when it changes.</p>
+      <p>And we have built all of it so that you do not have to take our word for anything. Every study ships with
+a research diary that is an executable recipe: take your own data, run the commands in order, and get the
+same classes, the same numbers, the same trained models. Every user can reproduce these experiments and
+verify them personally.</p>
+      <p>Stay with us and follow the articles that come next — they will have practical applications.</p>
+      <figure><img src="img/BTC_inside_storm_en.png" alt="⑧ What this adds up to, and what comes next" loading="lazy"><figcaption>⑧ What this adds up to, and what comes next</figcaption></figure>
+
+      <div class="aibox">🤖 This research — data collection, analysis, charts and the narrated
+      video — was produced with the assistance of AI, then reviewed by a human. We forecast
+      volatility, not direction, and log every prediction. <em>Research, not financial advice.</em></div>
+
+      <div class="next">
+        <div class="h2">Read next</div>
+        <p class="nlead">If this changed how you read the tape, the natural next step is <a class="nlink" href="/articles/volume-is-fuel-not-steering-wheel/">Volume Is the Fuel — Not the Steering Wheel</a> — We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p>
+        <div class="ncards"><a class="ncard" href="/articles/volume-is-fuel-not-steering-wheel/"><h3>Volume Is the Fuel — Not the Steering Wheel</h3><p>We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p></a><a class="ncard" href="/articles/about-market-research-lab/"><h3>About Market Research Lab — What We Collect and Why</h3><p>Most market commentary is storytelling.</p></a><a class="ncard" href="/articles/signal-standard-from-calm-to-calm-btc/"><h3>From Calm to Calm: a Standard for What Counts as a Signal (BTC)</h3><p>We stopped defining market signals with a stopwatch.</p></a><a class="ncard" href="/articles/resting-walls-what-thick-liquidity-predicts/"><h3>The Wall That Goes Quiet: What Resting Liquidity Predicts</h3><p>We measured resting limit liquidity sitting on both sides of the book second by second across six coins, and asked the only question that matters:….</p></a></div>
+        <p class="nall"><a href="../../">Browse every study on Market Flow Research →</a></p>
+      </div>
+
+      <h2>Comments</h2>
+      <p style="color:var(--muted)">Discussion is powered by GitHub. Enable it by adding <code>secrets/giscus.json</code> (repo IDs from giscus.app).</p>
+
+      <a class="back" href="../../">← All research</a>
+    </article>
+  </div>
+
+  <footer>
+    <div class="wrap" style="padding:0 22px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center">
+      <span class="badge"><span class="dot"></span>AI-assisted research · human-reviewed</span>
+      <span>© <span id="yr">2026</span> Market Flow Research</span>
+    </div>
+  </footer>
+
+  <script>
+    try{var st=localStorage.getItem("mfr_theme");if(st)document.body.setAttribute("data-theme",st);}catch(e){}
+    document.getElementById("yr").textContent=new Date().getFullYear();
+    function tl(){document.getElementById("themeBtn").textContent=document.body.getAttribute("data-theme")==="light"?"☀️":"🌙";}
+    tl();
+    document.getElementById("themeBtn").onclick=function(){
+      var t=document.body.getAttribute("data-theme")==="light"?"dark":"light";
+      document.body.setAttribute("data-theme",t);try{localStorage.setItem("mfr_theme",t);}catch(e){}tl();
+    };
+  </script>
+</body>
+</html>
