@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sixteen Networks, One Working Answer — and the Price Benchmark That Nearly Killed It — Market Flow Research</title>
+  <meta name="description" content="We trained sixteen one-class autoencoders on Bitcoin order-book windows: four market states, and inside each state one network per phase of the price move. Each network saw only its own kind of window and nothing else — no negative examples at all. One thing out of sixteen works: inside a storm you " />
+  <meta name="keywords" content="" />
+
+  <link rel="canonical" href="https://marketflowresear.ch/articles/sixteen-networks-one-working-answer/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Market Flow Research" />
+  <meta property="og:title" content="Sixteen Networks, One Working Answer — and the Price Benchmark That Nearly Killed It" />
+  <meta property="og:description" content="We trained sixteen one-class autoencoders on Bitcoin order-book windows: four market states, and inside each state one network per phase of the price move. Each network saw only its own kind of window and nothing else — no negative examples at all. One thing out of sixteen works: inside a storm you " />
+  <meta property="og:url" content="https://marketflowresear.ch/articles/sixteen-networks-one-working-answer/" />
+  <meta property="og:image" content="https://marketflowresear.ch/articles/sixteen-networks-one-working-answer/img/BTC_nets_storm_en.png" />
+  <meta property="og:image:width" content="2090" />
+  <meta property="og:image:height" content="528" />
+  <meta property="article:published_time" content="2026-08-08" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sixteen Networks, One Working Answer — and the Price Benchmark That Nearly Killed It" />
+  <meta name="twitter:description" content="We trained sixteen one-class autoencoders on Bitcoin order-book windows: four market states, and inside each state one network per phase of the price move. Each network saw only its own kind of window and nothing else — no negative examples at all. One thing out of sixteen works: inside a storm you " />
+  <meta name="twitter:image" content="https://marketflowresear.ch/articles/sixteen-networks-one-working-answer/img/BTC_nets_storm_en.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Sixteen Networks, One Working Answer \u2014 and the Price Benchmark That Nearly Killed It",
+    "description": "We trained sixteen one-class autoencoders on Bitcoin order-book windows: four market states, and inside each state one network per phase of the price move. Each network saw only its own kind of window and nothing else \u2014 no negative examples at all. One thing out of sixteen works: inside a storm you ",
+    "datePublished": "2026-08-08",
+    "inLanguage": "en",
+    "image": "https://marketflowresear.ch/articles/sixteen-networks-one-working-answer/img/BTC_nets_storm_en.png",
+    "author": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "publisher": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "mainEntityOfPage": "https://marketflowresear.ch/articles/sixteen-networks-one-working-answer/",
+    "creativeWorkStatus": "AI-assisted, human-reviewed"
+  }
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230b0d12'/><path d='M14 66 L34 46 L48 58 L70 30 L86 30' fill='none' stroke='%2340e0a0' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
+
+  <style>
+    :root{--bg:#0b0d12;--panel:#12151d;--ink:#e8ecf3;--muted:#8a93a6;--line:#232838;--accent:#40e0a0;--accent-dim:#1c3a2f}
+    body[data-theme="light"]{--bg:#ffffff;--panel:#f6f8fb;--ink:#12151d;--muted:#5b6472;--line:#e4e8ef;--accent:#0a9c69;--accent-dim:#e6f7f0}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{background:var(--bg);color:var(--ink);font:17px/1.72 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:720px;margin:0 auto;padding:0 22px}
+    .bar{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+    .brand{font-weight:800;letter-spacing:.13em;font-size:13px;text-transform:uppercase;text-decoration:none;color:var(--ink)}
+    .btn{cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:10px;padding:7px 11px;font-size:13px;font-weight:600}
+    article{padding:18px 0 40px}
+    .tag{display:inline-block;background:var(--panel);border:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+    h1{font-size:clamp(26px,5vw,38px);line-height:1.15;margin:16px 0 10px;letter-spacing:-.01em}
+    .lede{color:var(--muted);font-size:19px;margin:0 0 18px}
+    .meta{color:var(--muted);font-size:14px;margin-bottom:26px}
+    article h2{font-size:20px;margin:34px 0 10px}
+    article p{margin:0 0 18px}
+    article b{color:var(--ink)}
+    .video{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:8px 0 6px;background:#000}
+    .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    figure{margin:24px 0}
+    figure img{width:100%;border:1px solid var(--line);border-radius:14px;display:block;background:var(--panel)}
+    figcaption{color:var(--muted);font-size:13px;margin-top:8px;text-align:center}
+    .next{margin:40px 0 6px}
+    .next .h2{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+    .next .nlead{color:var(--ink);font-size:16px;margin:0 0 16px;line-height:1.6}
+    .next .nlink{color:var(--accent);font-weight:700;text-decoration:none;border-bottom:1px solid var(--accent-dim)}
+    .next .nlink:hover{border-bottom-color:var(--accent)}
+    .next .nall{margin:16px 0 0;font-size:14px}
+    .next .nall a{color:var(--accent);text-decoration:none;font-weight:600}
+    .ncards{display:grid;grid-template-columns:1fr;gap:14px}
+    @media(min-width:640px){.ncards{grid-template-columns:1fr 1fr}}
+    .ncard{display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;transition:border-color .15s,transform .15s}
+    .ncard:hover{border-color:var(--accent);transform:translateY(-2px)}
+    .ncard h3{margin:0 0 6px;font-size:16px}
+    .ncard p{margin:0;color:var(--muted);font-size:13px}
+    .aibox{margin:34px 0 0;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--muted);font-size:14px}
+    .back{display:inline-block;margin:30px 0 0;color:var(--accent);text-decoration:none;font-weight:600}
+    footer{border-top:1px solid var(--line);margin-top:20px;padding:22px 0 44px;color:var(--muted);font-size:13px}
+    .badge{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:999px;padding:5px 11px}
+    .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="../../">← Market Flow Research</a>
+      <span class="btn" id="themeBtn">🌙</span>
+    </div>
+
+    <article>
+      <span class="tag">Nets</span>
+      <h1>Sixteen Networks, One Working Answer — and the Price Benchmark That Nearly Killed It</h1>
+      <p class="lede">We trained sixteen one-class autoencoders on Bitcoin order-book windows: four market states, and inside each state one network per phase of the price move. Each network saw only its own kind of window and nothing else — no negative examples at all. One thing out of sixteen works: inside a storm you can tell a bottom reversal from a top one. On half the data that looked like AUC 0.6264; measured properly on all 800 events it is 0.5928. Then a one-line price benchmark scored 0.8548 on the same question. This article is about what survives that, and where it survives.</p>
+      <div class="meta">Research note · 8 August 2026 · AI-assisted, human-reviewed</div>
+
+      
+
+      <h2>① Sixteen networks that never saw a counter-example</h2>
+      <p>Two markings of the same seconds go into this study, and neither is produced here.</p>
+      <p>The <b>market state</b> comes from four detectors trained in an earlier study — storm, PCA-quiet,
+class 2 and calm — applied to windows of 8 order-book features × 210 seconds, out-of-fold, so
+every window is judged by a model that never saw it. The <b>phase of the move</b> comes from a ZigZag
+study: 1% ZigZag marks local extrema, a zone is the stretch while price stays within 0.5% of the
+extremum, and that yields four phases — bottom reversal, top reversal, down leg, up leg.</p>
+      <p>Then for each of the four states we train four networks, one per phase. The network for
+&quot;storm in a bottom reversal&quot; sees only storm events that fell inside a bottom reversal — nothing
+else. No windows from other phases, no windows from other states, and above all **no negative
+examples**. This is deliberate: the question &quot;how does a storm at a reversal differ from a storm
+mid-leg&quot; is not two labels of one phenomenon, it is two kinds of window. So the tool is a
+one-class Conv1D <b>autoencoder</b>, and its answer to any window is the reconstruction error.</p>
+      <p>Three decisions about the split, each with its own reason.</p>
+      <p><b>We split days, not events.</b> Windows lie on a continuous 210-second grid; neighbours are nearly
+identical — the same hour of market, shifted by three minutes. A random split trains on the window
+at 14:00 and &quot;tests&quot; on the window at 14:03. Of the 129 days with storm events, 64 are declared
+validation. The price of honesty: halves are unequal in events (191 train against
+225 validation for top reversals), because days differ in how busy they are.</p>
+      <p><b>The split is shared by all four networks.</b> Otherwise one network&#x27;s validation days would be
+another&#x27;s training days, and the joint question &quot;whose error is smaller&quot; would be a contest in
+memorisation.</p>
+      <p><b>Early stopping may not look at the validation half.</b> Where to stop is a parameter, so another
+10% is carved out of the <em>training</em> half for it.</p>
+      <p>And the errors of four networks cannot be compared raw. A network trained on 945 examples has
+lower error on <em>any</em> window than one trained on 191, simply because it saw more. So each error
+is first converted to a <b>rank within its own network&#x27;s distribution</b>, and only then compared.</p>
+      <p>Beside every number stands its null control: the same four networks on <b>shuffled</b> phase labels,
+same split, same validation. It answers &quot;how much accuracy accrues merely from four networks
+having been trained on four different chunks of history&quot; — and the answer is: quite a lot. In
+storm, the null control reaches an accuracy of 0.2275 where chance is 0.25.</p>
+      <figure><img src="img/BTC_nets_storm_en.png" alt="① Sixteen networks that never saw a counter-example" loading="lazy"><figcaption>① Sixteen networks that never saw a counter-example</figcaption></figure>
+
+      <h2>② One thing works, and only in one class</h2>
+      <p>On the validation half, three questions are asked of the same four errors: whose
+phase is this (four-way, chance 0.25), bottom reversal versus top, and reversal zone versus the
+body of a leg.</p>
+      <p>• <b>storm</b> — accuracy 0.2943 against a null of 0.2275; **direction 0.6264 against a null of
+0.4241**; zone-versus-leg 0.5221 against 0.4772;</p>
+      <p>• <b>PCA-quiet</b> — 0.2612 / 0.2555, direction 0.5751 / 0.5425: inside its own noise;</p>
+      <p>• <b>class 2</b> — the only other hint, and a weak one: zone versus leg 0.5471 against 0.5052;</p>
+      <p>• <b>calm</b> — 0.2458 / 0.2538, direction 0.5025 / 0.5206. Every metric at or below its own null.
+Calm events look the same in all four phases.</p>
+      <p>So: one working cell out of sixteen networks and twelve metrics. Direction — the thing this
+project has failed to read for months — is readable inside a storm, and nowhere else.</p>
+      <p>That is the point at which most write-ups stop. It is also the point at which the number is least
+trustworthy: it is measured on half the data, has no confidence interval, no operating threshold,
+and no answer to &quot;how many times out of ten&quot;.</p>
+      <figure><img src="img/BTC_nets_pcaquiet_en.png" alt="② One thing works, and only in one class" loading="lazy"><figcaption>② One thing works, and only in one class</figcaption></figure>
+
+      <h2>③ Making the number usable — and watching it shrink</h2>
+      <p>Four changes, in order.</p>
+      <p><b>Double cross-fitting.</b> In the first pass, networks learned on the first half of days and were
+measured on the second, so half the events had no score at all. Now a <b>mirror</b> pair of networks
+is trained on the validation half and used to score the training half. Every event gets an answer
+from a model that never saw it, and the sample doubles from 384 to 800 zone events
+(384 bottoms, 416 tops, 298 distinct extrema).</p>
+      <p>The first honest consequence: <b>0.6264 becomes 0.5928</b> [0.5329; 0.6533]. Half-data estimates
+run optimistic; that difference is ordinary variance on a few hundred events, and it is exactly
+why a single number without an interval is not a result.</p>
+      <p><b>An ensemble, assembled without fitting.</b> Beside the networks we put the same 16 descriptors
+(8 levels + 8 in-window slopes) used in the phase study, and average the two answers&#x27; ranks —
+no weights, because any weight tuned on these 800 events would be fitting. Descriptors alone give
+0.5698; the ensemble 0.6024 [0.5423; 0.6633]. The gain over networks alone is
+0.01 — comfortably inside the noise. Adding in-window price to the ensemble makes it
+<em>worse</em> (0.569).</p>
+      <p><b>Bootstrap over zones, not windows.</b> A zone holds 2.68 windows on average and they are nearly
+identical. Resampling windows pretends they are independent and returns an interval
+1.59× narrower than the honest one ([0.564; 0.6399] against [0.5423; 0.6633]).
+The unit of resampling has to be the unit of independence.</p>
+      <p><b>A working threshold.</b> The answer is turned into a rank within its fold, and a signal is given
+only on the extreme q% at each end; everything else is &quot;don&#x27;t know&quot;. At q=0.15 — that is, answering
+on 30% of events — 67.4% are correct (68% of &quot;bottom&quot; calls, 67% of &quot;top&quot; calls),
+against 49.8% for the null control at the same coverage and 47.1% for in-window price.
+Tightening further does not help: at q=0.05 accuracy falls back to 61.3%, because only dozens
+of events remain in the tails.</p>
+      <p><b>Month by month</b> the signal is not constant: 0.6516 in 2026-06, but 0.507 in 2026-03 —
+nothing at all in one month out of five. That is the ceiling on how much this deserves to be
+trusted.</p>
+      <figure><img src="img/BTC_dir_storm_en.png" alt="③ Making the number usable — and watching it shrink" loading="lazy"><figcaption>③ Making the number usable — and watching it shrink</figcaption></figure>
+
+      <h2>④ The benchmark that nearly kills it — and the one place it does not</h2>
+      <p>Price inside the same 210-second window scores 0.4722 on &quot;top or bottom&quot; — nothing,
+exactly as expected: at an extremum price does not move for three and a half minutes.</p>
+      <p>But there is a second price benchmark, and it is not polite. Take the percentile of the current
+price among the observations of the last 24 hours — one line of code, information the networks
+never see because it lies outside their window. It scores <b>0.8548</b> [0.8038; 0.8994].</p>
+      <p>The honest reading is not &quot;the order book is useless&quot;. It is that our label is nearly a function
+of that benchmark: a top and a bottom are <em>defined</em> by a ZigZag over price, so where price sits in
+its own recent range is an almost tautological predictor. Hiding it would be dishonest; surrendering
+to it would be sloppy. The right move is to stratify by it and ask what is left for the book **where
+price is silent**.</p>
+      <p>Split the events into thirds by how far the percentile sits from the middle of the day:</p>
+      <p>• <b>the third where price is mid-range</b> (|percentile − 0.5| ≈ 0.234, 267 events): price scores
+0.5251 — i.e. nothing — and the order book 0.5781;</p>
+      <p>• <b>the middle third</b> (0.469): price 0.8405, book 0.5391;</p>
+      <p>• <b>the third where price is at the edge of its daily range</b> (0.498): price 0.974,
+book 0.6916.</p>
+      <p>That is the whole practical truth of this line. When price has already committed to an edge of its
+range, it answers the question itself and the book adds nothing worth having. When price sits in
+the middle and says nothing, the book is the only thing that speaks — modestly, but it is the only
+one speaking.</p>
+      <p>One more warning that follows directly: a naive blend of the two, averaging their ranks, scores
+0.8134 — <b>worse</b> than price alone at 0.8548. The book is a regime-conditional signal, not
+an ingredient to stir in.</p>
+      <figure><img src="img/BTC_dirpx_storm_en.png" alt="④ The benchmark that nearly kills it — and the one place it does not" loading="lazy"><figcaption>④ The benchmark that nearly kills it — and the one place it does not</figcaption></figure>
+
+      <h2>⑤ A hypothesis that failed: networks on subclasses</h2>
+      <p>An earlier study showed that in the quiet classes, events inside reversal zones are
+<em>stronger</em> — the top tercile of intensity turns up there more often. That suggests an obvious
+improvement: if phases differ mainly by the strength of the event, then a network trained on events
+of a single strength should separate them better, because it does not have to spend capacity on the
+strong-versus-weak difference that has nothing to do with phase. So: twelve networks per class
+instead of four, one per phase × intensity tercile.</p>
+      <p>One design decision decided everything here. The tercile is cut <b>across the whole class</b>, not
+inside the phase. Cutting inside the phase would (a) put 34/33/33 in every column by construction,
+leaving nothing to compare, and (b) — fatally — make the tercile depend on the phase label: to
+choose which trio of networks an event belongs to you would already have to know the answer. That
+is a leak into the problem statement itself, and no metric would reveal it afterwards.</p>
+      <p>Everything is compared on the <em>same</em> validation events: subclass networks, the base networks from
+step ① (not retrained — literally the same models), and a null control of subclass networks on
+shuffled phase labels. The headline number is the <b>paired</b> difference with a bootstrap over
+zones, because both estimates come from one sample.</p>
+      <p>Result: <b>separation did not grow.</b> In storm the paired differences are -0.056
+[-0.1771; 0.0502] for the top tercile, +0.077 [-0.0406; 0.19] for the middle and
+-0.013 [-0.2113; 0.1584] for the weakest. Not one interval clears zero. In the quiet classes the split
+simply runs out of data: PCA-quiet lost 5 of its 12 networks to the 40-example minimum, because
+its zone events are rare to begin with and thirds cut them by three again.</p>
+      <p>There is a side observation worth more than the hypothesis. Look at the base networks&#x27; column: the
+same four models read direction differently in different terciles — 0.6433 on the strongest
+events, 0.6773 on ordinary ones, 0.555 on the weakest. The direction signal does not live
+in the most violent storms, as intuition suggests. It lives in the middling ones, and disappears
+in the weak.</p>
+      <figure><img src="img/BTC_nets3_storm_en.png" alt="⑤ A hypothesis that failed: networks on subclasses" loading="lazy"><figcaption>⑤ A hypothesis that failed: networks on subclasses</figcaption></figure>
+
+      <h2>⑥ What this adds up to</h2>
+      <p>Four things survive.</p>
+      <p><b>One.</b> Out of sixteen one-class networks, one cell reads: direction of a reversal inside a storm.
+Measured on all 800 events with every event scored by a model that never saw it, it is 0.5928
+[0.5329; 0.6533] against a null of 0.4774, ensemble 0.6024, and at a working threshold
+67% correct on 30% of events. It is real and it is small.</p>
+      <p><b>Two.</b> &quot;Storm is the special class&quot; is <em>not</em> established. In calm, the same 16 descriptors score
+0.5882 [0.5492; 0.6288] against a null of 0.5222 on 4,175 events — a narrower
+interval than storm&#x27;s, because there are five times more events. What is special about storm is
+that <em>networks</em> work there; the descriptors work in calm just as well.</p>
+      <p><b>Three.</b> A one-line price benchmark beats all of it at 0.8548, for a reason worth naming
+out loud: the label is built by a ZigZag over price. The order book earns its place only in the
+regime where that benchmark is silent — price mid-range — and there it is 0.5781 against
+price&#x27;s 0.5251. Blending the two naively makes things worse.</p>
+      <p><b>Four.</b> The subclass hypothesis failed cleanly, which is its own kind of result: cutting events
+by strength did not sharpen anything, and the direction signal turns out to live in the <em>middling</em>
+storms rather than the strongest.</p>
+      <p>All of it ships with a research diary written as an executable recipe: commands in order, the
+reasoning behind each choice, the traps we actually fell into — including a 97%-accuracy result
+that was pure memorisation, and a tercile cut that would have leaked the answer into the question —
+and a table of control numbers with tolerances so you can tell whether your own run reproduced
+ours. Take your own data and check.</p>
+      <figure><img src="img/BTC_nets_calm_en.png" alt="⑥ What this adds up to" loading="lazy"><figcaption>⑥ What this adds up to</figcaption></figure>
+
+      <div class="aibox">🤖 This research — data collection, analysis, charts and the narrated
+      video — was produced with the assistance of AI, then reviewed by a human. We forecast
+      volatility, not direction, and log every prediction. <em>Research, not financial advice.</em></div>
+
+      <div class="next">
+        <div class="h2">Read next</div>
+        <p class="nlead">If this changed how you read the tape, the natural next step is <a class="nlink" href="/articles/does-the-phase-of-a-move-change-what-the-order-book-looks-like/">Does the Phase of a Move Change What the Order Book Looks Like?</a> — </p>
+        <div class="ncards"><a class="ncard" href="/articles/does-the-phase-of-a-move-change-what-the-order-book-looks-like/"><h3>Does the Phase of a Move Change What the Order Book Looks Like?</h3><p></p></a><a class="ncard" href="/articles/local-tops-and-bottoms-what-four-trained-models-actually-see/"><h3>Local Tops and Bottoms in the Order Book</h3><p></p></a><a class="ncard" href="/articles/volume-is-fuel-not-steering-wheel/"><h3>Volume Is the Fuel — Not the Steering Wheel</h3><p>We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p></a><a class="ncard" href="/articles/about-market-research-lab/"><h3>About Market Research Lab — What We Collect and Why</h3><p>Most market commentary is storytelling.</p></a></div>
+        <p class="nall"><a href="../../">Browse every study on Market Flow Research →</a></p>
+      </div>
+
+      <h2>Comments</h2>
+      <p style="color:var(--muted)">Discussion is powered by GitHub. Enable it by adding <code>secrets/giscus.json</code> (repo IDs from giscus.app).</p>
+
+      <a class="back" href="../../">← All research</a>
+    </article>
+  </div>
+
+  <footer>
+    <div class="wrap" style="padding:0 22px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center">
+      <span class="badge"><span class="dot"></span>AI-assisted research · human-reviewed</span>
+      <span>© <span id="yr">2026</span> Market Flow Research</span>
+    </div>
+  </footer>
+
+  <script>
+    try{var st=localStorage.getItem("mfr_theme");if(st)document.body.setAttribute("data-theme",st);}catch(e){}
+    document.getElementById("yr").textContent=new Date().getFullYear();
+    function tl(){document.getElementById("themeBtn").textContent=document.body.getAttribute("data-theme")==="light"?"☀️":"🌙";}
+    tl();
+    document.getElementById("themeBtn").onclick=function(){
+      var t=document.body.getAttribute("data-theme")==="light"?"dark":"light";
+      document.body.setAttribute("data-theme",t);try{localStorage.setItem("mfr_theme",t);}catch(e){}tl();
+    };
+  </script>
+</body>
+</html>
