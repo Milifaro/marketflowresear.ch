@@ -16,7 +16,7 @@
   <meta property="og:image" content="https://marketflowresear.ch/articles/the-alphabet-of-the-order-book-signal-states/img/classify_en.png" />
   <meta property="og:image:width" content="990" />
   <meta property="og:image:height" content="550" />
-  <meta property="article:published_time" content="2026-08-03" />
+  <meta property="article:published_time" content="2026-08-08" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="The Alphabet of the Order Book" />
   <meta name="twitter:description" content="We described the order book as a single word: eight features, three states each. Of the 6,561 words that could exist, only 333 ever occur — and when we tested that alphabet out of sample, it described the market well and predicted it poorly." />
@@ -28,7 +28,7 @@
     "@type": "Article",
     "headline": "The Alphabet of the Order Book: 6,561 Possible States, 333 Real Ones",
     "description": "We described the order book as a single word: eight features, three states each. Of the 6,561 words that could exist, only 333 ever occur \u2014 and when we tested that alphabet out of sample, it described the market well and predicted it poorly.",
-    "datePublished": "2026-08-03",
+    "datePublished": "2026-08-08",
     "inLanguage": "en",
     "image": "https://marketflowresear.ch/articles/the-alphabet-of-the-order-book-signal-states/img/classify_en.png",
     "author": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
@@ -94,9 +94,10 @@
       <span class="tag">Signals</span>
       <h1>The Alphabet of the Order Book: 6,561 Possible States, 333 Real Ones</h1>
       <p class="lede">We described the order book as a single word: eight features, three states each. Of the 6,561 words that could exist, only 333 ever occur — and when we tested that alphabet out of sample, it described the market well and predicted it poorly.</p>
-      <div class="meta">Research note · 3 August 2026 · AI-assisted, human-reviewed</div>
+      <div class="meta">Research note · 8 August 2026 · AI-assisted, human-reviewed</div>
 
-      
+      <div class="video"><iframe src="https://www.youtube.com/embed/kmkRntCDgsc" title="Full research video" loading="lazy" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe></div>
+      <p style="color:var(--muted);font-size:13px;margin-top:0">Full walkthrough — streamed from YouTube.</p>
 
       <h2>① A signal is a state of the whole book, not one number</h2>
       <p>We stopped looking at features one at a time. At every moment each of the 8 order-book features is in one of three states — spike, normal or lull — so the market&#x27;s condition is an eight-character word. That gives 6,561 possible words, of which only <b>333</b> ever actually occur across 12,477 observed windows. The book does not wander freely; it lives in a small corner of its own state space.</p>
@@ -124,7 +125,7 @@
       <p>This is the section that matters. We split the history in half, learned the behaviour of each state on the first part (6,238 windows) and applied it blind to the second (6,239). Direction AUC falls from <b>0.623 in-sample to 0.554 out-of-sample</b>; the &#x27;will it move at all&#x27; model falls from 0.576 to 0.492 — i.e. to a coin flip. And 304 state-words in the test half had never been seen in training at all.\n\nSo the classification is real as a description and weak as a predictor. We publish it because the negative result is the finding: the book&#x27;s state space is small and legible, but knowing today&#x27;s word barely improves tomorrow&#x27;s guess.</p>
 
       <h2>⑧ What we take from this</h2>
-      <p>Three things. The market&#x27;s state space is far smaller than it could be — 333 words out of 6,561. Quiet dominates, so any live rule spends most of its time doing nothing. And the part that survives out of sample is amplitude, never direction — the same boundary we hit from every other angle in this project.\n\n<em>Research, not financial advice.</em></p>
+      <p>Three things. The market&#x27;s state space is far smaller than it could be — 333 words out of 6,561. Quiet dominates, so any live rule spends most of its time doing nothing. And the part that survives out of sample is amplitude, never direction — the same boundary we hit from every other angle in this project.\n\n_Research, not financial advice._</p>
 
       <div class="aibox">🤖 This research — data collection, analysis, charts and the narrated
       video — was produced with the assistance of AI, then reviewed by a human. We forecast
