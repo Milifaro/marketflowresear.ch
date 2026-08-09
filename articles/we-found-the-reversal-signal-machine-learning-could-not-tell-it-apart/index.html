@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>We Found the Reversal Signal. Machine Learning Could Not Tell It Apart. — Market Flow Research</title>
+  <meta name="description" content="A market moves in legs: a few percent one way, a turning point, then a few percent the other. This study asks whether the order book carries an event that marks the turn — and whether that event can be separated from the thousands of ordinary events of the same class. On 175 days of BTC the first ha" />
+  <meta name="keywords" content="" />
+
+  <link rel="canonical" href="https://marketflowresear.ch/articles/we-found-the-reversal-signal-machine-learning-could-not-tell-it-apart/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Market Flow Research" />
+  <meta property="og:title" content="We Found the Reversal Signal. Machine Learning Could Not Tell It Apart." />
+  <meta property="og:description" content="A market moves in legs: a few percent one way, a turning point, then a few percent the other. This study asks whether the order book carries an event that marks the turn — and whether that event can be separated from the thousands of ordinary events of the same class. On 175 days of BTC the first ha" />
+  <meta property="og:url" content="https://marketflowresear.ch/articles/we-found-the-reversal-signal-machine-learning-could-not-tell-it-apart/" />
+  <meta property="og:image" content="https://marketflowresear.ch/articles/we-found-the-reversal-signal-machine-learning-could-not-tell-it-apart/img/BTC_legs_map_en.png" />
+  <meta property="og:image:width" content="1276" />
+  <meta property="og:image:height" content="674" />
+  <meta property="article:published_time" content="2026-08-09" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="We Found the Reversal Signal. Machine Learning Could Not Tell It Apart." />
+  <meta name="twitter:description" content="A market moves in legs: a few percent one way, a turning point, then a few percent the other. This study asks whether the order book carries an event that marks the turn — and whether that event can be separated from the thousands of ordinary events of the same class. On 175 days of BTC the first ha" />
+  <meta name="twitter:image" content="https://marketflowresear.ch/articles/we-found-the-reversal-signal-machine-learning-could-not-tell-it-apart/img/BTC_legs_map_en.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "We Found the Reversal Signal. Machine Learning Could Not Tell It Apart.",
+    "description": "A market moves in legs: a few percent one way, a turning point, then a few percent the other. This study asks whether the order book carries an event that marks the turn \u2014 and whether that event can be separated from the thousands of ordinary events of the same class. On 175 days of BTC the first ha",
+    "datePublished": "2026-08-09",
+    "inLanguage": "en",
+    "image": "https://marketflowresear.ch/articles/we-found-the-reversal-signal-machine-learning-could-not-tell-it-apart/img/BTC_legs_map_en.png",
+    "author": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "publisher": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "mainEntityOfPage": "https://marketflowresear.ch/articles/we-found-the-reversal-signal-machine-learning-could-not-tell-it-apart/",
+    "creativeWorkStatus": "AI-assisted, human-reviewed"
+  }
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230b0d12'/><path d='M14 66 L34 46 L48 58 L70 30 L86 30' fill='none' stroke='%2340e0a0' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
+
+  <style>
+    :root{--bg:#0b0d12;--panel:#12151d;--ink:#e8ecf3;--muted:#8a93a6;--line:#232838;--accent:#40e0a0;--accent-dim:#1c3a2f}
+    body[data-theme="light"]{--bg:#ffffff;--panel:#f6f8fb;--ink:#12151d;--muted:#5b6472;--line:#e4e8ef;--accent:#0a9c69;--accent-dim:#e6f7f0}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{background:var(--bg);color:var(--ink);font:17px/1.72 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:720px;margin:0 auto;padding:0 22px}
+    .bar{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+    .brand{font-weight:800;letter-spacing:.13em;font-size:13px;text-transform:uppercase;text-decoration:none;color:var(--ink)}
+    .btn{cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:10px;padding:7px 11px;font-size:13px;font-weight:600}
+    article{padding:18px 0 40px}
+    .tag{display:inline-block;background:var(--panel);border:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+    h1{font-size:clamp(26px,5vw,38px);line-height:1.15;margin:16px 0 10px;letter-spacing:-.01em}
+    .lede{color:var(--muted);font-size:19px;margin:0 0 18px}
+    .meta{color:var(--muted);font-size:14px;margin-bottom:26px}
+    article h2{font-size:20px;margin:34px 0 10px}
+    article p{margin:0 0 18px}
+    article b{color:var(--ink)}
+    .video{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:8px 0 6px;background:#000}
+    .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    figure{margin:24px 0}
+    figure img{width:100%;border:1px solid var(--line);border-radius:14px;display:block;background:var(--panel)}
+    figcaption{color:var(--muted);font-size:13px;margin-top:8px;text-align:center}
+    .next{margin:40px 0 6px}
+    .next .h2{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+    .next .nlead{color:var(--ink);font-size:16px;margin:0 0 16px;line-height:1.6}
+    .next .nlink{color:var(--accent);font-weight:700;text-decoration:none;border-bottom:1px solid var(--accent-dim)}
+    .next .nlink:hover{border-bottom-color:var(--accent)}
+    .next .nall{margin:16px 0 0;font-size:14px}
+    .next .nall a{color:var(--accent);text-decoration:none;font-weight:600}
+    .ncards{display:grid;grid-template-columns:1fr;gap:14px}
+    @media(min-width:640px){.ncards{grid-template-columns:1fr 1fr}}
+    .ncard{display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;transition:border-color .15s,transform .15s}
+    .ncard:hover{border-color:var(--accent);transform:translateY(-2px)}
+    .ncard h3{margin:0 0 6px;font-size:16px}
+    .ncard p{margin:0;color:var(--muted);font-size:13px}
+    .aibox{margin:34px 0 0;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--muted);font-size:14px}
+    .back{display:inline-block;margin:30px 0 0;color:var(--accent);text-decoration:none;font-weight:600}
+    footer{border-top:1px solid var(--line);margin-top:20px;padding:22px 0 44px;color:var(--muted);font-size:13px}
+    .badge{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:999px;padding:5px 11px}
+    .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="../../">← Market Flow Research</a>
+      <span class="btn" id="themeBtn">🌙</span>
+    </div>
+
+    <article>
+      <span class="tag">Signals</span>
+      <h1>We Found the Reversal Signal. Machine Learning Could Not Tell It Apart.</h1>
+      <p class="lede">A market moves in legs: a few percent one way, a turning point, then a few percent the other. This study asks whether the order book carries an event that marks the turn — and whether that event can be separated from the thousands of ordinary events of the same class. On 175 days of BTC the first half works: groups of signals pile up at turning points 3.7× more often than chance, every class shows the same reversal signature, and inside a storm the shape of the flows tells a top from a bottom where price itself says nothing. The second half does not. Every way we tried to learn &#x27;is this a reversal&#x27; landed on top of its own null control, and a class retrained with all reversal windows removed still fires on them — harder than on its ordinary events. The signal is real; the discriminator is not.</p>
+      <div class="meta">Research note · 9 August 2026 · AI-assisted, human-reviewed</div>
+
+      
+
+      <h2>① Legs, groups, and one rule that shapes everything</h2>
+      <p>Two markings of the same seconds are laid over each other.</p>
+      <p>The first is <b>price phase</b>. A centred 5-minute average smooths the tick noise, a
+2.3% ZigZag marks the turning points, and the stretch between two turning points is a
+<b>leg</b>. On our slice: 120 legs (60 up, 60 down), median size
+4.2%, median duration 24.5 hours, covering
+97% of the time. Note that this marking looks ahead — the smoothing is
+centred. That is fine for analysis and fatal for trading, and we never let it into a model.</p>
+      <p>The second is <b>market state</b>: a window of 8 order-book features × 210 seconds, judged by four
+detectors trained in an earlier study — storm, class 2, calm and PCA-quiet.</p>
+      <p>And one rule shapes everything that follows: **an event is not a single firing of a detector, it is
+a group of firings in a row.** Signals arrive in dense clusters inside one move —
+50% of storm episodes are single windows, but the rest
+run a median of 7 minutes and up to
+360. Average over firings and every long cluster counts as a
+dozen separate events; the number you get back is an average over clusters weighted by their length,
+and it shows an edge that does not exist. The unit is the group, everywhere.</p>
+      <p>A group counts as sitting <b>at a turning point</b> if its interval crosses the pivot ±15 minutes.</p>
+      <figure><img src="img/BTC_legs_map_en.png" alt="① Legs, groups, and one rule that shapes everything" loading="lazy"><figcaption>① Legs, groups, and one rule that shapes everything</figcaption></figure>
+
+      <h2>② The signal: storm groups pile up at the turns</h2>
+      <p>The null control matters more than the observation here. There are many groups and few
+turning points, so overlaps happen on their own. So the entire sequence of a class&#x27;s groups is
+circularly shifted against price 999 times, and the same count is repeated.</p>
+      <p>Storm groups at leg changes: <b>95 observed against 26 in the null</b>
+(bottom→top 51 vs 13,
+top→bottom 44 vs 13,
+p=0 in both). Inside leg bodies the observed counts sit inside the null interval, as they should.
+PCA-quiet does the opposite — it is essentially absent at turning points
+(1 against a null of
+30).</p>
+      <p>Now read it backwards, which is the only direction that can be traded: a group has just fired — how
+likely is it that we are at a turn?</p>
+      <p>| storm group | groups | at a leg change | share |
+|---|---|---|---|
+| all | 1233 | 95 | 7.7% |
+| single firing | 553 | 21 | 3.8% |
+| ≥3 firings | 476 | 66 | 13.9% |
+| ≥6 firings | 223 | 49 | <b>22.0%</b> |</p>
+      <p>Against a base rate of 1.4% of the time being &quot;at a turn&quot;, a group of six or more is a
+15-fold lift. Keep that number in mind: by the end of the study it is
+still the only thing that works, and it is a property of the group&#x27;s <b>size</b>, not of what the
+windows contain.</p>
+      <p>One honest limitation, stated up front. We measured <em>when</em> the group arrives relative to the pivot:
+the median offset is -1.2 minutes, and the pivot comes after the middle
+of the group in only 45% of cases. Measured from the <em>end</em> of
+the group it is ahead far less often. The event <b>states</b> the turn, it does not anticipate it.</p>
+      <figure><img src="img/BTC_lift_en.png" alt="② The signal: storm groups pile up at the turns" loading="lazy"><figcaption>② The signal: storm groups pile up at the turns</figcaption></figure>
+
+      <h2>③ The signature of a reversal — the same in every class</h2>
+      <p>Every group is reduced to one average matrix of 8 features × 210 seconds, and the
+buckets of groups (up leg · down leg · bottom→top · top→bottom · outside legs) are compared. A cell
+is the deviation of a bucket from the mean <b>of its own class</b>, divided by the spread between events
+of that class, with a Benjamini-Hochberg correction over three 70-second blocks of the window.</p>
+      <p>Why deviation from its own class, not from the market: classes live at different absolute levels — a
+storm is by definition high flow. Measured against a global mean, every storm map would be red all
+over and say nothing about reversals.</p>
+      <p>The result is the same in all three classes that have enough reversal events: at a turning point
+<b>all flow features are lifted above their usual level and the const walls are pressed down</b>.
+What differs is amplitude, and it is largest where you would least expect it — in the quiet classes:</p>
+      <p>| class | events | reversal events | strongest three (deviation, d) |
+|---|---|---|---|
+| storm | 1233 | 51 + 44 | resist_plus +0.30 · resist_minus +0.29 · support_plus +0.29 |
+| class 2 | 3383 | 42 + 64 | resist_plus +0.42 · resist_minus +0.42 · support_minus +0.41 |
+| calm | 3228 | 31 + 38 | resist_plus +0.56 · support_minus +0.56 · resist_minus +0.56 |</p>
+      <p>A storm at a reversal is only mildly unusual for a storm. A <b>calm</b> window at a reversal is very
+unusual for calm — which is the first hint that &quot;reversal&quot; is not a state of its own but the loud end
+of whatever state you are already in.</p>
+      <p>There is also something the map does <em>not</em> show. The colouring is flat along each row: the difference
+is one of <b>level</b>, not of how the flow is arranged in time. Which is exactly what the next section
+goes after.</p>
+      <figure><img src="img/BTC_signature_en.png" alt="③ The signature of a reversal — the same in every class" loading="lazy"><figcaption>③ The signature of a reversal — the same in every class</figcaption></figure>
+
+      <h2>④ Shape: the one place the book beats price</h2>
+      <p>If level is all there is, then the arrangement inside the 210 seconds carries nothing.
+So we measured it directly. Each feature of a window gets five descriptors: <b>level</b> (mean),
+<b>slope</b> (OLS), <b>third third minus first</b>, <b>curvature</b>, and <b>sharpness</b> (max minus mean).
+Then: top versus bottom.</p>
+      <p>Two safeguards. The unit here is the <b>window</b>, not the group, because there are only a few dozen
+groups at pivots and this question needs events. And everything runs on <b>two ZigZag grids</b> —
+2.3% (our legs, 119 pivots) and
+1.0% (481 pivots). An effect that shows up on one
+grid and vanishes on the other is a fit to a particular set of pivots, not a finding.</p>
+      <p>Logistic regression, 5 blocked folds of 12 hours, bootstrap <b>by pivot</b> (windows near one extremum
+are near-copies; bootstrapping over them would give a deceptively narrow interval):</p>
+      <p>| slice | levels only | shape only | price in the same 210 s |
+|---|---|---|---|
+| storm, 2.3% grid | 0.623 | <b>0.691</b> [0.619, 0.766] | 0.419 |
+| storm, 1.0% grid | 0.523 | <b>0.609</b> [0.565, 0.655] | 0.529 |
+| all windows, 2.3% | 0.581 | 0.62 | 0.39 |</p>
+      <p>This is the one place in the whole study where the order book beats price. At the extremum price
+inside 210 seconds does not move — as a predictor it is worse than a coin
+(0.419) — while the shape of the flows separates a top from a
+bottom at 0.691, and it holds on the second grid
+(0.609). The working descriptor is <b>sharpness</b>: at a top the burst of
+`vol_buy` fades across the window, at a bottom `const_support` flares.</p>
+      <p>The obligatory honest note: &quot;price over the last hour&quot; scores
+0.9861 on this task — but a pivot <em>is</em> the reversal of an hour-long move, so
+that column is a tautology and stands only as a ceiling, never as a competitor.</p>
+      <figure><img src="img/BTC_shape_en.png" alt="④ Shape: the one place the book beats price" loading="lazy"><figcaption>④ Shape: the one place the book beats price</figcaption></figure>
+
+      <h2>⑤ Where it stops: three grids and a null control</h2>
+      <p>Everything above is description. Turning it into a decision means a classifier, so we
+built three of them, each with its own full grid (feature sets × model families × hyperparameters:
+logistic, boosting, forest, kNN, RBF-SVM, dilated Conv1D on the raw 8×210).</p>
+      <p>Three rules keep this honest. <b>GroupKFold by event</b> — windows near one extremum are near-copies, so
+splitting them between train and test hands the model the answer. **The winner is picked among
+order-book feature sets only** — price sets are controls, and the tautological one wins any grid.
+<b>The null permutes labels between events of similar size</b> — permute freely and the base rate of
+positives itself shifts, which makes the null&#x27;s PR-AUC incomparable.</p>
+      <p>| task | rows / events | positives | best | result | null |
+|---|---|---|---|---|---|
+| A · top vs bottom | 398 / 79 | 175 | форма (32), логрегресія | AUC <b>0.7167</b> [0.627, 0.81] | 0.463 |
+| B · reversal vs leg body, windows | 4494 / 187 | 398 | рівні (8), ліс | PR-AUC <b>0.1352</b> [0.091, 0.21] | 0.129 |
+| B2 · reversal vs leg body, groups | 1233 / 1233 | 95 | розмір+описи (51), логрегресія | PR-AUC <b>0.2459</b> [0.175, 0.34] | 0.08 |</p>
+      <p>Read it in order. Task A — <b>which side</b> of a reversal we are on, given that we already know it is
+one — is solvable, at 0.7167 against a null of 0.463, and the winning
+feature set is <em>shape</em>, not levels. Task B — <b>is this a reversal at all</b>, asked of a single window —
+returns 0.1352 against a null of 0.129: nothing. Task B2, the same
+question asked of whole groups, returns 0.2459 against 0.08 — a real but
+modest edge.</p>
+      <p>And then the detail that decides the study: in task B2 the feature set &quot;<b>size of the group</b>&quot;, three
+numbers, scores 0.2183 of the winner&#x27;s 0.2459. Forty-eight descriptors of
+what the windows actually contain add about 0.03. The reversal is not distinguished by **what the
+event looks like<b> but by </b>how long it is**.</p>
+      <figure><img src="img/BTC_tasks_en.png" alt="⑤ Where it stops: three grids and a null control" loading="lazy"><figcaption>⑤ Where it stops: three grids and a null control</figcaption></figure>
+
+      <h2>⑥ The decisive test: classes retrained without reversals</h2>
+      <p>If a reversal event were a distinct subtype of its class, a detector that had never seen
+one would not fire on it. That is a test, not an opinion, so we ran it: each class was retrained with
+the production recipe — same architecture from its grid, same 8 epochs, same 2% held out in four
+contiguous chunks with an embargo, threshold at the base rate — but with **all windows of reversal
+groups removed from training entirely**, neither positive nor negative. (Putting them in the negative
+class would place near-identical windows on both sides of the label and simply break the detector.)</p>
+      <p>Quality did not suffer: on the held-out 2% the new storm detector runs at precision
+0.9322 / recall 0.9402, class 2 at
+0.9042 / 0.9026, calm at 0.9224 /
+0.8467 — all within noise of the originals.</p>
+      <p>And on the windows it had never seen, the retrained model fires <b>more</b> than on the ordinary events
+of its own class: storm 99% against
+90%, class 2 98% against
+91%, calm 91% against
+92%.</p>
+      <p>So reversal events are not a separate subtype. They are the <b>most typical and strongest</b>
+representatives of their class — which is why no amount of model capacity separates them, and why
+the only thing that ever worked was the size of the group.</p>
+      <p>So reversal events are not a separate subtype of their class — and no amount of model capacity will
+separate them, because there is nothing categorical there to separate.</p>
+      <figure><img src="img/BTC_norev_en.png" alt="⑥ The decisive test: classes retrained without reversals" loading="lazy"><figcaption>⑥ The decisive test: classes retrained without reversals</figcaption></figure>
+
+      <h2>⑦ Why the negatives are contaminated: pullbacks inside a leg</h2>
+      <p>There is a structural reason a classifier is being set an unfair question here, and it is
+worth measuring rather than asserting. A leg is a move from one turning point to the next, but it
+does not go straight: price keeps falling back against it. To count those, a finer ZigZag is run
+<b>inside each leg</b> and the segments running against the leg&#x27;s direction are taken. Three thresholds,
+not one, because the count depends on the threshold more than on anything else:</p>
+      <p>| threshold | pullbacks | per leg (median) | legs with none | size | share of its own leg | duration | typical position in the leg |
+|---|---|---|---|---|---|---|---|
+| ≥0.5% | 615 | 4 | 11 of 120 | 0.787% | <b>15%</b> | 1.45 h | 41% |
+| ≥1.0% | 176 | 1 | 45 of 120 | 1.288% | <b>22%</b> | 2.8 h | 38% |
+| ≥1.5% | 56 | 0 | 82 of 120 | 1.753% | <b>28%</b> | 4.67 h | 39% |</p>
+      <p>A typical ≥0.5% pullback takes back 15% of its own leg over
+1.45 hours, there are 4 of them per
+leg, and only 11 legs out of 120 have none. At the 1%
+threshold a pullback is 1.288% deep — which is comparable to the
+2.3% that defines a leg in the first place.</p>
+      <p>That is the point. <b>For the order book, a deep pullback and a reversal are nearly the same event.</b>
+When we ask a model to separate &quot;reversal&quot; from &quot;leg body&quot;, a large part of the negative class it is
+told to reject consists of small reversals that our ZigZag threshold happened not to promote. The
+label is not clean, and no model fixes a label.</p>
+      <p>The same argument runs the other way as well: 37 of
+the 119 turning points have <b>no storm near them at all</b>, and no other class steps in
+above its own null. Those pivots are simply quieter — the price range ±15 minutes around them is
+0.515% against 0.869% where a storm is
+present. So the positive class is incomplete too.</p>
+      <figure><img src="img/BTC_pullbacks_en.png" alt="⑦ Why the negatives are contaminated: pullbacks inside a leg" loading="lazy"><figcaption>⑦ Why the negatives are contaminated: pullbacks inside a leg</figcaption></figure>
+
+      <h2>⑧ What this is worth</h2>
+      <p><b>Found.</b> Groups of storm signals concentrate at turning points 3.7×
+above chance and survive a 999-shift null. The reversal signature is identical across classes — all
+flow features up, walls down — and strongest in the quiet ones. Inside a storm the <em>shape</em> of the
+flows separates a top from a bottom at AUC 0.691 on two independent
+ZigZag grids, in a window where price itself is worse than a coin flip.</p>
+      <p><b>Not found.</b> Any way to decide, from the content of a window, that this event is a reversal. Window
+level: 0.1352 against a null of 0.129. Group level:
+0.2459 against 0.08, and 0.2183 of that comes from three
+numbers describing the group&#x27;s size. Classes retrained without reversal windows recognise them
+better than their own ordinary events. And the event arrives <b>at</b> the turn, not before it.</p>
+      <p>We are stating this as a negative result on purpose, because the shape of the negative is
+informative: the failure is not &quot;there is no signal in the order book&quot; — the signal reproduces
+against every control we could build. The failure is that a reversal is not a different <em>kind</em> of
+event, it is the loud end of an ordinary one, and a classifier asked to separate degrees of loudness
+inside a continuum has nothing categorical to hold on to.</p>
+      <p>Which is also why we think this line is worth continuing rather than closing. The pieces that
+survived every control — group size, the shape asymmetry inside a storm, the identical signature
+across classes — are the raw material of a decision rule, not of a classifier. Our working
+expectation is that further study of these reversal signals will make an effective trading bot
+possible: what is missing is not the signal but a way to separate it from the rest of its class.</p>
+      <p>Everything here ships with a research diary written as an executable recipe: the commands in order,
+the reasoning behind every choice, the six traps we actually fell into — including a null control
+that quietly moved its own base rate, and a claim about groups that we spent a day testing on
+windows — and a table of control numbers with tolerances, so you can tell whether your own run
+reproduced ours. Take your own data and check.</p>
+      <figure><img src="img/BTC_signature_en.png" alt="⑧ What this is worth" loading="lazy"><figcaption>⑧ What this is worth</figcaption></figure>
+
+      <div class="aibox">🤖 This research — data collection, analysis, charts and the narrated
+      video — was produced with the assistance of AI, then reviewed by a human. We forecast
+      volatility, not direction, and log every prediction. <em>Research, not financial advice.</em></div>
+
+      <div class="next">
+        <div class="h2">Read next</div>
+        <p class="nlead">If this changed how you read the tape, the natural next step is <a class="nlink" href="/articles/does-the-phase-of-a-move-change-what-the-order-book-looks-like/">Does the Phase of a Move Change What the Order Book Looks Like?</a> — </p>
+        <div class="ncards"><a class="ncard" href="/articles/does-the-phase-of-a-move-change-what-the-order-book-looks-like/"><h3>Does the Phase of a Move Change What the Order Book Looks Like?</h3><p></p></a><a class="ncard" href="/articles/local-tops-and-bottoms-what-four-trained-models-actually-see/"><h3>Local Tops and Bottoms in the Order Book</h3><p></p></a><a class="ncard" href="/articles/volume-is-fuel-not-steering-wheel/"><h3>Volume Is the Fuel — Not the Steering Wheel</h3><p>We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p></a><a class="ncard" href="/articles/about-market-research-lab/"><h3>About Market Research Lab — What We Collect and Why</h3><p>Most market commentary is storytelling.</p></a></div>
+        <p class="nall"><a href="../../">Browse every study on Market Flow Research →</a></p>
+      </div>
+
+      <h2>Comments</h2>
+      <p style="color:var(--muted)">Discussion is powered by GitHub. Enable it by adding <code>secrets/giscus.json</code> (repo IDs from giscus.app).</p>
+
+      <a class="back" href="../../">← All research</a>
+    </article>
+  </div>
+
+  <footer>
+    <div class="wrap" style="padding:0 22px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center">
+      <span class="badge"><span class="dot"></span>AI-assisted research · human-reviewed</span>
+      <span>© <span id="yr">2026</span> Market Flow Research</span>
+    </div>
+  </footer>
+
+  <script>
+    try{var st=localStorage.getItem("mfr_theme");if(st)document.body.setAttribute("data-theme",st);}catch(e){}
+    document.getElementById("yr").textContent=new Date().getFullYear();
+    function tl(){document.getElementById("themeBtn").textContent=document.body.getAttribute("data-theme")==="light"?"☀️":"🌙";}
+    tl();
+    document.getElementById("themeBtn").onclick=function(){
+      var t=document.body.getAttribute("data-theme")==="light"?"dark":"light";
+      document.body.setAttribute("data-theme",t);try{localStorage.setItem("mfr_theme",t);}catch(e){}tl();
+    };
+  </script>
+</body>
+</html>
