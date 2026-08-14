@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Twenty-Five Weeks, Twenty-Five Rebuilds: Which Clustering Survives — Market Flow Research</title>
+  <meta name="description" content="A clustering that only exists once is a story, not a result. So we rebuilt it 25 times — every week of the dataset from scratch, its own PCA, its own UMAP, its own clusters — and compared each week with the answer found on the whole dataset. One of the two methods reproduces. The other does not, and" />
+  <meta name="keywords" content="" />
+
+  <link rel="canonical" href="https://marketflowresear.ch/articles/twenty-five-weeks-twenty-five-rebuilds-which-clustering-survives/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Market Flow Research" />
+  <meta property="og:title" content="Twenty-Five Weeks, Twenty-Five Rebuilds: Which Clustering Survives" />
+  <meta property="og:description" content="A clustering that only exists once is a story, not a result. So we rebuilt it 25 times — every week of the dataset from scratch, its own PCA, its own UMAP, its own clusters — and compared each week with the answer found on the whole dataset. One of the two methods reproduces. The other does not, and" />
+  <meta property="og:url" content="https://marketflowresear.ch/articles/twenty-five-weeks-twenty-five-rebuilds-which-clustering-survives/" />
+  <meta property="og:image" content="https://marketflowresear.ch/articles/twenty-five-weeks-twenty-five-rebuilds-which-clustering-survives/img/week_size_en.png" />
+  <meta property="og:image:width" content="1256" />
+  <meta property="og:image:height" content="428" />
+  <meta property="article:published_time" content="2026-08-14" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Twenty-Five Weeks, Twenty-Five Rebuilds: Which Clustering Survives" />
+  <meta name="twitter:description" content="A clustering that only exists once is a story, not a result. So we rebuilt it 25 times — every week of the dataset from scratch, its own PCA, its own UMAP, its own clusters — and compared each week with the answer found on the whole dataset. One of the two methods reproduces. The other does not, and" />
+  <meta name="twitter:image" content="https://marketflowresear.ch/articles/twenty-five-weeks-twenty-five-rebuilds-which-clustering-survives/img/week_size_en.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Twenty-Five Weeks, Twenty-Five Rebuilds: Which Clustering Survives",
+    "description": "A clustering that only exists once is a story, not a result. So we rebuilt it 25 times \u2014 every week of the dataset from scratch, its own PCA, its own UMAP, its own clusters \u2014 and compared each week with the answer found on the whole dataset. One of the two methods reproduces. The other does not, and",
+    "datePublished": "2026-08-14",
+    "inLanguage": "en",
+    "image": "https://marketflowresear.ch/articles/twenty-five-weeks-twenty-five-rebuilds-which-clustering-survives/img/week_size_en.png",
+    "author": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "publisher": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "mainEntityOfPage": "https://marketflowresear.ch/articles/twenty-five-weeks-twenty-five-rebuilds-which-clustering-survives/",
+    "creativeWorkStatus": "AI-assisted, human-reviewed"
+  }
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230b0d12'/><path d='M14 66 L34 46 L48 58 L70 30 L86 30' fill='none' stroke='%2340e0a0' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
+
+  <style>
+    :root{--bg:#0b0d12;--panel:#12151d;--ink:#e8ecf3;--muted:#8a93a6;--line:#232838;--accent:#40e0a0;--accent-dim:#1c3a2f}
+    body[data-theme="light"]{--bg:#ffffff;--panel:#f6f8fb;--ink:#12151d;--muted:#5b6472;--line:#e4e8ef;--accent:#0a9c69;--accent-dim:#e6f7f0}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{background:var(--bg);color:var(--ink);font:17px/1.72 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:720px;margin:0 auto;padding:0 22px}
+    .bar{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+    .brand{font-weight:800;letter-spacing:.13em;font-size:13px;text-transform:uppercase;text-decoration:none;color:var(--ink)}
+    .btn{cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:10px;padding:7px 11px;font-size:13px;font-weight:600}
+    article{padding:18px 0 40px}
+    .tag{display:inline-block;background:var(--panel);border:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+    h1{font-size:clamp(26px,5vw,38px);line-height:1.15;margin:16px 0 10px;letter-spacing:-.01em}
+    .lede{color:var(--muted);font-size:19px;margin:0 0 18px}
+    .meta{color:var(--muted);font-size:14px;margin-bottom:26px}
+    article h2{font-size:20px;margin:34px 0 10px}
+    article p{margin:0 0 18px}
+    article b{color:var(--ink)}
+    .video{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:8px 0 6px;background:#000}
+    .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    figure{margin:24px 0}
+    figure img{width:100%;border:1px solid var(--line);border-radius:14px;display:block;background:var(--panel)}
+    figcaption{color:var(--muted);font-size:13px;margin-top:8px;text-align:center}
+    .next{margin:40px 0 6px}
+    .next .h2{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+    .next .nlead{color:var(--ink);font-size:16px;margin:0 0 16px;line-height:1.6}
+    .next .nlink{color:var(--accent);font-weight:700;text-decoration:none;border-bottom:1px solid var(--accent-dim)}
+    .next .nlink:hover{border-bottom-color:var(--accent)}
+    .next .nall{margin:16px 0 0;font-size:14px}
+    .next .nall a{color:var(--accent);text-decoration:none;font-weight:600}
+    .ncards{display:grid;grid-template-columns:1fr;gap:14px}
+    @media(min-width:640px){.ncards{grid-template-columns:1fr 1fr}}
+    .ncard{display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;transition:border-color .15s,transform .15s}
+    .ncard:hover{border-color:var(--accent);transform:translateY(-2px)}
+    .ncard h3{margin:0 0 6px;font-size:16px}
+    .ncard p{margin:0;color:var(--muted);font-size:13px}
+    .aibox{margin:34px 0 0;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--muted);font-size:14px}
+    .back{display:inline-block;margin:30px 0 0;color:var(--accent);text-decoration:none;font-weight:600}
+    footer{border-top:1px solid var(--line);margin-top:20px;padding:22px 0 44px;color:var(--muted);font-size:13px}
+    .badge{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:999px;padding:5px 11px}
+    .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="../../">← Market Flow Research</a>
+      <span class="btn" id="themeBtn">🌙</span>
+    </div>
+
+    <article>
+      <span class="tag">Week by week</span>
+      <h1>Twenty-Five Weeks, Twenty-Five Rebuilds: Which Clustering Survives</h1>
+      <p class="lede">A clustering that only exists once is a story, not a result. So we rebuilt it 25 times — every week of the dataset from scratch, its own PCA, its own UMAP, its own clusters — and compared each week with the answer found on the whole dataset. One of the two methods reproduces. The other does not, and it is the fashionable one.</p>
+      <div class="meta">Research note · 14 August 2026 · AI-assisted, human-reviewed</div>
+
+      
+
+      <h2>① Rebuilt, not scored</h2>
+      <p>The protocol is deliberately harsh. A week is not <em>scored</em> by the global
+model — it is <em>rebuilt</em> completely: its own feature scale, its own PCA, its own UMAP, its
+own clusters, with min_cluster_size scaled to the week&#x27;s size. Only then are the two label
+sets compared, by adjusted Rand index, which is invariant to how the classes happen to be
+numbered.</p>
+      <p>| | value |
+|---|---|
+| weeks in the dataset | 26 (25 large enough to count) |
+| windows per week | from 707 to 2,831 |
+| what is compared | each week&#x27;s labels against the labels of the full-dataset run |</p>
+      <p>Everything in this series feeds one goal: an automated trading bot that reads the order book instead of the price. A bot retrains on a rolling window of recent data, so &quot;does this structure exist in
+any given week&quot; is not an academic question — it is the difference between a model that
+can be refreshed and one that has to be rediscovered every time.</p>
+      <figure><img src="img/week_size_en.png" alt="① Rebuilt, not scored" loading="lazy"><figcaption>① Rebuilt, not scored</figcaption></figure>
+
+      <h2>② k-means: the same answer every week</h2>
+      <p>k-means reproduces itself, and it does so twice over.</p>
+      <p>| | value |
+|---|---|
+| weeks that chose the same K on their own | 0 of 25 |
+| median agreement with the global split | 0.699 |
+| worst week | 0.138 |
+| best week | 0.988 |</p>
+      <p>Every single week, independently, decided that its own data supports the same number of
+classes, and in a typical week the labels agree with the global ones on the great majority
+of windows. The bad weeks are not random either — they are the small ones, where the
+number of windows drops.</p>
+      <p>Everything in this series feeds one goal: an automated trading bot that reads the order book instead of the price. This is the result that makes the whole line usable: the &quot;is there inflow&quot; axis is
+a property of the market, not of the particular five months we happened to collect.</p>
+      <figure><img src="img/week_k_en.png" alt="② k-means: the same answer every week" loading="lazy"><figcaption>② k-means: the same answer every week</figcaption></figure>
+
+      <h2>③ HDBSCAN: two classes or seven, depending on the week</h2>
+      <p>HDBSCAN does not reproduce.</p>
+      <p>| | value |
+|---|---|
+| median agreement with the global split | 0.216 |
+| range across weeks | -0.029 … 0.318 |
+| classes found per week | from 2 to 7 |
+| noise share per week | from 0% to 66% |</p>
+      <p>Same method, same settings, same market — and depending on the week it returns two classes
+with almost no noise, or seven classes with two thirds of the data unplaced. It is not
+wrong; it is sensitive to sample size in a way that k-means is not, and a week is a much
+smaller sample than five months.</p>
+      <p>This matches what the earlier studies in this project found on a monthly split, and it is
+the reason we report <em>both</em> methods everywhere instead of picking the one with the nicer
+picture.</p>
+      <p>Everything in this series feeds one goal: an automated trading bot that reads the order book instead of the price. An unstable partition cannot be a production feature. If a class exists in June and
+not in July, a bot that keys on it is trading a calendar.</p>
+      <figure><img src="img/week_hdb_en.png" alt="③ HDBSCAN: two classes or seven, depending on the week" loading="lazy"><figcaption>③ HDBSCAN: two classes or seven, depending on the week</figcaption></figure>
+
+      <h2>④ What survives, and what that means in practice</h2>
+      <p><b>What we keep from this.</b> The axis is stable; the density-based
+subdivision of it is not. In practice that means: use k-means (or, better, the explicit
+threshold rules it implies) for anything that has to run continuously, and use HDBSCAN
+only to explore — with a full rebuild and a hard null every single time.</p>
+      <p>There is also a warning in these numbers for anyone reading clustering results in general.
+The hard null in this project regularly produces <em>more</em> classes than the real data, at the
+same noise share. If a study reports &quot;we found seven clusters&quot; without saying what shuffled
+data produces, that sentence carries no information at all.</p>
+      <p><b>What is next.</b> With the stable part identified, the following studies use it to clean
+the dataset: remove what provably carries no reversals, check what is left, and write the
+whole procedure down as a repeatable recipe so it can be run on the other five coins.
+Everything in this series feeds one goal: an automated trading bot that reads the order book instead of the price. A smaller, denser dataset trains faster and lets us test more ideas per day, which
+is the entire bottleneck of this project right now.</p>
+      <figure><img src="img/week_ari_en.png" alt="④ What survives, and what that means in practice" loading="lazy"><figcaption>④ What survives, and what that means in practice</figcaption></figure>
+
+      <div class="aibox">🤖 This research — data collection, analysis, charts and the narrated
+      video — was produced with the assistance of AI, then reviewed by a human. We forecast
+      volatility, not direction, and log every prediction. <em>Research, not financial advice.</em></div>
+
+      <div class="next">
+        <div class="h2">Read next</div>
+        <p class="nlead">If this changed how you read the tape, the natural next step is <a class="nlink" href="/articles/throwing-away-a-third-of-the-data-and-keeping-the-reversals/">Throwing Away a Third of the Data and Keeping 98% of the Reversals</a> — </p>
+        <div class="ncards"><a class="ncard" href="/articles/throwing-away-a-third-of-the-data-and-keeping-the-reversals/"><h3>Throwing Away a Third of the Data and Keeping 98% of the Reversals</h3><p></p></a><a class="ncard" href="/articles/a-recipe-not-a-result-how-we-clean-an-order-book-dataset/"><h3>A Recipe, Not a Result: How We Clean an Order-Book Dataset</h3><p></p></a><a class="ncard" href="/articles/volume-is-fuel-not-steering-wheel/"><h3>Volume Is the Fuel — Not the Steering Wheel</h3><p>We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p></a><a class="ncard" href="/articles/about-market-research-lab/"><h3>About Market Research Lab — What We Collect and Why</h3><p>Most market commentary is storytelling.</p></a></div>
+        <p class="nall"><a href="../../">Browse every study on Market Flow Research →</a></p>
+      </div>
+
+      <h2>Comments</h2>
+      <p style="color:var(--muted)">Discussion is powered by GitHub. Enable it by adding <code>secrets/giscus.json</code> (repo IDs from giscus.app).</p>
+
+      <a class="back" href="../../">← All research</a>
+    </article>
+  </div>
+
+  <footer>
+    <div class="wrap" style="padding:0 22px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center">
+      <span class="badge"><span class="dot"></span>AI-assisted research · human-reviewed</span>
+      <span>© <span id="yr">2026</span> Market Flow Research</span>
+    </div>
+  </footer>
+
+  <script>
+    try{var st=localStorage.getItem("mfr_theme");if(st)document.body.setAttribute("data-theme",st);}catch(e){}
+    document.getElementById("yr").textContent=new Date().getFullYear();
+    function tl(){document.getElementById("themeBtn").textContent=document.body.getAttribute("data-theme")==="light"?"☀️":"🌙";}
+    tl();
+    document.getElementById("themeBtn").onclick=function(){
+      var t=document.body.getAttribute("data-theme")==="light"?"dark":"light";
+      document.body.setAttribute("data-theme",t);try{localStorage.setItem("mfr_theme",t);}catch(e){}tl();
+    };
+  </script>
+</body>
+</html>
