@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>One Network for Three Market States: What a Pooled Reversal Model Learns — Market Flow Research</title>
+  <meta name="description" content="We trained one network on the events of three different market states at once — 55,929 events, 3,758 of which sit on a real turning point — and asked it a single question: is this event a reversal or an ordinary event of its own class? The answer is interesting in a way we did not plan: the model wo" />
+  <meta name="keywords" content="" />
+
+  <link rel="canonical" href="https://marketflowresear.ch/articles/one-network-for-three-market-states/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Market Flow Research" />
+  <meta property="og:title" content="One Network for Three Market States: What a Pooled Reversal Model Learns" />
+  <meta property="og:description" content="We trained one network on the events of three different market states at once — 55,929 events, 3,758 of which sit on a real turning point — and asked it a single question: is this event a reversal or an ordinary event of its own class? The answer is interesting in a way we did not plan: the model wo" />
+  <meta property="og:url" content="https://marketflowresear.ch/articles/one-network-for-three-market-states/" />
+  <meta property="og:image" content="https://marketflowresear.ch/articles/one-network-for-three-market-states/img/pool_setup_en.png" />
+  <meta property="og:image:width" content="1257" />
+  <meta property="og:image:height" content="427" />
+  <meta property="article:published_time" content="2026-08-14" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="One Network for Three Market States: What a Pooled Reversal Model Learns" />
+  <meta name="twitter:description" content="We trained one network on the events of three different market states at once — 55,929 events, 3,758 of which sit on a real turning point — and asked it a single question: is this event a reversal or an ordinary event of its own class? The answer is interesting in a way we did not plan: the model wo" />
+  <meta name="twitter:image" content="https://marketflowresear.ch/articles/one-network-for-three-market-states/img/pool_setup_en.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "One Network for Three Market States: What a Pooled Reversal Model Learns",
+    "description": "We trained one network on the events of three different market states at once \u2014 55,929 events, 3,758 of which sit on a real turning point \u2014 and asked it a single question: is this event a reversal or an ordinary event of its own class? The answer is interesting in a way we did not plan: the model wo",
+    "datePublished": "2026-08-14",
+    "inLanguage": "en",
+    "image": "https://marketflowresear.ch/articles/one-network-for-three-market-states/img/pool_setup_en.png",
+    "author": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "publisher": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "mainEntityOfPage": "https://marketflowresear.ch/articles/one-network-for-three-market-states/",
+    "creativeWorkStatus": "AI-assisted, human-reviewed"
+  }
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230b0d12'/><path d='M14 66 L34 46 L48 58 L70 30 L86 30' fill='none' stroke='%2340e0a0' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
+
+  <style>
+    :root{--bg:#0b0d12;--panel:#12151d;--ink:#e8ecf3;--muted:#8a93a6;--line:#232838;--accent:#40e0a0;--accent-dim:#1c3a2f}
+    body[data-theme="light"]{--bg:#ffffff;--panel:#f6f8fb;--ink:#12151d;--muted:#5b6472;--line:#e4e8ef;--accent:#0a9c69;--accent-dim:#e6f7f0}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{background:var(--bg);color:var(--ink);font:17px/1.72 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:720px;margin:0 auto;padding:0 22px}
+    .bar{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+    .brand{font-weight:800;letter-spacing:.13em;font-size:13px;text-transform:uppercase;text-decoration:none;color:var(--ink)}
+    .btn{cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:10px;padding:7px 11px;font-size:13px;font-weight:600}
+    article{padding:18px 0 40px}
+    .tag{display:inline-block;background:var(--panel);border:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+    h1{font-size:clamp(26px,5vw,38px);line-height:1.15;margin:16px 0 10px;letter-spacing:-.01em}
+    .lede{color:var(--muted);font-size:19px;margin:0 0 18px}
+    .meta{color:var(--muted);font-size:14px;margin-bottom:26px}
+    article h2{font-size:20px;margin:34px 0 10px}
+    article p{margin:0 0 18px}
+    article b{color:var(--ink)}
+    .video{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:8px 0 6px;background:#000}
+    .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    figure{margin:24px 0}
+    figure img{width:100%;border:1px solid var(--line);border-radius:14px;display:block;background:var(--panel)}
+    figcaption{color:var(--muted);font-size:13px;margin-top:8px;text-align:center}
+    .next{margin:40px 0 6px}
+    .next .h2{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+    .next .nlead{color:var(--ink);font-size:16px;margin:0 0 16px;line-height:1.6}
+    .next .nlink{color:var(--accent);font-weight:700;text-decoration:none;border-bottom:1px solid var(--accent-dim)}
+    .next .nlink:hover{border-bottom-color:var(--accent)}
+    .next .nall{margin:16px 0 0;font-size:14px}
+    .next .nall a{color:var(--accent);text-decoration:none;font-weight:600}
+    .ncards{display:grid;grid-template-columns:1fr;gap:14px}
+    @media(min-width:640px){.ncards{grid-template-columns:1fr 1fr}}
+    .ncard{display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;transition:border-color .15s,transform .15s}
+    .ncard:hover{border-color:var(--accent);transform:translateY(-2px)}
+    .ncard h3{margin:0 0 6px;font-size:16px}
+    .ncard p{margin:0;color:var(--muted);font-size:13px}
+    .aibox{margin:34px 0 0;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--muted);font-size:14px}
+    .back{display:inline-block;margin:30px 0 0;color:var(--accent);text-decoration:none;font-weight:600}
+    footer{border-top:1px solid var(--line);margin-top:20px;padding:22px 0 44px;color:var(--muted);font-size:13px}
+    .badge{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:999px;padding:5px 11px}
+    .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="../../">← Market Flow Research</a>
+      <span class="btn" id="themeBtn">🌙</span>
+    </div>
+
+    <article>
+      <span class="tag">Pooled reversal model</span>
+      <h1>One Network for Three Market States: What a Pooled Reversal Model Learns</h1>
+      <p class="lede">We trained one network on the events of three different market states at once — 55,929 events, 3,758 of which sit on a real turning point — and asked it a single question: is this event a reversal or an ordinary event of its own class? The answer is interesting in a way we did not plan: the model works, the validation set lies about which model is best, and an unsupervised split of the same pool finds classes that have nothing to do with reversals at all.</p>
+      <div class="meta">Research note · 14 August 2026 · AI-assisted, human-reviewed</div>
+
+      
+
+      <h2>① One pool, three states, one subtraction</h2>
+      <p>Three detectors mark events in our data: <b>storm</b> (loud order book),
+<b>calm</b> (quiet), <b>class 2</b> (the middle). Until now each had its own model. Here they
+share one, and the trick that makes that possible is subtraction: before an event goes
+into the network, we subtract from it the **average event of its own class over the past
+30 days<em>*. The network never sees &quot;a loud event&quot; or &quot;a quiet event&quot; — it sees </em>how much
+this event differs from what its class normally looks like*.</p>
+      <p>The base is strictly causal: for an event at time <em>t</em> it is built from events strictly
+before <em>t</em>, and validation and test events are excluded from it entirely. Otherwise the
+base would be quietly looking at its own answer.</p>
+      <p>| class | events in the pool | of them on a reversal | share |
+|---|---|---|---|
+| storm | 5,124 | 1,060 | 20.7% |
+| calm | 29,201 | 737 | 2.5% |
+| class 2 | 21,604 | 1,961 | 9.1% |</p>
+      <p>Read the last column, not the middle one. A reversal is one event in five inside a storm
+and one in forty inside calm — the same phenomenon is common in one state and rare in
+another, which is exactly why a single model trained on the union has to be told which
+state each event came from. Subtracting the class base is how we tell it.</p>
+      <p>Everything in this series feeds one goal: an automated trading bot that reads the order book instead of the price. This step is the plumbing for that: one model instead of three is one thing to
+maintain, retrain and monitor when it eventually runs live.</p>
+      <figure><img src="img/pool_setup_en.png" alt="① One pool, three states, one subtraction" loading="lazy"><figcaption>① One pool, three states, one subtraction</figcaption></figure>
+
+      <h2>② The model works. The validation set lies.</h2>
+      <p>The split is blocked in time: the timeline is cut into 50 chunks, five go to
+validation and five to test, every other one, with a 30-minute embargo around each. Then
+18 architectures are screened, the best three are trained to 48 epochs, and the answers
+are read at 11 checkpoints <em>inside</em> the run.</p>
+      <p>| model chosen by validation | validation PR-AUC | test PR-AUC | precision on test |
+|---|---|---|---|
+| ch64, kernel 5, 3 dilations | 0.3661 | 0.2284 | 26.0% |
+| best on test instead | 0.3661 | 0.2284 | 26.0% |</p>
+      <p>Against blind picking on the test period (3.6%) that is a real signal —
+roughly 7.3 times better than chance.</p>
+      <p>And here is the uncomfortable part. <b>Validation does not rank the models.</b> Among the
+three finalists the ordering on test is close to the reverse of the ordering on
+validation. The reason is visible in the numbers: the test chunks landed on a quiet
+stretch of the market with 3.6% reversals, while validation had
+13.8%. With 200 reversals in the test set, PR-AUC is too noisy to
+choose an architecture with.</p>
+      <p>We are reporting this rather than quietly picking the best number, because a bot built on
+&quot;the architecture that won validation&quot; would be built on a coin flip. Everything in this series feeds one goal: an automated trading bot that reads the order book instead of the price. A model we
+cannot rank honestly is a model we cannot deploy.</p>
+      <figure><img src="img/pool_net_en.png" alt="② The model works. The validation set lies." loading="lazy"><figcaption>② The model works. The validation set lies.</figcaption></figure>
+
+      <h2>③ What the pool splits into on its own</h2>
+      <p>Now the same pool, but without any labels at all: PCA → UMAP → HDBSCAN, and
+our reversal marks applied only afterwards, as a check.</p>
+      <p>The split is real — stability 0.813 on a full rebuild with a
+different seed, against 0.378 for a hard null where the cells are
+shuffled between events. But it is <b>not about reversals</b> (ARI 0.026)
+and not about our three classes (ARI 0.038). It cuts the pool along
+something else entirely: the level of the flows.</p>
+      <p>| class | events | reversals inside | versus the pool average |
+|---|---|---|---|
+| noise | 43,719 | 6.1% | ×0.91 |
+| class 0 | 2,663 | 2.4% | ×0.36 |
+| class 1 | 1,093 | 9.2% | ×1.36 |
+| class 2 | 7,203 | 12.4% | ×1.85 |
+| class 3 | 1,251 | 2.0% | ×0.30 |</p>
+      <p>The most reversal-rich class carries them at ×1.85 the base rate, the
+wall-shaped ones at a third of it. So reversals are <b>shifted</b> by the structure of the
+book, never <b>isolated</b> by it — the fourth time this series arrives at that sentence by a
+different road.</p>
+      <p>Everything in this series feeds one goal: an automated trading bot that reads the order book instead of the price. A shift of ×1.85 is not a trade on its own, but it is a filter: it tells
+a bot which events are worth spending a second signal on.</p>
+      <figure><img src="img/pool_hdb_en.png" alt="③ What the pool splits into on its own" loading="lazy"><figcaption>③ What the pool splits into on its own</figcaption></figure>
+
+      <h2>④ Every compression lost to one average</h2>
+      <p>Last question of this study: does the event need to be <em>compressed</em> before
+the model sees it? We ran PCA and an autoencoder at five bottleneck widths, with the same
+logistic head on top of both, so that what is compared is the compression and not the head.</p>
+      <p>| what we compressed with | best width | validation PR-AUC | test PR-AUC |
+|---|---|---|---|
+| PCA | 64 | 0.2253 | 0.0685 |
+| autoencoder | 64 | 0.2283 | 0.0713 |
+| autoencoder as an anomaly score | 64 | 0.2818 | 0.0891 |
+| <b>one number: the mean level of the six flow features</b> | — | <b>0.3137</b> | <b>0.1156</b> |</p>
+      <p>Both compressions lost to a single average, and the full network on all 1,680 numbers beat
+every bottleneck by a factor of two. The autoencoder as an <em>anomaly</em> detector — trained
+only on non-reversals, scored by reconstruction error — was the weakest of the three, and
+that is a finding rather than a failure: a reversal is not anomalous for a model that has
+learned ordinary events. It reconstructs just fine. It is simply louder.</p>
+      <p><b>What is next.</b> The following studies stop asking the model to be clever and start
+asking the data to be clean: what the whole dataset splits into when nobody tells it what
+to look for, how that split behaves in the rising and the falling half of a move, whether
+it reproduces week by week — and finally how to throw away the part of the data that
+carries no reversals at all. Everything in this series feeds one goal: an automated trading bot that reads the order book instead of the price. Every one of those steps is about giving that bot
+fewer, better events to look at.</p>
+      <figure><img src="img/pool_pcaae_en.png" alt="④ Every compression lost to one average" loading="lazy"><figcaption>④ Every compression lost to one average</figcaption></figure>
+
+      <div class="aibox">🤖 This research — data collection, analysis, charts and the narrated
+      video — was produced with the assistance of AI, then reviewed by a human. We forecast
+      volatility, not direction, and log every prediction. <em>Research, not financial advice.</em></div>
+
+      <div class="next">
+        <div class="h2">Read next</div>
+        <p class="nlead">If this changed how you read the tape, the natural next step is <a class="nlink" href="/articles/one-axis-again-clustering-order-book-windows-without-a-teacher/">One Axis, Again: Clustering 56,000 Order-Book Windows Without a Teacher</a> — </p>
+        <div class="ncards"><a class="ncard" href="/articles/one-axis-again-clustering-order-book-windows-without-a-teacher/"><h3>One Axis, Again: Clustering 56,000 Order-Book Windows Without a Teacher</h3><p></p></a><a class="ncard" href="/articles/the-rising-half-of-a-move-what-the-order-book-looks-like/"><h3>The Rising Half of a Move: What the Order Book Looks Like Between a Bottom and a Top</h3><p></p></a><a class="ncard" href="/articles/volume-is-fuel-not-steering-wheel/"><h3>Volume Is the Fuel — Not the Steering Wheel</h3><p>We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p></a><a class="ncard" href="/articles/about-market-research-lab/"><h3>About Market Research Lab — What We Collect and Why</h3><p>Most market commentary is storytelling.</p></a></div>
+        <p class="nall"><a href="../../">Browse every study on Market Flow Research →</a></p>
+      </div>
+
+      <h2>Comments</h2>
+      <p style="color:var(--muted)">Discussion is powered by GitHub. Enable it by adding <code>secrets/giscus.json</code> (repo IDs from giscus.app).</p>
+
+      <a class="back" href="../../">← All research</a>
+    </article>
+  </div>
+
+  <footer>
+    <div class="wrap" style="padding:0 22px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center">
+      <span class="badge"><span class="dot"></span>AI-assisted research · human-reviewed</span>
+      <span>© <span id="yr">2026</span> Market Flow Research</span>
+    </div>
+  </footer>
+
+  <script>
+    try{var st=localStorage.getItem("mfr_theme");if(st)document.body.setAttribute("data-theme",st);}catch(e){}
+    document.getElementById("yr").textContent=new Date().getFullYear();
+    function tl(){document.getElementById("themeBtn").textContent=document.body.getAttribute("data-theme")==="light"?"☀️":"🌙";}
+    tl();
+    document.getElementById("themeBtn").onclick=function(){
+      var t=document.body.getAttribute("data-theme")==="light"?"dark":"light";
+      document.body.setAttribute("data-theme",t);try{localStorage.setItem("mfr_theme",t);}catch(e){}tl();
+    };
+  </script>
+</body>
+</html>
