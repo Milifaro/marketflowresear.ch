@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>One Axis, Again: Clustering 56,000 Order-Book Windows Without a Teacher — Market Flow Research</title>
+  <meta name="description" content="Take 56,263 windows of the order book, 210 seconds each, eight features per second. Tell the algorithm nothing — not the price, not the time, not our own signals. Ask only one thing: does this pile of windows fall apart into groups by itself? It does, along exactly one axis, and that axis is not the" />
+  <meta name="keywords" content="" />
+
+  <link rel="canonical" href="https://marketflowresear.ch/articles/one-axis-again-clustering-order-book-windows-without-a-teacher/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Market Flow Research" />
+  <meta property="og:title" content="One Axis, Again: Clustering 56,000 Order-Book Windows Without a Teacher" />
+  <meta property="og:description" content="Take 56,263 windows of the order book, 210 seconds each, eight features per second. Tell the algorithm nothing — not the price, not the time, not our own signals. Ask only one thing: does this pile of windows fall apart into groups by itself? It does, along exactly one axis, and that axis is not the" />
+  <meta property="og:url" content="https://marketflowresear.ch/articles/one-axis-again-clustering-order-book-windows-without-a-teacher/" />
+  <meta property="og:image" content="https://marketflowresear.ch/articles/one-axis-again-clustering-order-book-windows-without-a-teacher/img/all_axis_en.png" />
+  <meta property="og:image:width" content="1083" />
+  <meta property="og:image:height" content="451" />
+  <meta property="article:published_time" content="2026-08-14" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="One Axis, Again: Clustering 56,000 Order-Book Windows Without a Teacher" />
+  <meta name="twitter:description" content="Take 56,263 windows of the order book, 210 seconds each, eight features per second. Tell the algorithm nothing — not the price, not the time, not our own signals. Ask only one thing: does this pile of windows fall apart into groups by itself? It does, along exactly one axis, and that axis is not the" />
+  <meta name="twitter:image" content="https://marketflowresear.ch/articles/one-axis-again-clustering-order-book-windows-without-a-teacher/img/all_axis_en.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "One Axis, Again: Clustering 56,000 Order-Book Windows Without a Teacher",
+    "description": "Take 56,263 windows of the order book, 210 seconds each, eight features per second. Tell the algorithm nothing \u2014 not the price, not the time, not our own signals. Ask only one thing: does this pile of windows fall apart into groups by itself? It does, along exactly one axis, and that axis is not the",
+    "datePublished": "2026-08-14",
+    "inLanguage": "en",
+    "image": "https://marketflowresear.ch/articles/one-axis-again-clustering-order-book-windows-without-a-teacher/img/all_axis_en.png",
+    "author": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "publisher": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "mainEntityOfPage": "https://marketflowresear.ch/articles/one-axis-again-clustering-order-book-windows-without-a-teacher/",
+    "creativeWorkStatus": "AI-assisted, human-reviewed"
+  }
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230b0d12'/><path d='M14 66 L34 46 L48 58 L70 30 L86 30' fill='none' stroke='%2340e0a0' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
+
+  <style>
+    :root{--bg:#0b0d12;--panel:#12151d;--ink:#e8ecf3;--muted:#8a93a6;--line:#232838;--accent:#40e0a0;--accent-dim:#1c3a2f}
+    body[data-theme="light"]{--bg:#ffffff;--panel:#f6f8fb;--ink:#12151d;--muted:#5b6472;--line:#e4e8ef;--accent:#0a9c69;--accent-dim:#e6f7f0}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{background:var(--bg);color:var(--ink);font:17px/1.72 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:720px;margin:0 auto;padding:0 22px}
+    .bar{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+    .brand{font-weight:800;letter-spacing:.13em;font-size:13px;text-transform:uppercase;text-decoration:none;color:var(--ink)}
+    .btn{cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:10px;padding:7px 11px;font-size:13px;font-weight:600}
+    article{padding:18px 0 40px}
+    .tag{display:inline-block;background:var(--panel);border:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+    h1{font-size:clamp(26px,5vw,38px);line-height:1.15;margin:16px 0 10px;letter-spacing:-.01em}
+    .lede{color:var(--muted);font-size:19px;margin:0 0 18px}
+    .meta{color:var(--muted);font-size:14px;margin-bottom:26px}
+    article h2{font-size:20px;margin:34px 0 10px}
+    article p{margin:0 0 18px}
+    article b{color:var(--ink)}
+    .video{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:8px 0 6px;background:#000}
+    .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    figure{margin:24px 0}
+    figure img{width:100%;border:1px solid var(--line);border-radius:14px;display:block;background:var(--panel)}
+    figcaption{color:var(--muted);font-size:13px;margin-top:8px;text-align:center}
+    .next{margin:40px 0 6px}
+    .next .h2{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+    .next .nlead{color:var(--ink);font-size:16px;margin:0 0 16px;line-height:1.6}
+    .next .nlink{color:var(--accent);font-weight:700;text-decoration:none;border-bottom:1px solid var(--accent-dim)}
+    .next .nlink:hover{border-bottom-color:var(--accent)}
+    .next .nall{margin:16px 0 0;font-size:14px}
+    .next .nall a{color:var(--accent);text-decoration:none;font-weight:600}
+    .ncards{display:grid;grid-template-columns:1fr;gap:14px}
+    @media(min-width:640px){.ncards{grid-template-columns:1fr 1fr}}
+    .ncard{display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;transition:border-color .15s,transform .15s}
+    .ncard:hover{border-color:var(--accent);transform:translateY(-2px)}
+    .ncard h3{margin:0 0 6px;font-size:16px}
+    .ncard p{margin:0;color:var(--muted);font-size:13px}
+    .aibox{margin:34px 0 0;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--muted);font-size:14px}
+    .back{display:inline-block;margin:30px 0 0;color:var(--accent);text-decoration:none;font-weight:600}
+    footer{border-top:1px solid var(--line);margin-top:20px;padding:22px 0 44px;color:var(--muted);font-size:13px}
+    .badge{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:999px;padding:5px 11px}
+    .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="../../">← Market Flow Research</a>
+      <span class="btn" id="themeBtn">🌙</span>
+    </div>
+
+    <article>
+      <span class="tag">Classes without a teacher</span>
+      <h1>One Axis, Again: Clustering 56,000 Order-Book Windows Without a Teacher</h1>
+      <p class="lede">Take 56,263 windows of the order book, 210 seconds each, eight features per second. Tell the algorithm nothing — not the price, not the time, not our own signals. Ask only one thing: does this pile of windows fall apart into groups by itself? It does, along exactly one axis, and that axis is not the one anybody hopes for.</p>
+      <div class="meta">Research note · 14 August 2026 · AI-assisted, human-reviewed</div>
+
+      
+
+      <h2>① The method, and the three guards that make it mean something</h2>
+      <p>The recipe is deliberately boring, because the guards matter more than the
+method: PCA to 32 dimensions, then k-means with K from 2 to 10, and in parallel
+UMAP to 10 dimensions and HDBSCAN. The 2-D map you see in the charts is <em>only</em> a map —
+clusters are never searched for on it.</p>
+      <p>Three guards run beside every split:</p>
+      <p>| guard | what it does | why it is not optional |
+|---|---|---|
+| hard null | shuffles each column between windows, destroying everything except the marginal distributions | it produced 11 &quot;classes&quot; with 78% noise — nearly the same as the real data |
+| stability | rebuilds the <b>entire</b> pipeline with a different seed and compares labels | a repeat clustering in a fixed space overstates it, sometimes twofold |
+| max_share | share of the largest class among clustered points | a &quot;nearly everything versus a crumb&quot; split reproduces itself and looks stable out of nothing |</p>
+      <p>The real split scores 0.724 stability against
+0.171 for the null. That gap — not the number of classes, not
+the share of noise — is the only thing that says the structure exists.</p>
+      <p>Everything in this series feeds one goal: an automated trading bot that reads the order book instead of the price. A bot trained on classes that a shuffled dataset can also produce is a bot trained
+on nothing, so this is where the money is saved.</p>
+      <figure><img src="img/all_axis_en.png" alt="① The method, and the three guards that make it mean something" loading="lazy"><figcaption>① The method, and the three guards that make it mean something</figcaption></figure>
+
+      <h2>② One axis: is there inflow, or is there not</h2>
+      <p>K=2, chosen by how far the silhouette beats the null rather than by the
+silhouette itself.</p>
+      <p>| class | windows | resist_plus level | reversal windows | versus base |
+|---|---|---|---|---|
+| the one with inflow | 13,586 (24%) | 6.36 | 659 | ×3.16 |
+| the one without | 42,677 (76%) | 1.84 | 204 | ×0.31 |</p>
+      <p>The whole difference is the flow features — inflow and drain on both walls — while the
+const walls themselves stand at the same level in both classes and take no part in the
+division. HDBSCAN, a completely different algorithm, finds the same thing: its
+reversal-rich class carries them at ×2.87, and its wall-shaped class has
+essentially none.</p>
+      <p>And the reversals: ARI against the reversal label is 0.044 and
+0.029, against the phase of the zigzag
+0.009. In plain words, <b>the split is not a reversal detector</b>.
+Reversals are merely three times denser on one side of the axis than on the other.</p>
+      <p>Everything in this series feeds one goal: an automated trading bot that reads the order book instead of the price. This is the honest ceiling of unsupervised work here: it hands a bot a filter that
+triples the density of what it is looking for, not a signal it can trade.</p>
+      <figure><img src="img/all_lift_en.png" alt="② One axis: is there inflow, or is there not" loading="lazy"><figcaption>② One axis: is there inflow, or is there not</figcaption></figure>
+
+      <h2>③ &#x27;Noise&#x27; is not a mystery, it is a level</h2>
+      <p>HDBSCAN leaves 72% of the windows unassigned, and
+&quot;noise&quot; sounds like &quot;the algorithm gave up&quot;. So we asked whether the noise can be told
+apart from everything else — and it can, almost trivially.</p>
+      <p>| how we separate noise | AUC, out-of-fold on blocked splits |
+|---|---|
+| boosting on a 32-dimensional PCA space | 0.974 |
+| one number — the mean level of the six flow features | 0.874 |
+| the null (the same label shifted in time) | 0.455 |</p>
+      <p>There is even an explicit rule with no model at all: if that one number falls in the band
+<b>-0.379 … 0.256</b>, the window is noise. It covers
+66% of all windows, is 92.3% pure, and catches
+85.0% of all the noise there is.</p>
+      <p>So noise is not a mystery — it is the quiet end of a single scale. Worth knowing before
+building anything on top of it: the ceiling of this task is 91.7%,
+because that is how often the label reproduces <em>itself</em> when the clustering is rebuilt
+with another seed.</p>
+      <p>Everything in this series feeds one goal: an automated trading bot that reads the order book instead of the price. Cheap, explainable rules like this band are what actually survive into production;
+a model that costs 30× more and scores the same is a liability.</p>
+      <figure><img src="img/all_noise_en.png" alt="③ &#x27;Noise&#x27; is not a mystery, it is a level" loading="lazy"><figcaption>③ &#x27;Noise&#x27; is not a mystery, it is a level</figcaption></figure>
+
+      <h2>④ Two independent definitions of a quiet market</h2>
+      <p>Cut the noise once more and its quiet half — we call it <b>1.1</b> —
+is 18,320 windows with 16 reversal windows in them: ×0.28
+the base rate, which is to say practically dead.</p>
+      <p>We already had a separate, independently trained detector of quiet market — &quot;quiet PCA&quot;,
+built with an external 28-day norm. Do the two agree?</p>
+      <p>| | windows | reversals |
+|---|---|---|
+| both | 3,937 | 1 |
+| only 1.1 | 12,674 | 8 |
+| only quiet-PCA | 493 | 0 |
+| neither | 29,286 | 614 |</p>
+      <p>89% of quiet-PCA lies inside 1.1, but takes only 24% of
+its volume: 1.1 is the wider &quot;quiet&quot;, quiet-PCA its narrow core. What separates them is
+<b>wall thickness</b> (const_resist 4.06
+in the quiet-PCA-only group against
+2.69 elsewhere) — that is what the
+external norm adds, not the fact of silence itself.</p>
+      <p><b>What is next.</b> Two studies that cut the same dataset by the geometry of the move —
+the rising half and the falling half — and one that rebuilds everything week by week to
+see what survives. Then we use what we learned here to throw the dead part of the dataset
+away. Everything in this series feeds one goal: an automated trading bot that reads the order book instead of the price. Fewer windows, same reversals, cheaper training.</p>
+      <figure><img src="img/all_11pq_en.png" alt="④ Two independent definitions of a quiet market" loading="lazy"><figcaption>④ Two independent definitions of a quiet market</figcaption></figure>
+
+      <div class="aibox">🤖 This research — data collection, analysis, charts and the narrated
+      video — was produced with the assistance of AI, then reviewed by a human. We forecast
+      volatility, not direction, and log every prediction. <em>Research, not financial advice.</em></div>
+
+      <div class="next">
+        <div class="h2">Read next</div>
+        <p class="nlead">If this changed how you read the tape, the natural next step is <a class="nlink" href="/articles/the-rising-half-of-a-move-what-the-order-book-looks-like/">The Rising Half of a Move: What the Order Book Looks Like Between a Bottom and a Top</a> — </p>
+        <div class="ncards"><a class="ncard" href="/articles/the-rising-half-of-a-move-what-the-order-book-looks-like/"><h3>The Rising Half of a Move: What the Order Book Looks Like Between a Bottom and a Top</h3><p></p></a><a class="ncard" href="/articles/tops-hide-bottoms-do-not-the-asymmetry-we-did-not-expect/"><h3>Tops Hide, Bottoms Don&#x27;t: an Asymmetry We Did Not Expect</h3><p></p></a><a class="ncard" href="/articles/volume-is-fuel-not-steering-wheel/"><h3>Volume Is the Fuel — Not the Steering Wheel</h3><p>We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p></a><a class="ncard" href="/articles/about-market-research-lab/"><h3>About Market Research Lab — What We Collect and Why</h3><p>Most market commentary is storytelling.</p></a></div>
+        <p class="nall"><a href="../../">Browse every study on Market Flow Research →</a></p>
+      </div>
+
+      <h2>Comments</h2>
+      <p style="color:var(--muted)">Discussion is powered by GitHub. Enable it by adding <code>secrets/giscus.json</code> (repo IDs from giscus.app).</p>
+
+      <a class="back" href="../../">← All research</a>
+    </article>
+  </div>
+
+  <footer>
+    <div class="wrap" style="padding:0 22px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center">
+      <span class="badge"><span class="dot"></span>AI-assisted research · human-reviewed</span>
+      <span>© <span id="yr">2026</span> Market Flow Research</span>
+    </div>
+  </footer>
+
+  <script>
+    try{var st=localStorage.getItem("mfr_theme");if(st)document.body.setAttribute("data-theme",st);}catch(e){}
+    document.getElementById("yr").textContent=new Date().getFullYear();
+    function tl(){document.getElementById("themeBtn").textContent=document.body.getAttribute("data-theme")==="light"?"☀️":"🌙";}
+    tl();
+    document.getElementById("themeBtn").onclick=function(){
+      var t=document.body.getAttribute("data-theme")==="light"?"dark":"light";
+      document.body.setAttribute("data-theme",t);try{localStorage.setItem("mfr_theme",t);}catch(e){}tl();
+    };
+  </script>
+</body>
+</html>
