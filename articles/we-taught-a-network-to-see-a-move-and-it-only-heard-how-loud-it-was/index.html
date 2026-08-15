@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>We Taught a Network to See a Move. It Only Heard How Loud It Was. — Market Flow Research</title>
+  <meta name="description" content="We trained three networks on the same 56,263 order-book windows and learned two things we did not want to learn. A single number — how loud the window is — matches a convolutional network on all 1,680 of them (0.7575 against 0.7571). And once you match windows by that number, the inflow features tha" />
+  <meta name="keywords" content="" />
+
+  <link rel="canonical" href="https://marketflowresear.ch/articles/we-taught-a-network-to-see-a-move-and-it-only-heard-how-loud-it-was/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Market Flow Research" />
+  <meta property="og:title" content="We Taught a Network to See a Move. It Only Heard How Loud It Was." />
+  <meta property="og:description" content="We trained three networks on the same 56,263 order-book windows and learned two things we did not want to learn. A single number — how loud the window is — matches a convolutional network on all 1,680 of them (0.7575 against 0.7571). And once you match windows by that number, the inflow features tha" />
+  <meta property="og:url" content="https://marketflowresear.ch/articles/we-taught-a-network-to-see-a-move-and-it-only-heard-how-loud-it-was/" />
+  <meta property="og:image" content="https://marketflowresear.ch/articles/we-taught-a-network-to-see-a-move-and-it-only-heard-how-loud-it-was/img/zznet_models_en.png" />
+  <meta property="og:image:width" content="1313" />
+  <meta property="og:image:height" content="474" />
+  <meta property="article:published_time" content="2026-08-15" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="We Taught a Network to See a Move. It Only Heard How Loud It Was." />
+  <meta name="twitter:description" content="We trained three networks on the same 56,263 order-book windows and learned two things we did not want to learn. A single number — how loud the window is — matches a convolutional network on all 1,680 of them (0.7575 against 0.7571). And once you match windows by that number, the inflow features tha" />
+  <meta name="twitter:image" content="https://marketflowresear.ch/articles/we-taught-a-network-to-see-a-move-and-it-only-heard-how-loud-it-was/img/zznet_models_en.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "We Taught a Network to See a Move. It Only Heard How Loud It Was.",
+    "description": "We trained three networks on the same 56,263 order-book windows and learned two things we did not want to learn. A single number \u2014 how loud the window is \u2014 matches a convolutional network on all 1,680 of them (0.7575 against 0.7571). And once you match windows by that number, the inflow features tha",
+    "datePublished": "2026-08-15",
+    "inLanguage": "en",
+    "image": "https://marketflowresear.ch/articles/we-taught-a-network-to-see-a-move-and-it-only-heard-how-loud-it-was/img/zznet_models_en.png",
+    "author": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "publisher": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "mainEntityOfPage": "https://marketflowresear.ch/articles/we-taught-a-network-to-see-a-move-and-it-only-heard-how-loud-it-was/",
+    "creativeWorkStatus": "AI-assisted, human-reviewed"
+  }
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230b0d12'/><path d='M14 66 L34 46 L48 58 L70 30 L86 30' fill='none' stroke='%2340e0a0' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
+
+  <style>
+    :root{--bg:#0b0d12;--panel:#12151d;--ink:#e8ecf3;--muted:#8a93a6;--line:#232838;--accent:#40e0a0;--accent-dim:#1c3a2f}
+    body[data-theme="light"]{--bg:#ffffff;--panel:#f6f8fb;--ink:#12151d;--muted:#5b6472;--line:#e4e8ef;--accent:#0a9c69;--accent-dim:#e6f7f0}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{background:var(--bg);color:var(--ink);font:17px/1.72 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:720px;margin:0 auto;padding:0 22px}
+    .bar{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+    .brand{font-weight:800;letter-spacing:.13em;font-size:13px;text-transform:uppercase;text-decoration:none;color:var(--ink)}
+    .btn{cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:10px;padding:7px 11px;font-size:13px;font-weight:600}
+    article{padding:18px 0 40px}
+    .tag{display:inline-block;background:var(--panel);border:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+    h1{font-size:clamp(26px,5vw,38px);line-height:1.15;margin:16px 0 10px;letter-spacing:-.01em}
+    .lede{color:var(--muted);font-size:19px;margin:0 0 18px}
+    .meta{color:var(--muted);font-size:14px;margin-bottom:26px}
+    article h2{font-size:20px;margin:34px 0 10px}
+    article p{margin:0 0 18px}
+    article b{color:var(--ink)}
+    .video{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:8px 0 6px;background:#000}
+    .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    figure{margin:24px 0}
+    figure img{width:100%;border:1px solid var(--line);border-radius:14px;display:block;background:var(--panel)}
+    figcaption{color:var(--muted);font-size:13px;margin-top:8px;text-align:center}
+    .next{margin:40px 0 6px}
+    .next .h2{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+    .next .nlead{color:var(--ink);font-size:16px;margin:0 0 16px;line-height:1.6}
+    .next .nlink{color:var(--accent);font-weight:700;text-decoration:none;border-bottom:1px solid var(--accent-dim)}
+    .next .nlink:hover{border-bottom-color:var(--accent)}
+    .next .nall{margin:16px 0 0;font-size:14px}
+    .next .nall a{color:var(--accent);text-decoration:none;font-weight:600}
+    .ncards{display:grid;grid-template-columns:1fr;gap:14px}
+    @media(min-width:640px){.ncards{grid-template-columns:1fr 1fr}}
+    .ncard{display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;transition:border-color .15s,transform .15s}
+    .ncard:hover{border-color:var(--accent);transform:translateY(-2px)}
+    .ncard h3{margin:0 0 6px;font-size:16px}
+    .ncard p{margin:0;color:var(--muted);font-size:13px}
+    .aibox{margin:34px 0 0;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--muted);font-size:14px}
+    .back{display:inline-block;margin:30px 0 0;color:var(--accent);text-decoration:none;font-weight:600}
+    footer{border-top:1px solid var(--line);margin-top:20px;padding:22px 0 44px;color:var(--muted);font-size:13px}
+    .badge{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:999px;padding:5px 11px}
+    .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="../../">← Market Flow Research</a>
+      <span class="btn" id="themeBtn">🌙</span>
+    </div>
+
+    <article>
+      <span class="tag">Moves, not noise</span>
+      <h1>We Taught a Network to See a Move. It Only Heard How Loud It Was.</h1>
+      <p class="lede">We trained three networks on the same 56,263 order-book windows and learned two things we did not want to learn. A single number — how loud the window is — matches a convolutional network on all 1,680 of them (0.7575 against 0.7571). And once you match windows by that number, the inflow features that carried the whole model separate nothing at all. What does survive is small, directional, and points at a different kind of bot than the one we set out to build.</p>
+      <div class="meta">Research note · 15 August 2026 · AI-assisted, human-reviewed</div>
+
+      
+
+      <h2>① Three targets and an honest split</h2>
+      <p>We had a cleaned dataset and no idea whether the cleaning meant
+anything. The chain that produced it — density clustering, then k-means, then k-means
+again — threw away 25,051 of 56,263 windows and kept
+823 of 863 reversal windows. So the discarded part earned
+a name: <b>«no reversal possible»</b>. Over 175 days it contains 40
+reversal windows in total.</p>
+      <p>Three networks, one recipe. Each sees exactly 1,680 raw numbers of a 210-second window —
+no price, no time of day, no normalisation against history, no answers from other
+detectors.</p>
+      <p>| target | windows | positives | base rate |
+|---|---|---|---|
+| «no reversal possible» | 56,263 | 25,051 | 44.52% |
+| cleaned dataset (the mirror) | 56,263 | 31,212 | 55.48% |
+| reversal, inside the cleaned data | 31,212 | 823 | 2.64% |</p>
+      <p>The split matters more than the architecture. The timeline is cut into 50 contiguous
+chunks of equal window count, and the chunks are dealt into five parts so that each part
+holds a proportional number of <b>reversals</b> — not just a proportional number of windows.
+The result: 11,253-11,252 windows and
+172-174 reversal
+windows per part. Each part is the test set once; a 30-minute embargo keeps the
+neighbouring window out of training, because a 210-second window is very close to its
+neighbour and without the embargo the model simply reads the answer off it.</p>
+      <p>Architecture is chosen by a grid of 18 configurations on a <b>different</b> split — screening
+parameters on the same folds you report is peeking.</p>
+      <p>Everything in this series feeds one goal: an automated trading bot that reads the order book instead of the price. Every number below is the honest, out-of-fold kind: each window scored by a model
+that never saw it.</p>
+      <figure><img src="img/zznet_models_en.png" alt="① Three targets and an honest split" loading="lazy"><figcaption>① Three targets and an honest split</figcaption></figure>
+
+      <h2>② The ceiling: one number, and what is under it</h2>
+      <p>The two mirror targets are learned almost perfectly. The reversal is not.</p>
+      <p>| target | dilated conv on 1,680 numbers | logistic regression on 8 levels | boosting on 40 descriptors | null control |
+|---|---|---|---|---|
+| «no reversal possible» | 0.9854 | 0.9840 | <b>0.9926</b> | 0.4885 |
+| cleaned dataset | 0.9877 | 0.9840 | <b>0.9926</b> | 0.4887 |
+| reversal | 0.7571 | <b>0.7564</b> | 0.7406 | 0.4851 |</p>
+      <p>Two things to say plainly. First, the network <b>lost in all three targets</b> — to boosting
+on 40 descriptors in the mirror pair, and to a logistic regression on eight numbers in the
+reversal task. Fourth line of this project to end that way.</p>
+      <p>Second, and more important: the mirror labels are a deterministic function of the same
+1,680 numbers, so 0.99 proves nothing by itself. What it does prove is that the boundary
+<b>holds on time the model never saw</b> — the null control, the same label shifted along the
+time axis, sits at 0.488.</p>
+      <p>Then we measured the ceiling. One number — the mean level of the six flow features in the
+window, what we call loudness — separates a reversal from the rest of the cleaned dataset
+at AUC <b>0.7575</b>. The network on all 1,680 numbers: 0.7571.</p>
+      <p>So we matched them. For each of the 823 reversal windows we picked a
+non-reversal window with the nearest loudness (3.9189 against
+3.9188; the AUC of loudness itself is now exactly 0.500).
+Everything that survives that is no longer level — it is composition.</p>
+      <p>| measured on loudness-matched windows | AUC |
+|---|---|
+| the four inflow/outflow features | 0.510 — 0.501 (nothing) |
+| both const walls | 0.433 (thinner on a reversal) |
+| both volumes | 0.539 |
+| volumes minus walls | <b>0.565</b> |</p>
+      <p>The inflow — the thing carrying the entire performance of the current model — separates
+<b>nothing</b> once loudness is equalised. What is left of a reversal is thinner constant
+walls and slightly more volume, worth about 0.56 AUC.</p>
+      <p>Everything in this series feeds one goal: an automated trading bot that reads the order book instead of the price. A model whose skill equals a single average is not a model we can improve by making
+it deeper. That is why the next one will not be built on level at all.</p>
+      <figure><img src="img/zznet_ceiling_en.png" alt="② The ceiling: one number, and what is under it" loading="lazy"><figcaption>② The ceiling: one number, and what is under it</figcaption></figure>
+
+      <h2>③ Direction: invisible in the move, visible at the turn</h2>
+      <p>If the book cannot tell a reversal from an ordinary loud moment, can it at
+least tell <b>which way</b> the market is going? We split the question in two, because the
+answers turn out to be opposite.</p>
+      <p><b>Inside the body of a move</b> — nothing. 13,597 windows in an up-leg against
+15,814 in a down-leg, loudness practically identical (3.350 against
+3.327), and after correcting for it no feature moves further from 0.5 than
+0.032. The order book does not
+know which half of the move it is in. That reproduces what a different line of this
+project found on 40 descriptors, by a different road.</p>
+      <p><b>At the turn itself</b> — quite a lot. 407 tops against 416 bottoms:</p>
+      <p>| measured inside deciles of loudness | AUC towards the top |
+|---|---|
+| loudness — control | 0.507 |
+| vol_sell | <b>0.617</b> |
+| const_support | 0.587 |
+| both const walls | 0.569 |
+| support_plus | 0.399 (i.e. towards the <b>bottom</b>) |</p>
+      <p>The correction is not cosmetic. In the raw levels `vol_sell` is <em>higher at bottoms</em>
+(0.353 against 0.224) — because bottoms are simply
+louder events (4.029 against 3.807). At equal loudness the sign
+flips and selling volume marks the <b>top</b>. A textbook Simpson&#x27;s paradox sitting in the
+middle of a trading dataset.</p>
+      <p>And one quantity tracks the direction of the move without being a shadow of loudness at
+all — the net growth of a wall per unit of aggression hitting it,
+`(inflow − outflow) / volume`:</p>
+      <p>| period | sell wall per unit of buying | buy wall per unit of selling |
+|---|---|---|
+| bottom | <b>18.42</b> | 13.87 |
+| leg down | 19.16 | 15.58 |
+| leg up | 16.80 | 17.09 |
+| top | 14.47 | <b>16.95</b> |
+| non-reversal, loudness-matched | 17.07 | 17.47 |</p>
+      <p>In a fall the sellers&#x27; wall rebuilds faster per unit of buying; in a rise, mirror image;
+in a matched ordinary moment, balance. In the quietest and the loudest subsets the gap is
+the same size, so this is not level in disguise.</p>
+      <p>Everything in this series feeds one goal: an automated trading bot that reads the order book instead of the price. This is the first directional quantity in the series that survives the loudness
+correction, and it points at a specific kind of bot: not one that predicts direction, but
+one that decides whether to <b>keep holding</b>.</p>
+      <figure><img src="img/zznet_side_en.png" alt="③ Direction: invisible in the move, visible at the turn" loading="lazy"><figcaption>③ Direction: invisible in the move, visible at the turn</figcaption></figure>
+
+      <h2>④ A week the models had never seen</h2>
+      <p>Everything above is measured on data the models were trained on, out of
+fold. The last check is different: 2,506 windows recorded <b>after</b> the
+dataset was frozen — 6.54 days the networks could not have seen, scored with
+frozen weights and frozen thresholds, nothing retrained, nothing recalibrated.</p>
+      <p>| model | fires on the fresh week | fired on the training period |
+|---|---|---|
+| «no reversal possible» | <b>70.75%</b> | 44.50% |
+| cleaned dataset | 30.97% | 55.44% |
+| reversal | 0.16% | 1.57% |</p>
+      <p>The week reads, to the order book, as markedly less reversal-capable than the average of
+the dataset. We cannot check that against a label: the cleaning chain rests on density
+clustering, and density clustering cannot assign new points to old clusters. So on fresh
+data these two targets have a model answer and no ground truth — we report the frequency
+and nothing else.</p>
+      <p>What we <em>can</em> check is the two mirror models against each other. They were trained
+separately, on opposite labels, with different architectures chosen by different grids.
+On the fresh week they disagree on 187 windows out of
+2,506 — 7.5%. That number is
+their own noise floor, and it is small.</p>
+      <p>A footnote worth keeping: in 6.5 days the 2.3% zigzag produced exactly
+<b>one</b> raw pivot and zero completed legs. Not a flat market — the price moved
+-3.10% — simply too short a stretch for alternating 2.3% legs. Anyone
+validating a reversal model on a week of data is validating it on one event.</p>
+      <p><b>What is next.</b> The direction quantity from the previous section goes into a written
+specification — <b>MOVE_HOLD.md</b>, downloadable below — for a <em>holding</em> indicator rather
+than an entry signal: the trade is already open, and the question is whether the book
+still supports the move. The document states the metric (percentage of the leg captured,
+measured on 120 legs rather than on windows), the seven traps, a table of control numbers
+with tolerances, and the list of directions already closed so nobody re-opens them.
+Everything in this series feeds one goal: an automated trading bot that reads the order book instead of the price. And it names the number that would kill the idea: if the quantity falls inside the
+null control at the level of moves, the holding indicator closes exactly as direction
+prediction did.</p>
+      <figure><img src="img/zznet_fresh_en.png" alt="④ A week the models had never seen" loading="lazy"><figcaption>④ A week the models had never seen</figcaption></figure>
+
+      <div class="aibox">🤖 This research — data collection, analysis, charts and the narrated
+      video — was produced with the assistance of AI, then reviewed by a human. We forecast
+      volatility, not direction, and log every prediction. <em>Research, not financial advice.</em></div>
+
+      <div class="next">
+        <div class="h2">Read next</div>
+        <p class="nlead">If this changed how you read the tape, the natural next step is <a class="nlink" href="/articles/volume-is-fuel-not-steering-wheel/">Volume Is the Fuel — Not the Steering Wheel</a> — We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p>
+        <div class="ncards"><a class="ncard" href="/articles/volume-is-fuel-not-steering-wheel/"><h3>Volume Is the Fuel — Not the Steering Wheel</h3><p>We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p></a><a class="ncard" href="/articles/about-market-research-lab/"><h3>About Market Research Lab — What We Collect and Why</h3><p>Most market commentary is storytelling.</p></a><a class="ncard" href="/articles/signal-standard-from-calm-to-calm-btc/"><h3>From Calm to Calm: a Standard for What Counts as a Signal (BTC)</h3><p>We stopped defining market signals with a stopwatch.</p></a><a class="ncard" href="/articles/resting-walls-what-thick-liquidity-predicts/"><h3>The Wall That Goes Quiet: What Resting Liquidity Predicts</h3><p>We measured resting limit liquidity sitting on both sides of the book second by second across six coins, and asked the only question that matters:….</p></a></div>
+        <p class="nall"><a href="../../">Browse every study on Market Flow Research →</a></p>
+      </div>
+
+      <h2>Comments</h2>
+      <p style="color:var(--muted)">Discussion is powered by GitHub. Enable it by adding <code>secrets/giscus.json</code> (repo IDs from giscus.app).</p>
+
+      <a class="back" href="../../">← All research</a>
+    </article>
+  </div>
+
+  <footer>
+    <div class="wrap" style="padding:0 22px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center">
+      <span class="badge"><span class="dot"></span>AI-assisted research · human-reviewed</span>
+      <span>© <span id="yr">2026</span> Market Flow Research</span>
+    </div>
+  </footer>
+
+  <script>
+    try{var st=localStorage.getItem("mfr_theme");if(st)document.body.setAttribute("data-theme",st);}catch(e){}
+    document.getElementById("yr").textContent=new Date().getFullYear();
+    function tl(){document.getElementById("themeBtn").textContent=document.body.getAttribute("data-theme")==="light"?"☀️":"🌙";}
+    tl();
+    document.getElementById("themeBtn").onclick=function(){
+      var t=document.body.getAttribute("data-theme")==="light"?"dark":"light";
+      document.body.setAttribute("data-theme",t);try{localStorage.setItem("mfr_theme",t);}catch(e){}tl();
+    };
+  </script>
+</body>
+</html>
