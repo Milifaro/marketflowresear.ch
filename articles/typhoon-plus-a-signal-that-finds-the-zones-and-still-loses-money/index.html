@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Typhoon+: A Signal That Finds the Perfect Trader&#x27;s Zones — and Still Loses Money — Market Flow Research</title>
+  <meta name="description" content="We drew the zones a perfect trader would use — 0.9% zigzag turns, a 0.15% band around each one — and found that the price sits inside them barely 3% of the time. A single gradient-boosting model, pooled over six coins, then finds 74% of those zones on days it never saw. It also fires false 86% of th" />
+  <meta name="keywords" content="" />
+
+  <link rel="canonical" href="https://marketflowresear.ch/articles/typhoon-plus-a-signal-that-finds-the-zones-and-still-loses-money/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Market Flow Research" />
+  <meta property="og:title" content="Typhoon+: A Signal That Finds the Perfect Trader&#x27;s Zones — and Still Loses Money" />
+  <meta property="og:description" content="We drew the zones a perfect trader would use — 0.9% zigzag turns, a 0.15% band around each one — and found that the price sits inside them barely 3% of the time. A single gradient-boosting model, pooled over six coins, then finds 74% of those zones on days it never saw. It also fires false 86% of th" />
+  <meta property="og:url" content="https://marketflowresear.ch/articles/typhoon-plus-a-signal-that-finds-the-zones-and-still-loses-money/" />
+  <meta property="og:image" content="https://marketflowresear.ch/articles/typhoon-plus-a-signal-that-finds-the-zones-and-still-loses-money/img/tplus_zones_en.png" />
+  <meta property="og:image:width" content="1088" />
+  <meta property="og:image:height" content="466" />
+  <meta property="article:published_time" content="2026-08-17" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Typhoon+: A Signal That Finds the Perfect Trader&#x27;s Zones — and Still Loses Money" />
+  <meta name="twitter:description" content="We drew the zones a perfect trader would use — 0.9% zigzag turns, a 0.15% band around each one — and found that the price sits inside them barely 3% of the time. A single gradient-boosting model, pooled over six coins, then finds 74% of those zones on days it never saw. It also fires false 86% of th" />
+  <meta name="twitter:image" content="https://marketflowresear.ch/articles/typhoon-plus-a-signal-that-finds-the-zones-and-still-loses-money/img/tplus_zones_en.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Typhoon+: A Signal That Finds the Perfect Trader's Zones \u2014 and Still Loses Money",
+    "description": "We drew the zones a perfect trader would use \u2014 0.9% zigzag turns, a 0.15% band around each one \u2014 and found that the price sits inside them barely 3% of the time. A single gradient-boosting model, pooled over six coins, then finds 74% of those zones on days it never saw. It also fires false 86% of th",
+    "datePublished": "2026-08-17",
+    "inLanguage": "en",
+    "image": "https://marketflowresear.ch/articles/typhoon-plus-a-signal-that-finds-the-zones-and-still-loses-money/img/tplus_zones_en.png",
+    "author": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "publisher": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "mainEntityOfPage": "https://marketflowresear.ch/articles/typhoon-plus-a-signal-that-finds-the-zones-and-still-loses-money/",
+    "creativeWorkStatus": "AI-assisted, human-reviewed"
+  }
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230b0d12'/><path d='M14 66 L34 46 L48 58 L70 30 L86 30' fill='none' stroke='%2340e0a0' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
+
+  <style>
+    :root{--bg:#0b0d12;--panel:#12151d;--ink:#e8ecf3;--muted:#8a93a6;--line:#232838;--accent:#40e0a0;--accent-dim:#1c3a2f}
+    body[data-theme="light"]{--bg:#ffffff;--panel:#f6f8fb;--ink:#12151d;--muted:#5b6472;--line:#e4e8ef;--accent:#0a9c69;--accent-dim:#e6f7f0}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{background:var(--bg);color:var(--ink);font:17px/1.72 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:720px;margin:0 auto;padding:0 22px}
+    .bar{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+    .brand{font-weight:800;letter-spacing:.13em;font-size:13px;text-transform:uppercase;text-decoration:none;color:var(--ink)}
+    .btn{cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:10px;padding:7px 11px;font-size:13px;font-weight:600}
+    article{padding:18px 0 40px}
+    .tag{display:inline-block;background:var(--panel);border:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+    h1{font-size:clamp(26px,5vw,38px);line-height:1.15;margin:16px 0 10px;letter-spacing:-.01em}
+    .lede{color:var(--muted);font-size:19px;margin:0 0 18px}
+    .meta{color:var(--muted);font-size:14px;margin-bottom:26px}
+    article h2{font-size:20px;margin:34px 0 10px}
+    article p{margin:0 0 18px}
+    article b{color:var(--ink)}
+    .video{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:8px 0 6px;background:#000}
+    .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    figure{margin:24px 0}
+    figure img{width:100%;border:1px solid var(--line);border-radius:14px;display:block;background:var(--panel)}
+    figcaption{color:var(--muted);font-size:13px;margin-top:8px;text-align:center}
+    .next{margin:40px 0 6px}
+    .next .h2{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+    .next .nlead{color:var(--ink);font-size:16px;margin:0 0 16px;line-height:1.6}
+    .next .nlink{color:var(--accent);font-weight:700;text-decoration:none;border-bottom:1px solid var(--accent-dim)}
+    .next .nlink:hover{border-bottom-color:var(--accent)}
+    .next .nall{margin:16px 0 0;font-size:14px}
+    .next .nall a{color:var(--accent);text-decoration:none;font-weight:600}
+    .ncards{display:grid;grid-template-columns:1fr;gap:14px}
+    @media(min-width:640px){.ncards{grid-template-columns:1fr 1fr}}
+    .ncard{display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;transition:border-color .15s,transform .15s}
+    .ncard:hover{border-color:var(--accent);transform:translateY(-2px)}
+    .ncard h3{margin:0 0 6px;font-size:16px}
+    .ncard p{margin:0;color:var(--muted);font-size:13px}
+    .aibox{margin:34px 0 0;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--muted);font-size:14px}
+    .back{display:inline-block;margin:30px 0 0;color:var(--accent);text-decoration:none;font-weight:600}
+    footer{border-top:1px solid var(--line);margin-top:20px;padding:22px 0 44px;color:var(--muted);font-size:13px}
+    .badge{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:999px;padding:5px 11px}
+    .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="../../">← Market Flow Research</a>
+      <span class="btn" id="themeBtn">🌙</span>
+    </div>
+
+    <article>
+      <span class="tag">Typhoon+</span>
+      <h1>Typhoon+: A Signal That Finds the Perfect Trader&#x27;s Zones — and Still Loses Money</h1>
+      <p class="lede">We drew the zones a perfect trader would use — 0.9% zigzag turns, a 0.15% band around each one — and found that the price sits inside them barely 3% of the time. A single gradient-boosting model, pooled over six coins, then finds 74% of those zones on days it never saw. It also fires false 86% of the time, leans mostly on price geometry rather than the order book, and loses 122% when traded plainly against 93% for buy &amp; hold. This is the article about a signal that finds the right places and still cannot pay the fee.</p>
+      <div class="meta">Research note · 17 August 2026 · AI-assisted, human-reviewed</div>
+
+      
+
+      <h2>① The zones a perfect trader would use</h2>
+      <p>Start from the answer instead of the model. If a trader knew the future,
+where exactly would they act? Not everywhere — a perfect trader touches the market only at
+turns, and spends the rest of the time doing nothing. So we drew those places first and
+only then asked whether the order book can see them.</p>
+      <p>A <b>zone</b> is built in two steps on 60-second bars. First a zigzag with a
+0.9% threshold marks every turn where the price reversed by at least that
+much. Then, around each turn, we take the continuous stretch of bars whose price stays
+within 0.15% of the extreme — that stretch is the zone, the window inside
+which acting is as good as acting exactly at the turn. Neighbouring zones are kept at least
+0.6% apart in price, so two zones can never be the same event
+counted twice.</p>
+      <p>The result is the first honest number of this line: <b>5,326 zones across six coins</b>,
+between 4.0 (BNB) and 8.7 (SOL) per day,
+and the price sits inside a zone only **2.6
+– 3.3% of the time**. Roughly 97% of all
+minutes are, for a perfect trader, waiting.</p>
+      <p>That waiting has a price tag. On BTC alone the perfect trader takes
+196 trades over the validation period — 4.47 a day — on moves
+averaging 2.00%, netting 1.436% per trade
+after fees, or <b>6.42% a day</b>. Across six coins the perfect trader
+finishes the same period at <b>2448%</b>. That is the ceiling this
+line is measured against — not a benchmark we expect to reach, but the yardstick that turns
+&quot;the signal looks good&quot; into a number.</p>
+      <figure><img src="img/tplus_zones_en.png" alt="① The zones a perfect trader would use" loading="lazy"><figcaption>① The zones a perfect trader would use</figcaption></figure>
+
+      <h2>② One model, six coins, four wrong calls in five</h2>
+      <p>One model for all six coins, not six models. The training pool mixes every
+coin&#x27;s bars, the split is chronological — **the first 70% of days train, the last 30%
+validate** and are never seen during training — and the engine is gradient boosting. The
+signal fires when the model&#x27;s score passes a threshold picked on train alone:
+τ = 0.87 for buy zones, 0.85 for sell zones.</p>
+      <p>It transfers. On unseen days the signal still covers **74.5% of buy
+zones and 79.1% of sell zones**, against
+85.7% / 89.8% on train. A drop, but not a
+collapse: what the model learned about one coin&#x27;s turns is not coin-specific folklore.</p>
+      <p>And now the number that decides everything. Of all the signal runs it produces on unseen
+days, <b>86.2% are false</b> — they fire where no zone was. Precision
+of a run is 0.209 for buys and
+0.214 for sells. Read the two facts together: the signal finds
+most of the real turns <em>and</em> four out of five of its calls are wrong. It is a wide net, not
+a scalpel.</p>
+      <p>There is a second, less comfortable finding in the feature importances. The top inputs are
+`pos_60` (0.331) and `pos_240` (0.240) — where the
+current price sits inside its own range over the last hour and last four hours — with
+`range_240` and `ret_5` behind them. Price geometry accounts for about
+84% of the model&#x27;s attention. The order-book features are in the input and
+they are not what the model leans on. A model that mostly says &quot;the price is near the edge
+of its recent range&quot; is a useful zone finder and a weak claim about the book.</p>
+      <figure><img src="img/tplus_signal_en.png" alt="② One model, six coins, four wrong calls in five" loading="lazy"><figcaption>② One model, six coins, four wrong calls in five</figcaption></figure>
+
+      <h2>③ Trading it: −122% against −93% for buy &amp; hold</h2>
+      <p>A zone finder is not a trading system, and this is where the line stops being
+flattering. The rule we tested is the plainest one that follows from the signal: enter on
+the onset of a signal run confirmed by 2 bars, exit on the
+first opposite run or at the end of the session, 42-hour sessions, at most
+12 trades a day — the project&#x27;s standard.</p>
+      <p>On unseen days, over six coins: **-122.3% net against
+-93.0% for buy &amp; hold**. Positive on 0 of 6 coins, better than
+buy &amp; hold on 1 of 6. Capture of the perfect trader&#x27;s result:
+<b>-5.0%</b> — not a fraction of the ceiling, the wrong side of
+zero.</p>
+      <p>BTC shows where the money goes. 66 trades, 1.51 a day,
+median holding 230 minutes, win rate 53% —
+more winners than losers. And still:</p>
+      <p>| component | BTC, % over the period |
+|---|---|
+| winning trades | +23.3 |
+| losing trades | -46.1 |
+| fees paid | −17.2 |
+| <b>net</b> | <b>-22.8</b> |</p>
+      <p>Gross per trade is -0.085% — <b>before any fee at all</b> — and net is
+-0.345%. That ordering matters. The fee is not what turns a winning
+rule into a losing one here; the rule has no edge to begin with, and the fee then triples
+the loss. Winning more often than losing is not the same as winning: the losers are simply
+bigger. (The fee in this test is 0.13% per action, the tariff at
+the time; the project&#x27;s current standard is 0.15%, which makes this worse, not better.)</p>
+      <p>Three things carry forward from this line, and all three shaped the bots we run now. A
+signal that <em>finds</em> turns is not a signal that <em>pays</em> for them — coverage and profit are
+different measurements. Anything that fires often must be gated, which is the subject of its
+own article. And the perfect-trader ceiling is the most useful number we built here: it
+turns &quot;our strategy is down 5%&quot; into &quot;we captured −5% of what was there&quot;, which is a
+sentence you can act on.</p>
+      <figure><img src="img/tplus_trade_en.png" alt="③ Trading it: −122% against −93% for buy &amp; hold" loading="lazy"><figcaption>③ Trading it: −122% against −93% for buy &amp; hold</figcaption></figure>
+
+      <div class="aibox">🤖 This research — data collection, analysis, charts and the narrated
+      video — was produced with the assistance of AI, then reviewed by a human. We forecast
+      volatility, not direction, and log every prediction. <em>Research, not financial advice.</em></div>
+
+      <div class="next">
+        <div class="h2">Read next</div>
+        <p class="nlead">If this changed how you read the tape, the natural next step is <a class="nlink" href="/articles/volume-is-fuel-not-steering-wheel/">Volume Is the Fuel — Not the Steering Wheel</a> — We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p>
+        <div class="ncards"><a class="ncard" href="/articles/volume-is-fuel-not-steering-wheel/"><h3>Volume Is the Fuel — Not the Steering Wheel</h3><p>We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p></a><a class="ncard" href="/articles/about-market-research-lab/"><h3>About Market Research Lab — What We Collect and Why</h3><p>Most market commentary is storytelling.</p></a><a class="ncard" href="/articles/signal-standard-from-calm-to-calm-btc/"><h3>From Calm to Calm: a Standard for What Counts as a Signal (BTC)</h3><p>We stopped defining market signals with a stopwatch.</p></a><a class="ncard" href="/articles/resting-walls-what-thick-liquidity-predicts/"><h3>The Wall That Goes Quiet: What Resting Liquidity Predicts</h3><p>We measured resting limit liquidity sitting on both sides of the book second by second across six coins, and asked the only question that matters:….</p></a></div>
+        <p class="nall"><a href="../../">Browse every study on Market Flow Research →</a></p>
+      </div>
+
+      <h2>Comments</h2>
+      <p style="color:var(--muted)">Discussion is powered by GitHub. Enable it by adding <code>secrets/giscus.json</code> (repo IDs from giscus.app).</p>
+
+      <a class="back" href="../../">← All research</a>
+    </article>
+  </div>
+
+  <footer>
+    <div class="wrap" style="padding:0 22px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center">
+      <span class="badge"><span class="dot"></span>AI-assisted research · human-reviewed</span>
+      <span>© <span id="yr">2026</span> Market Flow Research</span>
+    </div>
+  </footer>
+
+  <script>
+    try{var st=localStorage.getItem("mfr_theme");if(st)document.body.setAttribute("data-theme",st);}catch(e){}
+    document.getElementById("yr").textContent=new Date().getFullYear();
+    function tl(){document.getElementById("themeBtn").textContent=document.body.getAttribute("data-theme")==="light"?"☀️":"🌙";}
+    tl();
+    document.getElementById("themeBtn").onclick=function(){
+      var t=document.body.getAttribute("data-theme")==="light"?"dark":"light";
+      document.body.setAttribute("data-theme",t);try{localStorage.setItem("mfr_theme",t);}catch(e){}tl();
+    };
+  </script>
+</body>
+</html>
