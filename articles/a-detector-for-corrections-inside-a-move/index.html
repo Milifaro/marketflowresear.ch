@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>A Detector for Corrections Inside a Move — and Why It Took a New Way of Measuring — Market Flow Research</title>
+  <meta name="description" content="We stopped measuring how loud the order book is and started measuring how much wall stands per unit of aggression — eight features collapsed into four ratios. On that new scale a class appears that we could not see before: corrections inside a move, 5,396 of them, events that already look like a rev" />
+  <meta name="keywords" content="" />
+
+  <link rel="canonical" href="https://marketflowresear.ch/articles/a-detector-for-corrections-inside-a-move/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Market Flow Research" />
+  <meta property="og:title" content="A Detector for Corrections Inside a Move — and Why It Took a New Way of Measuring" />
+  <meta property="og:description" content="We stopped measuring how loud the order book is and started measuring how much wall stands per unit of aggression — eight features collapsed into four ratios. On that new scale a class appears that we could not see before: corrections inside a move, 5,396 of them, events that already look like a rev" />
+  <meta property="og:url" content="https://marketflowresear.ch/articles/a-detector-for-corrections-inside-a-move/" />
+  <meta property="og:image" content="https://marketflowresear.ch/articles/a-detector-for-corrections-inside-a-move/img/zzlegs_numbers_en.png" />
+  <meta property="og:image:width" content="1097" />
+  <meta property="og:image:height" content="492" />
+  <meta property="article:published_time" content="2026-08-31" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="A Detector for Corrections Inside a Move — and Why It Took a New Way of Measuring" />
+  <meta name="twitter:description" content="We stopped measuring how loud the order book is and started measuring how much wall stands per unit of aggression — eight features collapsed into four ratios. On that new scale a class appears that we could not see before: corrections inside a move, 5,396 of them, events that already look like a rev" />
+  <meta name="twitter:image" content="https://marketflowresear.ch/articles/a-detector-for-corrections-inside-a-move/img/zzlegs_numbers_en.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "A Detector for Corrections Inside a Move \u2014 and Why It Took a New Way of Measuring",
+    "description": "We stopped measuring how loud the order book is and started measuring how much wall stands per unit of aggression \u2014 eight features collapsed into four ratios. On that new scale a class appears that we could not see before: corrections inside a move, 5,396 of them, events that already look like a rev",
+    "datePublished": "2026-08-31",
+    "inLanguage": "en",
+    "image": "https://marketflowresear.ch/articles/a-detector-for-corrections-inside-a-move/img/zzlegs_numbers_en.png",
+    "author": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "publisher": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "mainEntityOfPage": "https://marketflowresear.ch/articles/a-detector-for-corrections-inside-a-move/",
+    "creativeWorkStatus": "AI-assisted, human-reviewed"
+  }
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230b0d12'/><path d='M14 66 L34 46 L48 58 L70 30 L86 30' fill='none' stroke='%2340e0a0' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
+
+  <style>
+    :root{--bg:#0b0d12;--panel:#12151d;--ink:#e8ecf3;--muted:#8a93a6;--line:#232838;--accent:#40e0a0;--accent-dim:#1c3a2f}
+    body[data-theme="light"]{--bg:#ffffff;--panel:#f6f8fb;--ink:#12151d;--muted:#5b6472;--line:#e4e8ef;--accent:#0a9c69;--accent-dim:#e6f7f0}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{background:var(--bg);color:var(--ink);font:17px/1.72 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:720px;margin:0 auto;padding:0 22px}
+    .bar{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+    .brand{font-weight:800;letter-spacing:.13em;font-size:13px;text-transform:uppercase;text-decoration:none;color:var(--ink)}
+    .btn{cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:10px;padding:7px 11px;font-size:13px;font-weight:600}
+    article{padding:18px 0 40px}
+    .tag{display:inline-block;background:var(--panel);border:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+    h1{font-size:clamp(26px,5vw,38px);line-height:1.15;margin:16px 0 10px;letter-spacing:-.01em}
+    .lede{color:var(--muted);font-size:19px;margin:0 0 18px}
+    .meta{color:var(--muted);font-size:14px;margin-bottom:26px}
+    article h2{font-size:20px;margin:34px 0 10px}
+    article p{margin:0 0 18px}
+    article b{color:var(--ink)}
+    .video{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:8px 0 6px;background:#000}
+    .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    figure{margin:24px 0}
+    figure img{width:100%;border:1px solid var(--line);border-radius:14px;display:block;background:var(--panel)}
+    figcaption{color:var(--muted);font-size:13px;margin-top:8px;text-align:center}
+    .next{margin:40px 0 6px}
+    .next .h2{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+    .next .nlead{color:var(--ink);font-size:16px;margin:0 0 16px;line-height:1.6}
+    .next .nlink{color:var(--accent);font-weight:700;text-decoration:none;border-bottom:1px solid var(--accent-dim)}
+    .next .nlink:hover{border-bottom-color:var(--accent)}
+    .next .nall{margin:16px 0 0;font-size:14px}
+    .next .nall a{color:var(--accent);text-decoration:none;font-weight:600}
+    .ncards{display:grid;grid-template-columns:1fr;gap:14px}
+    @media(min-width:640px){.ncards{grid-template-columns:1fr 1fr}}
+    .ncard{display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;transition:border-color .15s,transform .15s}
+    .ncard:hover{border-color:var(--accent);transform:translateY(-2px)}
+    .ncard h3{margin:0 0 6px;font-size:16px}
+    .ncard p{margin:0;color:var(--muted);font-size:13px}
+    .aibox{margin:34px 0 0;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--muted);font-size:14px}
+    .back{display:inline-block;margin:30px 0 0;color:var(--accent);text-decoration:none;font-weight:600}
+    footer{border-top:1px solid var(--line);margin-top:20px;padding:22px 0 44px;color:var(--muted);font-size:13px}
+    .badge{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:999px;padding:5px 11px}
+    .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="../../">← Market Flow Research</a>
+      <span class="btn" id="themeBtn">🌙</span>
+    </div>
+
+    <article>
+      <span class="tag">Corrections, not exits</span>
+      <h1>A Detector for Corrections Inside a Move — and Why It Took a New Way of Measuring</h1>
+      <p class="lede">We stopped measuring how loud the order book is and started measuring how much wall stands per unit of aggression — eight features collapsed into four ratios. On that new scale a class appears that we could not see before: corrections inside a move, 5,396 of them, events that already look like a reversal without being one. Three detectors find them at 0.94 precision on a held-out half, and an external 0.8% zigzag confirms the class survives after loudness is matched away (×1.69). For a bot, that is the difference between holding a trend and being shaken out of it.</p>
+      <div class="meta">Research note · 31 August 2026 · AI-assisted, human-reviewed</div>
+
+      
+
+      <h2>① Eight features become four ratios</h2>
+      <p>Every measurement system we built before this one asked the same
+question — <em>how loud is the market right now</em> — and every one of them ran into the same
+ceiling. A single number, the average level of six flow features, matched a convolutional
+network reading all 1,680 raw numbers of a window. Loudness was not one signal among many.
+It was the whole model.</p>
+      <p>So this line changed what a window <em>is</em>. A 210-second event used to be a matrix of
+210×8 raw numbers. Now it collapses in two steps:</p>
+      <p><b>Step one — eight averages.</b> For each of the eight order-book features, sum the 210
+seconds and divide by 210. One number per feature per event.</p>
+      <p><b>Step two — four ratios.</b> Each side of the book is divided by the aggression that hits
+it. The seller&#x27;s wall and the seller&#x27;s net gain are divided by buy volume; the buyer&#x27;s wall
+and the buyer&#x27;s net gain are divided by sell volume:</p>
+      <p>| number | what it measures |
+|---|---|
+| `const_resist / vol_buy` | how much seller wall stands per unit of buying |
+| `(resist_plus − resist_minus) / vol_buy` | how much seller wall is <em>gained</em> per unit of buying |
+| `const_support / vol_sell` | how much buyer wall stands per unit of selling |
+| `(support_plus − support_minus) / vol_sell` | how much buyer wall is <em>gained</em> per unit of selling |</p>
+      <p>Eight numbers to four, and the four are no longer measures of volume. They are measures of
+<b>resistance per unit of pressure</b> — a ratio, so a quiet minute and a violent minute are
+directly comparable. That is the whole trick, and it is the reason everything below works.</p>
+      <p>One rule about how these numbers are averaged, because it changes them by a factor of two.
+The ratio is computed <b>inside each event first</b>, and only then averaged over the class —
+every event weighs the same. Averaging the raw sums first and dividing afterwards weighs
+each event by its share of volume, and quiet windows, where the ratios are largest, almost
+vanish. On up legs the two conventions give 35.62 and 15.89 for the same set. We use the
+per-event one everywhere: the number in a table is exactly the centre of the cloud on the
+chart.</p>
+      <p>The dataset is the cleaned BTC set: <b>31,212 windows</b> of
+56,263, 175 days, 14 Feb – 8 Aug 2026. Inside it: 823 reversal
+windows of a 2.3% zigzag, 13,597 windows inside up legs, 15,814 inside down legs.
+A / (B + 1e-8) is the transform above; the tab shows every
+intermediate table.</p>
+      <figure><img src="img/zzlegs_numbers_en.png" alt="① Eight features become four ratios" loading="lazy"><figcaption>① Eight features become four ratios</figcaption></figure>
+
+      <h2>② The correction: a reversal that isn&#x27;t one</h2>
+      <p>A leg is a move of at least 2.3% in one direction. Inside it the price
+does not travel in a straight line — it stalls, pulls back, and continues. Those pauses are
+where a trading bot loses money: a stop gets hit, a position is closed, and the move
+resumes without you.</p>
+      <p>So we asked the four numbers a narrow question: **which events inside a leg already look
+like a reversal, without being one?** The similarity is scored by a logistic regression
+trained on «reversal versus everything else», measured strictly out of fold — five
+contiguous time blocks with a 30-minute embargo, because a 210-second window is very close
+to its neighbour and without the embargo the model reads the answer off it. Out-of-fold
+<b>AUC 0.7474</b>. The threshold is the <em>median score of the true reversals</em>:
+a correction is an event that, in book terms, looks no worse than half of the real turns.</p>
+      <p>That yields <b>2,563 corrections inside up legs</b>
+(18.9%) and <b>2,833 inside down legs</b>
+(17.9%).</p>
+      <p>They are not a weaker version of a reversal. They <b>overshoot</b> it, in the same direction:</p>
+      <p>| number (median) | reversal | correction | rest of the up leg |
+|---|---|---|---|
+| seller wall / buy volume | 11.40 | 6.64 | 29.45 |
+| buyer wall / sell volume | 10.54 | 6.89 | 28.08 |
+| wall difference (buyers − sellers) | -0.31 | 0.36 | -1.23 |</p>
+      <p>The rest of the leg carries a thick wall per unit of aggression — 29.4
+against 6.6 in a correction. The reversal sits <em>between</em> them. Read plainly: during a
+correction the walls thin out relative to the pressure hitting them, exactly as they do at
+a real turn, only more so.</p>
+      <p>The three-dimensional map of a leg shows the same thing without any labels in the input:
+corrections occupy a continuous band of the cloud rather than a separate island. That is
+the honest shape of this class — a region, not a lump.</p>
+      <figure><img src="img/zzlegs_umap_en.png" alt="② The correction: a reversal that isn&#x27;t one" loading="lazy"><figcaption>② The correction: a reversal that isn&#x27;t one</figcaption></figure>
+
+      <h2>③ Matched for loudness, checked from outside</h2>
+      <p>Every claim in this project has to survive the same two questions: *is it
+just loudness<em>, and </em>does anything outside the model agree*. Corrections are louder than
+reversals — median volume 0.514 against 0.395 — so the first question is not optional.</p>
+      <p><b>Loudness matched.</b> Split the up-leg events into ten deciles of loudness (the sum of six
+flow features) and compare a correction only against the rest of <em>its own</em> decile. The
+external check is a small 0.8% zigzag, 672 pivots, which the model never saw:
+does the event stand within ±14 minutes of a small local turn?</p>
+      <p>- corrections next to a small pivot: <b>31.2%</b>
+- expected if they behaved like their own decile: <b>18.5%</b>
+- lift after matching: <b>×1.69</b>
+- loudness on its own predicts nearness with AUC 0.597</p>
+      <p>The lift holds at 1.5–1.9 in nine deciles out of ten. For scale, true 2.3% reversals stand
+next to a small pivot 90.5% of the time — the check works.</p>
+      <p><b>Not a tail, a band.</b> Replace each number by its rank inside the leg — a monotone
+transform, order untouched — and the separation disappears: mean rank
+0.519 / 0.523 for corrections against
+0.495 / 0.495 for the rest. The reason is in the tails: only
+9.6% of corrections have a wall difference beyond ±10, against
+66.2% of the rest of the leg. The leg lives in both tails; the correction
+lives in the middle. No «greater than» threshold can catch that, which is precisely why a
+model is needed and why the earlier, cruder measurements missed it.</p>
+      <p><b>What we still cannot do.</b> Telling a real 2.3% reversal from a correction is a separate,
+much harder problem: AUC 0.670 on the four numbers against a shuffled-label null
+of 0.530, rising to 0.723 when loudness is added. Detecting *that
+something is happening<em> works. Deciding </em>whether the move ends here* does not, yet.</p>
+      <figure><img src="img/zzlegs_loud_en.png" alt="③ Matched for loudness, checked from outside" loading="lazy"><figcaption>③ Matched for loudness, checked from outside</figcaption></figure>
+
+      <h2>④ Three detectors, and what they are for</h2>
+      <p>Three detectors: one for up legs, one for down legs, one shared. The split
+is 50/50 by time — 20 contiguous blocks, even blocks train
+(15,606 windows), odd blocks validate (15,606). Contiguous on purpose: a
+random split lets the neighbouring window leak the answer.</p>
+      <p>Two grids. The first picks the model family <em>and the input class</em>; the second tunes the
+winner&#x27;s parameters while tracking the epoch curve, and takes the best epoch before
+overfitting.</p>
+      <p>| model | precision | recall | signals | hits | targets | base rate |
+|---|---|---|---|---|---|---|
+| up leg | 0.939 | 0.951 | 1,352 | 1,270 | 1,336 | 20.3% |
+| down leg | 0.920 | 0.939 | 1,349 | 1,241 | 1,322 | 17.2% |
+| shared | 0.935 | 0.934 | 2,653 | 2,482 | 2,658 | 18.6% |</p>
+      <p>All three chose the same input: <b>the four ratios</b>. Collapsing them further into two
+differences drops the best F1 from 0.93 to 0.61 — the class survives the step from
+eight numbers to four and dies at the step from four to two. That is the sharpest
+measurement result of this line.</p>
+      <p>This looks like a breakthrough in detecting corrections, and it points at something
+practical: <b>a bot that recognises a correction does not close a position into one.</b> False
+exits are the cheapest money a trend-following system loses, and this is the first
+measurement we have that marks those moments while they happen, at
+0.94 precision and 0.95 recall on data the model never saw.</p>
+      <p>Two honest limits, stated plainly. The label itself comes from a threshold on the same four
+numbers, so the high precision proves the detector reproduces the class cheaply and
+reliably — it does not prove the class exists on its own; the independent evidence for that
+is the ×1.69 lift of the previous section. And a correction signal does <b>not</b>
+mean the move will run further: after a signal a leg has 12.6
+hours left on average against 16.2 for an ordinary leg
+event. It marks a mature move, not a fresh one.</p>
+      <p>Both limits become the next articles: an independent label, and the same detector on the
+five remaining coins. Everything in this series feeds one goal: an automated trading bot that reads the order book instead of the price. The measurement system — eight features to four ratios per unit
+of aggression — is what made this step possible, and it is the piece we carry forward.</p>
+      <figure><img src="img/zzlegs_models_en.png" alt="④ Three detectors, and what they are for" loading="lazy"><figcaption>④ Three detectors, and what they are for</figcaption></figure>
+
+      <div class="aibox">🤖 This research — data collection, analysis, charts and the narrated
+      video — was produced with the assistance of AI, then reviewed by a human. We forecast
+      volatility, not direction, and log every prediction. <em>Research, not financial advice.</em></div>
+
+      <div class="next">
+        <div class="h2">Read next</div>
+        <p class="nlead">If this changed how you read the tape, the natural next step is <a class="nlink" href="/articles/volume-is-fuel-not-steering-wheel/">Volume Is the Fuel — Not the Steering Wheel</a> — We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p>
+        <div class="ncards"><a class="ncard" href="/articles/volume-is-fuel-not-steering-wheel/"><h3>Volume Is the Fuel — Not the Steering Wheel</h3><p>We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p></a><a class="ncard" href="/articles/about-market-research-lab/"><h3>About Market Research Lab — What We Collect and Why</h3><p>Most market commentary is storytelling.</p></a><a class="ncard" href="/articles/signal-standard-from-calm-to-calm-btc/"><h3>From Calm to Calm: a Standard for What Counts as a Signal (BTC)</h3><p>We stopped defining market signals with a stopwatch.</p></a><a class="ncard" href="/articles/resting-walls-what-thick-liquidity-predicts/"><h3>The Wall That Goes Quiet: What Resting Liquidity Predicts</h3><p>We measured resting limit liquidity sitting on both sides of the book second by second across six coins, and asked the only question that matters:….</p></a></div>
+        <p class="nall"><a href="../../">Browse every study on Market Flow Research →</a></p>
+      </div>
+
+      <h2>Comments</h2>
+      <p style="color:var(--muted)">Discussion is powered by GitHub. Enable it by adding <code>secrets/giscus.json</code> (repo IDs from giscus.app).</p>
+
+      <a class="back" href="../../">← All research</a>
+    </article>
+  </div>
+
+  <footer>
+    <div class="wrap" style="padding:0 22px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center">
+      <span class="badge"><span class="dot"></span>AI-assisted research · human-reviewed</span>
+      <span>© <span id="yr">2026</span> Market Flow Research</span>
+    </div>
+  </footer>
+
+  <script>
+    try{var st=localStorage.getItem("mfr_theme");if(st)document.body.setAttribute("data-theme",st);}catch(e){}
+    document.getElementById("yr").textContent=new Date().getFullYear();
+    function tl(){document.getElementById("themeBtn").textContent=document.body.getAttribute("data-theme")==="light"?"☀️":"🌙";}
+    tl();
+    document.getElementById("themeBtn").onclick=function(){
+      var t=document.body.getAttribute("data-theme")==="light"?"dark":"light";
+      document.body.setAttribute("data-theme",t);try{localStorage.setItem("mfr_theme",t);}catch(e){}tl();
+    };
+  </script>
+</body>
+</html>
