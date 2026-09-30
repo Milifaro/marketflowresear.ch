@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How Full Is This Leg? A Network That Finally Beats the Counter — by Reading Its Last Rows — Market Flow Research</title>
+  <meta name="description" content="Give a network the unfinished leg — everything from the last confirmed pivot to now, as one fixed-size canvas — and ask how complete it is. For the first time in this series a model beats the simple counter of events since the pivot on unseen weeks: fullness AUC 0.77 against 0.70, error 0.18 against" />
+  <meta name="keywords" content="" />
+
+  <link rel="canonical" href="https://marketflowresear.ch/articles/how-full-is-this-leg-a-network-that-finally-beats-the-counter/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Market Flow Research" />
+  <meta property="og:title" content="How Full Is This Leg? A Network That Finally Beats the Counter — by Reading Its Last Rows" />
+  <meta property="og:description" content="Give a network the unfinished leg — everything from the last confirmed pivot to now, as one fixed-size canvas — and ask how complete it is. For the first time in this series a model beats the simple counter of events since the pivot on unseen weeks: fullness AUC 0.77 against 0.70, error 0.18 against" />
+  <meta property="og:url" content="https://marketflowresear.ch/articles/how-full-is-this-leg-a-network-that-finally-beats-the-counter/" />
+  <meta property="og:image" content="https://marketflowresear.ch/articles/how-full-is-this-leg-a-network-that-finally-beats-the-counter/img/tb35_counter_en.png" />
+  <meta property="og:image:width" content="1104" />
+  <meta property="og:image:height" content="575" />
+  <meta property="article:published_time" content="2026-09-30" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How Full Is This Leg? A Network That Finally Beats the Counter — by Reading Its Last Rows" />
+  <meta name="twitter:description" content="Give a network the unfinished leg — everything from the last confirmed pivot to now, as one fixed-size canvas — and ask how complete it is. For the first time in this series a model beats the simple counter of events since the pivot on unseen weeks: fullness AUC 0.77 against 0.70, error 0.18 against" />
+  <meta name="twitter:image" content="https://marketflowresear.ch/articles/how-full-is-this-leg-a-network-that-finally-beats-the-counter/img/tb35_counter_en.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How Full Is This Leg? A Network That Finally Beats the Counter \u2014 by Reading Its Last Rows",
+    "description": "Give a network the unfinished leg \u2014 everything from the last confirmed pivot to now, as one fixed-size canvas \u2014 and ask how complete it is. For the first time in this series a model beats the simple counter of events since the pivot on unseen weeks: fullness AUC 0.77 against 0.70, error 0.18 against",
+    "datePublished": "2026-09-30",
+    "inLanguage": "en",
+    "image": "https://marketflowresear.ch/articles/how-full-is-this-leg-a-network-that-finally-beats-the-counter/img/tb35_counter_en.png",
+    "author": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "publisher": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "mainEntityOfPage": "https://marketflowresear.ch/articles/how-full-is-this-leg-a-network-that-finally-beats-the-counter/",
+    "creativeWorkStatus": "AI-assisted, human-reviewed"
+  }
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230b0d12'/><path d='M14 66 L34 46 L48 58 L70 30 L86 30' fill='none' stroke='%2340e0a0' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
+
+  <style>
+    :root{--bg:#0b0d12;--panel:#12151d;--ink:#e8ecf3;--muted:#8a93a6;--line:#232838;--accent:#40e0a0;--accent-dim:#1c3a2f}
+    body[data-theme="light"]{--bg:#ffffff;--panel:#f6f8fb;--ink:#12151d;--muted:#5b6472;--line:#e4e8ef;--accent:#0a9c69;--accent-dim:#e6f7f0}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{background:var(--bg);color:var(--ink);font:17px/1.72 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:720px;margin:0 auto;padding:0 22px}
+    .bar{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+    .brand{font-weight:800;letter-spacing:.13em;font-size:13px;text-transform:uppercase;text-decoration:none;color:var(--ink)}
+    .btn{cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:10px;padding:7px 11px;font-size:13px;font-weight:600}
+    article{padding:18px 0 40px}
+    .tag{display:inline-block;background:var(--panel);border:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+    h1{font-size:clamp(26px,5vw,38px);line-height:1.15;margin:16px 0 10px;letter-spacing:-.01em}
+    .lede{color:var(--muted);font-size:19px;margin:0 0 18px}
+    .meta{color:var(--muted);font-size:14px;margin-bottom:26px}
+    article h2{font-size:20px;margin:34px 0 10px}
+    article p{margin:0 0 18px}
+    article b{color:var(--ink)}
+    .video{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:8px 0 6px;background:#000}
+    .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    figure{margin:24px 0}
+    figure img{width:100%;border:1px solid var(--line);border-radius:14px;display:block;background:var(--panel)}
+    figcaption{color:var(--muted);font-size:13px;margin-top:8px;text-align:center}
+    .next{margin:40px 0 6px}
+    .next .h2{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+    .next .nlead{color:var(--ink);font-size:16px;margin:0 0 16px;line-height:1.6}
+    .next .nlink{color:var(--accent);font-weight:700;text-decoration:none;border-bottom:1px solid var(--accent-dim)}
+    .next .nlink:hover{border-bottom-color:var(--accent)}
+    .next .nall{margin:16px 0 0;font-size:14px}
+    .next .nall a{color:var(--accent);text-decoration:none;font-weight:600}
+    .ncards{display:grid;grid-template-columns:1fr;gap:14px}
+    @media(min-width:640px){.ncards{grid-template-columns:1fr 1fr}}
+    .ncard{display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;transition:border-color .15s,transform .15s}
+    .ncard:hover{border-color:var(--accent);transform:translateY(-2px)}
+    .ncard h3{margin:0 0 6px;font-size:16px}
+    .ncard p{margin:0;color:var(--muted);font-size:13px}
+    .repro{margin:0 0 18px;padding-left:20px}
+    .repro li{margin:0 0 8px}
+    .repro a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-dim)}
+    .aibox{margin:34px 0 0;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--muted);font-size:14px}
+    .back{display:inline-block;margin:30px 0 0;color:var(--accent);text-decoration:none;font-weight:600}
+    footer{border-top:1px solid var(--line);margin-top:20px;padding:22px 0 44px;color:var(--muted);font-size:13px}
+    .badge{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:999px;padding:5px 11px}
+    .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="../../">← Market Flow Research</a>
+      <span class="btn" id="themeBtn">🌙</span>
+    </div>
+
+    <article>
+      <span class="tag">Leg fullness</span>
+      <h1>How Full Is This Leg? A Network That Finally Beats the Counter — by Reading Its Last Rows</h1>
+      <p class="lede">Give a network the unfinished leg — everything from the last confirmed pivot to now, as one fixed-size canvas — and ask how complete it is. For the first time in this series a model beats the simple counter of events since the pivot on unseen weeks: fullness AUC 0.77 against 0.70, error 0.18 against 0.24. The surprise is where the knowledge comes from: the last 16 rows of the canvas do as well as all 500. On a 30-second standard with sliding windows the gap widens (0.78 vs 0.62), and the network locates a pivot inside its window with AUC 0.96. What it still cannot do cleanly is call &quot;the leg is over&quot; live: nine of ten such signals miss.</p>
+      <div class="meta">Research note · 30 September 2026 · AI-assisted, human-reviewed</div>
+
+      
+
+      <h2>① The edge of a correction looks like the edge of a leg</h2>
+      <p>Study 26 tried to estimate how much of its leg an event has travelled and could not beat the constant 0.5; a counter of events since the confirmed pivot was the bar nobody cleared. This study changes the input. The network gets the <b>unfinished leg itself</b> — every event from the confirmed pivot to now — and says how full it is: 0 at the start, 1 at the end. Six coins, `210×10-1×7d/d`, split by date (603 legs train, 106 validation).</p>
+      <p>The first stage mapped the roles of events inside a leg: its start, its end, and both edges of every internal correction. Leg edges stand out from the body clearly (AUC 0.72–0.81, the same sign on all coins and on validation). The edges of corrections carry <b>the same signature, weaker</b> — the difference between a reversal edge and a correction edge is only 0.07–0.11 of AUC. So fullness cannot come from one event; it has to come from the sequence: how many such edges there were and how much move lies between them. The number of corrections behind is causally known and travels with fullness.</p>
+      <figure><img src="img/tb35_counter_en.png" alt="Fullness AUC and share error of a counter, a network on the full leg canvas, and a network on its last 16 rows, on unseen weeks" loading="lazy"><figcaption>Fullness AUC and share error of a counter, a network on the full leg canvas, and a network on its last 16 rows, on unseen weeks</figcaption></figure>
+
+      <h2>② A canvas of the whole leg — and the last rows carry it</h2>
+      <p>Legs range from tens to thousands of events, so the prefix is laid onto a <b>fixed canvas</b>: the class is recomputed from second-by-second data at whatever step makes the prefix fit 500 rows × 9 blocks × 7 features — a long leg is compressed, a short one stretched.</p>
+      <p>On unseen weeks the network beats the counter, and the bootstrap over legs does not cover zero: fullness AUC <b>0.768</b> vs 0.699, share error <b>0.184</b> vs 0.237 (the constant: 0.271). But a control network that sees only the <b>last 16 rows</b> of the canvas — the last 3.2% of the prefix — does the same or better (0.784, 0.183); every difference between them covers zero. What the network knows about fullness it reads from the <em>end</em> of the prefix. The shape of the whole leg adds nothing. And the hardest case stays hard: a prefix cut at the edge of a correction gives 0.67, against 0.80–0.83 at random points.</p>
+      <p>A second setup moved to a 30-second standard with sliding windows that may run into the next leg, with outputs as a staircase of thresholds. Here the full canvas <b>does</b> beat its tail by 0.10 (0.781 vs 0.682): a window that crosses into the next leg carries the pivot inside the canvas, and only the whole canvas shows it. The network beats the counter on every threshold and every coin; the gap is widest where the counter is helpless — windows that overshot the leg (0.79–0.83 vs 0.54–0.58). It also finds <em>which row</em> of the canvas holds the pivot with AUC <b>0.960</b> (counter 0.639). The weakest point is the boundary itself: 0.714 at 98% full, 0.752 at &quot;100% or more&quot;.</p>
+      <figure><img src="img/tb35_steps_en.png" alt="AUC of the leg-fullness network versus a counter at thresholds from 10% to 140% of the leg on unseen weeks" loading="lazy"><figcaption>AUC of the leg-fullness network versus a counter at thresholds from 10% to 140% of the leg on unseen weeks</figcaption></figure>
+
+      <h2>③ No architecture beats the compressed canvas — and live calls still miss</h2>
+      <p>The next round removed the compression: the canvas fed whole, 500 rows, to attention with no stride; to LSTMs and transformers as a sequence; to an MLP on 4,000 inputs; to MLP-Mixers. <b>Compression loses nothing.</b> Uncompressed attention is not better (0.765 vs 0.781), the big MLP overfits from its first epoch, the best LSTM and transformer reach 0.764–0.766, and a deeper transformer (8 heads × 4 layers) is worse on validation (0.739). A Mixer on a <em>more</em> compressed 50 × 8 canvas draws level with the chosen model (0.789 vs 0.781, one run, one seed). An input mask for dead rows is unnecessary — the network sees seven zeros anyway.</p>
+      <p>The last stage asked for pivots directly: a zone &quot;the leg is over&quot; (95–105% of its duration, within 10% of its price range), marked on every row. On validation windows precision is <b>0.14–0.16</b>, three times the 0.055 of a random row, with recall 0.20–0.38. Run live over the unlabelled series, precision drops to <b>0.08–0.10</b>: 3–10 times more signals than pivots, nine of ten outside the zone. A 12-point grid of penalties for misses and false rows moved only the height of the output (99th percentile from 0.12 to 0.94) — precision stayed at 0.14–0.16 in every variant. The weights change how loud the network is, not how well it separates. That is where the final study of this series starts: a longer canvas around the leg, and the pivots themselves as the target.</p>
+      <figure><img src="img/tb35_arch_en.png" alt="Validation AUC of leg-fullness models of eight architectures, all between 0.71 and 0.79, above a 0.616 counter" loading="lazy"><figcaption>Validation AUC of leg-fullness models of eight architectures, all between 0.71 and 0.79, above a 0.616 counter</figcaption></figure>
+
+      <h2>Reproduce this study</h2>
+      <ul class="repro"><li><a href="35-leg-fullness.md">Research log (.md, Ukrainian): goal, data, plan, scripts, every confirmed stage and table — enough to rerun the study</a></li><li><a href="tb35_reproduce.zip">Reproduction kit (.zip): the study&#x27;s scripts, project rules and base scripts that build every class</a></li></ul>
+
+      <div class="aibox">🤖 This research — data collection, analysis, charts and the narrated
+      video — was produced with the assistance of AI, then reviewed by a human. We forecast
+      volatility, not direction, and log every prediction. <em>Research, not financial advice.</em></div>
+
+      <div class="next">
+        <div class="h2">Read next</div>
+        <p class="nlead">If this changed how you read the tape, the natural next step is <a class="nlink" href="/articles/volume-is-fuel-not-steering-wheel/">Volume Is the Fuel — Not the Steering Wheel</a> — We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p>
+        <div class="ncards"><a class="ncard" href="/articles/volume-is-fuel-not-steering-wheel/"><h3>Volume Is the Fuel — Not the Steering Wheel</h3><p>We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p></a><a class="ncard" href="/articles/about-market-research-lab/"><h3>About Market Research Lab — What We Collect and Why</h3><p>Most market commentary is storytelling.</p></a><a class="ncard" href="/articles/signal-standard-from-calm-to-calm-btc/"><h3>From Calm to Calm: a Standard for What Counts as a Signal (BTC)</h3><p>We stopped defining market signals with a stopwatch.</p></a><a class="ncard" href="/articles/resting-walls-what-thick-liquidity-predicts/"><h3>The Wall That Goes Quiet: What Resting Liquidity Predicts</h3><p>We measured resting limit liquidity sitting on both sides of the book second by second across six coins, and asked the only question that matters:….</p></a></div>
+        <p class="nall"><a href="../../">Browse every study on Market Flow Research →</a></p>
+      </div>
+
+      <h2>Comments</h2>
+      <p style="color:var(--muted)">Discussion is powered by GitHub. Enable it by adding <code>secrets/giscus.json</code> (repo IDs from giscus.app).</p>
+
+      <a class="back" href="../../">← All research</a>
+    </article>
+  </div>
+
+  <footer>
+    <div class="wrap" style="padding:0 22px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center">
+      <span class="badge"><span class="dot"></span>AI-assisted research · human-reviewed</span>
+      <span>© <span id="yr">2026</span> Market Flow Research</span>
+    </div>
+  </footer>
+
+  <script>
+    try{var st=localStorage.getItem("mfr_theme");if(st)document.body.setAttribute("data-theme",st);}catch(e){}
+    document.getElementById("yr").textContent=new Date().getFullYear();
+    function tl(){document.getElementById("themeBtn").textContent=document.body.getAttribute("data-theme")==="light"?"☀️":"🌙";}
+    tl();
+    document.getElementById("themeBtn").onclick=function(){
+      var t=document.body.getAttribute("data-theme")==="light"?"dark":"light";
+      document.body.setAttribute("data-theme",t);try{localStorage.setItem("mfr_theme",t);}catch(e){}tl();
+    };
+  </script>
+</body>
+</html>
