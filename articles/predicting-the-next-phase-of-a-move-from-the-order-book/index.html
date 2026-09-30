@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Predicting the Next Phase of a Move From the Order Book — 832 Window Sizes, One Honest Ceiling — Market Flow Research</title>
+  <meta name="description" content="Every event of BTC&#x27;s order book sits in one of four phases of a zigzag: rising, a pullback inside a rise, falling, or a pullback inside a fall. We asked a closed-form linear model to name the phase of the next event from the N events before it — and tried every N from 2 to 833. The signal is real fr" />
+  <meta name="keywords" content="" />
+
+  <link rel="canonical" href="https://marketflowresear.ch/articles/predicting-the-next-phase-of-a-move-from-the-order-book/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Market Flow Research" />
+  <meta property="og:title" content="Predicting the Next Phase of a Move From the Order Book — 832 Window Sizes, One Honest Ceiling" />
+  <meta property="og:description" content="Every event of BTC&#x27;s order book sits in one of four phases of a zigzag: rising, a pullback inside a rise, falling, or a pullback inside a fall. We asked a closed-form linear model to name the phase of the next event from the N events before it — and tried every N from 2 to 833. The signal is real fr" />
+  <meta property="og:url" content="https://marketflowresear.ch/articles/predicting-the-next-phase-of-a-move-from-the-order-book/" />
+  <meta property="og:image" content="https://marketflowresear.ch/articles/predicting-the-next-phase-of-a-move-from-the-order-book/img/tb05_cohorts_en.png" />
+  <meta property="og:image:width" content="1104" />
+  <meta property="og:image:height" content="575" />
+  <meta property="article:published_time" content="2026-09-30" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Predicting the Next Phase of a Move From the Order Book — 832 Window Sizes, One Honest Ceiling" />
+  <meta name="twitter:description" content="Every event of BTC&#x27;s order book sits in one of four phases of a zigzag: rising, a pullback inside a rise, falling, or a pullback inside a fall. We asked a closed-form linear model to name the phase of the next event from the N events before it — and tried every N from 2 to 833. The signal is real fr" />
+  <meta name="twitter:image" content="https://marketflowresear.ch/articles/predicting-the-next-phase-of-a-move-from-the-order-book/img/tb05_cohorts_en.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Predicting the Next Phase of a Move From the Order Book \u2014 832 Window Sizes, One Honest Ceiling",
+    "description": "Every event of BTC's order book sits in one of four phases of a zigzag: rising, a pullback inside a rise, falling, or a pullback inside a fall. We asked a closed-form linear model to name the phase of the next event from the N events before it \u2014 and tried every N from 2 to 833. The signal is real fr",
+    "datePublished": "2026-09-30",
+    "inLanguage": "en",
+    "image": "https://marketflowresear.ch/articles/predicting-the-next-phase-of-a-move-from-the-order-book/img/tb05_cohorts_en.png",
+    "author": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "publisher": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "mainEntityOfPage": "https://marketflowresear.ch/articles/predicting-the-next-phase-of-a-move-from-the-order-book/",
+    "creativeWorkStatus": "AI-assisted, human-reviewed"
+  }
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230b0d12'/><path d='M14 66 L34 46 L48 58 L70 30 L86 30' fill='none' stroke='%2340e0a0' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
+
+  <style>
+    :root{--bg:#0b0d12;--panel:#12151d;--ink:#e8ecf3;--muted:#8a93a6;--line:#232838;--accent:#40e0a0;--accent-dim:#1c3a2f}
+    body[data-theme="light"]{--bg:#ffffff;--panel:#f6f8fb;--ink:#12151d;--muted:#5b6472;--line:#e4e8ef;--accent:#0a9c69;--accent-dim:#e6f7f0}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{background:var(--bg);color:var(--ink);font:17px/1.72 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:720px;margin:0 auto;padding:0 22px}
+    .bar{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+    .brand{font-weight:800;letter-spacing:.13em;font-size:13px;text-transform:uppercase;text-decoration:none;color:var(--ink)}
+    .btn{cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:10px;padding:7px 11px;font-size:13px;font-weight:600}
+    article{padding:18px 0 40px}
+    .tag{display:inline-block;background:var(--panel);border:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+    h1{font-size:clamp(26px,5vw,38px);line-height:1.15;margin:16px 0 10px;letter-spacing:-.01em}
+    .lede{color:var(--muted);font-size:19px;margin:0 0 18px}
+    .meta{color:var(--muted);font-size:14px;margin-bottom:26px}
+    article h2{font-size:20px;margin:34px 0 10px}
+    article p{margin:0 0 18px}
+    article b{color:var(--ink)}
+    .video{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:8px 0 6px;background:#000}
+    .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    figure{margin:24px 0}
+    figure img{width:100%;border:1px solid var(--line);border-radius:14px;display:block;background:var(--panel)}
+    figcaption{color:var(--muted);font-size:13px;margin-top:8px;text-align:center}
+    .next{margin:40px 0 6px}
+    .next .h2{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+    .next .nlead{color:var(--ink);font-size:16px;margin:0 0 16px;line-height:1.6}
+    .next .nlink{color:var(--accent);font-weight:700;text-decoration:none;border-bottom:1px solid var(--accent-dim)}
+    .next .nlink:hover{border-bottom-color:var(--accent)}
+    .next .nall{margin:16px 0 0;font-size:14px}
+    .next .nall a{color:var(--accent);text-decoration:none;font-weight:600}
+    .ncards{display:grid;grid-template-columns:1fr;gap:14px}
+    @media(min-width:640px){.ncards{grid-template-columns:1fr 1fr}}
+    .ncard{display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;transition:border-color .15s,transform .15s}
+    .ncard:hover{border-color:var(--accent);transform:translateY(-2px)}
+    .ncard h3{margin:0 0 6px;font-size:16px}
+    .ncard p{margin:0;color:var(--muted);font-size:13px}
+    .repro{margin:0 0 18px;padding-left:20px}
+    .repro li{margin:0 0 8px}
+    .repro a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-dim)}
+    .aibox{margin:34px 0 0;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--muted);font-size:14px}
+    .back{display:inline-block;margin:30px 0 0;color:var(--accent);text-decoration:none;font-weight:600}
+    footer{border-top:1px solid var(--line);margin-top:20px;padding:22px 0 44px;color:var(--muted);font-size:13px}
+    .badge{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:999px;padding:5px 11px}
+    .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="../../">← Market Flow Research</a>
+      <span class="btn" id="themeBtn">🌙</span>
+    </div>
+
+    <article>
+      <span class="tag">Next cohort</span>
+      <h1>Predicting the Next Phase of a Move From the Order Book — 832 Window Sizes, One Honest Ceiling</h1>
+      <p class="lede">Every event of BTC&#x27;s order book sits in one of four phases of a zigzag: rising, a pullback inside a rise, falling, or a pullback inside a fall. We asked a closed-form linear model to name the phase of the next event from the N events before it — and tried every N from 2 to 833. The signal is real from N = 2, peaks at 0.418 accuracy on about one zigzag leg of history against a 0.377 baseline, and is essentially binary: up or down, the pullbacks go unseen. The labels of the past alone would score 0.976.</p>
+      <div class="meta">Research note · 30 September 2026 · AI-assisted, human-reviewed</div>
+
+      
+
+      <h2>① Four phases of a zigzag</h2>
+      <p>The labels come from two zigzags laid on the same price series: a big one with a 2.3% threshold and a nested one at 0.8%. Their pivots merge into a single timeline, and the stretch between two neighbouring pivots is a <em>segment</em>. Each 210-second event lies in exactly one segment and takes two labels from it: the direction of the big move it belongs to, and the direction of its own segment. The pair is its <b>cohort</b>.</p>
+      <p>On the BTC training set (24,150 events, 14 February – 16 August 2026; 116 big pivots and 472 small ones) that gives <b>8,878 rising</b> events, <b>2,742 pullbacks inside a rise</b>, <b>9,123 falling</b> and <b>3,195 pullbacks inside a fall</b>; 212 events sit outside the zigzag. Pullbacks are a separate cohort on purpose: they occupy the same place in a move as trend segments but point the other way, and a bot that confuses the two gets shaken out of every trend.</p>
+      <p>The labels are known only in hindsight — a zigzag pivot is confirmed by the move that follows it. That is why the forecast below never sees the labels of past events, only their order-book description.</p>
+      <figure><img src="img/tb05_cohorts_en.png" alt="Number of BTC training events in each of the four zigzag phases: rising, pullback in a rise, falling, pullback in a fall" loading="lazy"><figcaption>Number of BTC training events in each of the four zigzag phases: rising, pullback in a rise, falling, pullback in a fall</figcaption></figure>
+
+      <h2>② A closed-form model, 832 window sizes</h2>
+      <p>The forecaster is deliberately the simplest honest thing: each cohort is a Gaussian in the space of the window, with a shared covariance, and the decision is Bayes&#x27; rule — a <b>linear discriminant</b> computed from sums in closed form. No iterations, no seed, no tuning. Each event contributes two numbers (the mean over its 15 blocks of `balance` and `d_balance`), so a window of N events is 2N columns; the target event itself is never in its own window.</p>
+      <p>Windows of neighbouring targets overlap, so a random split would leak. Instead the training set is cut into <b>five contiguous time blocks</b>; each block is predicted by a model trained on the other four, with a quarantine of <b>±833 events</b> around it so no training window touches a test window.</p>
+      <p>Then the window grows: N from 2 to 833 in steps of one — <b>832 separate runs</b> on the same 23,194 targets. Against the baseline &quot;always say falling&quot; (0.3768 ± 0.0032), accuracy is <b>0.3971 at N = 2</b> (+6.4 standard errors), rises to a peak of <b>0.4182 at N = 203</b> (+13.0 SE) and falls back almost to the baseline beyond 600 events. The best window is about the length of one 2.3% leg; more distant history adds more noise than information.</p>
+      <figure><img src="img/tb05_ladder_en.png" alt="Accuracy of the next-cohort forecast against the number of past events in the window, from 2 to 833, with the always-falling baseline" loading="lazy"><figcaption>Accuracy of the next-cohort forecast against the number of past events in the window, from 2 to 833, with the always-falling baseline</figcaption></figure>
+
+      <h2>③ Binary in practice — and the ceiling that labels would give</h2>
+      <p>Look at what the best model actually says. At N = 203 it names <b>55.2%</b> of rising events and <b>55.1%</b> of falling ones — and <b>0.1%</b> and <b>2.2%</b> of the two pullback cohorts. Pullbacks are a third the size of their trend cohorts, and the order-book window does not separate them, so the model simply stops naming them. Formally the four-cohort criterion passes (balanced accuracy 0.284–0.291 against 0.25 by chance); in practice the model splits the field into &quot;up&quot; and &quot;down&quot;, and weakly.</p>
+      <p>The gain is small: +2 points at N = 2, +4.1 at the best window. That is a feature, not a trading signal.</p>
+      <p>The most useful number in the study is a different one. A &quot;persistence oracle&quot; — <em>the next event has the same cohort as the previous one</em> — scores <b>0.9757</b>. It cannot be traded, because the previous label is only known after the zigzag confirms it. But it shows where the structure lives: cohorts run in long stretches, and almost all the predictability is in the sequence of labels, not in 210·N seconds of book state. So the next step in this series is not a longer window. It is estimating the phase of the <b>current</b> event — where in its leg the market is right now.</p>
+      <figure><img src="img/tb05_recall_en.png" alt="Share of each phase correctly named by the forecast at a 203-event window: rising and falling about 0.55, pullbacks near zero" loading="lazy"><figcaption>Share of each phase correctly named by the forecast at a 203-event window: rising and falling about 0.55, pullbacks near zero</figcaption></figure>
+
+      <h2>Reproduce this study</h2>
+      <ul class="repro"><li><a href="05-next-cohort-forecast.md">Research log (.md, Ukrainian): goal, data, plan, scripts, every confirmed stage and table — enough to rerun the study</a></li><li><a href="tb05_reproduce.zip">Reproduction kit (.zip): the study&#x27;s scripts, project rules and base scripts that build every class</a></li></ul>
+
+      <div class="aibox">🤖 This research — data collection, analysis, charts and the narrated
+      video — was produced with the assistance of AI, then reviewed by a human. We forecast
+      volatility, not direction, and log every prediction. <em>Research, not financial advice.</em></div>
+
+      <div class="next">
+        <div class="h2">Read next</div>
+        <p class="nlead">If this changed how you read the tape, the natural next step is <a class="nlink" href="/articles/volume-is-fuel-not-steering-wheel/">Volume Is the Fuel — Not the Steering Wheel</a> — We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p>
+        <div class="ncards"><a class="ncard" href="/articles/volume-is-fuel-not-steering-wheel/"><h3>Volume Is the Fuel — Not the Steering Wheel</h3><p>We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p></a><a class="ncard" href="/articles/about-market-research-lab/"><h3>About Market Research Lab — What We Collect and Why</h3><p>Most market commentary is storytelling.</p></a><a class="ncard" href="/articles/signal-standard-from-calm-to-calm-btc/"><h3>From Calm to Calm: a Standard for What Counts as a Signal (BTC)</h3><p>We stopped defining market signals with a stopwatch.</p></a><a class="ncard" href="/articles/resting-walls-what-thick-liquidity-predicts/"><h3>The Wall That Goes Quiet: What Resting Liquidity Predicts</h3><p>We measured resting limit liquidity sitting on both sides of the book second by second across six coins, and asked the only question that matters:….</p></a></div>
+        <p class="nall"><a href="../../">Browse every study on Market Flow Research →</a></p>
+      </div>
+
+      <h2>Comments</h2>
+      <p style="color:var(--muted)">Discussion is powered by GitHub. Enable it by adding <code>secrets/giscus.json</code> (repo IDs from giscus.app).</p>
+
+      <a class="back" href="../../">← All research</a>
+    </article>
+  </div>
+
+  <footer>
+    <div class="wrap" style="padding:0 22px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center">
+      <span class="badge"><span class="dot"></span>AI-assisted research · human-reviewed</span>
+      <span>© <span id="yr">2026</span> Market Flow Research</span>
+    </div>
+  </footer>
+
+  <script>
+    try{var st=localStorage.getItem("mfr_theme");if(st)document.body.setAttribute("data-theme",st);}catch(e){}
+    document.getElementById("yr").textContent=new Date().getFullYear();
+    function tl(){document.getElementById("themeBtn").textContent=document.body.getAttribute("data-theme")==="light"?"☀️":"🌙";}
+    tl();
+    document.getElementById("themeBtn").onclick=function(){
+      var t=document.body.getAttribute("data-theme")==="light"?"dark":"light";
+      document.body.setAttribute("data-theme",t);try{localStorage.setItem("mfr_theme",t);}catch(e){}tl();
+    };
+  </script>
+</body>
+</html>
