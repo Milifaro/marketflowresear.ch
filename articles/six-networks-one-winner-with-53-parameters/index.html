@@ -99,7 +99,8 @@
       <p class="lede">Correlations said the slow order book knows roughly where price sits inside its zigzag leg. So we trained networks to say it out loud: a number from −1 (at the low pivot) to +1 (at the high pivot), from four book features under thirteen averages. Six families on the same data, a time split with five walk-forward windows — and the linear model with 53 parameters won. On the final test it beats the constant for the first time (MAE 0.438 vs 0.446, sign 55.1%); on eleven fresh days outside the dataset, sign 60.7% on 44 legs. Small, consistent — and the reason is a loss that pays attention to the edges of the leg.</p>
       <div class="meta">Research note · 30 September 2026 · AI-assisted, human-reviewed</div>
 
-      
+      <div class="video"><iframe src="https://www.youtube.com/embed/dB9RWrGoTOI" title="Full research video" loading="lazy" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe></div>
+      <p style="color:var(--muted);font-size:13px;margin-top:0">Full walkthrough — streamed from YouTube.</p>
 
       <h2>① A target that moves slowly, and a split that respects it</h2>
       <p>The target is the <b>position of each event inside its zigzag leg</b>: an independent 0.8% zigzag on event prices, the leg rescaled by rank to [−1, +1] and smoothed with a 10-event EMA <em>on the leg</em> (so the pivots stay put). Switching from a 0.8% zigzag on smoothed price to this one raised the number of legs from 110 to <b>684</b> — and legs, not events, are the independent units here, so the error bar on a sign rate fell from 4.8 to 1.9 points.</p>
