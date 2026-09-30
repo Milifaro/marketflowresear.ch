@@ -99,7 +99,8 @@
       <p class="lede">We asked an attention network to do one specific thing: tell when price is near the end of a 2.3% zigzag leg — within 10% of the pivot and no more than 40 events from it. On the weeks it trained on it caught 65% of those zones. On validation, 4%. On test, 3.8%. On ten days after the dataset ended, its correlation with the target turned negative. This is a measured negative result, and the measuring tool it produced — the pivot zone — is what we carry forward.</p>
       <div class="meta">Research note · 30 September 2026 · AI-assisted, human-reviewed</div>
 
-      
+      <div class="video"><iframe src="https://www.youtube.com/embed/DRh7ZOZhCFY" title="Full research video" loading="lazy" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe></div>
+      <p style="color:var(--muted);font-size:13px;margin-top:0">Full walkthrough — streamed from YouTube.</p>
 
       <h2>① Measure the distance to the pivot, not the average error</h2>
       <p>The target is the zigzag of this series at its larger scale: pivots of a <b>2.3%</b> zigzag drawn on a 90-event EMA of price, and each event&#x27;s position in its leg rescaled to −1 at the low pivot and +1 at the high one (min-max, so the distance to a vertex means a distance in price). The inputs are the 13 × 4 matrix of averaged book features from the previous article.</p>
