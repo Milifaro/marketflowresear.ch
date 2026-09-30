@@ -163,6 +163,16 @@
       <div class="h2" data-i18n="latest">Latest research</div>
       <div class="grid">
 
+        <a class="card" href="articles/can-a-memory-network-rebuild-context-from-the-raw-sequence/">
+          <div class="thumb"><img src="articles/can-a-memory-network-rebuild-context-from-the-raw-sequence/img/tb25_auc_en.png" alt="AUC of an LSTM confirming a pivot three events later, on the class alone, price context alone and both, on honest train scores and unseen weeks" loading="lazy"><span class="tag">Memory vs aggregates</span></div>
+          <div class="cbody">
+            <h3>Can a Memory Network Rebuild Context From the Raw Sequence? Not From the Order Book</h3>
+            <p>Trees won the reversal ladder with hand-made aggregates: five numbers about recent extremes over four look-back windows. A memory network should not need them — the price change of every event is already inside the class, and integrating it would rebuild the whole context. We gave an LSTM 60 events of raw class, of price context, and of both. The class alone reached an honest AUC of 0.77; price context alone, 0.965. Adding the class to price made it worse. And trees on five aggregates still found reversals two and a half times more precisely than the network.</p>
+            <div class="date">30 September 2026</div>
+          </div>
+        </a>
+
+
         <a class="card" href="articles/pivot-confirmation-on-three-unseen-weeks/">
           <div class="thumb"><img src="articles/pivot-confirmation-on-three-unseen-weeks/img/tb24_prec_en.png" alt="Precision of the pivot-confirmation ladder at four delays on train and on three unseen weeks; zero where the threshold let nothing through" loading="lazy"><span class="tag">Held-out time</span></div>
           <div class="cbody">
