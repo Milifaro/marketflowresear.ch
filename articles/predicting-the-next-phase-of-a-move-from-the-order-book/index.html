@@ -99,7 +99,8 @@
       <p class="lede">Every event of BTC&#x27;s order book sits in one of four phases of a zigzag: rising, a pullback inside a rise, falling, or a pullback inside a fall. We asked a closed-form linear model to name the phase of the next event from the N events before it — and tried every N from 2 to 833. The signal is real from N = 2, peaks at 0.418 accuracy on about one zigzag leg of history against a 0.377 baseline, and is essentially binary: up or down, the pullbacks go unseen. The labels of the past alone would score 0.976.</p>
       <div class="meta">Research note · 30 September 2026 · AI-assisted, human-reviewed</div>
 
-      
+      <div class="video"><iframe src="https://www.youtube.com/embed/VPdo1Cgk26k" title="Full research video" loading="lazy" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe></div>
+      <p style="color:var(--muted);font-size:13px;margin-top:0">Full walkthrough — streamed from YouTube.</p>
 
       <h2>① Four phases of a zigzag</h2>
       <p>The labels come from two zigzags laid on the same price series: a big one with a 2.3% threshold and a nested one at 0.8%. Their pivots merge into a single timeline, and the stretch between two neighbouring pivots is a <em>segment</em>. Each 210-second event lies in exactly one segment and takes two labels from it: the direction of the big move it belongs to, and the direction of its own segment. The pair is its <b>cohort</b>.</p>
