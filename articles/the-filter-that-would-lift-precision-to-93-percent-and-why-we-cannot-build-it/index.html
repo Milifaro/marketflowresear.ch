@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Filter That Would Lift Precision From 51% to 93% — and Why We Cannot Build It Yet — Market Flow Research</title>
+  <meta name="description" content="Half of the reversal-confirmation signals are false, and they share one trait: they point into the middle of a leg. A filter that knows how far along its leg an event really is removes 45 of 49 false signals and not one true one — precision 51% → 92.7%. The catch is that &quot;how far along&quot; is only know" />
+  <meta name="keywords" content="" />
+
+  <link rel="canonical" href="https://marketflowresear.ch/articles/the-filter-that-would-lift-precision-to-93-percent-and-why-we-cannot-build-it/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Market Flow Research" />
+  <meta property="og:title" content="The Filter That Would Lift Precision From 51% to 93% — and Why We Cannot Build It Yet" />
+  <meta property="og:description" content="Half of the reversal-confirmation signals are false, and they share one trait: they point into the middle of a leg. A filter that knows how far along its leg an event really is removes 45 of 49 false signals and not one true one — precision 51% → 92.7%. The catch is that &quot;how far along&quot; is only know" />
+  <meta property="og:url" content="https://marketflowresear.ch/articles/the-filter-that-would-lift-precision-to-93-percent-and-why-we-cannot-build-it/" />
+  <meta property="og:image" content="https://marketflowresear.ch/articles/the-filter-that-would-lift-precision-to-93-percent-and-why-we-cannot-build-it/img/tb26_ceiling_en.png" />
+  <meta property="og:image:width" content="1104" />
+  <meta property="og:image:height" content="575" />
+  <meta property="article:published_time" content="2026-09-30" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Filter That Would Lift Precision From 51% to 93% — and Why We Cannot Build It Yet" />
+  <meta name="twitter:description" content="Half of the reversal-confirmation signals are false, and they share one trait: they point into the middle of a leg. A filter that knows how far along its leg an event really is removes 45 of 49 false signals and not one true one — precision 51% → 92.7%. The catch is that &quot;how far along&quot; is only know" />
+  <meta name="twitter:image" content="https://marketflowresear.ch/articles/the-filter-that-would-lift-precision-to-93-percent-and-why-we-cannot-build-it/img/tb26_ceiling_en.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "The Filter That Would Lift Precision From 51% to 93% \u2014 and Why We Cannot Build It Yet",
+    "description": "Half of the reversal-confirmation signals are false, and they share one trait: they point into the middle of a leg. A filter that knows how far along its leg an event really is removes 45 of 49 false signals and not one true one \u2014 precision 51% \u2192 92.7%. The catch is that \"how far along\" is only know",
+    "datePublished": "2026-09-30",
+    "inLanguage": "en",
+    "image": "https://marketflowresear.ch/articles/the-filter-that-would-lift-precision-to-93-percent-and-why-we-cannot-build-it/img/tb26_ceiling_en.png",
+    "author": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "publisher": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "mainEntityOfPage": "https://marketflowresear.ch/articles/the-filter-that-would-lift-precision-to-93-percent-and-why-we-cannot-build-it/",
+    "creativeWorkStatus": "AI-assisted, human-reviewed"
+  }
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230b0d12'/><path d='M14 66 L34 46 L48 58 L70 30 L86 30' fill='none' stroke='%2340e0a0' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
+
+  <style>
+    :root{--bg:#0b0d12;--panel:#12151d;--ink:#e8ecf3;--muted:#8a93a6;--line:#232838;--accent:#40e0a0;--accent-dim:#1c3a2f}
+    body[data-theme="light"]{--bg:#ffffff;--panel:#f6f8fb;--ink:#12151d;--muted:#5b6472;--line:#e4e8ef;--accent:#0a9c69;--accent-dim:#e6f7f0}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{background:var(--bg);color:var(--ink);font:17px/1.72 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:720px;margin:0 auto;padding:0 22px}
+    .bar{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+    .brand{font-weight:800;letter-spacing:.13em;font-size:13px;text-transform:uppercase;text-decoration:none;color:var(--ink)}
+    .btn{cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:10px;padding:7px 11px;font-size:13px;font-weight:600}
+    article{padding:18px 0 40px}
+    .tag{display:inline-block;background:var(--panel);border:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+    h1{font-size:clamp(26px,5vw,38px);line-height:1.15;margin:16px 0 10px;letter-spacing:-.01em}
+    .lede{color:var(--muted);font-size:19px;margin:0 0 18px}
+    .meta{color:var(--muted);font-size:14px;margin-bottom:26px}
+    article h2{font-size:20px;margin:34px 0 10px}
+    article p{margin:0 0 18px}
+    article b{color:var(--ink)}
+    .video{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:8px 0 6px;background:#000}
+    .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    figure{margin:24px 0}
+    figure img{width:100%;border:1px solid var(--line);border-radius:14px;display:block;background:var(--panel)}
+    figcaption{color:var(--muted);font-size:13px;margin-top:8px;text-align:center}
+    .next{margin:40px 0 6px}
+    .next .h2{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+    .next .nlead{color:var(--ink);font-size:16px;margin:0 0 16px;line-height:1.6}
+    .next .nlink{color:var(--accent);font-weight:700;text-decoration:none;border-bottom:1px solid var(--accent-dim)}
+    .next .nlink:hover{border-bottom-color:var(--accent)}
+    .next .nall{margin:16px 0 0;font-size:14px}
+    .next .nall a{color:var(--accent);text-decoration:none;font-weight:600}
+    .ncards{display:grid;grid-template-columns:1fr;gap:14px}
+    @media(min-width:640px){.ncards{grid-template-columns:1fr 1fr}}
+    .ncard{display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;transition:border-color .15s,transform .15s}
+    .ncard:hover{border-color:var(--accent);transform:translateY(-2px)}
+    .ncard h3{margin:0 0 6px;font-size:16px}
+    .ncard p{margin:0;color:var(--muted);font-size:13px}
+    .repro{margin:0 0 18px;padding-left:20px}
+    .repro li{margin:0 0 8px}
+    .repro a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-dim)}
+    .aibox{margin:34px 0 0;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--muted);font-size:14px}
+    .back{display:inline-block;margin:30px 0 0;color:var(--accent);text-decoration:none;font-weight:600}
+    footer{border-top:1px solid var(--line);margin-top:20px;padding:22px 0 44px;color:var(--muted);font-size:13px}
+    .badge{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:999px;padding:5px 11px}
+    .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="../../">← Market Flow Research</a>
+      <span class="btn" id="themeBtn">🌙</span>
+    </div>
+
+    <article>
+      <span class="tag">The perfect filter we cannot build</span>
+      <h1>The Filter That Would Lift Precision From 51% to 93% — and Why We Cannot Build It Yet</h1>
+      <p class="lede">Half of the reversal-confirmation signals are false, and they share one trait: they point into the middle of a leg. A filter that knows how far along its leg an event really is removes 45 of 49 false signals and not one true one — precision 51% → 92.7%. The catch is that &quot;how far along&quot; is only known in hindsight. Every causal estimator we built — trees, a memory network, ten loss functions, a 24-point grid — reaches an AUC of about 0.69 for &quot;this is the last tenth of the leg&quot;, where the filter needs something near 0.95. With that estimate, the filter cuts true signals as fast as false ones.</p>
+      <div class="meta">Research note · 30 September 2026 · AI-assisted, human-reviewed</div>
+
+      
+
+      <h2>① The idea works — with the true answer</h2>
+      <p>The confirmation ladder of the last two articles answers &quot;was there a pivot N events ago?&quot; at about 50% precision on unseen weeks — half the signals are wrong. This study asks whether a <b>second signal</b> can cancel the wrong half.</p>
+      <p>The second signal is simple to state: take the event the ladder points at and say <b>what share of its leg it has travelled</b>, from 0 at the start to 1 at the end. A pivot is the end of a leg, so a signal pointing into the middle of one should be false.</p>
+      <p>With the <em>true</em> share — known in hindsight from the zigzag — the idea works beautifully. At rung 43 (150 minutes after the pivot, four windows plus class, the threshold from honest training scores) there are 51 true and 49 false signals on the three unseen weeks. Keeping only signals whose event has travelled at least 90% of its leg: <b>51 true, 4 false — precision 92.7%</b>, recall unchanged. At rung 103, 73.3% becomes <b>97.1%</b>. The false signals really do sit in the middle of legs.</p>
+      <figure><img src="img/tb26_ceiling_en.png" alt="Precision of pivot-confirmation signals after filtering by leg share, using the true share versus two causal estimates" loading="lazy"><figcaption>Precision of pivot-confirmation signals after filtering by leg share, using the true share versus two causal estimates</figcaption></figure>
+
+      <h2>② The causal estimate cannot see the end of the leg</h2>
+      <p>The estimator gets only causal inputs: a counter of events since the last <em>confirmed</em> pivot, the five context numbers on four windows, and optionally the 62 class numbers. On the unseen weeks, by mean absolute error, <b>no set beats the constant 0.5</b> (best 0.2534 vs 0.2484): what the trees learned on training weeks does not transfer. They do see the end of a leg a little — AUC <b>0.653</b> for &quot;this event is in the last tenth&quot;, against 0.552 for the counter alone. The class adds nothing (0.656), as in every study since 23.</p>
+      <p>A memory network over 2,500 events of history does better — AUC <b>0.693</b> with four windows and the counter, and the only estimator to beat the constant on MAE. Ten loss functions (MSE, L1, Huber, rank, edge-weighted, staircase heads, tenths…) all land in 0.739–0.761 on the later part of validation — a spread of 0.022, pure selection noise. Stretching the output to the label&#x27;s spread made the error worse at the same AUC: under a weak signal, hugging the middle is the correct behaviour. A 24-point grid over memory length, width, depth and learning rate: best 0.6930 against 0.6922 for the untouched control. Every model&#x27;s best epoch is the first; they overfit from the second.</p>
+      <figure><img src="img/tb26_estimators_en.png" alt="AUC of six causal estimators for the last tenth of a leg, from 0.55 to 0.76, against the 0.95 the filter would need" loading="lazy"><figcaption>AUC of six causal estimators for the last tenth of a leg, from 0.55 to 0.76, against the 0.95 the filter would need</figcaption></figure>
+
+      <h2>③ A weak estimate cuts the wrong signals</h2>
+      <p>Used as a filter, the estimated share does the opposite of what was hoped: it <b>cuts true signals faster than false ones</b>. At a threshold of 0.5 the trees&#x27; estimate removes 8 false and 5 true signals (51.0% → 52.9%); at 0.9 it keeps 3 of 100 signals and precision <em>falls</em> to 37.5%. Thresholding the network&#x27;s output needs ranks — its scale is compressed and it almost never says 0.9 — and even then the best result is 52.9% at rung 43 and 76.9% at rung 103: gains of a point or three, paid for with a third of the signals.</p>
+      <p>One more idea was tested: a second network trained to confirm reversals, used as an extra vote. At rung 103 it only hurts. At rung 43 it helps only at the very end of its scale — a 0.99 threshold gives 71.4%, but that is 10 of 93 reversals, one signal every eight days. The two models look at the same price context and tend to be wrong in the same places: at 0.9 the network cancelled 20 false signals and 23 true ones.</p>
+      <p>The whole problem has collapsed into a single number: how well the last tenth of a leg can be recognised causally. The ceiling shows what each point of that AUC is worth — tens of percentage points of signal precision. The estimate sits at 0.69; the filter needs about 0.95. The next study attacks exactly this gap with a different definition of the reversal zone.</p>
+      <figure><img src="img/tb26_voice_en.png" alt="Precision and recall of the confirmation ladder when a second network must also confirm the pivot, for five thresholds" loading="lazy"><figcaption>Precision and recall of the confirmation ladder when a second network must also confirm the pivot, for five thresholds</figcaption></figure>
+
+      <h2>Reproduce this study</h2>
+      <ul class="repro"><li><a href="26-leg-share-filter.md">Research log (.md, Ukrainian): goal, data, plan, scripts, every confirmed stage and table — enough to rerun the study</a></li><li><a href="tb26_reproduce.zip">Reproduction kit (.zip): the study&#x27;s scripts, project rules and base scripts that build every class</a></li></ul>
+
+      <div class="aibox">🤖 This research — data collection, analysis, charts and the narrated
+      video — was produced with the assistance of AI, then reviewed by a human. We forecast
+      volatility, not direction, and log every prediction. <em>Research, not financial advice.</em></div>
+
+      <div class="next">
+        <div class="h2">Read next</div>
+        <p class="nlead">If this changed how you read the tape, the natural next step is <a class="nlink" href="/articles/volume-is-fuel-not-steering-wheel/">Volume Is the Fuel — Not the Steering Wheel</a> — We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p>
+        <div class="ncards"><a class="ncard" href="/articles/volume-is-fuel-not-steering-wheel/"><h3>Volume Is the Fuel — Not the Steering Wheel</h3><p>We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p></a><a class="ncard" href="/articles/about-market-research-lab/"><h3>About Market Research Lab — What We Collect and Why</h3><p>Most market commentary is storytelling.</p></a><a class="ncard" href="/articles/signal-standard-from-calm-to-calm-btc/"><h3>From Calm to Calm: a Standard for What Counts as a Signal (BTC)</h3><p>We stopped defining market signals with a stopwatch.</p></a><a class="ncard" href="/articles/resting-walls-what-thick-liquidity-predicts/"><h3>The Wall That Goes Quiet: What Resting Liquidity Predicts</h3><p>We measured resting limit liquidity sitting on both sides of the book second by second across six coins, and asked the only question that matters:….</p></a></div>
+        <p class="nall"><a href="../../">Browse every study on Market Flow Research →</a></p>
+      </div>
+
+      <h2>Comments</h2>
+      <p style="color:var(--muted)">Discussion is powered by GitHub. Enable it by adding <code>secrets/giscus.json</code> (repo IDs from giscus.app).</p>
+
+      <a class="back" href="../../">← All research</a>
+    </article>
+  </div>
+
+  <footer>
+    <div class="wrap" style="padding:0 22px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center">
+      <span class="badge"><span class="dot"></span>AI-assisted research · human-reviewed</span>
+      <span>© <span id="yr">2026</span> Market Flow Research</span>
+    </div>
+  </footer>
+
+  <script>
+    try{var st=localStorage.getItem("mfr_theme");if(st)document.body.setAttribute("data-theme",st);}catch(e){}
+    document.getElementById("yr").textContent=new Date().getFullYear();
+    function tl(){document.getElementById("themeBtn").textContent=document.body.getAttribute("data-theme")==="light"?"☀️":"🌙";}
+    tl();
+    document.getElementById("themeBtn").onclick=function(){
+      var t=document.body.getAttribute("data-theme")==="light"?"dark":"light";
+      document.body.setAttribute("data-theme",t);try{localStorage.setItem("mfr_theme",t);}catch(e){}tl();
+    };
+  </script>
+</body>
+</html>
