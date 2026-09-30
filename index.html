@@ -163,6 +163,16 @@
       <div class="h2" data-i18n="latest">Latest research</div>
       <div class="grid">
 
+        <a class="card" href="articles/same-data-different-readout-transformer-vs-attention-query/">
+          <div class="thumb"><img src="articles/same-data-different-readout-transformer-vs-attention-query/img/tb17_readout_en.png" alt="Test MAE, output spread and precision of vertex calls for the transformer and the wattn attention network" loading="lazy"><span class="tag">Readout</span></div>
+          <div class="cbody">
+            <h3>Same Data, Different Readout — How a Transformer Fails Differently From an Attention Query</h3>
+            <p>We repeated the previous study exactly — same 2.3% zigzag target, same pivot zone, same loss, split and seed — and changed one thing: how the network reads its own sequence. Averaging the 13 steps instead of letting a learned query pick them cut the error from 0.554 to 0.476 and made &quot;vertex&quot; calls 44% precise instead of 3%. Tuning then turned the same model into a noisy caller again. And past the end of the dataset, both readouts lose the direction. The readout decides how a network is wrong, not whether it is right.</p>
+            <div class="date">30 September 2026</div>
+          </div>
+        </a>
+
+
         <a class="card" href="articles/a-network-that-found-the-pivot-zone-only-where-it-was-trained/">
           <div class="thumb"><img src="articles/a-network-that-found-the-pivot-zone-only-where-it-was-trained/img/tb16_zone_en.png" alt="Share of pivot-zone events caught by the wattn network on train, validation, test and ten unseen days" loading="lazy"><span class="tag">Pivot zone net</span></div>
           <div class="cbody">
