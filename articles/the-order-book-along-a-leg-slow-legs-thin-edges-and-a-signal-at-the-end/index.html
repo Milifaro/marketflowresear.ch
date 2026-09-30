@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Order Book Along a Leg — Slow Legs, Thin Edges, and a Signal at the End That Beats Chance ×4.6 — Market Flow Research</title>
+  <meta name="description" content="We laid the seven features of our best order-book class along 554 zigzag legs of six coins. Every feature marks the edges of a leg, with the book thinning per unit of flow right before a pivot. The same features tell a short leg from a long one early — not the exact length, but its distribution. A m" />
+  <meta name="keywords" content="" />
+
+  <link rel="canonical" href="https://marketflowresear.ch/articles/the-order-book-along-a-leg-slow-legs-thin-edges-and-a-signal-at-the-end/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Market Flow Research" />
+  <meta property="og:title" content="The Order Book Along a Leg — Slow Legs, Thin Edges, and a Signal at the End That Beats Chance ×4.6" />
+  <meta property="og:description" content="We laid the seven features of our best order-book class along 554 zigzag legs of six coins. Every feature marks the edges of a leg, with the book thinning per unit of flow right before a pivot. The same features tell a short leg from a long one early — not the exact length, but its distribution. A m" />
+  <meta property="og:url" content="https://marketflowresear.ch/articles/the-order-book-along-a-leg-slow-legs-thin-edges-and-a-signal-at-the-end/" />
+  <meta property="og:image" content="https://marketflowresear.ch/articles/the-order-book-along-a-leg-slow-legs-thin-edges-and-a-signal-at-the-end/img/tb29_profile_en.png" />
+  <meta property="og:image:width" content="1104" />
+  <meta property="og:image:height" content="575" />
+  <meta property="article:published_time" content="2026-09-30" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Order Book Along a Leg — Slow Legs, Thin Edges, and a Signal at the End That Beats Chance ×4.6" />
+  <meta name="twitter:description" content="We laid the seven features of our best order-book class along 554 zigzag legs of six coins. Every feature marks the edges of a leg, with the book thinning per unit of flow right before a pivot. The same features tell a short leg from a long one early — not the exact length, but its distribution. A m" />
+  <meta name="twitter:image" content="https://marketflowresear.ch/articles/the-order-book-along-a-leg-slow-legs-thin-edges-and-a-signal-at-the-end/img/tb29_profile_en.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "The Order Book Along a Leg \u2014 Slow Legs, Thin Edges, and a Signal at the End That Beats Chance \u00d74.6",
+    "description": "We laid the seven features of our best order-book class along 554 zigzag legs of six coins. Every feature marks the edges of a leg, with the book thinning per unit of flow right before a pivot. The same features tell a short leg from a long one early \u2014 not the exact length, but its distribution. A m",
+    "datePublished": "2026-09-30",
+    "inLanguage": "en",
+    "image": "https://marketflowresear.ch/articles/the-order-book-along-a-leg-slow-legs-thin-edges-and-a-signal-at-the-end/img/tb29_profile_en.png",
+    "author": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "publisher": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "mainEntityOfPage": "https://marketflowresear.ch/articles/the-order-book-along-a-leg-slow-legs-thin-edges-and-a-signal-at-the-end/",
+    "creativeWorkStatus": "AI-assisted, human-reviewed"
+  }
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230b0d12'/><path d='M14 66 L34 46 L48 58 L70 30 L86 30' fill='none' stroke='%2340e0a0' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
+
+  <style>
+    :root{--bg:#0b0d12;--panel:#12151d;--ink:#e8ecf3;--muted:#8a93a6;--line:#232838;--accent:#40e0a0;--accent-dim:#1c3a2f}
+    body[data-theme="light"]{--bg:#ffffff;--panel:#f6f8fb;--ink:#12151d;--muted:#5b6472;--line:#e4e8ef;--accent:#0a9c69;--accent-dim:#e6f7f0}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{background:var(--bg);color:var(--ink);font:17px/1.72 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:720px;margin:0 auto;padding:0 22px}
+    .bar{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+    .brand{font-weight:800;letter-spacing:.13em;font-size:13px;text-transform:uppercase;text-decoration:none;color:var(--ink)}
+    .btn{cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:10px;padding:7px 11px;font-size:13px;font-weight:600}
+    article{padding:18px 0 40px}
+    .tag{display:inline-block;background:var(--panel);border:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+    h1{font-size:clamp(26px,5vw,38px);line-height:1.15;margin:16px 0 10px;letter-spacing:-.01em}
+    .lede{color:var(--muted);font-size:19px;margin:0 0 18px}
+    .meta{color:var(--muted);font-size:14px;margin-bottom:26px}
+    article h2{font-size:20px;margin:34px 0 10px}
+    article p{margin:0 0 18px}
+    article b{color:var(--ink)}
+    .video{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:8px 0 6px;background:#000}
+    .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    figure{margin:24px 0}
+    figure img{width:100%;border:1px solid var(--line);border-radius:14px;display:block;background:var(--panel)}
+    figcaption{color:var(--muted);font-size:13px;margin-top:8px;text-align:center}
+    .next{margin:40px 0 6px}
+    .next .h2{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+    .next .nlead{color:var(--ink);font-size:16px;margin:0 0 16px;line-height:1.6}
+    .next .nlink{color:var(--accent);font-weight:700;text-decoration:none;border-bottom:1px solid var(--accent-dim)}
+    .next .nlink:hover{border-bottom-color:var(--accent)}
+    .next .nall{margin:16px 0 0;font-size:14px}
+    .next .nall a{color:var(--accent);text-decoration:none;font-weight:600}
+    .ncards{display:grid;grid-template-columns:1fr;gap:14px}
+    @media(min-width:640px){.ncards{grid-template-columns:1fr 1fr}}
+    .ncard{display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;transition:border-color .15s,transform .15s}
+    .ncard:hover{border-color:var(--accent);transform:translateY(-2px)}
+    .ncard h3{margin:0 0 6px;font-size:16px}
+    .ncard p{margin:0;color:var(--muted);font-size:13px}
+    .repro{margin:0 0 18px;padding-left:20px}
+    .repro li{margin:0 0 8px}
+    .repro a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-dim)}
+    .aibox{margin:34px 0 0;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--muted);font-size:14px}
+    .back{display:inline-block;margin:30px 0 0;color:var(--accent);text-decoration:none;font-weight:600}
+    footer{border-top:1px solid var(--line);margin-top:20px;padding:22px 0 44px;color:var(--muted);font-size:13px}
+    .badge{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:999px;padding:5px 11px}
+    .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="../../">← Market Flow Research</a>
+      <span class="btn" id="themeBtn">🌙</span>
+    </div>
+
+    <article>
+      <span class="tag">The class along the leg</span>
+      <h1>The Order Book Along a Leg — Slow Legs, Thin Edges, and a Signal at the End That Beats Chance ×4.6</h1>
+      <p class="lede">We laid the seven features of our best order-book class along 554 zigzag legs of six coins. Every feature marks the edges of a leg, with the book thinning per unit of flow right before a pivot. The same features tell a short leg from a long one early — not the exact length, but its distribution. A memory network trained on &quot;the last 5% of the leg&quot; puts 23% of its loudest calls there, against 5% by chance. And the honest cost is written next to each number: detecting a new leg takes 12–16 events, a price-path detector still does better, and the zigzag labels themselves arrive late.</p>
+      <div class="meta">Research note · 30 September 2026 · AI-assisted, human-reviewed</div>
+
+      
+
+      <h2>① Every feature marks the edges</h2>
+      <p>Study 28 measured the leg on price. Here the same pass is applied to `210×10-1×7d/d` — six derivative ratios between book levels and flow, plus the price derivative — over <b>554 legs</b> and 309,021 events on six coins.</p>
+      <p><b>Every one of the seven features marks the edges</b>, with |t| from 9.6 to 10.2 between edges and middle (the same measurement on noise gives |t| &lt; 4). They split into two opposite groups. Flow-type features (flow per resistance, flow per support, price) are <em>higher</em> at the edges — a U-shape with its bottom in the fifth tenth and its top in the last. Book-per-flow ratios are <em>lower</em> at the edges and lowest precisely in the <b>last tenth</b> (0.343 against 0.466 mid-leg): just before a pivot, each unit of trading meets less standing book. The end of a leg is sharper than its start in both groups — the opposite of the price-based picture, where the start dominated.</p>
+      <p>Length matters too. Long legs are <b>slow</b>: the amplitude of flow and price derivatives is lower (Spearman −0.59 to −0.61 with leg length), book-per-flow ratios higher (+0.54 to +0.60). The edge profile survives at any length; the level shifts, the difference stays. Same sign on all six coins.</p>
+      <figure><img src="img/tb29_profile_en.png" alt="Rank of four features of the order-book class along the ten tenths of a zigzag leg: U-shape for flow and price, inverted for book-per-flow" loading="lazy"><figcaption>Rank of four features of the order-book class along the ten tenths of a zigzag leg: U-shape for flow and price, inverted for book-per-flow</figcaption></figure>
+
+      <h2>② A new leg is visible after 12–16 events</h2>
+      <p>Asked whether a 2.3% reversal happened within the last X events, gradient boosting on the class reaches AUC <b>0.737–0.762</b> for every X from 3 to 100 on the unseen weeks — longer history does not make the class see a reversal better. What moves is the price of the answer: 95% precision at the top 1% of scores needs X = 100 and arrives <b>29 events</b> (1 h 42 min) after the pivot. The working middle is X = 30–39: <b>49–62%</b> precision at 12–16 events delay. The fastest windows (X = 5–8, delay 2–5 events) are right only 3–11% of the time.</p>
+      <p>What works changes with the window: on short windows, the <em>mean</em> levels of support and resistance per flow; from X = 10 on, their <em>spread</em> — when a reversal is inside the window, the spread of those ratios drops, the same thinning seen in the last tenth. For comparison, the same detector on the price path (study 28) gives 0.830. Price is still the stronger description.</p>
+      <figure><img src="img/tb29_detect_en.png" alt="Precision of detecting a new zigzag leg from the order-book class at the top 1% of scores, for windows of 5 to 100 events, with delays" loading="lazy"><figcaption>Precision of detecting a new zigzag leg from the order-book class at the top 1% of scores, for windows of 5 to 100 events, with delays</figcaption></figure>
+
+      <h2>③ Short or long: the leg&#x27;s length as a distribution</h2>
+      <p>Stage 1 found that feature level and leg length are linked, but measured the level over the whole leg. Taken causally from the first K events after a pivot, the link holds: split legs into five equal groups by the level of support-per-flow in the first 10 events and the median lengths run <b>238 → 372 → 476 → 483 → 565</b>. The quartiles overlap — the level moves the <em>distribution</em> of length rather than naming it.</p>
+      <p>A model on the head of the leg plus the previous leg forecasts length with Spearman <b>+0.58</b> and AUC 0.806 by date, +0.44 and 0.716 on a held-out coin (K = 100); the median error is 162 events against 198 for the median. The class alone, with no price, already gives 0.697 on a held-out coin. The longer the leg has run, the better its end is seen (+0.32 at K = 10 → +0.50 at K = 100). On the unseen weeks, the detector plus this forecast catch 47 of 95 legs within their first 39 events — but with hundreds of false triggers inside legs, and a forecast of the end that is off by 112–563 events. An order of magnitude, not an event.</p>
+      <figure><img src="img/tb29_length_en.png" alt="Median length of zigzag legs in five groups by the level of the support-per-flow feature in their first ten events" loading="lazy"><figcaption>Median length of zigzag legs in five groups by the level of the support-per-flow feature in their first ten events</figcaption></figure>
+
+      <h2>④ &quot;The last 5% of the leg&quot;: 23% hits where chance gives 5%</h2>
+      <p>The last stage labels the final 5% of each leg and trains a memory network on 131 channels from seven classes (451 legs train, 103 validation). The best run — plain binary cross-entropy, positive weight 19 — gives AUC 0.714 and AP 0.151 on validation, and its output climbs <b>ninefold</b> from the second tenth of the leg to the tenth. Taking its loudest 5% of events, <b>23.2%</b> are truly in the last 5% of a leg: <b>×4.6</b> chance. A counter of events since the pivot, used the same way, scores 4.7% — worse than random, because its loudest events are the ends of the longest legs.</p>
+      <p>The honest caveat is in the same table. The network also sees counters reset at zigzag pivots, and a 2.3% pivot is confirmed only once price has moved 2.3% away — a median of <b>80 events</b> (4.7 hours) later on validation. Removing the three counters costs AP 0.027; the class alone still hits <b>12.9%</b> at its loudest 5%, 2.6× chance. So the class carries the result and the labels amplify it. Shaped losses (focal, &quot;close&quot;) only made the whole leg hum at 0.5; what helped was training longer and demanding silence in the first 50 events of a leg. The network memorises train almost completely (AUC 0.998) — early stopping on validation is what keeps it useful.</p>
+      <figure><img src="img/tb29_end_en.png" alt="Mean output of the end-of-leg memory network in each tenth of the leg, rising to a peak in the last tenth, against a counter baseline" loading="lazy"><figcaption>Mean output of the end-of-leg memory network in each tenth of the leg, rising to a peak in the last tenth, against a counter baseline</figcaption></figure>
+
+      <h2>Reproduce this study</h2>
+      <ul class="repro"><li><a href="29-class7dd-legs.md">Research log (.md, Ukrainian): goal, data, plan, scripts, every confirmed stage and table — enough to rerun the study</a></li><li><a href="tb29_reproduce.zip">Reproduction kit (.zip): the study&#x27;s scripts, project rules and base scripts that build every class</a></li></ul>
+
+      <div class="aibox">🤖 This research — data collection, analysis, charts and the narrated
+      video — was produced with the assistance of AI, then reviewed by a human. We forecast
+      volatility, not direction, and log every prediction. <em>Research, not financial advice.</em></div>
+
+      <div class="next">
+        <div class="h2">Read next</div>
+        <p class="nlead">If this changed how you read the tape, the natural next step is <a class="nlink" href="/articles/volume-is-fuel-not-steering-wheel/">Volume Is the Fuel — Not the Steering Wheel</a> — We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p>
+        <div class="ncards"><a class="ncard" href="/articles/volume-is-fuel-not-steering-wheel/"><h3>Volume Is the Fuel — Not the Steering Wheel</h3><p>We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p></a><a class="ncard" href="/articles/about-market-research-lab/"><h3>About Market Research Lab — What We Collect and Why</h3><p>Most market commentary is storytelling.</p></a><a class="ncard" href="/articles/signal-standard-from-calm-to-calm-btc/"><h3>From Calm to Calm: a Standard for What Counts as a Signal (BTC)</h3><p>We stopped defining market signals with a stopwatch.</p></a><a class="ncard" href="/articles/resting-walls-what-thick-liquidity-predicts/"><h3>The Wall That Goes Quiet: What Resting Liquidity Predicts</h3><p>We measured resting limit liquidity sitting on both sides of the book second by second across six coins, and asked the only question that matters:….</p></a></div>
+        <p class="nall"><a href="../../">Browse every study on Market Flow Research →</a></p>
+      </div>
+
+      <h2>Comments</h2>
+      <p style="color:var(--muted)">Discussion is powered by GitHub. Enable it by adding <code>secrets/giscus.json</code> (repo IDs from giscus.app).</p>
+
+      <a class="back" href="../../">← All research</a>
+    </article>
+  </div>
+
+  <footer>
+    <div class="wrap" style="padding:0 22px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center">
+      <span class="badge"><span class="dot"></span>AI-assisted research · human-reviewed</span>
+      <span>© <span id="yr">2026</span> Market Flow Research</span>
+    </div>
+  </footer>
+
+  <script>
+    try{var st=localStorage.getItem("mfr_theme");if(st)document.body.setAttribute("data-theme",st);}catch(e){}
+    document.getElementById("yr").textContent=new Date().getFullYear();
+    function tl(){document.getElementById("themeBtn").textContent=document.body.getAttribute("data-theme")==="light"?"☀️":"🌙";}
+    tl();
+    document.getElementById("themeBtn").onclick=function(){
+      var t=document.body.getAttribute("data-theme")==="light"?"dark":"light";
+      document.body.setAttribute("data-theme",t);try{localStorage.setItem("mfr_theme",t);}catch(e){}tl();
+    };
+  </script>
+</body>
+</html>
