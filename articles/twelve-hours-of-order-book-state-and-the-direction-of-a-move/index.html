@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Twelve Hours of Order-Book State and the Direction of a Move — From 0.16 to 0.42 — Market Flow Research</title>
+  <meta name="description" content="Does the order book, averaged over about half a day, know which way the current move is going? We smoothed four book features with exponential averages on 52 horizons from 35 minutes to 58 hours and correlated them with the direction of 2.3% and 0.8% zigzag moves on 40,242 BTC events. The raw answer" />
+  <meta name="keywords" content="" />
+
+  <link rel="canonical" href="https://marketflowresear.ch/articles/twelve-hours-of-order-book-state-and-the-direction-of-a-move/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Market Flow Research" />
+  <meta property="og:title" content="Twelve Hours of Order-Book State and the Direction of a Move — From 0.16 to 0.42" />
+  <meta property="og:description" content="Does the order book, averaged over about half a day, know which way the current move is going? We smoothed four book features with exponential averages on 52 horizons from 35 minutes to 58 hours and correlated them with the direction of 2.3% and 0.8% zigzag moves on 40,242 BTC events. The raw answer" />
+  <meta property="og:url" content="https://marketflowresear.ch/articles/twelve-hours-of-order-book-state-and-the-direction-of-a-move/" />
+  <meta property="og:image" content="https://marketflowresear.ch/articles/twelve-hours-of-order-book-state-and-the-direction-of-a-move/img/tb11_raw_en.png" />
+  <meta property="og:image:width" content="1104" />
+  <meta property="og:image:height" content="575" />
+  <meta property="article:published_time" content="2026-09-30" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Twelve Hours of Order-Book State and the Direction of a Move — From 0.16 to 0.42" />
+  <meta name="twitter:description" content="Does the order book, averaged over about half a day, know which way the current move is going? We smoothed four book features with exponential averages on 52 horizons from 35 minutes to 58 hours and correlated them with the direction of 2.3% and 0.8% zigzag moves on 40,242 BTC events. The raw answer" />
+  <meta name="twitter:image" content="https://marketflowresear.ch/articles/twelve-hours-of-order-book-state-and-the-direction-of-a-move/img/tb11_raw_en.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Twelve Hours of Order-Book State and the Direction of a Move \u2014 From 0.16 to 0.42",
+    "description": "Does the order book, averaged over about half a day, know which way the current move is going? We smoothed four book features with exponential averages on 52 horizons from 35 minutes to 58 hours and correlated them with the direction of 2.3% and 0.8% zigzag moves on 40,242 BTC events. The raw answer",
+    "datePublished": "2026-09-30",
+    "inLanguage": "en",
+    "image": "https://marketflowresear.ch/articles/twelve-hours-of-order-book-state-and-the-direction-of-a-move/img/tb11_raw_en.png",
+    "author": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "publisher": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "mainEntityOfPage": "https://marketflowresear.ch/articles/twelve-hours-of-order-book-state-and-the-direction-of-a-move/",
+    "creativeWorkStatus": "AI-assisted, human-reviewed"
+  }
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230b0d12'/><path d='M14 66 L34 46 L48 58 L70 30 L86 30' fill='none' stroke='%2340e0a0' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
+
+  <style>
+    :root{--bg:#0b0d12;--panel:#12151d;--ink:#e8ecf3;--muted:#8a93a6;--line:#232838;--accent:#40e0a0;--accent-dim:#1c3a2f}
+    body[data-theme="light"]{--bg:#ffffff;--panel:#f6f8fb;--ink:#12151d;--muted:#5b6472;--line:#e4e8ef;--accent:#0a9c69;--accent-dim:#e6f7f0}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{background:var(--bg);color:var(--ink);font:17px/1.72 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:720px;margin:0 auto;padding:0 22px}
+    .bar{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+    .brand{font-weight:800;letter-spacing:.13em;font-size:13px;text-transform:uppercase;text-decoration:none;color:var(--ink)}
+    .btn{cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:10px;padding:7px 11px;font-size:13px;font-weight:600}
+    article{padding:18px 0 40px}
+    .tag{display:inline-block;background:var(--panel);border:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+    h1{font-size:clamp(26px,5vw,38px);line-height:1.15;margin:16px 0 10px;letter-spacing:-.01em}
+    .lede{color:var(--muted);font-size:19px;margin:0 0 18px}
+    .meta{color:var(--muted);font-size:14px;margin-bottom:26px}
+    article h2{font-size:20px;margin:34px 0 10px}
+    article p{margin:0 0 18px}
+    article b{color:var(--ink)}
+    .video{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:8px 0 6px;background:#000}
+    .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    figure{margin:24px 0}
+    figure img{width:100%;border:1px solid var(--line);border-radius:14px;display:block;background:var(--panel)}
+    figcaption{color:var(--muted);font-size:13px;margin-top:8px;text-align:center}
+    .next{margin:40px 0 6px}
+    .next .h2{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+    .next .nlead{color:var(--ink);font-size:16px;margin:0 0 16px;line-height:1.6}
+    .next .nlink{color:var(--accent);font-weight:700;text-decoration:none;border-bottom:1px solid var(--accent-dim)}
+    .next .nlink:hover{border-bottom-color:var(--accent)}
+    .next .nall{margin:16px 0 0;font-size:14px}
+    .next .nall a{color:var(--accent);text-decoration:none;font-weight:600}
+    .ncards{display:grid;grid-template-columns:1fr;gap:14px}
+    @media(min-width:640px){.ncards{grid-template-columns:1fr 1fr}}
+    .ncard{display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;transition:border-color .15s,transform .15s}
+    .ncard:hover{border-color:var(--accent);transform:translateY(-2px)}
+    .ncard h3{margin:0 0 6px;font-size:16px}
+    .ncard p{margin:0;color:var(--muted);font-size:13px}
+    .repro{margin:0 0 18px;padding-left:20px}
+    .repro li{margin:0 0 8px}
+    .repro a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-dim)}
+    .aibox{margin:34px 0 0;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--muted);font-size:14px}
+    .back{display:inline-block;margin:30px 0 0;color:var(--accent);text-decoration:none;font-weight:600}
+    footer{border-top:1px solid var(--line);margin-top:20px;padding:22px 0 44px;color:var(--muted);font-size:13px}
+    .badge{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:999px;padding:5px 11px}
+    .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="../../">← Market Flow Research</a>
+      <span class="btn" id="themeBtn">🌙</span>
+    </div>
+
+    <article>
+      <span class="tag">Slow book state</span>
+      <h1>Twelve Hours of Order-Book State and the Direction of a Move — From 0.16 to 0.42</h1>
+      <p class="lede">Does the order book, averaged over about half a day, know which way the current move is going? We smoothed four book features with exponential averages on 52 horizons from 35 minutes to 58 hours and correlated them with the direction of 2.3% and 0.8% zigzag moves on 40,242 BTC events. The raw answer is weak (−0.16 at best). Three changes of question — a price feature instead of price, the position inside the leg instead of the direction, and a zigzag drawn on the same smoothing — lift the ceiling to 0.42. That is 17% of the variance, from a description that ignores the last hour entirely.</p>
+      <div class="meta">Research note · 30 September 2026 · AI-assisted, human-reviewed</div>
+
+      
+
+      <h2>① The raw answer: weak, and pointing backwards</h2>
+      <p>The events are the same 210-second windows as everywhere in this series — <b>40,242 BTC events</b> from 14 February to 16 August 2026, laid out as one continuous timeline. Each is reduced to three normalised differences between the two sides of the book: `balance` (resistance versus support), `d_balance` (how fast that balance changes) and `vol_balance` (buy versus sell volume). Then each gets an exponential average over 200 events — about 11 hours 40 minutes — together with the price.</p>
+      <p>The target is the direction of the zigzag move the event sits in: +1 up, −1 down, for two independent zigzags, 2.3% and 0.8%. No parameters, no randomness, no seed; the result is deterministic.</p>
+      <p>The honest first answer: <b>there is a link, and it is weak.</b> The strongest is the book balance against the small zigzag: <b>−0.161</b> (Pearson; Spearman −0.146), about 2.6% of shared variance. The sign is negative — during a rise the averaged book leans toward support, during a fall toward resistance — and it holds on both zigzags and both metrics. On the big 2.3% zigzag everything is roughly half as strong. The price level itself says almost nothing (−0.02 to −0.04), which is what you would expect.</p>
+      <figure><img src="img/tb11_raw_en.png" alt="Pearson correlation of four 200-event exponential averages with the direction of 2.3% and 0.8% zigzag moves on BTC" loading="lazy"><figcaption>Pearson correlation of four 200-event exponential averages with the direction of 2.3% and 0.8% zigzag moves on BTC</figcaption></figure>
+
+      <h2>② A price feature beats the price</h2>
+      <p>The first change: instead of averaging the price, turn it into a feature built by the same rule as the others — the normalised difference between upward and downward movement inside each 14-second block, i.e. <em>how straight</em> the price travelled. All four series then live on the same [−1, 1] scale.</p>
+      <p>We swept the averaging period over <b>52 values</b>, from 10 to 1,000 events (0.6 to 58.3 hours). The price feature reaches <b>+0.217</b> against the 0.8% zigzag at period 20 (about 1.2 hours) — where plain price managed −0.023. The change of balance mirrors it at <b>−0.231</b>.</p>
+      <p>The mirror is not a coincidence. The pair `d_balance × price_balance` correlates at <b>−0.67 to −0.93</b> across the whole grid: the difference in how the two walls move is mostly the same information as the direction of price, with the opposite sign. None of the six feature pairs is close to independent (|r| from 0.24 to 0.93). Four series, fewer than four pieces of information — and the ceiling is still about ±0.23, some 5% of the variance.</p>
+      <figure><img src="img/tb11_grid_en.png" alt="Correlation of the price feature, the change of balance and the book balance with the 0.8% zigzag direction across EMA periods from 10 to 1000 events" loading="lazy"><figcaption>Correlation of the price feature, the change of balance and the book balance with the 0.8% zigzag direction across EMA periods from 10 to 1000 events</figcaption></figure>
+
+      <h2>③ Ask where, not which way — on a smoothed zigzag</h2>
+      <p>Two more changes of question moved the ceiling far more than any feature did.</p>
+      <p><b>Position instead of direction.</b> Every event gets its place inside its zigzag leg: −1 at the low pivot, +1 at the high pivot, proportional in between — and the feature is rescaled the same way over the same leg, so like is compared with like. On the small zigzag this gives the strongest numbers so far: price feature <b>+0.328</b>, change of balance <b>−0.338</b>, with peaks on long periods (450–1,000 events) rather than 10–20. The book holds &quot;where are we in the leg&quot; better than &quot;where is the leg going&quot;.</p>
+      <p><b>A zigzag drawn on the same smoothing.</b> Instead of pivots on raw event prices, first smooth the price with the <em>same</em> EMA period as the features, then draw the zigzag. Now volume balance against the 2.3% direction goes from −0.049 to <b>−0.396</b>, and the best cell of the study appears: volume balance against the position in a 0.8% leg, period 380 events (≈ 22 hours), <b>−0.417</b> — about 17% of the variance against 5% before. Two signs flip in the process: book balance and its change run <em>against</em> small wiggles but <em>with</em> the smoothed trend (+0.24).</p>
+      <p>We also tested three ways to rescale inside a leg (min-max, robust, quantile). They change the magnitude by 0.02–0.09 and <b>never flip a sign</b> — quantile wins on raw price, min-max on smoothed price, robust is weakest because a leg is a monotone move, not a cloud around a centre.</p>
+      <figure><img src="img/tb11_ceiling_en.png" alt="Strongest absolute correlation reached at each stage of the study: 0.161, 0.231, 0.338, 0.417" loading="lazy"><figcaption>Strongest absolute correlation reached at each stage of the study: 0.161, 0.231, 0.338, 0.417</figcaption></figure>
+
+      <h2>④ What 0.42 means — and what it does not</h2>
+      <p>The picture is consistent and it is useful: slow book state carries real information about the phase of a move, and it carries it best when the question is posed on the same time scale as the features. The volume balance is the most stable of the four: buying pressure runs <em>against</em> the rise, −0.30 to −0.40 on long periods, on every variant.</p>
+      <p>Two limits keep this from being a trading rule. First, the target is a zigzag label, and a zigzag pivot is only confirmed after the move — the correlation describes a leg, it does not call it in advance. Second, a smoothed zigzag moves its pivots later still. This study measured <em>how much</em> the slow book knows about the leg; the next ones in this series try to turn that into a label a model can learn causally, event by event.</p>
+      <figure><img src="img/tb11_ema_vs_price_en.png" alt="Correlation of volume balance with the direction of the 2.3% move when the zigzag is drawn on the EMA of price versus on raw price" loading="lazy"><figcaption>Correlation of volume balance with the direction of the 2.3% move when the zigzag is drawn on the EMA of price versus on raw price</figcaption></figure>
+
+      <h2>Reproduce this study</h2>
+      <ul class="repro"><li><a href="11-ema-zigzag-correlation.md">Research log (.md, Ukrainian): goal, data, plan, scripts, every confirmed stage and table — enough to rerun the study</a></li><li><a href="tb11_reproduce.zip">Reproduction kit (.zip): the study&#x27;s scripts, project rules and base scripts that build every class</a></li></ul>
+
+      <div class="aibox">🤖 This research — data collection, analysis, charts and the narrated
+      video — was produced with the assistance of AI, then reviewed by a human. We forecast
+      volatility, not direction, and log every prediction. <em>Research, not financial advice.</em></div>
+
+      <div class="next">
+        <div class="h2">Read next</div>
+        <p class="nlead">If this changed how you read the tape, the natural next step is <a class="nlink" href="/articles/volume-is-fuel-not-steering-wheel/">Volume Is the Fuel — Not the Steering Wheel</a> — We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p>
+        <div class="ncards"><a class="ncard" href="/articles/volume-is-fuel-not-steering-wheel/"><h3>Volume Is the Fuel — Not the Steering Wheel</h3><p>We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p></a><a class="ncard" href="/articles/about-market-research-lab/"><h3>About Market Research Lab — What We Collect and Why</h3><p>Most market commentary is storytelling.</p></a><a class="ncard" href="/articles/signal-standard-from-calm-to-calm-btc/"><h3>From Calm to Calm: a Standard for What Counts as a Signal (BTC)</h3><p>We stopped defining market signals with a stopwatch.</p></a><a class="ncard" href="/articles/resting-walls-what-thick-liquidity-predicts/"><h3>The Wall That Goes Quiet: What Resting Liquidity Predicts</h3><p>We measured resting limit liquidity sitting on both sides of the book second by second across six coins, and asked the only question that matters:….</p></a></div>
+        <p class="nall"><a href="../../">Browse every study on Market Flow Research →</a></p>
+      </div>
+
+      <h2>Comments</h2>
+      <p style="color:var(--muted)">Discussion is powered by GitHub. Enable it by adding <code>secrets/giscus.json</code> (repo IDs from giscus.app).</p>
+
+      <a class="back" href="../../">← All research</a>
+    </article>
+  </div>
+
+  <footer>
+    <div class="wrap" style="padding:0 22px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center">
+      <span class="badge"><span class="dot"></span>AI-assisted research · human-reviewed</span>
+      <span>© <span id="yr">2026</span> Market Flow Research</span>
+    </div>
+  </footer>
+
+  <script>
+    try{var st=localStorage.getItem("mfr_theme");if(st)document.body.setAttribute("data-theme",st);}catch(e){}
+    document.getElementById("yr").textContent=new Date().getFullYear();
+    function tl(){document.getElementById("themeBtn").textContent=document.body.getAttribute("data-theme")==="light"?"☀️":"🌙";}
+    tl();
+    document.getElementById("themeBtn").onclick=function(){
+      var t=document.body.getAttribute("data-theme")==="light"?"dark":"light";
+      document.body.setAttribute("data-theme",t);try{localStorage.setItem("mfr_theme",t);}catch(e){}tl();
+    };
+  </script>
+</body>
+</html>
