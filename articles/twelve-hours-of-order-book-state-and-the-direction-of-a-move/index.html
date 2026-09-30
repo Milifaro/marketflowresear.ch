@@ -99,7 +99,8 @@
       <p class="lede">Does the order book, averaged over about half a day, know which way the current move is going? We smoothed four book features with exponential averages on 52 horizons from 35 minutes to 58 hours and correlated them with the direction of 2.3% and 0.8% zigzag moves on 40,242 BTC events. The raw answer is weak (−0.16 at best). Three changes of question — a price feature instead of price, the position inside the leg instead of the direction, and a zigzag drawn on the same smoothing — lift the ceiling to 0.42. That is 17% of the variance, from a description that ignores the last hour entirely.</p>
       <div class="meta">Research note · 30 September 2026 · AI-assisted, human-reviewed</div>
 
-      
+      <div class="video"><iframe src="https://www.youtube.com/embed/SGzc0G3dC48" title="Full research video" loading="lazy" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe></div>
+      <p style="color:var(--muted);font-size:13px;margin-top:0">Full walkthrough — streamed from YouTube.</p>
 
       <h2>① The raw answer: weak, and pointing backwards</h2>
       <p>The events are the same 210-second windows as everywhere in this series — <b>40,242 BTC events</b> from 14 February to 16 August 2026, laid out as one continuous timeline. Each is reduced to three normalised differences between the two sides of the book: `balance` (resistance versus support), `d_balance` (how fast that balance changes) and `vol_balance` (buy versus sell volume). Then each gets an exponential average over 200 events — about 11 hours 40 minutes — together with the price.</p>
