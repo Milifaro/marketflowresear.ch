@@ -163,6 +163,16 @@
       <div class="h2" data-i18n="latest">Latest research</div>
       <div class="grid">
 
+        <a class="card" href="articles/a-loss-ladder-for-five-trained-networks-and-the-win-that-was-a-dropout-bug/">
+          <div class="thumb"><img src="articles/a-loss-ladder-for-five-trained-networks-and-the-win-that-was-a-dropout-bug/img/tb32_ladder_en.png" alt="Change of each of five networks&#x27; fixed validation metric after the loss ladder, next to the measurement noise" loading="lazy"><span class="tag">Loss ladder</span></div>
+          <div class="cbody">
+            <h3>A Loss Ladder for Five Trained Networks — and the Biggest Win That Was a Dropout Bug</h3>
+            <p>We took five approved networks from this series and tried to improve them without retraining: change the loss function between epochs, raise the penalty step by step, keep an epoch only if a fixed metric on validation improves. 124 attempts, 6.9 machine hours. One network truly improved — the one whose own training had stopped too early — and it improved from a smaller learning rate, not a new loss. The spectacular result, +0.47 on the zone model, vanished when the saved weights were measured again in a separate process: the GPU backend had left dropout switched on during evaluation.</p>
+            <div class="date">30 September 2026</div>
+          </div>
+        </a>
+
+
         <a class="card" href="articles/correction-and-reversal-are-one-event-of-different-strength/">
           <div class="thumb"><img src="articles/correction-and-reversal-are-one-event-of-different-strength/img/tb31_base_en.png" alt="Spread of the support-per-flow feature with no base, with the leg&#x27;s own mean removed, and with the previous leg&#x27;s mean removed, for up and down legs" loading="lazy"><span class="tag">One axis: normal → correction → pivot</span></div>
           <div class="cbody">

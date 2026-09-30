@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>A Loss Ladder for Five Trained Networks — and the Biggest Win That Was a Dropout Bug — Market Flow Research</title>
+  <meta name="description" content="We took five approved networks from this series and tried to improve them without retraining: change the loss function between epochs, raise the penalty step by step, keep an epoch only if a fixed metric on validation improves. 124 attempts, 6.9 machine hours. One network truly improved — the one wh" />
+  <meta name="keywords" content="" />
+
+  <link rel="canonical" href="https://marketflowresear.ch/articles/a-loss-ladder-for-five-trained-networks-and-the-win-that-was-a-dropout-bug/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Market Flow Research" />
+  <meta property="og:title" content="A Loss Ladder for Five Trained Networks — and the Biggest Win That Was a Dropout Bug" />
+  <meta property="og:description" content="We took five approved networks from this series and tried to improve them without retraining: change the loss function between epochs, raise the penalty step by step, keep an epoch only if a fixed metric on validation improves. 124 attempts, 6.9 machine hours. One network truly improved — the one wh" />
+  <meta property="og:url" content="https://marketflowresear.ch/articles/a-loss-ladder-for-five-trained-networks-and-the-win-that-was-a-dropout-bug/" />
+  <meta property="og:image" content="https://marketflowresear.ch/articles/a-loss-ladder-for-five-trained-networks-and-the-win-that-was-a-dropout-bug/img/tb32_ladder_en.png" />
+  <meta property="og:image:width" content="1104" />
+  <meta property="og:image:height" content="575" />
+  <meta property="article:published_time" content="2026-09-30" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="A Loss Ladder for Five Trained Networks — and the Biggest Win That Was a Dropout Bug" />
+  <meta name="twitter:description" content="We took five approved networks from this series and tried to improve them without retraining: change the loss function between epochs, raise the penalty step by step, keep an epoch only if a fixed metric on validation improves. 124 attempts, 6.9 machine hours. One network truly improved — the one wh" />
+  <meta name="twitter:image" content="https://marketflowresear.ch/articles/a-loss-ladder-for-five-trained-networks-and-the-win-that-was-a-dropout-bug/img/tb32_ladder_en.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "A Loss Ladder for Five Trained Networks \u2014 and the Biggest Win That Was a Dropout Bug",
+    "description": "We took five approved networks from this series and tried to improve them without retraining: change the loss function between epochs, raise the penalty step by step, keep an epoch only if a fixed metric on validation improves. 124 attempts, 6.9 machine hours. One network truly improved \u2014 the one wh",
+    "datePublished": "2026-09-30",
+    "inLanguage": "en",
+    "image": "https://marketflowresear.ch/articles/a-loss-ladder-for-five-trained-networks-and-the-win-that-was-a-dropout-bug/img/tb32_ladder_en.png",
+    "author": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "publisher": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "mainEntityOfPage": "https://marketflowresear.ch/articles/a-loss-ladder-for-five-trained-networks-and-the-win-that-was-a-dropout-bug/",
+    "creativeWorkStatus": "AI-assisted, human-reviewed"
+  }
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230b0d12'/><path d='M14 66 L34 46 L48 58 L70 30 L86 30' fill='none' stroke='%2340e0a0' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
+
+  <style>
+    :root{--bg:#0b0d12;--panel:#12151d;--ink:#e8ecf3;--muted:#8a93a6;--line:#232838;--accent:#40e0a0;--accent-dim:#1c3a2f}
+    body[data-theme="light"]{--bg:#ffffff;--panel:#f6f8fb;--ink:#12151d;--muted:#5b6472;--line:#e4e8ef;--accent:#0a9c69;--accent-dim:#e6f7f0}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{background:var(--bg);color:var(--ink);font:17px/1.72 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:720px;margin:0 auto;padding:0 22px}
+    .bar{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+    .brand{font-weight:800;letter-spacing:.13em;font-size:13px;text-transform:uppercase;text-decoration:none;color:var(--ink)}
+    .btn{cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:10px;padding:7px 11px;font-size:13px;font-weight:600}
+    article{padding:18px 0 40px}
+    .tag{display:inline-block;background:var(--panel);border:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+    h1{font-size:clamp(26px,5vw,38px);line-height:1.15;margin:16px 0 10px;letter-spacing:-.01em}
+    .lede{color:var(--muted);font-size:19px;margin:0 0 18px}
+    .meta{color:var(--muted);font-size:14px;margin-bottom:26px}
+    article h2{font-size:20px;margin:34px 0 10px}
+    article p{margin:0 0 18px}
+    article b{color:var(--ink)}
+    .video{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:8px 0 6px;background:#000}
+    .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    figure{margin:24px 0}
+    figure img{width:100%;border:1px solid var(--line);border-radius:14px;display:block;background:var(--panel)}
+    figcaption{color:var(--muted);font-size:13px;margin-top:8px;text-align:center}
+    .next{margin:40px 0 6px}
+    .next .h2{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+    .next .nlead{color:var(--ink);font-size:16px;margin:0 0 16px;line-height:1.6}
+    .next .nlink{color:var(--accent);font-weight:700;text-decoration:none;border-bottom:1px solid var(--accent-dim)}
+    .next .nlink:hover{border-bottom-color:var(--accent)}
+    .next .nall{margin:16px 0 0;font-size:14px}
+    .next .nall a{color:var(--accent);text-decoration:none;font-weight:600}
+    .ncards{display:grid;grid-template-columns:1fr;gap:14px}
+    @media(min-width:640px){.ncards{grid-template-columns:1fr 1fr}}
+    .ncard{display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;transition:border-color .15s,transform .15s}
+    .ncard:hover{border-color:var(--accent);transform:translateY(-2px)}
+    .ncard h3{margin:0 0 6px;font-size:16px}
+    .ncard p{margin:0;color:var(--muted);font-size:13px}
+    .repro{margin:0 0 18px;padding-left:20px}
+    .repro li{margin:0 0 8px}
+    .repro a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-dim)}
+    .aibox{margin:34px 0 0;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--muted);font-size:14px}
+    .back{display:inline-block;margin:30px 0 0;color:var(--accent);text-decoration:none;font-weight:600}
+    footer{border-top:1px solid var(--line);margin-top:20px;padding:22px 0 44px;color:var(--muted);font-size:13px}
+    .badge{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:999px;padding:5px 11px}
+    .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="../../">← Market Flow Research</a>
+      <span class="btn" id="themeBtn">🌙</span>
+    </div>
+
+    <article>
+      <span class="tag">Loss ladder</span>
+      <h1>A Loss Ladder for Five Trained Networks — and the Biggest Win That Was a Dropout Bug</h1>
+      <p class="lede">We took five approved networks from this series and tried to improve them without retraining: change the loss function between epochs, raise the penalty step by step, keep an epoch only if a fixed metric on validation improves. 124 attempts, 6.9 machine hours. One network truly improved — the one whose own training had stopped too early — and it improved from a smaller learning rate, not a new loss. The spectacular result, +0.47 on the zone model, vanished when the saved weights were measured again in a separate process: the GPU backend had left dropout switched on during evaluation.</p>
+      <div class="meta">Research note · 30 September 2026 · AI-assisted, human-reviewed</div>
+
+      
+
+      <h2>① The ladder and its fixed yardstick</h2>
+      <p>This series has several approved networks, each with its best version: weights, settings and the validation number it was chosen by. The question here: <b>can an approved version be fine-tuned by changing the loss function between epochs</b> so that its own fixed metric gets better? And a service question: were they all trained to the end, or did some stop because the epoch budget ran out?</p>
+      <p>The ladder starts from the approved weights. Each rung is one epoch under its own loss, with the penalty growing rung by rung; after the epoch, the fixed metric is measured on validation. Better — keep the weights and continue from them. Worse — roll back. The metric is chosen in advance and does not depend on the penalty. And every model gets a <b>measurement noise</b> — the spread of repeated measurements of the same point — so a change can be read against it.</p>
+      <p>Five networks: `legleft` (how many events to the end of the leg), `legtip` (end-of-leg signal), `hazard100` (a pivot within the next 100 events), `hazard4` (four horizons), and `zone` (pivot zone, correction zone, ordinary event). 124 rung attempts in total.</p>
+      <figure><img src="img/tb32_ladder_en.png" alt="Change of each of five networks&#x27; fixed validation metric after the loss ladder, next to the measurement noise" loading="lazy"><figcaption>Change of each of five networks&#x27; fixed validation metric after the loss ladder, next to the measurement noise</figcaption></figure>
+
+      <h2>② Fine-tuning helps exactly where training stopped short</h2>
+      <p>The result sorts cleanly by one property — <b>how each network&#x27;s own training had ended</b>. `hazard100` had been stopped by patience while its metric was still rising (best epoch 8 of 11); the ladder added <b>+0.0224</b> (0.7204 → 0.7428), with 14 of 29 attempts outside the noise. `legleft` and `legtip` had trained to the end: 0 of 23 and 0 of 25. `hazard4` had also been stopped by patience, but none of its 22 attempts moved the metric even by the noise (±0.0026) — what matters is whether the metric was still moving, not how many epochs were allowed.</p>
+      <p>The rungs `hazard100` kept were &quot;the same loss, learning rate ×0.3&quot; and &quot;gradient window 40&quot;. No new loss shape — focal, proximity-to-pivot weighting, tripled label weight — gave anything a smaller step on the old loss did not. The rule for the rest of the project: <b>before inventing a loss, finish training on a smaller step.</b></p>
+      <p>Two more lessons. For `legleft`, all 23 attempts landed at 0.85–0.90 against the approved 0.8373 — the approved number was the best of 32 epochs selected on the same validation, and one new epoch simply returns the model to its typical level. And `hazard100`&#x27;s gain is mostly on its weakest coin: BNB from 0.555 to 0.639, while the two strongest coins slipped slightly. &quot;The model improved&quot; really means &quot;the worst part improved&quot;.</p>
+      <figure><img src="img/tb32_hazard_en.png" alt="Change in AUC of the hazard100 network per coin after the loss ladder: gains on BNB, SOL, DOGE, BTC; small losses on XRP and ETH" loading="lazy"><figcaption>Change in AUC of the hazard100 network per coin after the loss ladder: gains on BNB, SOL, DOGE, BTC; small losses on XRP and ETH</figcaption></figure>
+
+      <h2>③ The +0.47 that was not there</h2>
+      <p>The headline number of the run was `zone`: score 0.7055 → <b>1.1799</b>, and the confusion between the pivot and correction channels cut from 0.417 to 0.263 — five rungs kept, the training curves spotless.</p>
+      <p>Then all saved weights were measured again, event by event on validation, in a separate process. Four networks reproduced their numbers exactly. `zone` did not: approved <b>1.0471</b>, ladder <b>0.9909</b> — worse by 0.056, with the confusion <em>up</em> from 0.400 to 0.462. The cause: after a backward pass, the `mps` accelerator kept `nn.Dropout` active during evaluation even in `eval` mode. The approved version lost more to that noise than the version trained under the targeted penalty — hence the entire &quot;gain&quot;. The ladder version also never says &quot;zone&quot; in argmax mode: its accuracy 0.8936 equals the share of the majority class.</p>
+      <p>The rule that comes out of it reaches beyond this study: <b>any number measured in the same process as training on `mps` must be re-measured in a separate CPU run.</b> Measuring saved weights costs minutes and catches what no training curve can.</p>
+      <p>Two further checks close the study. Replacing the zigzag&#x27;s pivots with fake ones every 150 events barely moved `legleft` (narrow corridor 9.9% → 11.1%); its output does not follow a step counter (correlation 0.036) — it answers from the class, and the labels mostly give it a window of <b>silence</b>. And letting a network reset its own leg — no zigzag at all — reached the same corridor as the labelled version, paying with coverage: a monotone shape can be built into the architecture (`s = (1 − r)·min(s + g, 1)`), but the <em>place</em> of the reversal stays a question of data. On the right reset rate the detector hits 11–17% of reversals, with 88% of its signals false.</p>
+      <figure><img src="img/tb32_zone_en.png" alt="Score of the zone model before and after the loss ladder, as measured inside the run and re-measured separately on CPU" loading="lazy"><figcaption>Score of the zone model before and after the loss ladder, as measured inside the run and re-measured separately on CPU</figcaption></figure>
+
+      <h2>Reproduce this study</h2>
+      <ul class="repro"><li><a href="32-loss-ladder.md">Research log (.md, Ukrainian): goal, data, plan, scripts, every confirmed stage and table — enough to rerun the study</a></li><li><a href="tb32_reproduce.zip">Reproduction kit (.zip): the study&#x27;s scripts, project rules and base scripts that build every class</a></li></ul>
+
+      <div class="aibox">🤖 This research — data collection, analysis, charts and the narrated
+      video — was produced with the assistance of AI, then reviewed by a human. We forecast
+      volatility, not direction, and log every prediction. <em>Research, not financial advice.</em></div>
+
+      <div class="next">
+        <div class="h2">Read next</div>
+        <p class="nlead">If this changed how you read the tape, the natural next step is <a class="nlink" href="/articles/volume-is-fuel-not-steering-wheel/">Volume Is the Fuel — Not the Steering Wheel</a> — We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p>
+        <div class="ncards"><a class="ncard" href="/articles/volume-is-fuel-not-steering-wheel/"><h3>Volume Is the Fuel — Not the Steering Wheel</h3><p>We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p></a><a class="ncard" href="/articles/about-market-research-lab/"><h3>About Market Research Lab — What We Collect and Why</h3><p>Most market commentary is storytelling.</p></a><a class="ncard" href="/articles/signal-standard-from-calm-to-calm-btc/"><h3>From Calm to Calm: a Standard for What Counts as a Signal (BTC)</h3><p>We stopped defining market signals with a stopwatch.</p></a><a class="ncard" href="/articles/resting-walls-what-thick-liquidity-predicts/"><h3>The Wall That Goes Quiet: What Resting Liquidity Predicts</h3><p>We measured resting limit liquidity sitting on both sides of the book second by second across six coins, and asked the only question that matters:….</p></a></div>
+        <p class="nall"><a href="../../">Browse every study on Market Flow Research →</a></p>
+      </div>
+
+      <h2>Comments</h2>
+      <p style="color:var(--muted)">Discussion is powered by GitHub. Enable it by adding <code>secrets/giscus.json</code> (repo IDs from giscus.app).</p>
+
+      <a class="back" href="../../">← All research</a>
+    </article>
+  </div>
+
+  <footer>
+    <div class="wrap" style="padding:0 22px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center">
+      <span class="badge"><span class="dot"></span>AI-assisted research · human-reviewed</span>
+      <span>© <span id="yr">2026</span> Market Flow Research</span>
+    </div>
+  </footer>
+
+  <script>
+    try{var st=localStorage.getItem("mfr_theme");if(st)document.body.setAttribute("data-theme",st);}catch(e){}
+    document.getElementById("yr").textContent=new Date().getFullYear();
+    function tl(){document.getElementById("themeBtn").textContent=document.body.getAttribute("data-theme")==="light"?"☀️":"🌙";}
+    tl();
+    document.getElementById("themeBtn").onclick=function(){
+      var t=document.body.getAttribute("data-theme")==="light"?"dark":"light";
+      document.body.setAttribute("data-theme",t);try{localStorage.setItem("mfr_theme",t);}catch(e){}tl();
+    };
+  </script>
+</body>
+</html>
