@@ -16,7 +16,7 @@
   <meta property="og:image" content="https://marketflowresear.ch/articles/sixteen-networks-one-working-answer/img/BTC_nets_storm_en.png" />
   <meta property="og:image:width" content="2090" />
   <meta property="og:image:height" content="528" />
-  <meta property="article:published_time" content="2026-08-17" />
+  <meta property="article:published_time" content="2026-09-30" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Sixteen Networks, One Working Answer — and the Price Benchmark That Nearly Killed It" />
   <meta name="twitter:description" content="We trained sixteen one-class autoencoders on Bitcoin order-book windows: four market states, and inside each state one network per phase of the price move. Each network saw only its own kind of window and nothing else — no negative examples at all. One thing out of sixteen works: inside a storm you " />
@@ -28,7 +28,7 @@
     "@type": "Article",
     "headline": "Sixteen Networks, One Working Answer \u2014 and the Price Benchmark That Nearly Killed It",
     "description": "We trained sixteen one-class autoencoders on Bitcoin order-book windows: four market states, and inside each state one network per phase of the price move. Each network saw only its own kind of window and nothing else \u2014 no negative examples at all. One thing out of sixteen works: inside a storm you ",
-    "datePublished": "2026-08-17",
+    "datePublished": "2026-09-30",
     "inLanguage": "en",
     "image": "https://marketflowresear.ch/articles/sixteen-networks-one-working-answer/img/BTC_nets_storm_en.png",
     "author": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
@@ -76,6 +76,9 @@
     .ncard:hover{border-color:var(--accent);transform:translateY(-2px)}
     .ncard h3{margin:0 0 6px;font-size:16px}
     .ncard p{margin:0;color:var(--muted);font-size:13px}
+    .repro{margin:0 0 18px;padding-left:20px}
+    .repro li{margin:0 0 8px}
+    .repro a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-dim)}
     .aibox{margin:34px 0 0;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--muted);font-size:14px}
     .back{display:inline-block;margin:30px 0 0;color:var(--accent);text-decoration:none;font-weight:600}
     footer{border-top:1px solid var(--line);margin-top:20px;padding:22px 0 44px;color:var(--muted);font-size:13px}
@@ -94,7 +97,7 @@
       <span class="tag">Nets</span>
       <h1>Sixteen Networks, One Working Answer — and the Price Benchmark That Nearly Killed It</h1>
       <p class="lede">We trained sixteen one-class autoencoders on Bitcoin order-book windows: four market states, and inside each state one network per phase of the price move. Each network saw only its own kind of window and nothing else — no negative examples at all. One thing out of sixteen works: inside a storm you can tell a bottom reversal from a top one. On half the data that looked like AUC 0.6264; measured properly on all 800 events it is 0.5928. Then a one-line price benchmark scored 0.8548 on the same question. This article is about what survives that, and where it survives.</p>
-      <div class="meta">Research note · 17 August 2026 · AI-assisted, human-reviewed</div>
+      <div class="meta">Research note · 30 September 2026 · AI-assisted, human-reviewed</div>
 
       <div class="video"><iframe src="https://www.youtube.com/embed/7oTwp5TxdjI" title="Full research video" loading="lazy" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe></div>
       <p style="color:var(--muted);font-size:13px;margin-top:0">Full walkthrough — streamed from YouTube.</p>
@@ -257,6 +260,9 @@ that was pure memorisation, and a tercile cut that would have leaked the answer 
 and a table of control numbers with tolerances so you can tell whether your own run reproduced
 ours. Take your own data and check.</p>
       <figure><img src="img/BTC_nets_calm_en.png" alt="⑥ What this adds up to" loading="lazy"><figcaption>⑥ What this adds up to</figcaption></figure>
+
+      <h2>Reproduce this study</h2>
+      <ul class="repro"><li><a href="NETS_DIARY.md">Research diary of this study</a></li></ul>
 
       <div class="aibox">🤖 This research — data collection, analysis, charts and the narrated
       video — was produced with the assistance of AI, then reviewed by a human. We forecast

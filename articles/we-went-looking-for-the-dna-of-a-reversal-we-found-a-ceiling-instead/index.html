@@ -16,7 +16,7 @@
   <meta property="og:image" content="https://marketflowresear.ch/articles/we-went-looking-for-the-dna-of-a-reversal-we-found-a-ceiling-instead/img/BTC_signature_en.png" />
   <meta property="og:image:width" content="1210" />
   <meta property="og:image:height" content="539" />
-  <meta property="article:published_time" content="2026-08-17" />
+  <meta property="article:published_time" content="2026-09-30" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="We Went Looking for the DNA of a Reversal. We Found a Ceiling Instead." />
   <meta name="twitter:description" content="An earlier study on this dataset (175 days of BTC) found 271 order-book events that sit exactly on the turning points of price, and showed that a model cannot separate them from the thousands of ordinary events of their own class. This study asks a narrower question: forget separating a reversal fro" />
@@ -28,7 +28,7 @@
     "@type": "Article",
     "headline": "We Went Looking for the DNA of a Reversal. We Found a Ceiling Instead.",
     "description": "An earlier study on this dataset (175 days of BTC) found 271 order-book events that sit exactly on the turning points of price, and showed that a model cannot separate them from the thousands of ordinary events of their own class. This study asks a narrower question: forget separating a reversal fro",
-    "datePublished": "2026-08-17",
+    "datePublished": "2026-09-30",
     "inLanguage": "en",
     "image": "https://marketflowresear.ch/articles/we-went-looking-for-the-dna-of-a-reversal-we-found-a-ceiling-instead/img/BTC_signature_en.png",
     "author": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
@@ -76,6 +76,9 @@
     .ncard:hover{border-color:var(--accent);transform:translateY(-2px)}
     .ncard h3{margin:0 0 6px;font-size:16px}
     .ncard p{margin:0;color:var(--muted);font-size:13px}
+    .repro{margin:0 0 18px;padding-left:20px}
+    .repro li{margin:0 0 8px}
+    .repro a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-dim)}
     .aibox{margin:34px 0 0;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--muted);font-size:14px}
     .back{display:inline-block;margin:30px 0 0;color:var(--accent);text-decoration:none;font-weight:600}
     footer{border-top:1px solid var(--line);margin-top:20px;padding:22px 0 44px;color:var(--muted);font-size:13px}
@@ -94,7 +97,7 @@
       <span class="tag">Reversal DNA</span>
       <h1>We Went Looking for the DNA of a Reversal. We Found a Ceiling Instead.</h1>
       <p class="lede">An earlier study on this dataset (175 days of BTC) found 271 order-book events that sit exactly on the turning points of price, and showed that a model cannot separate them from the thousands of ordinary events of their own class. This study asks a narrower question: forget separating a reversal from its class — is there anything, on its own, that a reversal event&#x27;s 271 examples share? Nine different methods attack the question from nine angles: a two-condition threshold rule, a raw-vector kinship check, a full neural detector, a scan for the shortest useful slice of the window, four models on four quarters of it, one model on all of its 30-second slices at once, and three independent models — one per parent market state. Every method finds something real, reproducible, and well above every null control we built. None of them clears the bar a trading signal needs. The best operating point we found, buried inside the loudest of four market states, is right roughly one time in three.</p>
-      <div class="meta">Research note · 17 August 2026 · AI-assisted, human-reviewed</div>
+      <div class="meta">Research note · 30 September 2026 · AI-assisted, human-reviewed</div>
 
       <div class="video"><iframe src="https://www.youtube.com/embed/KxAzNMCggYg" title="Full research video" loading="lazy" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe></div>
       <p style="color:var(--muted);font-size:13px;margin-top:0">Full walkthrough — streamed from YouTube.</p>
@@ -292,6 +295,9 @@ between market states that says storm&#x27;s reversals carry a signature the oth
 material, not a finished answer. What continues from here is a search for a <em>better way to identify</em>
 these events, not a claim that the underlying signal isn&#x27;t there: on this evidence, it is.</p>
       <figure><img src="img/BTC_signature_en.png" alt="⑨ What this is worth" loading="lazy"><figcaption>⑨ What this is worth</figcaption></figure>
+
+      <h2>Reproduce this study</h2>
+      <ul class="repro"><li><a href="DNA_DIARY.md">Research diary of this study</a></li></ul>
 
       <div class="aibox">🤖 This research — data collection, analysis, charts and the narrated
       video — was produced with the assistance of AI, then reviewed by a human. We forecast
