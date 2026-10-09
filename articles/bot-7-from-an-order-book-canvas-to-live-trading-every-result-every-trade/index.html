@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bot 7 — From an Order-Book Canvas to Live Trading: Every Stretch, Every Result, Every Real Trade — Market Flow Research</title>
+  <meta name="description" content="Bot 7 is the end of a long research line: a transformer reads 30 hours of BTC order book as one canvas and says how likely it is that this moment sits in a 2.3% bottom — or, in its second version, a 2.3% top. This article puts the whole path in one place: how the networks were trained, what each ver" />
+  <meta name="keywords" content="" />
+
+  <link rel="canonical" href="https://marketflowresear.ch/articles/bot-7-from-an-order-book-canvas-to-live-trading-every-result-every-trade/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Market Flow Research" />
+  <meta property="og:title" content="Bot 7 — From an Order-Book Canvas to Live Trading: Every Stretch, Every Result, Every Real Trade" />
+  <meta property="og:description" content="Bot 7 is the end of a long research line: a transformer reads 30 hours of BTC order book as one canvas and says how likely it is that this moment sits in a 2.3% bottom — or, in its second version, a 2.3% top. This article puts the whole path in one place: how the networks were trained, what each ver" />
+  <meta property="og:url" content="https://marketflowresear.ch/articles/bot-7-from-an-order-book-canvas-to-live-trading-every-result-every-trade/" />
+  <meta property="og:image" content="https://marketflowresear.ch/articles/bot-7-from-an-order-book-canvas-to-live-trading-every-result-every-trade/img/tb43_val_en.png" />
+  <meta property="og:image:width" content="1104" />
+  <meta property="og:image:height" content="575" />
+  <meta property="article:published_time" content="2026-10-09" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Bot 7 — From an Order-Book Canvas to Live Trading: Every Stretch, Every Result, Every Real Trade" />
+  <meta name="twitter:description" content="Bot 7 is the end of a long research line: a transformer reads 30 hours of BTC order book as one canvas and says how likely it is that this moment sits in a 2.3% bottom — or, in its second version, a 2.3% top. This article puts the whole path in one place: how the networks were trained, what each ver" />
+  <meta name="twitter:image" content="https://marketflowresear.ch/articles/bot-7-from-an-order-book-canvas-to-live-trading-every-result-every-trade/img/tb43_val_en.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Bot 7 \u2014 From an Order-Book Canvas to Live Trading: Every Stretch, Every Result, Every Real Trade",
+    "description": "Bot 7 is the end of a long research line: a transformer reads 30 hours of BTC order book as one canvas and says how likely it is that this moment sits in a 2.3% bottom \u2014 or, in its second version, a 2.3% top. This article puts the whole path in one place: how the networks were trained, what each ver",
+    "datePublished": "2026-10-09",
+    "inLanguage": "en",
+    "image": "https://marketflowresear.ch/articles/bot-7-from-an-order-book-canvas-to-live-trading-every-result-every-trade/img/tb43_val_en.png",
+    "author": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "publisher": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "mainEntityOfPage": "https://marketflowresear.ch/articles/bot-7-from-an-order-book-canvas-to-live-trading-every-result-every-trade/",
+    "creativeWorkStatus": "AI-assisted, human-reviewed"
+  }
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230b0d12'/><path d='M14 66 L34 46 L48 58 L70 30 L86 30' fill='none' stroke='%2340e0a0' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
+
+  <style>
+    :root{--bg:#0b0d12;--panel:#12151d;--ink:#e8ecf3;--muted:#8a93a6;--line:#232838;--accent:#40e0a0;--accent-dim:#1c3a2f}
+    body[data-theme="light"]{--bg:#ffffff;--panel:#f6f8fb;--ink:#12151d;--muted:#5b6472;--line:#e4e8ef;--accent:#0a9c69;--accent-dim:#e6f7f0}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{background:var(--bg);color:var(--ink);font:17px/1.72 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:720px;margin:0 auto;padding:0 22px}
+    .bar{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+    .brand{font-weight:800;letter-spacing:.13em;font-size:13px;text-transform:uppercase;text-decoration:none;color:var(--ink)}
+    .btn{cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:10px;padding:7px 11px;font-size:13px;font-weight:600}
+    article{padding:18px 0 40px}
+    .tag{display:inline-block;background:var(--panel);border:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+    h1{font-size:clamp(26px,5vw,38px);line-height:1.15;margin:16px 0 10px;letter-spacing:-.01em}
+    .lede{color:var(--muted);font-size:19px;margin:0 0 18px}
+    .meta{color:var(--muted);font-size:14px;margin-bottom:26px}
+    article h2{font-size:20px;margin:34px 0 10px}
+    article p{margin:0 0 18px}
+    article b{color:var(--ink)}
+    .video{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:8px 0 6px;background:#000}
+    .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    figure{margin:24px 0}
+    figure img{width:100%;border:1px solid var(--line);border-radius:14px;display:block;background:var(--panel)}
+    figcaption{color:var(--muted);font-size:13px;margin-top:8px;text-align:center}
+    .next{margin:40px 0 6px}
+    .next .h2{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+    .next .nlead{color:var(--ink);font-size:16px;margin:0 0 16px;line-height:1.6}
+    .next .nlink{color:var(--accent);font-weight:700;text-decoration:none;border-bottom:1px solid var(--accent-dim)}
+    .next .nlink:hover{border-bottom-color:var(--accent)}
+    .next .nall{margin:16px 0 0;font-size:14px}
+    .next .nall a{color:var(--accent);text-decoration:none;font-weight:600}
+    .ncards{display:grid;grid-template-columns:1fr;gap:14px}
+    @media(min-width:640px){.ncards{grid-template-columns:1fr 1fr}}
+    .ncard{display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;transition:border-color .15s,transform .15s}
+    .ncard:hover{border-color:var(--accent);transform:translateY(-2px)}
+    .ncard h3{margin:0 0 6px;font-size:16px}
+    .ncard p{margin:0;color:var(--muted);font-size:13px}
+    .repro{margin:0 0 18px;padding-left:20px}
+    .repro li{margin:0 0 8px}
+    .repro a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-dim)}
+    .aibox{margin:34px 0 0;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--muted);font-size:14px}
+    .back{display:inline-block;margin:30px 0 0;color:var(--accent);text-decoration:none;font-weight:600}
+    footer{border-top:1px solid var(--line);margin-top:20px;padding:22px 0 44px;color:var(--muted);font-size:13px}
+    .badge{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:999px;padding:5px 11px}
+    .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="../../">← Market Flow Research</a>
+      <span class="btn" id="themeBtn">🌙</span>
+    </div>
+
+    <article>
+      <span class="tag">Bot 7 overview</span>
+      <h1>Bot 7 — From an Order-Book Canvas to Live Trading: Every Stretch, Every Result, Every Real Trade</h1>
+      <p class="lede">Bot 7 is the end of a long research line: a transformer reads 30 hours of BTC order book as one canvas and says how likely it is that this moment sits in a 2.3% bottom — or, in its second version, a 2.3% top. This article puts the whole path in one place: how the networks were trained, what each version made on training-period weeks it was not fitted on, on validation, on days nobody had looked at, and since it went live. All live trades so far are listed at the end, model and exchange side by side. As of 9 October 2026 08:20 UTC the record is three closed trades: two take-profits and one stop.</p>
+      <div class="meta">Research note · 9 October 2026 · AI-assisted, human-reviewed</div>
+
+      
+
+      <h2>① How bot 7 was trained</h2>
+      <p><b>Input.</b> Every 10 minutes the bot takes the last <b>160 hours</b> of second-by-second Binance order-book data (resting liquidity on both sides, liquidity added and pulled, buy and sell flow), folds it into <b>1,100 records of 100 seconds</b> and 8 features each, and gives the canvas to a small transformer. The output is one number: the probability that <em>now</em> is inside a 2.3% zigzag pivot zone. The zone is the honest label: a stretch of time around a bottom (or top) whose legs last at least 7 hours, within 10% of the leg&#x27;s move from the extreme.</p>
+      <p><b>Training.</b> BTC only. Networks learn on <b>21 Feb – 30 Jun 2026</b> (15,878 steps), a 200-hour gap follows, and <b>8 Jul – 12 Aug</b> (4,445 steps) is held out to choose the epoch. Eighteen runs per side differ only in the loss function. <b>15 Aug – 21 Sep</b> (5,265 steps) is validation: here the signal is turned into trades — the probability is summed over a window W, the bot acts when the sum reaches θ — and here W, θ and the networks were chosen.</p>
+      <p><b>Two versions.</b> <em>Bot 7.0</em> buys only: `BUY_pos` epoch 9, W 180 minutes, θ 11.74, take-profit 1.9% above the lowest price after entry, stop 2%, a filter for repeat signals and rule 7.1. <em>Bot 7</em> trades both sides on one account: `BUY_l3` epoch 3 (W 340 min, θ 2.72) and `SELL_l2` epoch 17 (W 30 min, θ 1.74), one trade per 2.3% leg, take-profit 1.9%, stop 2.5%, a signal from the other side closes the trade. The pair was chosen not for money but for behaving the same on three stretches.</p>
+      <figure><img src="img/tb43_val_en.png" alt="BTC price over the validation month with the buy-only bot&#x27;s nine long trades, all closed at take-profit" loading="lazy"><figcaption>BTC price over the validation month with the buy-only bot&#x27;s nine long trades, all closed at take-profit</figcaption></figure>
+
+      <h2>② Results on every stretch — against buy &amp; hold</h2>
+      <p>All historical runs start from $1000, put the whole account into each trade, use no leverage and pay 0.05% fee plus 0.02% slippage per side.</p>
+      <p><b>Held-out training weeks, 8 Jul – 12 Aug</b> (bot 7): <b>$1086.70</b> against <b>$1022.67</b> for buying and holding — the only stretch where the bot clearly wins, in a month BTC rose 2.4%. <b>Validation, 15 Aug – 21 Sep</b>: bot 7.0 <b>$1100.85</b> with nine trades, all take-profit; bot 7 <b>$1147.38</b>; buy &amp; hold <b>$1289.36</b>. BTC rose about 29% and a bot that is out of the market much of the time cannot keep up. Every parameter was chosen here, so these are the most flattering numbers. <b>Unseen days</b>: bot 7.0 on 21–30 Sep <b>$1032.92</b> (three trades, three take-profits) against <b>$1035.51</b>; bot 7 on 21 Sep – 5 Oct <b>$1059.30</b> against <b>$1064.02</b>.</p>
+      <p>The pattern is consistent and not exciting: positive everywhere, roughly level with the market when the market is calm, far behind it in a strong rally. Earlier articles of this series give each stretch in full.</p>
+      <figure><img src="img/tb43_stretches_en.png" alt="Bot vs buy and hold on five stretches: 1087 vs 1023, 1101 vs 1289, 1147 vs 1289, 1033 vs 1036, 1059 vs 1064" loading="lazy"><figcaption>Bot vs buy and hold on five stretches: 1087 vs 1023, 1101 vs 1289, 1147 vs 1289, 1033 vs 1036, 1059 vs 1064</figcaption></figure>
+
+      <h2>③ Live since 30 September — every trade so far</h2>
+      <p>The bot runs on the data collector&#x27;s live feed, a decision every 10 minutes. The model&#x27;s trades are booked on paper from $10,000 at the close of the decision step, with exchange-level costs (0.10% fee + 0.02–0.03% slippage per side). In parallel each trade is sent to a real <b>CEX.IO margin account: a $100 position at ×4 leverage</b>. Bot 7.0 ran from <b>30 Sep 20:00 to 5 Oct 21:50 UTC</b>; bot 7 replaced it at <b>5 Oct 22:00 UTC</b>.</p>
+      <p>All trades as of 9 Oct 2026 08:20 UTC (model, paper):</p>
+      <ul><li><b>7.0 · long</b> · in 1 Oct 14:40 at 84,189.26 → out 2 Oct 03:01 at 85,398.81 · <b>take-profit · +1.17%</b></li><li><b>7 · long</b> · in 7 Oct 14:40 at 83,042.99 → out 8 Oct 17:00 at 80,962.59 · <b>stop · −2.76%</b></li><li><b>7 · long</b> · in 8 Oct 17:00 at 80,962.59 → out 9 Oct 04:20 at 82,515.32 · <b>take-profit · +1.65%</b></li></ul>
+      <p>Paper account: bot 7.0 <b>$10,000 → $10,117.31</b> while BTC rose 2.81% over its days; bot 7 <b>$10,000 → $9,884.89</b> while BTC fell 3.84% over its days.</p>
+      <p>Real exchange positions ($100, ×4):</p>
+      <ul><li><b>#129035 · long</b> · in 83,067.00 → out 80,893.60 (stop) · <b>−2.84 USDT</b> after 0.23 USDT fees and rollover — the model expected −2.76%, the exchange gave −2.84%</li><li><b>#129249 · long</b> · opened 8 Oct 17:00 UTC at 80,900.1 · <b>still open</b> — the account owner moved its take-profit by hand to 85,000 (stop 78,938.2), so the model&#x27;s take-profit at 82,500.88 was booked on paper but not on the exchange</li><li>Bot 7.0&#x27;s single trade never reached the exchange: the order failed on a missing component of the order client, and it was fixed afterwards</li></ul>
+      <p>Three trades are not a track record, and this list is not a claim of an edge. It is published so the result can be checked against what the research promised: so far a take-profit is about 1.2–1.7% after costs and a stop about −2.8%, so the bot needs roughly two wins per loss just to stand still. The list will be updated as trades close. Research, not financial advice.</p>
+      <figure><img src="img/tb43_live_en.png" alt="BTC price from 30 September to 9 October 2026 with three live trades: a take-profit on 1 October, a stop on 8 October and a take-profit on 9 October" loading="lazy"><figcaption>BTC price from 30 September to 9 October 2026 with three live trades: a take-profit on 1 October, a stop on 8 October and a take-profit on 9 October</figcaption></figure>
+
+      <h2>Reproduce this study</h2>
+      <ul class="repro"><li><a href="36-canvas600-pivots.md">Research log (.md, Ukrainian): goal, data, plan, scripts, every confirmed stage and table — enough to rerun the study</a></li><li><a href="tb43_reproduce.zip">Reproduction kit (.zip): the study&#x27;s scripts, project rules and base scripts that build every class</a></li><li><a href="bot-line-7.0.md">bot-line-7.0.md (.md, Ukrainian): the exported bot built from this study — model, signal, trade rules, how to rebuild it from raw data</a></li></ul>
+
+      <div class="aibox">🤖 This research — data collection, analysis, charts and the narrated
+      video — was produced with the assistance of AI, then reviewed by a human. We forecast
+      volatility, not direction, and log every prediction. <em>Research, not financial advice.</em></div>
+
+      <div class="next">
+        <div class="h2">Read next</div>
+        <p class="nlead">If this changed how you read the tape, the natural next step is <a class="nlink" href="/articles/volume-is-fuel-not-steering-wheel/">Volume Is the Fuel — Not the Steering Wheel</a> — We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p>
+        <div class="ncards"><a class="ncard" href="/articles/volume-is-fuel-not-steering-wheel/"><h3>Volume Is the Fuel — Not the Steering Wheel</h3><p>We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p></a><a class="ncard" href="/articles/about-market-research-lab/"><h3>About Market Research Lab — What We Collect and Why</h3><p>Most market commentary is storytelling.</p></a><a class="ncard" href="/articles/signal-standard-from-calm-to-calm-btc/"><h3>From Calm to Calm: a Standard for What Counts as a Signal (BTC)</h3><p>We stopped defining market signals with a stopwatch.</p></a><a class="ncard" href="/articles/resting-walls-what-thick-liquidity-predicts/"><h3>The Wall That Goes Quiet: What Resting Liquidity Predicts</h3><p>We measured resting limit liquidity sitting on both sides of the book second by second across six coins, and asked the only question that matters:….</p></a></div>
+        <p class="nall"><a href="../../">Browse every study on Market Flow Research →</a></p>
+      </div>
+
+      <h2>Comments</h2>
+      <p style="color:var(--muted)">Discussion is powered by GitHub. Enable it by adding <code>secrets/giscus.json</code> (repo IDs from giscus.app).</p>
+
+      <a class="back" href="../../">← All research</a>
+    </article>
+  </div>
+
+  <footer>
+    <div class="wrap" style="padding:0 22px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center">
+      <span class="badge"><span class="dot"></span>AI-assisted research · human-reviewed</span>
+      <span>© <span id="yr">2026</span> Market Flow Research</span>
+    </div>
+  </footer>
+
+  <script>
+    try{var st=localStorage.getItem("mfr_theme");if(st)document.body.setAttribute("data-theme",st);}catch(e){}
+    document.getElementById("yr").textContent=new Date().getFullYear();
+    function tl(){document.getElementById("themeBtn").textContent=document.body.getAttribute("data-theme")==="light"?"☀️":"🌙";}
+    tl();
+    document.getElementById("themeBtn").onclick=function(){
+      var t=document.body.getAttribute("data-theme")==="light"?"dark":"light";
+      document.body.setAttribute("data-theme",t);try{localStorage.setItem("mfr_theme",t);}catch(e){}tl();
+    };
+  </script>
+</body>
+</html>
