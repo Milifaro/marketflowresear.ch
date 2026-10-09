@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Picking a Network by the Width of Its Good Zone, Not Its Best Point — 42 &quot;Potentially Best&quot; Networks — Market Flow Research</title>
+  <meta name="description" content="Every trained network becomes a signal through two knobs: the window W over which its probabilities are summed and the threshold θ that sum must reach. Pick the single best cell of that grid and you usually pick noise. So each of 450 buy candidates and 75 sell candidates was traded on a 72 × 50 grid" />
+  <meta name="keywords" content="" />
+
+  <link rel="canonical" href="https://marketflowresear.ch/articles/picking-a-network-by-the-width-of-its-good-zone-not-its-best-point/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Market Flow Research" />
+  <meta property="og:title" content="Picking a Network by the Width of Its Good Zone, Not Its Best Point — 42 &quot;Potentially Best&quot; Networks" />
+  <meta property="og:description" content="Every trained network becomes a signal through two knobs: the window W over which its probabilities are summed and the threshold θ that sum must reach. Pick the single best cell of that grid and you usually pick noise. So each of 450 buy candidates and 75 sell candidates was traded on a 72 × 50 grid" />
+  <meta property="og:url" content="https://marketflowresear.ch/articles/picking-a-network-by-the-width-of-its-good-zone-not-its-best-point/" />
+  <meta property="og:image" content="https://marketflowresear.ch/articles/picking-a-network-by-the-width-of-its-good-zone-not-its-best-point/img/tb40_buy_en.png" />
+  <meta property="og:image:width" content="1104" />
+  <meta property="og:image:height" content="763" />
+  <meta property="article:published_time" content="2026-10-09" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Picking a Network by the Width of Its Good Zone, Not Its Best Point — 42 &quot;Potentially Best&quot; Networks" />
+  <meta name="twitter:description" content="Every trained network becomes a signal through two knobs: the window W over which its probabilities are summed and the threshold θ that sum must reach. Pick the single best cell of that grid and you usually pick noise. So each of 450 buy candidates and 75 sell candidates was traded on a 72 × 50 grid" />
+  <meta name="twitter:image" content="https://marketflowresear.ch/articles/picking-a-network-by-the-width-of-its-good-zone-not-its-best-point/img/tb40_buy_en.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Picking a Network by the Width of Its Good Zone, Not Its Best Point \u2014 42 \"Potentially Best\" Networks",
+    "description": "Every trained network becomes a signal through two knobs: the window W over which its probabilities are summed and the threshold \u03b8 that sum must reach. Pick the single best cell of that grid and you usually pick noise. So each of 450 buy candidates and 75 sell candidates was traded on a 72 \u00d7 50 grid",
+    "datePublished": "2026-10-09",
+    "inLanguage": "en",
+    "image": "https://marketflowresear.ch/articles/picking-a-network-by-the-width-of-its-good-zone-not-its-best-point/img/tb40_buy_en.png",
+    "author": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "publisher": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "mainEntityOfPage": "https://marketflowresear.ch/articles/picking-a-network-by-the-width-of-its-good-zone-not-its-best-point/",
+    "creativeWorkStatus": "AI-assisted, human-reviewed"
+  }
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230b0d12'/><path d='M14 66 L34 46 L48 58 L70 30 L86 30' fill='none' stroke='%2340e0a0' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
+
+  <style>
+    :root{--bg:#0b0d12;--panel:#12151d;--ink:#e8ecf3;--muted:#8a93a6;--line:#232838;--accent:#40e0a0;--accent-dim:#1c3a2f}
+    body[data-theme="light"]{--bg:#ffffff;--panel:#f6f8fb;--ink:#12151d;--muted:#5b6472;--line:#e4e8ef;--accent:#0a9c69;--accent-dim:#e6f7f0}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{background:var(--bg);color:var(--ink);font:17px/1.72 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:720px;margin:0 auto;padding:0 22px}
+    .bar{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+    .brand{font-weight:800;letter-spacing:.13em;font-size:13px;text-transform:uppercase;text-decoration:none;color:var(--ink)}
+    .btn{cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:10px;padding:7px 11px;font-size:13px;font-weight:600}
+    article{padding:18px 0 40px}
+    .tag{display:inline-block;background:var(--panel);border:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+    h1{font-size:clamp(26px,5vw,38px);line-height:1.15;margin:16px 0 10px;letter-spacing:-.01em}
+    .lede{color:var(--muted);font-size:19px;margin:0 0 18px}
+    .meta{color:var(--muted);font-size:14px;margin-bottom:26px}
+    article h2{font-size:20px;margin:34px 0 10px}
+    article p{margin:0 0 18px}
+    article b{color:var(--ink)}
+    .video{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:8px 0 6px;background:#000}
+    .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    figure{margin:24px 0}
+    figure img{width:100%;border:1px solid var(--line);border-radius:14px;display:block;background:var(--panel)}
+    figcaption{color:var(--muted);font-size:13px;margin-top:8px;text-align:center}
+    .next{margin:40px 0 6px}
+    .next .h2{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+    .next .nlead{color:var(--ink);font-size:16px;margin:0 0 16px;line-height:1.6}
+    .next .nlink{color:var(--accent);font-weight:700;text-decoration:none;border-bottom:1px solid var(--accent-dim)}
+    .next .nlink:hover{border-bottom-color:var(--accent)}
+    .next .nall{margin:16px 0 0;font-size:14px}
+    .next .nall a{color:var(--accent);text-decoration:none;font-weight:600}
+    .ncards{display:grid;grid-template-columns:1fr;gap:14px}
+    @media(min-width:640px){.ncards{grid-template-columns:1fr 1fr}}
+    .ncard{display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;transition:border-color .15s,transform .15s}
+    .ncard:hover{border-color:var(--accent);transform:translateY(-2px)}
+    .ncard h3{margin:0 0 6px;font-size:16px}
+    .ncard p{margin:0;color:var(--muted);font-size:13px}
+    .repro{margin:0 0 18px;padding-left:20px}
+    .repro li{margin:0 0 8px}
+    .repro a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-dim)}
+    .aibox{margin:34px 0 0;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--muted);font-size:14px}
+    .back{display:inline-block;margin:30px 0 0;color:var(--accent);text-decoration:none;font-weight:600}
+    footer{border-top:1px solid var(--line);margin-top:20px;padding:22px 0 44px;color:var(--muted);font-size:13px}
+    .badge{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:999px;padding:5px 11px}
+    .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="../../">← Market Flow Research</a>
+      <span class="btn" id="themeBtn">🌙</span>
+    </div>
+
+    <article>
+      <span class="tag">Potentially best networks</span>
+      <h1>Picking a Network by the Width of Its Good Zone, Not Its Best Point — 42 &quot;Potentially Best&quot; Networks</h1>
+      <p class="lede">Every trained network becomes a signal through two knobs: the window W over which its probabilities are summed and the threshold θ that sum must reach. Pick the single best cell of that grid and you usually pick noise. So each of 450 buy candidates and 75 sell candidates was traded on a 72 × 50 grid of W and θ, and for each one we measured how wide the area is where profit stays within 90% of its best. In every loss family the network with the widest such zone was kept — plus, if another epoch earned more than twice as much, that one too. The result: 22 buy and 20 sell networks, all scored on the same validation month.</p>
+      <div class="meta">Research note · 9 October 2026 · AI-assisted, human-reviewed</div>
+
+      
+
+      <h2>① A grid of 3,600 cells for every network</h2>
+      <p>For each candidate, every cell of the grid is a run of one side on its own: the signal fires the moment the sum of probabilities over the last <b>W minutes</b> reaches <b>θ</b>; the trade is a long for a buy network or a short for a sell network; one trade per 2.3% zigzag leg; take-profit <b>1.9%</b>, stop <b>2.5%</b>; costs 0.07% per side; $1000 start. W runs <b>10 to 720 minutes</b> in 10-minute steps (72 rows), and θ/W — the average probability needed in the window — runs <b>0.02 to 1.00</b> in steps of 0.02 (50 columns).</p>
+      <p>The <b>90% zone</b> is the largest rectangle around the best cell in which every cell earns at least 90% of the best. Its area, in cells, says how forgiving the network is: a wide zone means a slightly different window or threshold gives nearly the same money; a one-cell zone means the result exists at one point only. The network&#x27;s working W and θ are taken from the <b>middle of its zone</b>, not from the best cell.</p>
+
+      <h2>② Wide and modest, or narrow and rich</h2>
+      <p>Within each loss family the network with the <b>largest 90% zone</b> is the first pick; ties go to more money. Then the richest network of the same family is checked: if it earns <b>more than twice</b> the first pick, it is kept as well and marked as added for money.</p>
+      <p>For buy networks this rule mattered in four families. In `bce`, `pos` and `focal`, epoch 3 earned the same <b>$30.27</b> across most or all of the grid — 72, 1,944 and 504 cells — because at that epoch money barely depends on W or θ. The richest epochs of the same families earned <b>five to seven times more</b> ($151.32, $211.01, $164.91) but in zones of 1 to 4 cells. In `ladder`, epoch 0 ($119.61) was added over epoch 6 ($27.84). Altogether <b>450 buy candidates → 22 networks</b>, <b>75 sell candidates → 20 networks</b> (three added for money). `dice` (buy) and `focal` (sell) earn nothing in any cell.</p>
+      <figure><img src="img/tb40_buy_en.png" alt="For buy networks, the widest-zone pick earns 28 to 155 dollars; in four families a much richer but narrow epoch is added" loading="lazy"><figcaption>For buy networks, the widest-zone pick earns 28 to 155 dollars; in four families a much richer but narrow epoch is added</figcaption></figure>
+
+      <h2>③ Sell networks earn less, and the warning that comes with all of this</h2>
+      <p>Sells were scored in a month when BTC rose about 29%, so shorting was swimming against the tide: the best sell picks earned <b>$20–88</b>, against <b>$28–211</b> for buys. Most sell zones are one or two cells wide; the widest, `l3` epoch 4, holds 90% of its money over W 230–290 minutes and 14 cells. Three sell networks were added for money: `l2s1` e0 ($46.84), `l2s2` e9 ($59.83) and `l2s5` e21 ($87.66) — each in a single cell.</p>
+      <p>The width rule is a guard against luck, not a cure for it. Every candidate, every zone and every profit here was measured on the same 38 validation days. A wide zone on validation is a better bet than a sharp peak, but it is still a bet about the future. That is why the next step pairs these networks into one bot and then — the part that matters — checks the pairs on stretches they were not chosen on.</p>
+      <figure><img src="img/tb40_sell_en.png" alt="Sell networks: profits from 20 to 88 dollars, almost all with 90% zones of one or two cells, l3 with 14" loading="lazy"><figcaption>Sell networks: profits from 20 to 88 dollars, almost all with 90% zones of one or two cells, l3 with 14</figcaption></figure>
+
+      <h2>Reproduce this study</h2>
+      <ul class="repro"><li><a href="36-canvas600-pivots.md">Research log (.md, Ukrainian): goal, data, plan, scripts, every confirmed stage and table — enough to rerun the study</a></li><li><a href="tb40_reproduce.zip">Reproduction kit (.zip): the study&#x27;s scripts, project rules and base scripts that build every class</a></li></ul>
+
+      <div class="aibox">🤖 This research — data collection, analysis, charts and the narrated
+      video — was produced with the assistance of AI, then reviewed by a human. We forecast
+      volatility, not direction, and log every prediction. <em>Research, not financial advice.</em></div>
+
+      <div class="next">
+        <div class="h2">Read next</div>
+        <p class="nlead">If this changed how you read the tape, the natural next step is <a class="nlink" href="/articles/volume-is-fuel-not-steering-wheel/">Volume Is the Fuel — Not the Steering Wheel</a> — We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p>
+        <div class="ncards"><a class="ncard" href="/articles/volume-is-fuel-not-steering-wheel/"><h3>Volume Is the Fuel — Not the Steering Wheel</h3><p>We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p></a><a class="ncard" href="/articles/about-market-research-lab/"><h3>About Market Research Lab — What We Collect and Why</h3><p>Most market commentary is storytelling.</p></a><a class="ncard" href="/articles/signal-standard-from-calm-to-calm-btc/"><h3>From Calm to Calm: a Standard for What Counts as a Signal (BTC)</h3><p>We stopped defining market signals with a stopwatch.</p></a><a class="ncard" href="/articles/resting-walls-what-thick-liquidity-predicts/"><h3>The Wall That Goes Quiet: What Resting Liquidity Predicts</h3><p>We measured resting limit liquidity sitting on both sides of the book second by second across six coins, and asked the only question that matters:….</p></a></div>
+        <p class="nall"><a href="../../">Browse every study on Market Flow Research →</a></p>
+      </div>
+
+      <h2>Comments</h2>
+      <p style="color:var(--muted)">Discussion is powered by GitHub. Enable it by adding <code>secrets/giscus.json</code> (repo IDs from giscus.app).</p>
+
+      <a class="back" href="../../">← All research</a>
+    </article>
+  </div>
+
+  <footer>
+    <div class="wrap" style="padding:0 22px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center">
+      <span class="badge"><span class="dot"></span>AI-assisted research · human-reviewed</span>
+      <span>© <span id="yr">2026</span> Market Flow Research</span>
+    </div>
+  </footer>
+
+  <script>
+    try{var st=localStorage.getItem("mfr_theme");if(st)document.body.setAttribute("data-theme",st);}catch(e){}
+    document.getElementById("yr").textContent=new Date().getFullYear();
+    function tl(){document.getElementById("themeBtn").textContent=document.body.getAttribute("data-theme")==="light"?"☀️":"🌙";}
+    tl();
+    document.getElementById("themeBtn").onclick=function(){
+      var t=document.body.getAttribute("data-theme")==="light"?"dark":"light";
+      document.body.setAttribute("data-theme",t);try{localStorage.setItem("mfr_theme",t);}catch(e){}tl();
+    };
+  </script>
+</body>
+</html>
