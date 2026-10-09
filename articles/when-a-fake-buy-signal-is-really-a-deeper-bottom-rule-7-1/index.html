@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>When a &quot;Fake&quot; Buy Signal Is Really a Deeper Bottom — Rule 7.1, Tested on Validation and Unseen Days — Market Flow Research</title>
+  <meta name="description" content="Our buy-only bot throws away a buy signal if price has not risen 2.3% since the previous signal — a repeat call inside the same dip is treated as fake. On the nine unseen days after validation that filter rejected 36 signals and left one trade. Rule 7.1 asks one more question before rejecting: did p" />
+  <meta name="keywords" content="" />
+
+  <link rel="canonical" href="https://marketflowresear.ch/articles/when-a-fake-buy-signal-is-really-a-deeper-bottom-rule-7-1/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Market Flow Research" />
+  <meta property="og:title" content="When a &quot;Fake&quot; Buy Signal Is Really a Deeper Bottom — Rule 7.1, Tested on Validation and Unseen Days" />
+  <meta property="og:description" content="Our buy-only bot throws away a buy signal if price has not risen 2.3% since the previous signal — a repeat call inside the same dip is treated as fake. On the nine unseen days after validation that filter rejected 36 signals and left one trade. Rule 7.1 asks one more question before rejecting: did p" />
+  <meta property="og:url" content="https://marketflowresear.ch/articles/when-a-fake-buy-signal-is-really-a-deeper-bottom-rule-7-1/" />
+  <meta property="og:image" content="https://marketflowresear.ch/articles/when-a-fake-buy-signal-is-really-a-deeper-bottom-rule-7-1/img/tb38_fakes_en.png" />
+  <meta property="og:image:width" content="1104" />
+  <meta property="og:image:height" content="575" />
+  <meta property="article:published_time" content="2026-10-09" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="When a &quot;Fake&quot; Buy Signal Is Really a Deeper Bottom — Rule 7.1, Tested on Validation and Unseen Days" />
+  <meta name="twitter:description" content="Our buy-only bot throws away a buy signal if price has not risen 2.3% since the previous signal — a repeat call inside the same dip is treated as fake. On the nine unseen days after validation that filter rejected 36 signals and left one trade. Rule 7.1 asks one more question before rejecting: did p" />
+  <meta name="twitter:image" content="https://marketflowresear.ch/articles/when-a-fake-buy-signal-is-really-a-deeper-bottom-rule-7-1/img/tb38_fakes_en.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "When a \"Fake\" Buy Signal Is Really a Deeper Bottom \u2014 Rule 7.1, Tested on Validation and Unseen Days",
+    "description": "Our buy-only bot throws away a buy signal if price has not risen 2.3% since the previous signal \u2014 a repeat call inside the same dip is treated as fake. On the nine unseen days after validation that filter rejected 36 signals and left one trade. Rule 7.1 asks one more question before rejecting: did p",
+    "datePublished": "2026-10-09",
+    "inLanguage": "en",
+    "image": "https://marketflowresear.ch/articles/when-a-fake-buy-signal-is-really-a-deeper-bottom-rule-7-1/img/tb38_fakes_en.png",
+    "author": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "publisher": {"@type": "Organization", "name": "Market Flow Research", "url": "https://marketflowresear.ch/"},
+    "mainEntityOfPage": "https://marketflowresear.ch/articles/when-a-fake-buy-signal-is-really-a-deeper-bottom-rule-7-1/",
+    "creativeWorkStatus": "AI-assisted, human-reviewed"
+  }
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230b0d12'/><path d='M14 66 L34 46 L48 58 L70 30 L86 30' fill='none' stroke='%2340e0a0' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
+
+  <style>
+    :root{--bg:#0b0d12;--panel:#12151d;--ink:#e8ecf3;--muted:#8a93a6;--line:#232838;--accent:#40e0a0;--accent-dim:#1c3a2f}
+    body[data-theme="light"]{--bg:#ffffff;--panel:#f6f8fb;--ink:#12151d;--muted:#5b6472;--line:#e4e8ef;--accent:#0a9c69;--accent-dim:#e6f7f0}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{background:var(--bg);color:var(--ink);font:17px/1.72 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:720px;margin:0 auto;padding:0 22px}
+    .bar{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+    .brand{font-weight:800;letter-spacing:.13em;font-size:13px;text-transform:uppercase;text-decoration:none;color:var(--ink)}
+    .btn{cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:10px;padding:7px 11px;font-size:13px;font-weight:600}
+    article{padding:18px 0 40px}
+    .tag{display:inline-block;background:var(--panel);border:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+    h1{font-size:clamp(26px,5vw,38px);line-height:1.15;margin:16px 0 10px;letter-spacing:-.01em}
+    .lede{color:var(--muted);font-size:19px;margin:0 0 18px}
+    .meta{color:var(--muted);font-size:14px;margin-bottom:26px}
+    article h2{font-size:20px;margin:34px 0 10px}
+    article p{margin:0 0 18px}
+    article b{color:var(--ink)}
+    .video{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:8px 0 6px;background:#000}
+    .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    figure{margin:24px 0}
+    figure img{width:100%;border:1px solid var(--line);border-radius:14px;display:block;background:var(--panel)}
+    figcaption{color:var(--muted);font-size:13px;margin-top:8px;text-align:center}
+    .next{margin:40px 0 6px}
+    .next .h2{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+    .next .nlead{color:var(--ink);font-size:16px;margin:0 0 16px;line-height:1.6}
+    .next .nlink{color:var(--accent);font-weight:700;text-decoration:none;border-bottom:1px solid var(--accent-dim)}
+    .next .nlink:hover{border-bottom-color:var(--accent)}
+    .next .nall{margin:16px 0 0;font-size:14px}
+    .next .nall a{color:var(--accent);text-decoration:none;font-weight:600}
+    .ncards{display:grid;grid-template-columns:1fr;gap:14px}
+    @media(min-width:640px){.ncards{grid-template-columns:1fr 1fr}}
+    .ncard{display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;transition:border-color .15s,transform .15s}
+    .ncard:hover{border-color:var(--accent);transform:translateY(-2px)}
+    .ncard h3{margin:0 0 6px;font-size:16px}
+    .ncard p{margin:0;color:var(--muted);font-size:13px}
+    .repro{margin:0 0 18px;padding-left:20px}
+    .repro li{margin:0 0 8px}
+    .repro a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-dim)}
+    .aibox{margin:34px 0 0;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--muted);font-size:14px}
+    .back{display:inline-block;margin:30px 0 0;color:var(--accent);text-decoration:none;font-weight:600}
+    footer{border-top:1px solid var(--line);margin-top:20px;padding:22px 0 44px;color:var(--muted);font-size:13px}
+    .badge{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:999px;padding:5px 11px}
+    .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="../../">← Market Flow Research</a>
+      <span class="btn" id="themeBtn">🌙</span>
+    </div>
+
+    <article>
+      <span class="tag">Rule 7.1</span>
+      <h1>When a &quot;Fake&quot; Buy Signal Is Really a Deeper Bottom — Rule 7.1, Tested on Validation and Unseen Days</h1>
+      <p class="lede">Our buy-only bot throws away a buy signal if price has not risen 2.3% since the previous signal — a repeat call inside the same dip is treated as fake. On the nine unseen days after validation that filter rejected 36 signals and left one trade. Rule 7.1 asks one more question before rejecting: did price, between the last peak and now, make a lower bottom within 1% of the current price? If so, the signal is real, and the take-profit is measured from that lower bottom. With the rule, fakes on unseen days fell from 36 to 0, trades rose from 1 to 3, and the result from $1008.45 to $1034.12.</p>
+      <div class="meta">Research note · 9 October 2026 · AI-assisted, human-reviewed</div>
+
+      
+
+      <h2>① Rule 7: why the bot ignores repeat signals</h2>
+      <p>The network marks bottoms, and a bottom is a place, not a moment: the signal keeps firing for hours while price grinds along the lows. After a trade closes, the next signal in the same dip would buy the same bottom twice. So rule 7: once the bot has a closed trade and no position, a signal is <b>ignored if the highest close between the previous signal and this one is less than 2.3% above the current price</b>. Price has to have left the area and come back before the bot buys again.</p>
+      <p>That works when a dip is one dip. It fails when the market makes a staircase down: a peak, a drop of more than 2.3%, a bottom, a small bounce — and a new signal a little above that bottom. Rule 7 measures from the wrong point and calls it fake.</p>
+      <figure><img src="img/tb38_fakes_en.png" alt="Rejected signals: 32 to 15 on validation and 36 to 0 on unseen days when rule 7.1 is added" loading="lazy"><figcaption>Rejected signals: 32 to 15 on validation and 36 to 0 on unseen days when rule 7.1 is added</figcaption></figure>
+
+      <h2>② Rule 7.1: a lower bottom within 1%</h2>
+      <p>The rule is checked only for a signal that rule 7 has already called fake, so it can only add trades, never remove them. Three points are found on the 100-second records between the previous signal and the current one: the <b>peak</b> — the highest close; the <b>bottom</b> — the lowest close after that peak; and the <b>current price</b> — the close at the signal.</p>
+      <p>If the peak is more than <b>2.3% above the bottom</b>, the bottom is <b>below the current price</b>, and the current price is <b>less than 1% above the bottom</b>, the trade opens. Entry and stop are as usual (stop 2% below entry); the take-profit base is the bottom itself, or a lower price if one comes after entry: take = min(bottom, lowest price after entry) × 1.02. The idea comes from how a trader would read the chart — &quot;the market already made its low a few hours ago, we are still near it&quot; — and the target is smaller because the move has partly started.</p>
+
+      <h2>③ Results: one more trade on validation, two more on unseen days</h2>
+      <p>On validation (15.08–21.09) the rule turned one rejected signal into a trade: in at 78,863.46 on 7 September, bottom 78,713.21, out at take-profit on 9 September at 79,273.84, <b>+0.38%</b>. Trades went from 8 to 9, rejections from 32 to 15, money from <b>$1103.17 to $1107.36</b>.</p>
+      <p>On the unseen days (21.09–30.09) the effect was bigger: both the 25 and 29 September entries came through rule 7.1, at 83,811.35 above a bottom of 83,261.89 and at 83,258.01 above a bottom of 82,621.70. Trades went from 1 to 3, rejections from 36 to 0, money from <b>$1008.45 to $1034.12</b>. No trade in any run hit the stop.</p>
+      <p>The bot ships with a take-profit of <b>1.9%</b> rather than 2%: same entries, earlier exits — $1100.85 on validation and $1032.92 on unseen days. Two cautions. The rule was written after looking at validation charts, so validation is not a fair test of it; the unseen days are, and there it added two trades out of two. And three trades are not a sample — the honest summary is &quot;it did what it was designed to do, twice&quot;.</p>
+      <figure><img src="img/tb38_money_en.png" alt="Bot money without and with rule 7.1: 1103 to 1107 dollars on validation, 1008 to 1034 on unseen days" loading="lazy"><figcaption>Bot money without and with rule 7.1: 1103 to 1107 dollars on validation, 1008 to 1034 on unseen days</figcaption></figure>
+
+      <h2>Reproduce this study</h2>
+      <ul class="repro"><li><a href="36-canvas600-pivots.md">Research log (.md, Ukrainian): goal, data, plan, scripts, every confirmed stage and table — enough to rerun the study</a></li><li><a href="tb38_reproduce.zip">Reproduction kit (.zip): the study&#x27;s scripts, project rules and base scripts that build every class</a></li><li><a href="bot-line-7.0.md">bot-line-7.0.md (.md, Ukrainian): the exported bot built from this study — model, signal, trade rules, how to rebuild it from raw data</a></li></ul>
+
+      <div class="aibox">🤖 This research — data collection, analysis, charts and the narrated
+      video — was produced with the assistance of AI, then reviewed by a human. We forecast
+      volatility, not direction, and log every prediction. <em>Research, not financial advice.</em></div>
+
+      <div class="next">
+        <div class="h2">Read next</div>
+        <p class="nlead">If this changed how you read the tape, the natural next step is <a class="nlink" href="/articles/volume-is-fuel-not-steering-wheel/">Volume Is the Fuel — Not the Steering Wheel</a> — We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p>
+        <div class="ncards"><a class="ncard" href="/articles/volume-is-fuel-not-steering-wheel/"><h3>Volume Is the Fuel — Not the Steering Wheel</h3><p>We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does.</p></a><a class="ncard" href="/articles/about-market-research-lab/"><h3>About Market Research Lab — What We Collect and Why</h3><p>Most market commentary is storytelling.</p></a><a class="ncard" href="/articles/signal-standard-from-calm-to-calm-btc/"><h3>From Calm to Calm: a Standard for What Counts as a Signal (BTC)</h3><p>We stopped defining market signals with a stopwatch.</p></a><a class="ncard" href="/articles/resting-walls-what-thick-liquidity-predicts/"><h3>The Wall That Goes Quiet: What Resting Liquidity Predicts</h3><p>We measured resting limit liquidity sitting on both sides of the book second by second across six coins, and asked the only question that matters:….</p></a></div>
+        <p class="nall"><a href="../../">Browse every study on Market Flow Research →</a></p>
+      </div>
+
+      <h2>Comments</h2>
+      <p style="color:var(--muted)">Discussion is powered by GitHub. Enable it by adding <code>secrets/giscus.json</code> (repo IDs from giscus.app).</p>
+
+      <a class="back" href="../../">← All research</a>
+    </article>
+  </div>
+
+  <footer>
+    <div class="wrap" style="padding:0 22px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center">
+      <span class="badge"><span class="dot"></span>AI-assisted research · human-reviewed</span>
+      <span>© <span id="yr">2026</span> Market Flow Research</span>
+    </div>
+  </footer>
+
+  <script>
+    try{var st=localStorage.getItem("mfr_theme");if(st)document.body.setAttribute("data-theme",st);}catch(e){}
+    document.getElementById("yr").textContent=new Date().getFullYear();
+    function tl(){document.getElementById("themeBtn").textContent=document.body.getAttribute("data-theme")==="light"?"☀️":"🌙";}
+    tl();
+    document.getElementById("themeBtn").onclick=function(){
+      var t=document.body.getAttribute("data-theme")==="light"?"dark":"light";
+      document.body.setAttribute("data-theme",t);try{localStorage.setItem("mfr_theme",t);}catch(e){}tl();
+    };
+  </script>
+</body>
+</html>
