@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- mfr-analytics:head -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'granted'});
+    gtag('consent', 'default', {ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied', region: ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'IS', 'LI', 'NO', 'GB', 'CH']});
+    try { var c = localStorage.getItem('mfr_consent'); if (c) gtag('consent', 'update', {analytics_storage: c}); } catch (e) {}
+    gtag('js', new Date());
+    gtag('config', 'G-NVD5LZ4GDB');
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NVD5LZ4GDB"></script>
+<!-- /mfr-analytics:head -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Class 2: the Middle State Where No Single Feature Wins — Market Flow Research</title>
@@ -250,5 +262,29 @@ signal to intersect with this one.</p>
       document.body.setAttribute("data-theme",t);try{localStorage.setItem("mfr_theme",t);}catch(e){}tl();
     };
   </script>
+<!-- mfr-analytics:body -->
+  <div id="mfr-consent" style="display:none;position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;max-width:560px;margin:0 auto;padding:12px 14px;border-radius:10px;background:#14171f;color:#e6e8ee;border:1px solid #2a2f3a;font:14px/1.4 system-ui,-apple-system,Segoe UI,sans-serif;box-shadow:0 6px 24px rgba(0,0,0,.35)">
+    We use Google Analytics cookies to count visits and see where readers come from. No ads, no selling of data.
+    <div style="margin-top:10px;display:flex;gap:8px;justify-content:flex-end">
+      <button type="button" data-c="denied" style="padding:6px 12px;border-radius:6px;border:1px solid #3a404d;background:transparent;color:#e6e8ee;cursor:pointer">Decline</button>
+      <button type="button" data-c="granted" style="padding:6px 12px;border-radius:6px;border:0;background:#40e0a0;color:#0b0d12;font-weight:600;cursor:pointer">Accept</button>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var b = document.getElementById('mfr-consent'), s = null;
+      try { s = localStorage.getItem('mfr_consent'); } catch (e) {}
+      if (s) return;
+      b.style.display = 'block';
+      b.addEventListener('click', function (e) {
+        var c = e.target.getAttribute && e.target.getAttribute('data-c');
+        if (!c) return;
+        gtag('consent', 'update', {analytics_storage: c});
+        try { localStorage.setItem('mfr_consent', c); } catch (e2) {}
+        b.style.display = 'none';
+      });
+    })();
+  </script>
+<!-- /mfr-analytics:body -->
 </body>
 </html>
