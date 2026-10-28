@@ -212,6 +212,7 @@
 
 
 
+
     /* mfr-home:css */
     button.btn{font-family:inherit}
     .jump{display:flex;flex-wrap:wrap;gap:8px 14px;justify-content:center;margin:22px 0 0;font-size:14px}
@@ -298,7 +299,7 @@
     </header>
 
     <!-- mfr-home:body -->
-    <nav class="jump" aria-label="Sections"><a href="#bots">Live bots — every result</a> <a href="#bot7">The road to Bot 7</a> <a href="#book">Order-book research</a> <a href="#dataset">Open dataset</a> <a href="/mfr-digest.md">AI digest (.md)</a></nav>
+    <nav class="jump" aria-label="Sections"><a href="#bot7">The road to Bot 7</a> <a href="#bots">Live bots — every result</a> <a href="#book">Order-book research</a> <a href="#dataset">Open dataset</a> <a href="/mfr-digest.md">AI digest (.md)</a></nav>
     <section class="pinned" id="start">
       <div class="h2">Start here</div>
       <div class="pgrid">
@@ -332,85 +333,6 @@
       Windows: <code>copy /b BTC_1s_dataset.zip.part0+...part3 BTC_1s_dataset.zip</code>.
       sha256 of the joined file: <code>18fdcb02848ac1ece7d5a0482c59de9992929995bd1bc82d2dce98f86fb364a2</code></span>
       </div>
-    </section>
-
-    <section class="series" id="bots">
-      <div class="sh"><h2 class="st">Live bots — every result</h2><span class="sn">7 studies</span></div>
-      <p class="sd">Bots built from this research and run live: winners and losers, every trade.</p>
-      <div class="grid">
-        <a class="card" href="articles/line-7-live-trading-report/">
-          <div class="thumb"><img src="articles/line-7-live-trading-report/img/l7_equity_en.png" alt="Line 7 paper account from $10,000 to $10,544 against buy and hold falling 5.3% over the same days" width="1104" height="575" loading="lazy" decoding="async"></div>
-          <div class="cbody">
-            <span class="tag">Live report · Line 7</span>
-            <h3>Line 7: The Best of All Our Bots — Live Trading Report, Every Trade</h3>
-            <p>We have built and tested more than a dozen trading bots on the research published here. Line 7 is the only one ahead of buy &amp; hold in live trading: from 5 October to 28 October 2026 its paper account made +5.44% after costs while BTC fell 5.29% — 6 trades, 5 take-profits. Real positions on the exchange: +1.39 USDT. Six trades are not a track record; this report lists every one of them and is updated as trades close. Research, not financial advice.</p>
-            <div class="date">28 October 2026</div>
-          </div>
-        </a>
-
-        <a class="card" href="articles/bot-7-from-an-order-book-canvas-to-live-trading-every-result-every-trade/">
-          <div class="thumb"><img src="articles/bot-7-from-an-order-book-canvas-to-live-trading-every-result-every-trade/img/tb43_val_en.png" alt="BTC price over the validation month with the buy-only bot&#x27;s nine long trades, all closed at take-profit" width="1104" height="575" loading="lazy" decoding="async"></div>
-          <div class="cbody">
-            <span class="tag">Bot 7 overview</span>
-            <h3>Bot 7 — From an Order-Book Canvas to Live Trading: Every Stretch, Every Result, Every Real Trade</h3>
-            <p>Bot 7 is the end of a long research line: a transformer reads 30 hours of BTC order book as one canvas and says how likely it is that this moment sits in a 2.3% bottom — or, in its second version, a 2.3% top. This article puts the whole path in one place: how the networks were trained, what each version made on training-period weeks it was not fitted on, on validation, on days nobody had looked at, and since it went live. All live trades so far are listed at the end, model and exchange side by side. As of 9 October 2026 08:20 UTC the record is three closed trades: two take-profits and one stop.</p>
-            <div class="date">9 October 2026</div>
-          </div>
-        </a>
-
-        <a class="card" href="articles/bot-6-line-61-nine-trades-eight-winners/">
-          <div class="thumb"><img src="articles/bot-6-line-61-nine-trades-eight-winners/img/61_equity_en.png" alt="① One trade at a time: how line 61 works" width="1053" height="443" loading="lazy" decoding="async"></div>
-          <div class="cbody">
-            <span class="tag">Line 61 live</span>
-            <h3>Bot 6, Line 61: Nine Trades, Eight Winners, and Why We Are Not Celebrating</h3>
-            <p>Line 61 of Bot 6 holds one position at a time and has been live since 17 July 2026: 31 days, 9 closed trades, +11.81 USD on a 100 USD slot, win rate 89%. Its entry gate is agreement between two independent models plus a context check; its exits are a 2% target, a 4% stop and a hard 72-hour clock. This is the complete record, including the comparison with its twin line running the identical recipe — which is the part that keeps us honest.</p>
-            <div class="date">17 August 2026</div>
-          </div>
-        </a>
-
-        <a class="card" href="articles/bot-6-line-60-a-bot-that-mostly-waits/">
-          <div class="thumb"><img src="articles/bot-6-line-60-a-bot-that-mostly-waits/img/60_equity_en.png" alt="① One trade at a time: how line 60 works" width="1053" height="443" loading="lazy" decoding="async"></div>
-          <div class="cbody">
-            <span class="tag">Line 60 live</span>
-            <h3>Bot 6, Line 60: A Bot That Mostly Waits — and What the Clock Costs It</h3>
-            <p>Line 60 of Bot 6 holds one position at a time and has been live since 15 July 2026: 33 days, 9 closed trades, +0.68 USD on a 100 USD slot, win rate 44%. Its entry gate is agreement between two independent models plus a context check; its exits are a 2% target, a 4% stop and a hard 72-hour clock. This is the complete record, including the comparison with its twin line running the identical recipe — which is the part that keeps us honest.</p>
-            <div class="date">17 August 2026</div>
-          </div>
-        </a>
-
-        <a class="card" href="articles/bot-4-forty-days-of-live-paper-trading/">
-          <div class="thumb"><img src="articles/bot-4-forty-days-of-live-paper-trading/img/bot4_equity_en.png" alt="① The rules it has been playing by, unchanged" width="1056" height="443" loading="lazy" decoding="async"></div>
-          <div class="cbody">
-            <span class="tag">Bot 4 live</span>
-            <h3>Bot 4: What Forty Days of Live Paper Trading Actually Look Like</h3>
-            <p>Bot 4 has been trading live on paper since 09 July 2026 — 40 days, 49 closed trades, +29.53 USD on 600 USD of capital, a 80% win rate, against +1.49% on average for buying and holding the same coins. This is the full record: the rules it never deviates from, every closed trade, the open positions right now, and the hourly referee that can hand the account to a freshly trained challenger — which has happened 4 times so far.</p>
-            <div class="date">17 August 2026</div>
-          </div>
-        </a>
-
-        <a class="card" href="articles/gates-the-part-of-a-bot-that-decides-not-to-trade/">
-          <div class="thumb"><img src="articles/gates-the-part-of-a-bot-that-decides-not-to-trade/img/gates_tradeoff_en.png" alt="① A gate buys precision with coverage" width="1157" height="501" loading="lazy" decoding="async"></div>
-          <div class="cbody">
-            <span class="tag">Gates</span>
-            <h3>Gates: The Part of a Trading Bot That Decides Not to Trade</h3>
-            <p>A trading bot&#x27;s model produces a number; its gate decides whether that number is worth a fee. This article measures what gates actually cost. Demanding a signal persist two bars instead of one raises precision from 0.209 to 0.238 and throws away 25% of the opportunities. Bot 4 stacks four gates and still lands inside the noise across random seeds. Bot 6 gates on agreement between two models — and two live lines running that identical gate for a month finished +11.81 and +0.68 USD apart. Gates buy precision with coverage; nothing here is free.</p>
-            <div class="date">17 August 2026</div>
-          </div>
-        </a>
-      </div>
-      <details class="more"><summary>Show all 7 →</summary>
-      <div class="grid">
-        <a class="card" href="articles/typhoon-plus-a-signal-that-finds-the-zones-and-still-loses-money/">
-          <div class="thumb"><img src="articles/typhoon-plus-a-signal-that-finds-the-zones-and-still-loses-money/img/tplus_zones_en.png" alt="① The zones a perfect trader would use" width="1088" height="466" loading="lazy" decoding="async"></div>
-          <div class="cbody">
-            <span class="tag">Typhoon+</span>
-            <h3>Typhoon+: A Signal That Finds the Perfect Trader&#x27;s Zones — and Still Loses Money</h3>
-            <p>We drew the zones a perfect trader would use — 0.9% zigzag turns, a 0.15% band around each one — and found that the price sits inside them barely 3% of the time. A single gradient-boosting model, pooled over six coins, then finds 74% of those zones on days it never saw. It also fires false 86% of the time, leans mostly on price geometry rather than the order book, and loses 122% when traded plainly against 93% for buy &amp; hold. This is the article about a signal that finds the right places and still cannot pay the fee.</p>
-            <div class="date">17 August 2026</div>
-          </div>
-        </a>
-      </div>
-      </details>
     </section>
 
     <section class="series" id="bot7">
@@ -726,6 +648,85 @@
             <h3>A Leg Is the Sum of Its Events — and Size Beats Count</h3>
             <p>We cut the price of six coins into 210-second events and into 2.3% zigzag legs, then asked the simplest question a direction model has to answer: how does a leg actually make its move? Over 712 legs and 409,998 events the answer is exact — the leg is the sum of its events (0.999 on clean legs) — and surprising: up legs are only 51.9% up-events. The move is carried by the size of events, not by how many point the right way.</p>
             <div class="date">30 September 2026</div>
+          </div>
+        </a>
+      </div>
+      </details>
+    </section>
+
+    <section class="series" id="bots">
+      <div class="sh"><h2 class="st">Live bots — every result</h2><span class="sn">7 studies</span></div>
+      <p class="sd">Bots built from this research and run live: winners and losers, every trade.</p>
+      <div class="grid">
+        <a class="card" href="articles/line-7-live-trading-report/">
+          <div class="thumb"><img src="articles/line-7-live-trading-report/img/l7_equity_en.png" alt="Line 7 paper account from $10,000 to $10,544 against buy and hold falling 5.3% over the same days" width="1104" height="575" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Live report · Line 7</span>
+            <h3>Line 7: The Best of All Our Bots — Live Trading Report, Every Trade</h3>
+            <p>We have built and tested more than a dozen trading bots on the research published here. Line 7 is the only one ahead of buy &amp; hold in live trading: from 5 October to 28 October 2026 its paper account made +5.44% after costs while BTC fell 5.29% — 6 trades, 5 take-profits. Real positions on the exchange: +1.39 USDT. Six trades are not a track record; this report lists every one of them and is updated as trades close. Research, not financial advice.</p>
+            <div class="date">28 October 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/bot-7-from-an-order-book-canvas-to-live-trading-every-result-every-trade/">
+          <div class="thumb"><img src="articles/bot-7-from-an-order-book-canvas-to-live-trading-every-result-every-trade/img/tb43_val_en.png" alt="BTC price over the validation month with the buy-only bot&#x27;s nine long trades, all closed at take-profit" width="1104" height="575" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Bot 7 overview</span>
+            <h3>Bot 7 — From an Order-Book Canvas to Live Trading: Every Stretch, Every Result, Every Real Trade</h3>
+            <p>Bot 7 is the end of a long research line: a transformer reads 30 hours of BTC order book as one canvas and says how likely it is that this moment sits in a 2.3% bottom — or, in its second version, a 2.3% top. This article puts the whole path in one place: how the networks were trained, what each version made on training-period weeks it was not fitted on, on validation, on days nobody had looked at, and since it went live. All live trades so far are listed at the end, model and exchange side by side. As of 9 October 2026 08:20 UTC the record is three closed trades: two take-profits and one stop.</p>
+            <div class="date">9 October 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/bot-6-line-61-nine-trades-eight-winners/">
+          <div class="thumb"><img src="articles/bot-6-line-61-nine-trades-eight-winners/img/61_equity_en.png" alt="① One trade at a time: how line 61 works" width="1053" height="443" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Line 61 live</span>
+            <h3>Bot 6, Line 61: Nine Trades, Eight Winners, and Why We Are Not Celebrating</h3>
+            <p>Line 61 of Bot 6 holds one position at a time and has been live since 17 July 2026: 31 days, 9 closed trades, +11.81 USD on a 100 USD slot, win rate 89%. Its entry gate is agreement between two independent models plus a context check; its exits are a 2% target, a 4% stop and a hard 72-hour clock. This is the complete record, including the comparison with its twin line running the identical recipe — which is the part that keeps us honest.</p>
+            <div class="date">17 August 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/bot-6-line-60-a-bot-that-mostly-waits/">
+          <div class="thumb"><img src="articles/bot-6-line-60-a-bot-that-mostly-waits/img/60_equity_en.png" alt="① One trade at a time: how line 60 works" width="1053" height="443" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Line 60 live</span>
+            <h3>Bot 6, Line 60: A Bot That Mostly Waits — and What the Clock Costs It</h3>
+            <p>Line 60 of Bot 6 holds one position at a time and has been live since 15 July 2026: 33 days, 9 closed trades, +0.68 USD on a 100 USD slot, win rate 44%. Its entry gate is agreement between two independent models plus a context check; its exits are a 2% target, a 4% stop and a hard 72-hour clock. This is the complete record, including the comparison with its twin line running the identical recipe — which is the part that keeps us honest.</p>
+            <div class="date">17 August 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/bot-4-forty-days-of-live-paper-trading/">
+          <div class="thumb"><img src="articles/bot-4-forty-days-of-live-paper-trading/img/bot4_equity_en.png" alt="① The rules it has been playing by, unchanged" width="1056" height="443" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Bot 4 live</span>
+            <h3>Bot 4: What Forty Days of Live Paper Trading Actually Look Like</h3>
+            <p>Bot 4 has been trading live on paper since 09 July 2026 — 40 days, 49 closed trades, +29.53 USD on 600 USD of capital, a 80% win rate, against +1.49% on average for buying and holding the same coins. This is the full record: the rules it never deviates from, every closed trade, the open positions right now, and the hourly referee that can hand the account to a freshly trained challenger — which has happened 4 times so far.</p>
+            <div class="date">17 August 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/gates-the-part-of-a-bot-that-decides-not-to-trade/">
+          <div class="thumb"><img src="articles/gates-the-part-of-a-bot-that-decides-not-to-trade/img/gates_tradeoff_en.png" alt="① A gate buys precision with coverage" width="1157" height="501" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Gates</span>
+            <h3>Gates: The Part of a Trading Bot That Decides Not to Trade</h3>
+            <p>A trading bot&#x27;s model produces a number; its gate decides whether that number is worth a fee. This article measures what gates actually cost. Demanding a signal persist two bars instead of one raises precision from 0.209 to 0.238 and throws away 25% of the opportunities. Bot 4 stacks four gates and still lands inside the noise across random seeds. Bot 6 gates on agreement between two models — and two live lines running that identical gate for a month finished +11.81 and +0.68 USD apart. Gates buy precision with coverage; nothing here is free.</p>
+            <div class="date">17 August 2026</div>
+          </div>
+        </a>
+      </div>
+      <details class="more"><summary>Show all 7 →</summary>
+      <div class="grid">
+        <a class="card" href="articles/typhoon-plus-a-signal-that-finds-the-zones-and-still-loses-money/">
+          <div class="thumb"><img src="articles/typhoon-plus-a-signal-that-finds-the-zones-and-still-loses-money/img/tplus_zones_en.png" alt="① The zones a perfect trader would use" width="1088" height="466" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Typhoon+</span>
+            <h3>Typhoon+: A Signal That Finds the Perfect Trader&#x27;s Zones — and Still Loses Money</h3>
+            <p>We drew the zones a perfect trader would use — 0.9% zigzag turns, a 0.15% band around each one — and found that the price sits inside them barely 3% of the time. A single gradient-boosting model, pooled over six coins, then finds 74% of those zones on days it never saw. It also fires false 86% of the time, leans mostly on price geometry rather than the order book, and loses 122% when traded plainly against 93% for buy &amp; hold. This is the article about a signal that finds the right places and still cannot pay the fee.</p>
+            <div class="date">17 August 2026</div>
           </div>
         </a>
       </div>

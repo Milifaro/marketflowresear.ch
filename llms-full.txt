@@ -4,661 +4,6 @@ Source: https://marketflowresear.ch/ · built 2026-10-28. AI-assisted research, 
 
 
 ================================================================================
-# Line 7: The Best of All Our Bots — Live Trading Report, Every Trade
-
-URL: https://marketflowresear.ch/articles/line-7-live-trading-report/
-Published: 2026-10-28 · Series: Live bots — every result · Live report · Line 7
-
-> We have built and tested more than a dozen trading bots on the research published here. Line 7 is the only one ahead of buy & hold in live trading: from 5 October to 28 October 2026 its paper account made +5.44% after costs while BTC fell 5.29% — 6 trades, 5 take-profits. Real positions on the exchange: +1.39 USDT. Six trades are not a track record; this report lists every one of them and is updated as trades close. Research, not financial advice.
-
-## ① All our bots, one scoreboard
-
-| Bot | How it was tested | Trades | Result | Buy & hold, same days |
-|---|---|---|---|---|
-| Bot 1 "Battle" | historical run on the full dataset | 211 | −44.0% | −16.0% |
-| Bot 2 | historical run; zero trades in its live week, 8–14 Jul | 72 | +55.8% (historical only) | — |
-| Bot 4 | live paper trading, six coins, 9 Jul – 6 Sep | 169 | −3.45% | +32.0% |
-| Bot 6 · line 61 | live paper trading, six coins, 75 days to 30 Sep | 32 | −10.70% | +35.3% |
-| Bot 6 · line 60 | live paper trading, six coins, 15 Jul – 5 Oct | 39 | +8.66% | +22.8% |
-| Bot 7.0 | live, BTC, 30 Sep – 5 Oct | 1 | +1.17% | +2.81% |
-| **Bot 7 · Line 7** | **live, BTC, 5 Oct – 28 Oct, paper + real exchange** | **6** | **+5.44%** | **−5.29%** |
-
-Every bot in this table was built from the research on this site. Of those that traded live, every one except Line 7 ended behind simply buying and holding over the same days — including the two that made money. Line 7 is the only bot ahead of buy & hold in live trading: **+5.44% against −5.29%**.
-
-Two honest caveats come with that sentence. Its live record is 23 days and 6 trades. And it was earned in a falling market, where being out of the market already helps. But Line 7 did not just lose less than the market — it made money while BTC fell: 5 of 6 trades closed at take-profit.
-
-Smaller experiments — lines 5A, 5B, 5X_20, 50, 62 and two clones of line 60 — were retired after a handful of trades or after failing validation, so they are not in the table.
-
-## ② How Line 7 decides
-
-Every 10 minutes Line 7 looks back over the last 160 hours of second-by-second Binance order book for BTC — resting liquidity on both sides, liquidity added and pulled, buy and sell flow — folds it into a canvas of 1,100 records of 100 seconds with 8 features each, and hands the canvas to two small transformers. One says how likely it is that this moment sits in a 2.3% bottom zone, the other — in a 2.3% top zone.
-
-- **Entry:** each probability is summed over its own window — 340 minutes for buys, 30 for sells — and a trade opens when the sum crosses its threshold (2.72 and 1.74).
-- **Exit:** take-profit 1.9%, stop 2.5%, or a signal from the other side closes the position.
-- **Discipline:** one position at a time, one trade per 2.3% leg.
-
-The pair of networks was not picked for the most money on validation: it was picked for behaving the same on three separate stretches of data. The whole path — how the networks were trained, what each version made on every stretch — is in [Bot 7: from an order-book canvas to live trading](/articles/bot-7-from-an-order-book-canvas-to-live-trading-every-result-every-trade/).
-
-## ③ Every trade
-
-| # | Version | Side | Entry (UTC) | Exit (UTC) | Exit by | Result after costs |
-|---|---|---|---|---|---|---|
-| 1 | 7.0 | long | 1 Oct 14:40 at 84,189.26 | 2 Oct 03:01 at 85,398.81 | take-profit | **+1.17%** |
-| 2 | 7 | long | 7 Oct 14:40 at 83,042.99 | 8 Oct 17:00 at 80,962.59 | stop | **−2.76%** |
-| 3 | 7 | long | 8 Oct 17:00 at 80,962.59 | 9 Oct 04:20 at 82,515.32 | take-profit | **+1.65%** |
-| 4 | 7 | long | 12 Oct 23:10 at 82,179.65 | 13 Oct 06:50 at 83,776.24 | take-profit | **+1.68%** |
-| 5 | 7 | long | 14 Oct 15:30 at 81,971.00 | 20 Oct 15:10 at 83,040.01 | opposite signal | **+1.04%** |
-| 6 | 7 | short | 20 Oct 15:10 at 83,040.01 | 22 Oct 16:50 at 81,141.88 | take-profit | **+2.03%** |
-| 7 | 7 | long | 24 Oct 16:50 at 80,044.87 | 28 Oct 08:40 at 81,665.78 | take-profit | **+1.76%** |
-
-Costs are inside every number: 0.10% exchange fee and 0.02–0.03% slippage per side. Trades are booked at the close of the 10-minute decision step, the way the bot itself books them. No position is open at the time of this update.
-
-## ④ The paper account against buy & hold
-
-The paper account of the current version started with $10,000 on 5 Oct 22:00 UTC. On 28 October 2026, 11:50 UTC it holds **$10,543.75** (+5.44%). Buying BTC at the first step and holding it to the last would have given **−5.29%**. With the cheaper costs used in our research runs (0.05% fee + 0.02% slippage) the same trades give $10,619.60.
-
-Before it, version 7.0 (buys only) traded from 30 Sep 20:00 to 5 Oct 21:50 UTC: one trade, one take-profit, +1.17% while BTC rose 2.81%.
-
-## ⑤ Real money on the exchange
-
-Every signal is also sent to a real **CEX.IO margin account: a $100 position at ×4 leverage**. Closed so far:
-
-| Position | Side | Entry | Exit | Net after fees and rollover |
-|---|---|---|---|---|
-| #129035 | long | 83,067.00 | 80,893.60 | **−2.84 USDT** |
-| #129249 | long | 80,900.10 | 82,511.00 | **+1.78 USDT** |
-| #130929 | short | 82,464.00 | 81,476.00 | **+0.95 USDT** |
-| #131441 | long | 80,133.70 | 81,589.00 | **+1.51 USDT** |
-
-Net on the exchange: **+1.39 USDT**. The exchange side differs from the paper account for reasons we publish as they happened. Position #129249 opened on 8 Oct without the bot's exit orders because of an error in the bot's order code; its owner moved the take-profit by hand and closed it on 20 Oct, so trades 4 and 5 of the table above never reached the exchange. The short #130929 was sent after that pause and entered 0.69% worse than the model's price, which is why it made +0.95 USDT where the model booked +2.03%. Fills otherwise land within 0.1% of the model's prices.
-
-## ⑥ What six trades can and cannot tell
-
-A winning trade has paid about +1.63% after costs and the stop −2.76%, so the bot needs to win about 63% of its trades just to stand still. A bot with exactly that break-even win rate and no edge at all would still win 5 or more of 6 trades in about **28% of cases** — roughly one time in 4. Six trades cannot rule luck out. What they show is narrower and still useful: the signal has not fallen apart outside the data it was chosen on, and the gap to buy & hold so far points the right way.
-
-That is why this page is a live report rather than a claim. Every new trade is added, losing ones included, and the scoreboard above is recomputed — if Line 7 stops being ahead, this page will say so.
-
-**Research, not financial advice.** Nothing here is a recommendation to buy, sell or copy these trades. Past results — especially six of them — say little about the next trade.
-
-
-================================================================================
-# Bot 7 — From an Order-Book Canvas to Live Trading: Every Stretch, Every Result, Every Real Trade
-
-URL: https://marketflowresear.ch/articles/bot-7-from-an-order-book-canvas-to-live-trading-every-result-every-trade/
-Published: 2026-10-09 · Series: Live bots — every result · Bot 7 overview
-
-> Bot 7 is the end of a long research line: a transformer reads 30 hours of BTC order book as one canvas and says how likely it is that this moment sits in a 2.3% bottom — or, in its second version, a 2.3% top. This article puts the whole path in one place: how the networks were trained, what each version made on training-period weeks it was not fitted on, on validation, on days nobody had looked at, and since it went live. All live trades so far are listed at the end, model and exchange side by side. As of 9 October 2026 08:20 UTC the record is three closed trades: two take-profits and one stop.
-
-## ① How bot 7 was trained
-
-**Input.** Every 10 minutes the bot takes the last **160 hours** of second-by-second Binance order-book data (resting liquidity on both sides, liquidity added and pulled, buy and sell flow), folds it into **1,100 records of 100 seconds** and 8 features each, and gives the canvas to a small transformer. The output is one number: the probability that *now* is inside a 2.3% zigzag pivot zone. The zone is the honest label: a stretch of time around a bottom (or top) whose legs last at least 7 hours, within 10% of the leg's move from the extreme.
-
-**Training.** BTC only. Networks learn on **21 Feb – 30 Jun 2026** (15,878 steps), a 200-hour gap follows, and **8 Jul – 12 Aug** (4,445 steps) is held out to choose the epoch. Eighteen runs per side differ only in the loss function. **15 Aug – 21 Sep** (5,265 steps) is validation: here the signal is turned into trades — the probability is summed over a window W, the bot acts when the sum reaches θ — and here W, θ and the networks were chosen.
-
-**Two versions.** *Bot 7.0* buys only: `BUY_pos` epoch 9, W 180 minutes, θ 11.74, take-profit 1.9% above the lowest price after entry, stop 2%, a filter for repeat signals and rule 7.1. *Bot 7* trades both sides on one account: `BUY_l3` epoch 3 (W 340 min, θ 2.72) and `SELL_l2` epoch 17 (W 30 min, θ 1.74), one trade per 2.3% leg, take-profit 1.9%, stop 2.5%, a signal from the other side closes the trade. The pair was chosen not for money but for behaving the same on three stretches.
-
-## ② Results on every stretch — against buy & hold
-
-All historical runs start from $1000, put the whole account into each trade, use no leverage and pay 0.05% fee plus 0.02% slippage per side.
-
-**Held-out training weeks, 8 Jul – 12 Aug** (bot 7): **$1086.70** against **$1022.67** for buying and holding — the only stretch where the bot clearly wins, in a month BTC rose 2.4%. **Validation, 15 Aug – 21 Sep**: bot 7.0 **$1100.85** with nine trades, all take-profit; bot 7 **$1147.38**; buy & hold **$1289.36**. BTC rose about 29% and a bot that is out of the market much of the time cannot keep up. Every parameter was chosen here, so these are the most flattering numbers. **Unseen days**: bot 7.0 on 21–30 Sep **$1032.92** (three trades, three take-profits) against **$1035.51**; bot 7 on 21 Sep – 5 Oct **$1059.30** against **$1064.02**.
-
-The pattern is consistent and not exciting: positive everywhere, roughly level with the market when the market is calm, far behind it in a strong rally. Earlier articles of this series give each stretch in full.
-
-## ③ Live since 30 September — every trade so far
-
-The bot runs on the data collector's live feed, a decision every 10 minutes. The model's trades are booked on paper from $10,000 at the close of the decision step, with exchange-level costs (0.10% fee + 0.02–0.03% slippage per side). In parallel each trade is sent to a real **CEX.IO margin account: a $100 position at ×4 leverage**. Bot 7.0 ran from **30 Sep 20:00 to 5 Oct 21:50 UTC**; bot 7 replaced it at **5 Oct 22:00 UTC**.
-
-All trades as of 9 Oct 2026 08:20 UTC (model, paper):
-
-- **7.0 · long** · in 1 Oct 14:40 at 84,189.26 → out 2 Oct 03:01 at 85,398.81 · **take-profit · +1.17%**
-- **7 · long** · in 7 Oct 14:40 at 83,042.99 → out 8 Oct 17:00 at 80,962.59 · **stop · −2.76%**
-- **7 · long** · in 8 Oct 17:00 at 80,962.59 → out 9 Oct 04:20 at 82,515.32 · **take-profit · +1.65%**
-
-Paper account: bot 7.0 **$10,000 → $10,117.31** while BTC rose 2.81% over its days; bot 7 **$10,000 → $9,884.89** while BTC fell 3.84% over its days.
-
-Real exchange positions ($100, ×4):
-
-- **#129035 · long** · in 83,067.00 → out 80,893.60 (stop) · **−2.84 USDT** after 0.23 USDT fees and rollover — the model expected −2.76%, the exchange gave −2.84%
-- **#129249 · long** · opened 8 Oct 17:00 UTC at 80,900.1 · **still open** — the account owner moved its take-profit by hand to 85,000 (stop 78,938.2), so the model's take-profit at 82,500.88 was booked on paper but not on the exchange
-- Bot 7.0's single trade never reached the exchange: the order failed on a missing component of the order client, and it was fixed afterwards
-
-Three trades are not a track record, and this list is not a claim of an edge. It is published so the result can be checked against what the research promised: so far a take-profit is about 1.2–1.7% after costs and a stop about −2.8%, so the bot needs roughly two wins per loss just to stand still. The list will be updated as trades close. Research, not financial advice.
-
-
-================================================================================
-# Bot 6, Line 61: Nine Trades, Eight Winners, and Why We Are Not Celebrating
-
-URL: https://marketflowresear.ch/articles/bot-6-line-61-nine-trades-eight-winners/
-Published: 2026-08-17 · Series: Live bots — every result · Line 61 live
-
-> Line 61 of Bot 6 holds one position at a time and has been live since 17 July 2026: 31 days, 9 closed trades, +11.81 USD on a 100 USD slot, win rate 89%. Its entry gate is agreement between two independent models plus a context check; its exits are a 2% target, a 4% stop and a hard 72-hour clock. This is the complete record, including the comparison with its twin line running the identical recipe — which is the part that keeps us honest.
-
-## ① One trade at a time: how line 61 works
-
-Line 61 is one instance of Bot 6 — a bot that holds **one position at a
-time, across all six coins**, with a single slot of 100 USD. It has been
-running on live data since 17 July 2026, on paper, with a fee of
-0.15% per action.
-
-Its entry rule is a gate made of agreement rather than of thresholds. An ensemble of models
-scores every coin; a trade is allowed only when the ensemble's confidence clears
-τA = 0.618, a second, independent model agrees on the same side, and a context check
-confirms the wider market state. If two of the three disagree, there is no trade — and there
-is no fallback, no "trade the best of a bad lot". The bot simply waits.
-
-Exits are equally plain: take profit 2%, stop loss
-4%, and a hard **72-hour timeout** that closes anything still
-open at whatever price is there. That timeout is the part to watch in the results below.
-
-The recipe was chosen on a grid of 30 settings, on training episodes only,
-with one rule that threw out otherwise attractive candidates: a setting had to produce a
-signal in at least 60% of episodes. A gate that opens twice a year will
-show a wonderful win rate and teach you nothing. On the validation period the chosen recipe
-made +7.88 USD over 8 trades, with a median
-wait of 12.8 hours before a signal and
-12.8 hours in the position.
-
-There is one more moving part. After **every closed trade**, a challenger is retrained on
-the freshest data and compared with the running version; the better one keeps the line.
-Line 61 is on version 4 after
-10 such rounds.
-
-## ② 31 days live: the numbers
-
-As of **2026-08-17**, after 31 days live:
-
-| measure | value |
-|---|---|
-| closed trades | 9 |
-| net result | **+11.81 USD** (+11.81% of 100 USD) |
-| win rate | 88.9% |
-| average trade | +1.312% · median +1.810% |
-| median holding | 58.6 h |
-| how they ended | take profit — 7, 72 h timeout — 2 |
-| best / worst | DOGE +2.12% / SOL -1.86% |
-| buy & hold, same coins and days | +0.09% on average (BNB +7.3%, BTC +1.8%, DOGE -2.1%, SOL +1.5%, XRP -7.9%) |
-
-Open at the time of writing: BTC long +1.98% after 31 h — +1.83 USD unrealised in total.
-
-One trade at a time over 31 days means roughly one closed position every
-3.5 days — and that number is the most informative one in
-the table. This bot spends the overwhelming majority of its life flat, waiting for its three
-conditions to line up. Every result it produces has to be read with that in mind: with
-9 closed trades, a single outcome moves the win rate by
-11 percentage points.
-
-The exits column is where the mechanism shows through. take profit — 7, 72 h timeout — 2 — and the split
-between "hit the target" and "ran out of time" says more about the bot than the profit does.
-A position closed by the clock is one where the entry was not wrong enough to hit the stop
-and not right enough to hit the target within three days.
-
-## ③ Nine trades, eight winners, and why that is not proof
-
-7 of line 61's 9 closed trades hit their take profit, the win rate
-is 89%, and the line is +11.81 USD ahead on a
-100 USD slot. This is the best live result in the project so far, and
-this section exists to argue against reading too much into it.
-
-Start with the sample. 9 trades. If this gate were a coin flip, the chance of seeing
-8 or more winners out of 9 is 0.020 — about one run in
-51. Unlikely, then, but nowhere near proof: we run several bot lines, and one of
-several coin flips landing well is the ordinary case, not the remarkable one.
-
-Then look at its twin. Line 60 runs **the same recipe, the same gate, the same six coins**,
-launched two days earlier, and closed 9 trades for +0.68 USD at a
-44% win rate. Nothing distinguishes the two systems except which entries
-each happened to catch. If line 61's numbers proved the method works, line 60's would prove
-it does not — and both cannot be true.
-
-What *is* solid in this line has nothing to do with the profit. The exits: a median holding
-of 58.6 hours, with take profits dominating the timeouts, means the gate
-tends to fire in front of moves that resolve inside the bot's three-day window. That is a
-statement about the entry mechanism, it is consistent across the trades, and it does not
-depend on the size of the wins.
-
-Buy & hold over the same days and coins: +0.09% on average (BNB +7.3%, BTC +1.8%, DOGE -2.1%, SOL +1.5%, XRP -7.9%). So the line is ahead of holding, by
-a margin that a single bad trade would erase. It keeps running unchanged, it retrains a
-challenger after every close, and its balance goes out in a daily report — including the
-days it gives some of this back.
-
-
-================================================================================
-# Bot 6, Line 60: A Bot That Mostly Waits — and What the Clock Costs It
-
-URL: https://marketflowresear.ch/articles/bot-6-line-60-a-bot-that-mostly-waits/
-Published: 2026-08-17 · Series: Live bots — every result · Line 60 live
-
-> Line 60 of Bot 6 holds one position at a time and has been live since 15 July 2026: 33 days, 9 closed trades, +0.68 USD on a 100 USD slot, win rate 44%. Its entry gate is agreement between two independent models plus a context check; its exits are a 2% target, a 4% stop and a hard 72-hour clock. This is the complete record, including the comparison with its twin line running the identical recipe — which is the part that keeps us honest.
-
-## ① One trade at a time: how line 60 works
-
-Line 60 is one instance of Bot 6 — a bot that holds **one position at a
-time, across all six coins**, with a single slot of 100 USD. It has been
-running on live data since 15 July 2026, on paper, with a fee of
-0.15% per action.
-
-Its entry rule is a gate made of agreement rather than of thresholds. An ensemble of models
-scores every coin; a trade is allowed only when the ensemble's confidence clears
-τA = 0.618, a second, independent model agrees on the same side, and a context check
-confirms the wider market state. If two of the three disagree, there is no trade — and there
-is no fallback, no "trade the best of a bad lot". The bot simply waits.
-
-Exits are equally plain: take profit 2%, stop loss
-4%, and a hard **72-hour timeout** that closes anything still
-open at whatever price is there. That timeout is the part to watch in the results below.
-
-The recipe was chosen on a grid of 30 settings, on training episodes only,
-with one rule that threw out otherwise attractive candidates: a setting had to produce a
-signal in at least 60% of episodes. A gate that opens twice a year will
-show a wonderful win rate and teach you nothing. On the validation period the chosen recipe
-made +7.88 USD over 8 trades, with a median
-wait of 12.8 hours before a signal and
-12.8 hours in the position.
-
-There is one more moving part. After **every closed trade**, a challenger is retrained on
-the freshest data and compared with the running version; the better one keeps the line.
-Line 60 is on version 1 after
-8 such rounds.
-
-## ② 33 days live: the numbers
-
-As of **2026-08-17**, after 33 days live:
-
-| measure | value |
-|---|---|
-| closed trades | 9 |
-| net result | **+0.68 USD** (+0.68% of 100 USD) |
-| win rate | 44.4% |
-| average trade | +0.076% · median -0.580% |
-| median holding | 72.0 h |
-| how they ended | take profit — 2, 72 h timeout — 7 |
-| best / worst | ETH +2.40% / BTC -2.36% |
-| buy & hold, same coins and days | -2.09% on average (BNB +4.3%, BTC -1.2%, ETH -1.2%, XRP -10.3%) |
-
-Open at the time of writing: ETH long +1.50% after 40 h — +1.35 USD unrealised in total.
-
-One trade at a time over 33 days means roughly one closed position every
-3.7 days — and that number is the most informative one in
-the table. This bot spends the overwhelming majority of its life flat, waiting for its three
-conditions to line up. Every result it produces has to be read with that in mind: with
-9 closed trades, a single outcome moves the win rate by
-11 percentage points.
-
-The exits column is where the mechanism shows through. take profit — 2, 72 h timeout — 7 — and the split
-between "hit the target" and "ran out of time" says more about the bot than the profit does.
-A position closed by the clock is one where the entry was not wrong enough to hit the stop
-and not right enough to hit the target within three days.
-
-## ③ What the clock costs it
-
-Line 60's defining number is not its profit — it is that **7 of its
-9 closed trades ended on the 72-hour clock**, not at a target or a stop. The bot was
-right that something was happening; it was wrong, or too early, about when.
-
-That is a specific and fixable failure, and it is worth separating from the general "the
-strategy does not work". A timeout exit means the entry gate opened, the position went
-nowhere decisive for three days, and the bot took whatever was on the table — on this line,
-a median holding of 72.0 hours, which is the timeout itself. The move the
-model saw either arrived later, or was smaller than 0.08% and never
-reached the 2% target.
-
-The comparison that makes this concrete is line 61 — the same recipe, the same gate, the
-same six coins, launched two days apart. It closed 9 trades in
-31 days for +11.81 USD at a 89% win
-rate, and its exits are dominated by take profits rather than timeouts. Two identical
-systems, one month each, 11.13 USD apart.
-
-We are not going to explain that gap with a story about market regimes. With
-9 and 9 trades, the difference is inside the range that pure chance produces,
-and pretending otherwise is how people end up "improving" a system into overfitting. What
-the pair genuinely tells us is something narrower and more useful: **the same gate produces
-very different outcomes depending on which entries it happens to catch**, so the next piece
-of work is not a better gate, it is a better exit — one that reads the state of the move
-instead of counting hours.
-
-Buy & hold over the same days on the coins it traded: -2.09% on average (BNB +4.3%, BTC -1.2%, ETH -1.2%, XRP -10.3%). Line 60 finished
-+0.68 USD against that. Both numbers are small, both are honest, and both will
-be republished daily as they change.
-
-
-================================================================================
-# Bot 4: What Forty Days of Live Paper Trading Actually Look Like
-
-URL: https://marketflowresear.ch/articles/bot-4-forty-days-of-live-paper-trading/
-Published: 2026-08-17 · Series: Live bots — every result · Bot 4 live
-
-> Bot 4 has been trading live on paper since 09 July 2026 — 40 days, 49 closed trades, +29.53 USD on 600 USD of capital, a 80% win rate, against +1.49% on average for buying and holding the same coins. This is the full record: the rules it never deviates from, every closed trade, the open positions right now, and the hourly referee that can hand the account to a freshly trained challenger — which has happened 4 times so far.
-
-## ① The rules it has been playing by, unchanged
-
-Bot 4 has been running on live market data since **09 July 2026** — no breaks,
-no manual entries, no discretion. It trades on paper: every fill is simulated at the price
-its own data feed sees, with a fee of 0.15% charged on both the
-entry and the exit. That is the honest way to describe it, and it is the first thing anyone
-reading a results table should know.
-
-The rules it plays by have not changed since it was launched:
-
-- **six coins in parallel**, each with its own slot of 100 USD
-  (600 USD of capital in total), never more than one position per coin;
-- **entry** only when four gates open at once — probability ≥ 0.55, expected value
-  ≥ 0.002, both holding for 2 consecutive bars, plus an optional
-  volatility floor the grid search left switched off;
-- **exit** at take profit 2% or stop loss 4%, or when the
-  48-hour episode ends — and at the end of an episode the bot stays in
-  whatever it was in, rather than forcing a sale at a bad moment;
-- **at most 12 entries a day**, the house limit;
-- **entries pause automatically** when the data feed is thin or lagging by more than
-  15 minutes, while exits keep working — a stop must never depend on a healthy feed.
-
-The take profit is deliberately smaller than the stop loss. That is a standing rule here,
-not the output of an optimiser: the median 48-hour swing on these coins is
-5.26%, so a 2% target is reachable often,
-while a 4% stop is far enough away that ordinary noise does not touch it.
-The bot wins small and often, and loses rarely and larger — which is exactly what the
-numbers below show.
-
-## ② 40 days live: the numbers
-
-As of **2026-08-17**, after 40 days live:
-
-| measure | value |
-|---|---|
-| closed trades | 49 |
-| net result | **+29.53 USD** (+4.92% of 600 USD) |
-| win rate | 79.6% |
-| average trade | +0.603% · median +1.770% |
-| median holding | 46.2 h |
-| how they ended | stop loss — 10, take profit — 39 |
-| best / worst | SOL +3.03% / ETH -4.86% |
-| buy & hold, same days | +1.49% on average (BTC +3.7%, ETH +10.3%, SOL -1.6%, BNB +6.9%, XRP -7.9%, DOGE -2.6%) |
-
-Open at the time of writing: DOGE long +1.38% after 20 h; BNB long -0.22% after 98 h; SOL long +0.41% after 113 h; XRP long -1.38% after 144 h; ETH long -0.20% after 247 h; BTC long -0.16% after 311 h — -1.07 USD unrealised in total. Counting those open positions at their current price, the running score is
-+28.46 USD.
-
-Two readings of the same table, and both are true. The favourable one: the bot is ahead of
-buying and holding the same six coins over the same days, with a win rate near
-80%, and it got there by taking small profits — the exits are dominated by
-take profits, not by lucky outliers.
-
-The careful one, which we owe the reader. 49 trades is a small sample, and the
-distribution here is asymmetric by design: many small wins, few larger losses. Before this
-bot went live, the same configuration was tested offline across three random seeds and
-averaged -19.7 USD, spread from -53.2 to
-+8.8, against buy & hold at -18.3 — that is, the
-offline verdict was "no better than holding, with a wide spread". The live run is currently
-at the good end of that spread. Nothing in the last 40 days proves the
-offline test wrong; it is simply too early, and we will keep publishing the number either
-way.
-
-## ③ Champion versus challenger, refereed hourly
-
-The interesting part of Bot 4 is not the model — it is that the model is
-replaceable while running. Two copies trade side by side on the same live data: the
-**champion**, whose numbers are above, and a **challenger** trained on fresher data with a
-different take-profit/stop-loss geometry. A referee process compares them every hour on a
-single number: net result plus the value of everything still open.
-
-The rule is deliberately hard to game: *control passes to the challenger only if its score
-beats the champion's by more than 1 USD, and only after it has been trading for at least
-48 hours*. The margin stops a coin flip from taking over the account, and the 48-hour
-minimum stops a challenger that got lucky in its first hour.
-
-Since launch: **17 challenger rounds, 4 handovers of control**,
-500 recorded comparisons. Each round trains a new challenger on fresh data
-with the next geometry in the rotation — TP1.5/SL4.5, TP2/SL4, TP2/SL6, TP3/SL3.75, TP3/SL4.5, TP3/SL9 — and the loser is
-archived rather than deleted, so every version that ever ran can still be inspected.
-
-The current challenger has been live for 6 days with geometry
-TP3/SL9: 2 closed trades, +5.46 USD, win rate
-100%, and 6 positions open, worth
-+6.98 USD unrealised. Its running score is +12.44
-USD against the champion's +28.46.
-
-Why build it this way at all? Because the honest conclusion of every offline test we have
-run is that the difference between two decent configurations is smaller than the noise
-between two random samples of days. If you cannot tell which is better on a backtest, the
-only remaining method is to let both trade the real feed and give control to whichever
-survives — slowly, with a margin, and in public. That is the whole design: not a bot that
-is right, but a bot that can be replaced without anyone touching it.
-
-
-================================================================================
-# Gates: The Part of a Trading Bot That Decides Not to Trade
-
-URL: https://marketflowresear.ch/articles/gates-the-part-of-a-bot-that-decides-not-to-trade/
-Published: 2026-08-17 · Series: Live bots — every result · Gates
-
-> A trading bot's model produces a number; its gate decides whether that number is worth a fee. This article measures what gates actually cost. Demanding a signal persist two bars instead of one raises precision from 0.209 to 0.238 and throws away 25% of the opportunities. Bot 4 stacks four gates and still lands inside the noise across random seeds. Bot 6 gates on agreement between two models — and two live lines running that identical gate for a month finished +11.81 and +0.68 USD apart. Gates buy precision with coverage; nothing here is free.
-
-## ① A gate buys precision with coverage
-
-Every trading bot has two halves, and only one of them gets written about.
-The first half is the model: it looks at the market and produces a number. The second half
-is the **gate** — the rule that turns that number into "act" or, far more often, "do
-nothing". In our systems the gate is where most of the design work goes, because a raw
-model signal fires constantly and every firing costs a fee.
-
-The cleanest measurement of what a gate does comes from our zone-finding line, where a
-model marks the places a perfect trader would use. Take the same model and put four
-different gates behind it:
-
-| gate | zones still covered | precision of a signal run | combined train score |
-|---|---|---|---|
-| threshold only (τ = 0.87) | 0.745 | 0.209 | 0.2901 |
-| + must persist 2 bars | 0.560 | 0.238 | 0.2598 |
-| + must persist 3 bars | 0.399 | 0.239 | 0.2144 |
-| + volatility floor (q30) | 0.721 | 0.215 | 0.2678 |
-
-Read the first two columns as a single trade. Demanding that a signal survive two bars
-instead of one raises precision from 0.209 to
-0.238 — about
-14% better — and costs
-25% of the opportunities. Going to
-three bars costs another 29% and buys
-almost nothing: precision 0.239 against
-0.238. The volatility floor is the gentlest of the four and moves
-both numbers least.
-
-So the honest description of a gate is not "it makes the signal better". **A gate buys
-precision with coverage**, at a rate the data sets, and past a point the rate goes bad. The
-combined score in the last column — which weighs both — peaks at the plainest gate of all
-and falls with every addition. That is the trap this whole article is about: gates feel like
-improvements, and each one has to be paid for in trades you will never take.
-
-## ② Bot 4: four gates in a stack
-
-Bot 4 is where this gets concrete. Its entry rule is a stack of four
-independent gates, and a trade happens only if **all** of them open:
-
-1. **probability** — the classifier's chance of the move must clear π = 0.55;
-2. **expected value** — the EV model must clear 0.002, so a likely move
-   that is too small to pay the fee is refused;
-3. **persistence** — the first two must hold for 2 consecutive bars,
-   which is the same persistence gate as in the table above;
-4. **volatility** — an optional floor on predicted volatility, which the grid search left
-   switched off (None), because on our data it removed more good trades
-   than bad ones.
-
-Every threshold is picked on the training episodes only. The geometry — take profit
-2% against stop loss 4% — comes from
-the same training data, guided by a fixed house rule: the take profit is always *smaller*
-than the stop. The reasoning is the swing statistics, not taste: the median 48-hour swing
-is 5.26%, and a 2% target is
-reached from 33.5% of training bars.
-
-What loosening a gate does, measured on episodes the bot never saw:
-
-| version | gates | trades | win rate | take-profit exits | net on unseen episodes |
-|---|---|---|---|---|---|
-| 4.0, long only | persist 1, EV ≥ 0.004 | 28 | 50.0% | 42.9% | -6.88 USD |
-| 4.1, long + short | persist 2, EV ≥ 0.002 | 75 | 62.7% | 48.0% | +8.85 USD |
-
-Loosening EV while tightening persistence — and allowing shorts — nearly tripled the number
-of trades and turned -6.88 into +8.85 USD. It would be easy
-to stop here and call it a win. We do not, for one reason: across three random seeds the
-same configuration averages -19.7 USD with a spread from
--53.2 to +8.8, against buy & hold at
--18.3. The gate settings are inside the noise of which episodes you happened
-to test on.
-
-The strongest evidence for that caution is the geometry grid. Twelve take-profit/stop-loss
-pairs, each scored on training episodes and on held-out ones. The correlation between the
-two columns is **ρ = -0.67** — negative. Choosing the geometry that looked best in
-training was, on this data, slightly worse than choosing at random. That is not an argument
-against gates; it is an argument against believing the number you tuned them on.
-
-## ③ Bot 6: the gate is agreement
-
-Bot 6 uses a different kind of gate, and it is our favourite one because it
-cannot be tuned into a corner: **agreement**. Two independent models look at the same
-market. The trade happens only when both say the same thing, the ensemble's confidence
-clears τA = 0.618, and a context check confirms the wider state. There is no
-threshold on "how strong" beyond that — the gate is a vote, not a dial.
-
-The grid that chose it had 30 settings and one hard floor: any candidate that
-produced a signal in fewer than 60% of episodes was rejected outright,
-however profitable it looked. A gate that almost never opens will show a beautiful win rate
-on the two trades it allows, and that is exactly the way to fool yourself.
-
-Chosen on training data: **+55.44 USD over 48 trades, win rate
-85%**, a signal in 75% of episodes, median wait
-9.4 h and median holding 12.1 h. On the validation
-period it never saw: **+7.88 USD over 8 trades, win rate
-88%**, signal in 80% of episodes. The cycle is roughly
-22 hours from "start looking" to "position closed" —
-this is a gate that spends most of its life shut.
-
-Then it went live, twice, with the same recipe on two independent lines. As of
-2026-08-17:
-
-| line | days live | closed trades | net | win rate | how they ended |
-|---|---|---|---|---|---|
-| 60 | 33 | 9 | +0.68 USD | 44% | 7 of 9 by the 72-hour timeout |
-| 61 | 31 | 9 | +11.81 USD | 89% | 7 of 9 hit take profit |
-
-Same gate, same thresholds, same six coins, one month each — and one line makes
-+11.81 USD while the other makes +0.68. We are not going to
-tell you the second one is better tuned. With nine trades apiece, the honest reading is
-that this is what nine samples look like, and the useful signal is in the last column
-rather than the money column: on line 60 the position is usually closed by the clock, not
-by the target. A gate that opens on agreement can be right about "something is coming" and
-still be attached to a move that takes longer than the bot is allowed to wait.
-
-That is the working conclusion of everything above. The gate is not the part that finds
-money; it is the part that decides how often you are allowed to be wrong. Ours are chosen
-on data the bot never sees afterwards, they are kept as blunt as possible, and every one of
-them is measured in trades refused — because that is the price, and the price is always
-paid.
-
-
-================================================================================
-# Typhoon+: A Signal That Finds the Perfect Trader's Zones — and Still Loses Money
-
-URL: https://marketflowresear.ch/articles/typhoon-plus-a-signal-that-finds-the-zones-and-still-loses-money/
-Published: 2026-08-17 · Series: Live bots — every result · Typhoon+
-
-> We drew the zones a perfect trader would use — 0.9% zigzag turns, a 0.15% band around each one — and found that the price sits inside them barely 3% of the time. A single gradient-boosting model, pooled over six coins, then finds 74% of those zones on days it never saw. It also fires false 86% of the time, leans mostly on price geometry rather than the order book, and loses 122% when traded plainly against 93% for buy & hold. This is the article about a signal that finds the right places and still cannot pay the fee.
-
-## ① The zones a perfect trader would use
-
-Start from the answer instead of the model. If a trader knew the future,
-where exactly would they act? Not everywhere — a perfect trader touches the market only at
-turns, and spends the rest of the time doing nothing. So we drew those places first and
-only then asked whether the order book can see them.
-
-A **zone** is built in two steps on 60-second bars. First a zigzag with a
-0.9% threshold marks every turn where the price reversed by at least that
-much. Then, around each turn, we take the continuous stretch of bars whose price stays
-within 0.15% of the extreme — that stretch is the zone, the window inside
-which acting is as good as acting exactly at the turn. Neighbouring zones are kept at least
-0.6% apart in price, so two zones can never be the same event
-counted twice.
-
-The result is the first honest number of this line: **5,326 zones across six coins**,
-between 4.0 (BNB) and 8.7 (SOL) per day,
-and the price sits inside a zone only **2.6
-– 3.3% of the time**. Roughly 97% of all
-minutes are, for a perfect trader, waiting.
-
-That waiting has a price tag. On BTC alone the perfect trader takes
-196 trades over the validation period — 4.47 a day — on moves
-averaging 2.00%, netting 1.436% per trade
-after fees, or **6.42% a day**. Across six coins the perfect trader
-finishes the same period at **2448%**. That is the ceiling this
-line is measured against — not a benchmark we expect to reach, but the yardstick that turns
-"the signal looks good" into a number.
-
-## ② One model, six coins, four wrong calls in five
-
-One model for all six coins, not six models. The training pool mixes every
-coin's bars, the split is chronological — **the first 70% of days train, the last 30%
-validate** and are never seen during training — and the engine is gradient boosting. The
-signal fires when the model's score passes a threshold picked on train alone:
-τ = 0.87 for buy zones, 0.85 for sell zones.
-
-It transfers. On unseen days the signal still covers **74.5% of buy
-zones and 79.1% of sell zones**, against
-85.7% / 89.8% on train. A drop, but not a
-collapse: what the model learned about one coin's turns is not coin-specific folklore.
-
-And now the number that decides everything. Of all the signal runs it produces on unseen
-days, **86.2% are false** — they fire where no zone was. Precision
-of a run is 0.209 for buys and
-0.214 for sells. Read the two facts together: the signal finds
-most of the real turns *and* four out of five of its calls are wrong. It is a wide net, not
-a scalpel.
-
-There is a second, less comfortable finding in the feature importances. The top inputs are
-`pos_60` (0.331) and `pos_240` (0.240) — where the
-current price sits inside its own range over the last hour and last four hours — with
-`range_240` and `ret_5` behind them. Price geometry accounts for about
-84% of the model's attention. The order-book features are in the input and
-they are not what the model leans on. A model that mostly says "the price is near the edge
-of its recent range" is a useful zone finder and a weak claim about the book.
-
-## ③ Trading it: −122% against −93% for buy & hold
-
-A zone finder is not a trading system, and this is where the line stops being
-flattering. The rule we tested is the plainest one that follows from the signal: enter on
-the onset of a signal run confirmed by 2 bars, exit on the
-first opposite run or at the end of the session, 42-hour sessions, at most
-12 trades a day — the project's standard.
-
-On unseen days, over six coins: **-122.3% net against
--93.0% for buy & hold**. Positive on 0 of 6 coins, better than
-buy & hold on 1 of 6. Capture of the perfect trader's result:
-**-5.0%** — not a fraction of the ceiling, the wrong side of
-zero.
-
-BTC shows where the money goes. 66 trades, 1.51 a day,
-median holding 230 minutes, win rate 53% —
-more winners than losers. And still:
-
-| component | BTC, % over the period |
-|---|---|
-| winning trades | +23.3 |
-| losing trades | -46.1 |
-| fees paid | −17.2 |
-| **net** | **-22.8** |
-
-Gross per trade is -0.085% — **before any fee at all** — and net is
--0.345%. That ordering matters. The fee is not what turns a winning
-rule into a losing one here; the rule has no edge to begin with, and the fee then triples
-the loss. Winning more often than losing is not the same as winning: the losers are simply
-bigger. (The fee in this test is 0.13% per action, the tariff at
-the time; the project's current standard is 0.15%, which makes this worse, not better.)
-
-Three things carry forward from this line, and all three shaped the bots we run now. A
-signal that *finds* turns is not a signal that *pays* for them — coverage and profit are
-different measurements. Anything that fires often must be gated, which is the subject of its
-own article. And the perfect-trader ceiling is the most useful number we built here: it
-turns "our strategy is down 5%" into "we captured −5% of what was there", which is a
-sentence you can act on.
-
-
-================================================================================
 # The Pair That Behaves the Same on Three Stretches of Data — How the Live Bot's Networks Were Chosen
 
 URL: https://marketflowresear.ch/articles/the-pair-that-behaves-the-same-on-three-stretches-of-data/
@@ -1732,6 +1077,661 @@ If the edge is that thin, some legs must lack it. We took them apart.
 **46 legs (6.5%)** had the count but not the size: events against the leg were bigger. These are the weakest legs — median move 2.96% against 4.53%, 272 events against 438 — built from many small steps, with the top ten events giving only 12.7% of the move.
 
 Legs where *both* count and size go against the leg do not exist in the market. There are exactly three, and all three sit on holes in the data (median gap 59.4 hours). That is a data-quality filter, not a pattern. And in every group the move gathers at the **edges** of the leg — the first and last tenth — and least in the middle. The edges of a leg are where the next studies in this series go looking.
+
+
+================================================================================
+# Line 7: The Best of All Our Bots — Live Trading Report, Every Trade
+
+URL: https://marketflowresear.ch/articles/line-7-live-trading-report/
+Published: 2026-10-28 · Series: Live bots — every result · Live report · Line 7
+
+> We have built and tested more than a dozen trading bots on the research published here. Line 7 is the only one ahead of buy & hold in live trading: from 5 October to 28 October 2026 its paper account made +5.44% after costs while BTC fell 5.29% — 6 trades, 5 take-profits. Real positions on the exchange: +1.39 USDT. Six trades are not a track record; this report lists every one of them and is updated as trades close. Research, not financial advice.
+
+## ① All our bots, one scoreboard
+
+| Bot | How it was tested | Trades | Result | Buy & hold, same days |
+|---|---|---|---|---|
+| Bot 1 "Battle" | historical run on the full dataset | 211 | −44.0% | −16.0% |
+| Bot 2 | historical run; zero trades in its live week, 8–14 Jul | 72 | +55.8% (historical only) | — |
+| Bot 4 | live paper trading, six coins, 9 Jul – 6 Sep | 169 | −3.45% | +32.0% |
+| Bot 6 · line 61 | live paper trading, six coins, 75 days to 30 Sep | 32 | −10.70% | +35.3% |
+| Bot 6 · line 60 | live paper trading, six coins, 15 Jul – 5 Oct | 39 | +8.66% | +22.8% |
+| Bot 7.0 | live, BTC, 30 Sep – 5 Oct | 1 | +1.17% | +2.81% |
+| **Bot 7 · Line 7** | **live, BTC, 5 Oct – 28 Oct, paper + real exchange** | **6** | **+5.44%** | **−5.29%** |
+
+Every bot in this table was built from the research on this site. Of those that traded live, every one except Line 7 ended behind simply buying and holding over the same days — including the two that made money. Line 7 is the only bot ahead of buy & hold in live trading: **+5.44% against −5.29%**.
+
+Two honest caveats come with that sentence. Its live record is 23 days and 6 trades. And it was earned in a falling market, where being out of the market already helps. But Line 7 did not just lose less than the market — it made money while BTC fell: 5 of 6 trades closed at take-profit.
+
+Smaller experiments — lines 5A, 5B, 5X_20, 50, 62 and two clones of line 60 — were retired after a handful of trades or after failing validation, so they are not in the table.
+
+## ② How Line 7 decides
+
+Every 10 minutes Line 7 looks back over the last 160 hours of second-by-second Binance order book for BTC — resting liquidity on both sides, liquidity added and pulled, buy and sell flow — folds it into a canvas of 1,100 records of 100 seconds with 8 features each, and hands the canvas to two small transformers. One says how likely it is that this moment sits in a 2.3% bottom zone, the other — in a 2.3% top zone.
+
+- **Entry:** each probability is summed over its own window — 340 minutes for buys, 30 for sells — and a trade opens when the sum crosses its threshold (2.72 and 1.74).
+- **Exit:** take-profit 1.9%, stop 2.5%, or a signal from the other side closes the position.
+- **Discipline:** one position at a time, one trade per 2.3% leg.
+
+The pair of networks was not picked for the most money on validation: it was picked for behaving the same on three separate stretches of data. The whole path — how the networks were trained, what each version made on every stretch — is in [Bot 7: from an order-book canvas to live trading](/articles/bot-7-from-an-order-book-canvas-to-live-trading-every-result-every-trade/).
+
+## ③ Every trade
+
+| # | Version | Side | Entry (UTC) | Exit (UTC) | Exit by | Result after costs |
+|---|---|---|---|---|---|---|
+| 1 | 7.0 | long | 1 Oct 14:40 at 84,189.26 | 2 Oct 03:01 at 85,398.81 | take-profit | **+1.17%** |
+| 2 | 7 | long | 7 Oct 14:40 at 83,042.99 | 8 Oct 17:00 at 80,962.59 | stop | **−2.76%** |
+| 3 | 7 | long | 8 Oct 17:00 at 80,962.59 | 9 Oct 04:20 at 82,515.32 | take-profit | **+1.65%** |
+| 4 | 7 | long | 12 Oct 23:10 at 82,179.65 | 13 Oct 06:50 at 83,776.24 | take-profit | **+1.68%** |
+| 5 | 7 | long | 14 Oct 15:30 at 81,971.00 | 20 Oct 15:10 at 83,040.01 | opposite signal | **+1.04%** |
+| 6 | 7 | short | 20 Oct 15:10 at 83,040.01 | 22 Oct 16:50 at 81,141.88 | take-profit | **+2.03%** |
+| 7 | 7 | long | 24 Oct 16:50 at 80,044.87 | 28 Oct 08:40 at 81,665.78 | take-profit | **+1.76%** |
+
+Costs are inside every number: 0.10% exchange fee and 0.02–0.03% slippage per side. Trades are booked at the close of the 10-minute decision step, the way the bot itself books them. No position is open at the time of this update.
+
+## ④ The paper account against buy & hold
+
+The paper account of the current version started with $10,000 on 5 Oct 22:00 UTC. On 28 October 2026, 11:50 UTC it holds **$10,543.75** (+5.44%). Buying BTC at the first step and holding it to the last would have given **−5.29%**. With the cheaper costs used in our research runs (0.05% fee + 0.02% slippage) the same trades give $10,619.60.
+
+Before it, version 7.0 (buys only) traded from 30 Sep 20:00 to 5 Oct 21:50 UTC: one trade, one take-profit, +1.17% while BTC rose 2.81%.
+
+## ⑤ Real money on the exchange
+
+Every signal is also sent to a real **CEX.IO margin account: a $100 position at ×4 leverage**. Closed so far:
+
+| Position | Side | Entry | Exit | Net after fees and rollover |
+|---|---|---|---|---|
+| #129035 | long | 83,067.00 | 80,893.60 | **−2.84 USDT** |
+| #129249 | long | 80,900.10 | 82,511.00 | **+1.78 USDT** |
+| #130929 | short | 82,464.00 | 81,476.00 | **+0.95 USDT** |
+| #131441 | long | 80,133.70 | 81,589.00 | **+1.51 USDT** |
+
+Net on the exchange: **+1.39 USDT**. The exchange side differs from the paper account for reasons we publish as they happened. Position #129249 opened on 8 Oct without the bot's exit orders because of an error in the bot's order code; its owner moved the take-profit by hand and closed it on 20 Oct, so trades 4 and 5 of the table above never reached the exchange. The short #130929 was sent after that pause and entered 0.69% worse than the model's price, which is why it made +0.95 USDT where the model booked +2.03%. Fills otherwise land within 0.1% of the model's prices.
+
+## ⑥ What six trades can and cannot tell
+
+A winning trade has paid about +1.63% after costs and the stop −2.76%, so the bot needs to win about 63% of its trades just to stand still. A bot with exactly that break-even win rate and no edge at all would still win 5 or more of 6 trades in about **28% of cases** — roughly one time in 4. Six trades cannot rule luck out. What they show is narrower and still useful: the signal has not fallen apart outside the data it was chosen on, and the gap to buy & hold so far points the right way.
+
+That is why this page is a live report rather than a claim. Every new trade is added, losing ones included, and the scoreboard above is recomputed — if Line 7 stops being ahead, this page will say so.
+
+**Research, not financial advice.** Nothing here is a recommendation to buy, sell or copy these trades. Past results — especially six of them — say little about the next trade.
+
+
+================================================================================
+# Bot 7 — From an Order-Book Canvas to Live Trading: Every Stretch, Every Result, Every Real Trade
+
+URL: https://marketflowresear.ch/articles/bot-7-from-an-order-book-canvas-to-live-trading-every-result-every-trade/
+Published: 2026-10-09 · Series: Live bots — every result · Bot 7 overview
+
+> Bot 7 is the end of a long research line: a transformer reads 30 hours of BTC order book as one canvas and says how likely it is that this moment sits in a 2.3% bottom — or, in its second version, a 2.3% top. This article puts the whole path in one place: how the networks were trained, what each version made on training-period weeks it was not fitted on, on validation, on days nobody had looked at, and since it went live. All live trades so far are listed at the end, model and exchange side by side. As of 9 October 2026 08:20 UTC the record is three closed trades: two take-profits and one stop.
+
+## ① How bot 7 was trained
+
+**Input.** Every 10 minutes the bot takes the last **160 hours** of second-by-second Binance order-book data (resting liquidity on both sides, liquidity added and pulled, buy and sell flow), folds it into **1,100 records of 100 seconds** and 8 features each, and gives the canvas to a small transformer. The output is one number: the probability that *now* is inside a 2.3% zigzag pivot zone. The zone is the honest label: a stretch of time around a bottom (or top) whose legs last at least 7 hours, within 10% of the leg's move from the extreme.
+
+**Training.** BTC only. Networks learn on **21 Feb – 30 Jun 2026** (15,878 steps), a 200-hour gap follows, and **8 Jul – 12 Aug** (4,445 steps) is held out to choose the epoch. Eighteen runs per side differ only in the loss function. **15 Aug – 21 Sep** (5,265 steps) is validation: here the signal is turned into trades — the probability is summed over a window W, the bot acts when the sum reaches θ — and here W, θ and the networks were chosen.
+
+**Two versions.** *Bot 7.0* buys only: `BUY_pos` epoch 9, W 180 minutes, θ 11.74, take-profit 1.9% above the lowest price after entry, stop 2%, a filter for repeat signals and rule 7.1. *Bot 7* trades both sides on one account: `BUY_l3` epoch 3 (W 340 min, θ 2.72) and `SELL_l2` epoch 17 (W 30 min, θ 1.74), one trade per 2.3% leg, take-profit 1.9%, stop 2.5%, a signal from the other side closes the trade. The pair was chosen not for money but for behaving the same on three stretches.
+
+## ② Results on every stretch — against buy & hold
+
+All historical runs start from $1000, put the whole account into each trade, use no leverage and pay 0.05% fee plus 0.02% slippage per side.
+
+**Held-out training weeks, 8 Jul – 12 Aug** (bot 7): **$1086.70** against **$1022.67** for buying and holding — the only stretch where the bot clearly wins, in a month BTC rose 2.4%. **Validation, 15 Aug – 21 Sep**: bot 7.0 **$1100.85** with nine trades, all take-profit; bot 7 **$1147.38**; buy & hold **$1289.36**. BTC rose about 29% and a bot that is out of the market much of the time cannot keep up. Every parameter was chosen here, so these are the most flattering numbers. **Unseen days**: bot 7.0 on 21–30 Sep **$1032.92** (three trades, three take-profits) against **$1035.51**; bot 7 on 21 Sep – 5 Oct **$1059.30** against **$1064.02**.
+
+The pattern is consistent and not exciting: positive everywhere, roughly level with the market when the market is calm, far behind it in a strong rally. Earlier articles of this series give each stretch in full.
+
+## ③ Live since 30 September — every trade so far
+
+The bot runs on the data collector's live feed, a decision every 10 minutes. The model's trades are booked on paper from $10,000 at the close of the decision step, with exchange-level costs (0.10% fee + 0.02–0.03% slippage per side). In parallel each trade is sent to a real **CEX.IO margin account: a $100 position at ×4 leverage**. Bot 7.0 ran from **30 Sep 20:00 to 5 Oct 21:50 UTC**; bot 7 replaced it at **5 Oct 22:00 UTC**.
+
+All trades as of 9 Oct 2026 08:20 UTC (model, paper):
+
+- **7.0 · long** · in 1 Oct 14:40 at 84,189.26 → out 2 Oct 03:01 at 85,398.81 · **take-profit · +1.17%**
+- **7 · long** · in 7 Oct 14:40 at 83,042.99 → out 8 Oct 17:00 at 80,962.59 · **stop · −2.76%**
+- **7 · long** · in 8 Oct 17:00 at 80,962.59 → out 9 Oct 04:20 at 82,515.32 · **take-profit · +1.65%**
+
+Paper account: bot 7.0 **$10,000 → $10,117.31** while BTC rose 2.81% over its days; bot 7 **$10,000 → $9,884.89** while BTC fell 3.84% over its days.
+
+Real exchange positions ($100, ×4):
+
+- **#129035 · long** · in 83,067.00 → out 80,893.60 (stop) · **−2.84 USDT** after 0.23 USDT fees and rollover — the model expected −2.76%, the exchange gave −2.84%
+- **#129249 · long** · opened 8 Oct 17:00 UTC at 80,900.1 · **still open** — the account owner moved its take-profit by hand to 85,000 (stop 78,938.2), so the model's take-profit at 82,500.88 was booked on paper but not on the exchange
+- Bot 7.0's single trade never reached the exchange: the order failed on a missing component of the order client, and it was fixed afterwards
+
+Three trades are not a track record, and this list is not a claim of an edge. It is published so the result can be checked against what the research promised: so far a take-profit is about 1.2–1.7% after costs and a stop about −2.8%, so the bot needs roughly two wins per loss just to stand still. The list will be updated as trades close. Research, not financial advice.
+
+
+================================================================================
+# Bot 6, Line 61: Nine Trades, Eight Winners, and Why We Are Not Celebrating
+
+URL: https://marketflowresear.ch/articles/bot-6-line-61-nine-trades-eight-winners/
+Published: 2026-08-17 · Series: Live bots — every result · Line 61 live
+
+> Line 61 of Bot 6 holds one position at a time and has been live since 17 July 2026: 31 days, 9 closed trades, +11.81 USD on a 100 USD slot, win rate 89%. Its entry gate is agreement between two independent models plus a context check; its exits are a 2% target, a 4% stop and a hard 72-hour clock. This is the complete record, including the comparison with its twin line running the identical recipe — which is the part that keeps us honest.
+
+## ① One trade at a time: how line 61 works
+
+Line 61 is one instance of Bot 6 — a bot that holds **one position at a
+time, across all six coins**, with a single slot of 100 USD. It has been
+running on live data since 17 July 2026, on paper, with a fee of
+0.15% per action.
+
+Its entry rule is a gate made of agreement rather than of thresholds. An ensemble of models
+scores every coin; a trade is allowed only when the ensemble's confidence clears
+τA = 0.618, a second, independent model agrees on the same side, and a context check
+confirms the wider market state. If two of the three disagree, there is no trade — and there
+is no fallback, no "trade the best of a bad lot". The bot simply waits.
+
+Exits are equally plain: take profit 2%, stop loss
+4%, and a hard **72-hour timeout** that closes anything still
+open at whatever price is there. That timeout is the part to watch in the results below.
+
+The recipe was chosen on a grid of 30 settings, on training episodes only,
+with one rule that threw out otherwise attractive candidates: a setting had to produce a
+signal in at least 60% of episodes. A gate that opens twice a year will
+show a wonderful win rate and teach you nothing. On the validation period the chosen recipe
+made +7.88 USD over 8 trades, with a median
+wait of 12.8 hours before a signal and
+12.8 hours in the position.
+
+There is one more moving part. After **every closed trade**, a challenger is retrained on
+the freshest data and compared with the running version; the better one keeps the line.
+Line 61 is on version 4 after
+10 such rounds.
+
+## ② 31 days live: the numbers
+
+As of **2026-08-17**, after 31 days live:
+
+| measure | value |
+|---|---|
+| closed trades | 9 |
+| net result | **+11.81 USD** (+11.81% of 100 USD) |
+| win rate | 88.9% |
+| average trade | +1.312% · median +1.810% |
+| median holding | 58.6 h |
+| how they ended | take profit — 7, 72 h timeout — 2 |
+| best / worst | DOGE +2.12% / SOL -1.86% |
+| buy & hold, same coins and days | +0.09% on average (BNB +7.3%, BTC +1.8%, DOGE -2.1%, SOL +1.5%, XRP -7.9%) |
+
+Open at the time of writing: BTC long +1.98% after 31 h — +1.83 USD unrealised in total.
+
+One trade at a time over 31 days means roughly one closed position every
+3.5 days — and that number is the most informative one in
+the table. This bot spends the overwhelming majority of its life flat, waiting for its three
+conditions to line up. Every result it produces has to be read with that in mind: with
+9 closed trades, a single outcome moves the win rate by
+11 percentage points.
+
+The exits column is where the mechanism shows through. take profit — 7, 72 h timeout — 2 — and the split
+between "hit the target" and "ran out of time" says more about the bot than the profit does.
+A position closed by the clock is one where the entry was not wrong enough to hit the stop
+and not right enough to hit the target within three days.
+
+## ③ Nine trades, eight winners, and why that is not proof
+
+7 of line 61's 9 closed trades hit their take profit, the win rate
+is 89%, and the line is +11.81 USD ahead on a
+100 USD slot. This is the best live result in the project so far, and
+this section exists to argue against reading too much into it.
+
+Start with the sample. 9 trades. If this gate were a coin flip, the chance of seeing
+8 or more winners out of 9 is 0.020 — about one run in
+51. Unlikely, then, but nowhere near proof: we run several bot lines, and one of
+several coin flips landing well is the ordinary case, not the remarkable one.
+
+Then look at its twin. Line 60 runs **the same recipe, the same gate, the same six coins**,
+launched two days earlier, and closed 9 trades for +0.68 USD at a
+44% win rate. Nothing distinguishes the two systems except which entries
+each happened to catch. If line 61's numbers proved the method works, line 60's would prove
+it does not — and both cannot be true.
+
+What *is* solid in this line has nothing to do with the profit. The exits: a median holding
+of 58.6 hours, with take profits dominating the timeouts, means the gate
+tends to fire in front of moves that resolve inside the bot's three-day window. That is a
+statement about the entry mechanism, it is consistent across the trades, and it does not
+depend on the size of the wins.
+
+Buy & hold over the same days and coins: +0.09% on average (BNB +7.3%, BTC +1.8%, DOGE -2.1%, SOL +1.5%, XRP -7.9%). So the line is ahead of holding, by
+a margin that a single bad trade would erase. It keeps running unchanged, it retrains a
+challenger after every close, and its balance goes out in a daily report — including the
+days it gives some of this back.
+
+
+================================================================================
+# Bot 6, Line 60: A Bot That Mostly Waits — and What the Clock Costs It
+
+URL: https://marketflowresear.ch/articles/bot-6-line-60-a-bot-that-mostly-waits/
+Published: 2026-08-17 · Series: Live bots — every result · Line 60 live
+
+> Line 60 of Bot 6 holds one position at a time and has been live since 15 July 2026: 33 days, 9 closed trades, +0.68 USD on a 100 USD slot, win rate 44%. Its entry gate is agreement between two independent models plus a context check; its exits are a 2% target, a 4% stop and a hard 72-hour clock. This is the complete record, including the comparison with its twin line running the identical recipe — which is the part that keeps us honest.
+
+## ① One trade at a time: how line 60 works
+
+Line 60 is one instance of Bot 6 — a bot that holds **one position at a
+time, across all six coins**, with a single slot of 100 USD. It has been
+running on live data since 15 July 2026, on paper, with a fee of
+0.15% per action.
+
+Its entry rule is a gate made of agreement rather than of thresholds. An ensemble of models
+scores every coin; a trade is allowed only when the ensemble's confidence clears
+τA = 0.618, a second, independent model agrees on the same side, and a context check
+confirms the wider market state. If two of the three disagree, there is no trade — and there
+is no fallback, no "trade the best of a bad lot". The bot simply waits.
+
+Exits are equally plain: take profit 2%, stop loss
+4%, and a hard **72-hour timeout** that closes anything still
+open at whatever price is there. That timeout is the part to watch in the results below.
+
+The recipe was chosen on a grid of 30 settings, on training episodes only,
+with one rule that threw out otherwise attractive candidates: a setting had to produce a
+signal in at least 60% of episodes. A gate that opens twice a year will
+show a wonderful win rate and teach you nothing. On the validation period the chosen recipe
+made +7.88 USD over 8 trades, with a median
+wait of 12.8 hours before a signal and
+12.8 hours in the position.
+
+There is one more moving part. After **every closed trade**, a challenger is retrained on
+the freshest data and compared with the running version; the better one keeps the line.
+Line 60 is on version 1 after
+8 such rounds.
+
+## ② 33 days live: the numbers
+
+As of **2026-08-17**, after 33 days live:
+
+| measure | value |
+|---|---|
+| closed trades | 9 |
+| net result | **+0.68 USD** (+0.68% of 100 USD) |
+| win rate | 44.4% |
+| average trade | +0.076% · median -0.580% |
+| median holding | 72.0 h |
+| how they ended | take profit — 2, 72 h timeout — 7 |
+| best / worst | ETH +2.40% / BTC -2.36% |
+| buy & hold, same coins and days | -2.09% on average (BNB +4.3%, BTC -1.2%, ETH -1.2%, XRP -10.3%) |
+
+Open at the time of writing: ETH long +1.50% after 40 h — +1.35 USD unrealised in total.
+
+One trade at a time over 33 days means roughly one closed position every
+3.7 days — and that number is the most informative one in
+the table. This bot spends the overwhelming majority of its life flat, waiting for its three
+conditions to line up. Every result it produces has to be read with that in mind: with
+9 closed trades, a single outcome moves the win rate by
+11 percentage points.
+
+The exits column is where the mechanism shows through. take profit — 2, 72 h timeout — 7 — and the split
+between "hit the target" and "ran out of time" says more about the bot than the profit does.
+A position closed by the clock is one where the entry was not wrong enough to hit the stop
+and not right enough to hit the target within three days.
+
+## ③ What the clock costs it
+
+Line 60's defining number is not its profit — it is that **7 of its
+9 closed trades ended on the 72-hour clock**, not at a target or a stop. The bot was
+right that something was happening; it was wrong, or too early, about when.
+
+That is a specific and fixable failure, and it is worth separating from the general "the
+strategy does not work". A timeout exit means the entry gate opened, the position went
+nowhere decisive for three days, and the bot took whatever was on the table — on this line,
+a median holding of 72.0 hours, which is the timeout itself. The move the
+model saw either arrived later, or was smaller than 0.08% and never
+reached the 2% target.
+
+The comparison that makes this concrete is line 61 — the same recipe, the same gate, the
+same six coins, launched two days apart. It closed 9 trades in
+31 days for +11.81 USD at a 89% win
+rate, and its exits are dominated by take profits rather than timeouts. Two identical
+systems, one month each, 11.13 USD apart.
+
+We are not going to explain that gap with a story about market regimes. With
+9 and 9 trades, the difference is inside the range that pure chance produces,
+and pretending otherwise is how people end up "improving" a system into overfitting. What
+the pair genuinely tells us is something narrower and more useful: **the same gate produces
+very different outcomes depending on which entries it happens to catch**, so the next piece
+of work is not a better gate, it is a better exit — one that reads the state of the move
+instead of counting hours.
+
+Buy & hold over the same days on the coins it traded: -2.09% on average (BNB +4.3%, BTC -1.2%, ETH -1.2%, XRP -10.3%). Line 60 finished
++0.68 USD against that. Both numbers are small, both are honest, and both will
+be republished daily as they change.
+
+
+================================================================================
+# Bot 4: What Forty Days of Live Paper Trading Actually Look Like
+
+URL: https://marketflowresear.ch/articles/bot-4-forty-days-of-live-paper-trading/
+Published: 2026-08-17 · Series: Live bots — every result · Bot 4 live
+
+> Bot 4 has been trading live on paper since 09 July 2026 — 40 days, 49 closed trades, +29.53 USD on 600 USD of capital, a 80% win rate, against +1.49% on average for buying and holding the same coins. This is the full record: the rules it never deviates from, every closed trade, the open positions right now, and the hourly referee that can hand the account to a freshly trained challenger — which has happened 4 times so far.
+
+## ① The rules it has been playing by, unchanged
+
+Bot 4 has been running on live market data since **09 July 2026** — no breaks,
+no manual entries, no discretion. It trades on paper: every fill is simulated at the price
+its own data feed sees, with a fee of 0.15% charged on both the
+entry and the exit. That is the honest way to describe it, and it is the first thing anyone
+reading a results table should know.
+
+The rules it plays by have not changed since it was launched:
+
+- **six coins in parallel**, each with its own slot of 100 USD
+  (600 USD of capital in total), never more than one position per coin;
+- **entry** only when four gates open at once — probability ≥ 0.55, expected value
+  ≥ 0.002, both holding for 2 consecutive bars, plus an optional
+  volatility floor the grid search left switched off;
+- **exit** at take profit 2% or stop loss 4%, or when the
+  48-hour episode ends — and at the end of an episode the bot stays in
+  whatever it was in, rather than forcing a sale at a bad moment;
+- **at most 12 entries a day**, the house limit;
+- **entries pause automatically** when the data feed is thin or lagging by more than
+  15 minutes, while exits keep working — a stop must never depend on a healthy feed.
+
+The take profit is deliberately smaller than the stop loss. That is a standing rule here,
+not the output of an optimiser: the median 48-hour swing on these coins is
+5.26%, so a 2% target is reachable often,
+while a 4% stop is far enough away that ordinary noise does not touch it.
+The bot wins small and often, and loses rarely and larger — which is exactly what the
+numbers below show.
+
+## ② 40 days live: the numbers
+
+As of **2026-08-17**, after 40 days live:
+
+| measure | value |
+|---|---|
+| closed trades | 49 |
+| net result | **+29.53 USD** (+4.92% of 600 USD) |
+| win rate | 79.6% |
+| average trade | +0.603% · median +1.770% |
+| median holding | 46.2 h |
+| how they ended | stop loss — 10, take profit — 39 |
+| best / worst | SOL +3.03% / ETH -4.86% |
+| buy & hold, same days | +1.49% on average (BTC +3.7%, ETH +10.3%, SOL -1.6%, BNB +6.9%, XRP -7.9%, DOGE -2.6%) |
+
+Open at the time of writing: DOGE long +1.38% after 20 h; BNB long -0.22% after 98 h; SOL long +0.41% after 113 h; XRP long -1.38% after 144 h; ETH long -0.20% after 247 h; BTC long -0.16% after 311 h — -1.07 USD unrealised in total. Counting those open positions at their current price, the running score is
++28.46 USD.
+
+Two readings of the same table, and both are true. The favourable one: the bot is ahead of
+buying and holding the same six coins over the same days, with a win rate near
+80%, and it got there by taking small profits — the exits are dominated by
+take profits, not by lucky outliers.
+
+The careful one, which we owe the reader. 49 trades is a small sample, and the
+distribution here is asymmetric by design: many small wins, few larger losses. Before this
+bot went live, the same configuration was tested offline across three random seeds and
+averaged -19.7 USD, spread from -53.2 to
++8.8, against buy & hold at -18.3 — that is, the
+offline verdict was "no better than holding, with a wide spread". The live run is currently
+at the good end of that spread. Nothing in the last 40 days proves the
+offline test wrong; it is simply too early, and we will keep publishing the number either
+way.
+
+## ③ Champion versus challenger, refereed hourly
+
+The interesting part of Bot 4 is not the model — it is that the model is
+replaceable while running. Two copies trade side by side on the same live data: the
+**champion**, whose numbers are above, and a **challenger** trained on fresher data with a
+different take-profit/stop-loss geometry. A referee process compares them every hour on a
+single number: net result plus the value of everything still open.
+
+The rule is deliberately hard to game: *control passes to the challenger only if its score
+beats the champion's by more than 1 USD, and only after it has been trading for at least
+48 hours*. The margin stops a coin flip from taking over the account, and the 48-hour
+minimum stops a challenger that got lucky in its first hour.
+
+Since launch: **17 challenger rounds, 4 handovers of control**,
+500 recorded comparisons. Each round trains a new challenger on fresh data
+with the next geometry in the rotation — TP1.5/SL4.5, TP2/SL4, TP2/SL6, TP3/SL3.75, TP3/SL4.5, TP3/SL9 — and the loser is
+archived rather than deleted, so every version that ever ran can still be inspected.
+
+The current challenger has been live for 6 days with geometry
+TP3/SL9: 2 closed trades, +5.46 USD, win rate
+100%, and 6 positions open, worth
++6.98 USD unrealised. Its running score is +12.44
+USD against the champion's +28.46.
+
+Why build it this way at all? Because the honest conclusion of every offline test we have
+run is that the difference between two decent configurations is smaller than the noise
+between two random samples of days. If you cannot tell which is better on a backtest, the
+only remaining method is to let both trade the real feed and give control to whichever
+survives — slowly, with a margin, and in public. That is the whole design: not a bot that
+is right, but a bot that can be replaced without anyone touching it.
+
+
+================================================================================
+# Gates: The Part of a Trading Bot That Decides Not to Trade
+
+URL: https://marketflowresear.ch/articles/gates-the-part-of-a-bot-that-decides-not-to-trade/
+Published: 2026-08-17 · Series: Live bots — every result · Gates
+
+> A trading bot's model produces a number; its gate decides whether that number is worth a fee. This article measures what gates actually cost. Demanding a signal persist two bars instead of one raises precision from 0.209 to 0.238 and throws away 25% of the opportunities. Bot 4 stacks four gates and still lands inside the noise across random seeds. Bot 6 gates on agreement between two models — and two live lines running that identical gate for a month finished +11.81 and +0.68 USD apart. Gates buy precision with coverage; nothing here is free.
+
+## ① A gate buys precision with coverage
+
+Every trading bot has two halves, and only one of them gets written about.
+The first half is the model: it looks at the market and produces a number. The second half
+is the **gate** — the rule that turns that number into "act" or, far more often, "do
+nothing". In our systems the gate is where most of the design work goes, because a raw
+model signal fires constantly and every firing costs a fee.
+
+The cleanest measurement of what a gate does comes from our zone-finding line, where a
+model marks the places a perfect trader would use. Take the same model and put four
+different gates behind it:
+
+| gate | zones still covered | precision of a signal run | combined train score |
+|---|---|---|---|
+| threshold only (τ = 0.87) | 0.745 | 0.209 | 0.2901 |
+| + must persist 2 bars | 0.560 | 0.238 | 0.2598 |
+| + must persist 3 bars | 0.399 | 0.239 | 0.2144 |
+| + volatility floor (q30) | 0.721 | 0.215 | 0.2678 |
+
+Read the first two columns as a single trade. Demanding that a signal survive two bars
+instead of one raises precision from 0.209 to
+0.238 — about
+14% better — and costs
+25% of the opportunities. Going to
+three bars costs another 29% and buys
+almost nothing: precision 0.239 against
+0.238. The volatility floor is the gentlest of the four and moves
+both numbers least.
+
+So the honest description of a gate is not "it makes the signal better". **A gate buys
+precision with coverage**, at a rate the data sets, and past a point the rate goes bad. The
+combined score in the last column — which weighs both — peaks at the plainest gate of all
+and falls with every addition. That is the trap this whole article is about: gates feel like
+improvements, and each one has to be paid for in trades you will never take.
+
+## ② Bot 4: four gates in a stack
+
+Bot 4 is where this gets concrete. Its entry rule is a stack of four
+independent gates, and a trade happens only if **all** of them open:
+
+1. **probability** — the classifier's chance of the move must clear π = 0.55;
+2. **expected value** — the EV model must clear 0.002, so a likely move
+   that is too small to pay the fee is refused;
+3. **persistence** — the first two must hold for 2 consecutive bars,
+   which is the same persistence gate as in the table above;
+4. **volatility** — an optional floor on predicted volatility, which the grid search left
+   switched off (None), because on our data it removed more good trades
+   than bad ones.
+
+Every threshold is picked on the training episodes only. The geometry — take profit
+2% against stop loss 4% — comes from
+the same training data, guided by a fixed house rule: the take profit is always *smaller*
+than the stop. The reasoning is the swing statistics, not taste: the median 48-hour swing
+is 5.26%, and a 2% target is
+reached from 33.5% of training bars.
+
+What loosening a gate does, measured on episodes the bot never saw:
+
+| version | gates | trades | win rate | take-profit exits | net on unseen episodes |
+|---|---|---|---|---|---|
+| 4.0, long only | persist 1, EV ≥ 0.004 | 28 | 50.0% | 42.9% | -6.88 USD |
+| 4.1, long + short | persist 2, EV ≥ 0.002 | 75 | 62.7% | 48.0% | +8.85 USD |
+
+Loosening EV while tightening persistence — and allowing shorts — nearly tripled the number
+of trades and turned -6.88 into +8.85 USD. It would be easy
+to stop here and call it a win. We do not, for one reason: across three random seeds the
+same configuration averages -19.7 USD with a spread from
+-53.2 to +8.8, against buy & hold at
+-18.3. The gate settings are inside the noise of which episodes you happened
+to test on.
+
+The strongest evidence for that caution is the geometry grid. Twelve take-profit/stop-loss
+pairs, each scored on training episodes and on held-out ones. The correlation between the
+two columns is **ρ = -0.67** — negative. Choosing the geometry that looked best in
+training was, on this data, slightly worse than choosing at random. That is not an argument
+against gates; it is an argument against believing the number you tuned them on.
+
+## ③ Bot 6: the gate is agreement
+
+Bot 6 uses a different kind of gate, and it is our favourite one because it
+cannot be tuned into a corner: **agreement**. Two independent models look at the same
+market. The trade happens only when both say the same thing, the ensemble's confidence
+clears τA = 0.618, and a context check confirms the wider state. There is no
+threshold on "how strong" beyond that — the gate is a vote, not a dial.
+
+The grid that chose it had 30 settings and one hard floor: any candidate that
+produced a signal in fewer than 60% of episodes was rejected outright,
+however profitable it looked. A gate that almost never opens will show a beautiful win rate
+on the two trades it allows, and that is exactly the way to fool yourself.
+
+Chosen on training data: **+55.44 USD over 48 trades, win rate
+85%**, a signal in 75% of episodes, median wait
+9.4 h and median holding 12.1 h. On the validation
+period it never saw: **+7.88 USD over 8 trades, win rate
+88%**, signal in 80% of episodes. The cycle is roughly
+22 hours from "start looking" to "position closed" —
+this is a gate that spends most of its life shut.
+
+Then it went live, twice, with the same recipe on two independent lines. As of
+2026-08-17:
+
+| line | days live | closed trades | net | win rate | how they ended |
+|---|---|---|---|---|---|
+| 60 | 33 | 9 | +0.68 USD | 44% | 7 of 9 by the 72-hour timeout |
+| 61 | 31 | 9 | +11.81 USD | 89% | 7 of 9 hit take profit |
+
+Same gate, same thresholds, same six coins, one month each — and one line makes
++11.81 USD while the other makes +0.68. We are not going to
+tell you the second one is better tuned. With nine trades apiece, the honest reading is
+that this is what nine samples look like, and the useful signal is in the last column
+rather than the money column: on line 60 the position is usually closed by the clock, not
+by the target. A gate that opens on agreement can be right about "something is coming" and
+still be attached to a move that takes longer than the bot is allowed to wait.
+
+That is the working conclusion of everything above. The gate is not the part that finds
+money; it is the part that decides how often you are allowed to be wrong. Ours are chosen
+on data the bot never sees afterwards, they are kept as blunt as possible, and every one of
+them is measured in trades refused — because that is the price, and the price is always
+paid.
+
+
+================================================================================
+# Typhoon+: A Signal That Finds the Perfect Trader's Zones — and Still Loses Money
+
+URL: https://marketflowresear.ch/articles/typhoon-plus-a-signal-that-finds-the-zones-and-still-loses-money/
+Published: 2026-08-17 · Series: Live bots — every result · Typhoon+
+
+> We drew the zones a perfect trader would use — 0.9% zigzag turns, a 0.15% band around each one — and found that the price sits inside them barely 3% of the time. A single gradient-boosting model, pooled over six coins, then finds 74% of those zones on days it never saw. It also fires false 86% of the time, leans mostly on price geometry rather than the order book, and loses 122% when traded plainly against 93% for buy & hold. This is the article about a signal that finds the right places and still cannot pay the fee.
+
+## ① The zones a perfect trader would use
+
+Start from the answer instead of the model. If a trader knew the future,
+where exactly would they act? Not everywhere — a perfect trader touches the market only at
+turns, and spends the rest of the time doing nothing. So we drew those places first and
+only then asked whether the order book can see them.
+
+A **zone** is built in two steps on 60-second bars. First a zigzag with a
+0.9% threshold marks every turn where the price reversed by at least that
+much. Then, around each turn, we take the continuous stretch of bars whose price stays
+within 0.15% of the extreme — that stretch is the zone, the window inside
+which acting is as good as acting exactly at the turn. Neighbouring zones are kept at least
+0.6% apart in price, so two zones can never be the same event
+counted twice.
+
+The result is the first honest number of this line: **5,326 zones across six coins**,
+between 4.0 (BNB) and 8.7 (SOL) per day,
+and the price sits inside a zone only **2.6
+– 3.3% of the time**. Roughly 97% of all
+minutes are, for a perfect trader, waiting.
+
+That waiting has a price tag. On BTC alone the perfect trader takes
+196 trades over the validation period — 4.47 a day — on moves
+averaging 2.00%, netting 1.436% per trade
+after fees, or **6.42% a day**. Across six coins the perfect trader
+finishes the same period at **2448%**. That is the ceiling this
+line is measured against — not a benchmark we expect to reach, but the yardstick that turns
+"the signal looks good" into a number.
+
+## ② One model, six coins, four wrong calls in five
+
+One model for all six coins, not six models. The training pool mixes every
+coin's bars, the split is chronological — **the first 70% of days train, the last 30%
+validate** and are never seen during training — and the engine is gradient boosting. The
+signal fires when the model's score passes a threshold picked on train alone:
+τ = 0.87 for buy zones, 0.85 for sell zones.
+
+It transfers. On unseen days the signal still covers **74.5% of buy
+zones and 79.1% of sell zones**, against
+85.7% / 89.8% on train. A drop, but not a
+collapse: what the model learned about one coin's turns is not coin-specific folklore.
+
+And now the number that decides everything. Of all the signal runs it produces on unseen
+days, **86.2% are false** — they fire where no zone was. Precision
+of a run is 0.209 for buys and
+0.214 for sells. Read the two facts together: the signal finds
+most of the real turns *and* four out of five of its calls are wrong. It is a wide net, not
+a scalpel.
+
+There is a second, less comfortable finding in the feature importances. The top inputs are
+`pos_60` (0.331) and `pos_240` (0.240) — where the
+current price sits inside its own range over the last hour and last four hours — with
+`range_240` and `ret_5` behind them. Price geometry accounts for about
+84% of the model's attention. The order-book features are in the input and
+they are not what the model leans on. A model that mostly says "the price is near the edge
+of its recent range" is a useful zone finder and a weak claim about the book.
+
+## ③ Trading it: −122% against −93% for buy & hold
+
+A zone finder is not a trading system, and this is where the line stops being
+flattering. The rule we tested is the plainest one that follows from the signal: enter on
+the onset of a signal run confirmed by 2 bars, exit on the
+first opposite run or at the end of the session, 42-hour sessions, at most
+12 trades a day — the project's standard.
+
+On unseen days, over six coins: **-122.3% net against
+-93.0% for buy & hold**. Positive on 0 of 6 coins, better than
+buy & hold on 1 of 6. Capture of the perfect trader's result:
+**-5.0%** — not a fraction of the ceiling, the wrong side of
+zero.
+
+BTC shows where the money goes. 66 trades, 1.51 a day,
+median holding 230 minutes, win rate 53% —
+more winners than losers. And still:
+
+| component | BTC, % over the period |
+|---|---|
+| winning trades | +23.3 |
+| losing trades | -46.1 |
+| fees paid | −17.2 |
+| **net** | **-22.8** |
+
+Gross per trade is -0.085% — **before any fee at all** — and net is
+-0.345%. That ordering matters. The fee is not what turns a winning
+rule into a losing one here; the rule has no edge to begin with, and the fee then triples
+the loss. Winning more often than losing is not the same as winning: the losers are simply
+bigger. (The fee in this test is 0.13% per action, the tariff at
+the time; the project's current standard is 0.15%, which makes this worse, not better.)
+
+Three things carry forward from this line, and all three shaped the bots we run now. A
+signal that *finds* turns is not a signal that *pays* for them — coverage and profit are
+different measurements. Anything that fires often must be gated, which is the subject of its
+own article. And the perfect-trader ceiling is the most useful number we built here: it
+turns "our strategy is down 5%" into "we captured −5% of what was there", which is a
+sentence you can act on.
 
 
 ================================================================================

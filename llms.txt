@@ -10,18 +10,6 @@ Every number in the articles comes from research logs, and losing results are pu
 - [Line 7: The Best of All Our Bots — Live Trading Report, Every Trade](https://marketflowresear.ch/articles/line-7-live-trading-report/): We have built and tested more than a dozen trading bots on the research published here.
 - [AI digest — every study in one Markdown file](https://marketflowresear.ch/mfr-digest.md): titles, links, summaries and the key sentence of every section; made to be read by an AI in one go.
 
-## Live bots — every result
-
-Bots built from this research and run live: winners and losers, every trade.
-
-- [Line 7: The Best of All Our Bots — Live Trading Report, Every Trade](https://marketflowresear.ch/articles/line-7-live-trading-report/): We have built and tested more than a dozen trading bots on the research published here.
-- [Bot 7 — From an Order-Book Canvas to Live Trading: Every Stretch, Every Result, Every Real Trade](https://marketflowresear.ch/articles/bot-7-from-an-order-book-canvas-to-live-trading-every-result-every-trade/): Bot 7 is the end of a long research line: a transformer reads 30 hours of BTC order book as one canvas and says how likely it is that this moment….
-- [Bot 6, Line 61: Nine Trades, Eight Winners, and Why We Are Not Celebrating](https://marketflowresear.ch/articles/bot-6-line-61-nine-trades-eight-winners/): Line 61 of Bot 6 holds one position at a time and has been live since 17 July 2026: 31 days, 9 closed trades, +11.81 USD on a 100 USD slot, win….
-- [Bot 6, Line 60: A Bot That Mostly Waits — and What the Clock Costs It](https://marketflowresear.ch/articles/bot-6-line-60-a-bot-that-mostly-waits/): Line 60 of Bot 6 holds one position at a time and has been live since 15 July 2026: 33 days, 9 closed trades, +0.68 USD on a 100 USD slot, win….
-- [Bot 4: What Forty Days of Live Paper Trading Actually Look Like](https://marketflowresear.ch/articles/bot-4-forty-days-of-live-paper-trading/): Bot 4 has been trading live on paper since 09 July 2026 — 40 days, 49 closed trades, +29.53 USD on 600 USD of capital, a 80% win rate, against….
-- [Gates: The Part of a Trading Bot That Decides Not to Trade](https://marketflowresear.ch/articles/gates-the-part-of-a-bot-that-decides-not-to-trade/): A trading bot's model produces a number; its gate decides whether that number is worth a fee.
-- [Typhoon+: A Signal That Finds the Perfect Trader's Zones — and Still Loses Money](https://marketflowresear.ch/articles/typhoon-plus-a-signal-that-finds-the-zones-and-still-loses-money/): We drew the zones a perfect trader would use — 0.9% zigzag turns, a 0.15% band around each one — and found that the price sits inside them barely….
-
 ## The road to Bot 7
 
 One question at a time: from zigzag legs to a network that reads 160 hours of order book as one canvas.
@@ -57,6 +45,18 @@ One question at a time: from zigzag legs to a network that reads 160 hours of or
 - [Twelve Hours of Order-Book State and the Direction of a Move — From 0.16 to 0.42](https://marketflowresear.ch/articles/twelve-hours-of-order-book-state-and-the-direction-of-a-move/): Does the order book, averaged over about half a day, know which way the current move is going? We smoothed four book features with exponential….
 - [Predicting the Next Phase of a Move From the Order Book — 832 Window Sizes, One Honest Ceiling](https://marketflowresear.ch/articles/predicting-the-next-phase-of-a-move-from-the-order-book/): Every event of BTC's order book sits in one of four phases of a zigzag: rising, a pullback inside a rise, falling, or a pullback inside a fall.
 - [A Leg Is the Sum of Its Events — and Size Beats Count](https://marketflowresear.ch/articles/a-leg-is-the-sum-of-its-events-size-beats-count/): We cut the price of six coins into 210-second events and into 2.3% zigzag legs, then asked the simplest question a direction model has to answer:….
+
+## Live bots — every result
+
+Bots built from this research and run live: winners and losers, every trade.
+
+- [Line 7: The Best of All Our Bots — Live Trading Report, Every Trade](https://marketflowresear.ch/articles/line-7-live-trading-report/): We have built and tested more than a dozen trading bots on the research published here.
+- [Bot 7 — From an Order-Book Canvas to Live Trading: Every Stretch, Every Result, Every Real Trade](https://marketflowresear.ch/articles/bot-7-from-an-order-book-canvas-to-live-trading-every-result-every-trade/): Bot 7 is the end of a long research line: a transformer reads 30 hours of BTC order book as one canvas and says how likely it is that this moment….
+- [Bot 6, Line 61: Nine Trades, Eight Winners, and Why We Are Not Celebrating](https://marketflowresear.ch/articles/bot-6-line-61-nine-trades-eight-winners/): Line 61 of Bot 6 holds one position at a time and has been live since 17 July 2026: 31 days, 9 closed trades, +11.81 USD on a 100 USD slot, win….
+- [Bot 6, Line 60: A Bot That Mostly Waits — and What the Clock Costs It](https://marketflowresear.ch/articles/bot-6-line-60-a-bot-that-mostly-waits/): Line 60 of Bot 6 holds one position at a time and has been live since 15 July 2026: 33 days, 9 closed trades, +0.68 USD on a 100 USD slot, win….
+- [Bot 4: What Forty Days of Live Paper Trading Actually Look Like](https://marketflowresear.ch/articles/bot-4-forty-days-of-live-paper-trading/): Bot 4 has been trading live on paper since 09 July 2026 — 40 days, 49 closed trades, +29.53 USD on 600 USD of capital, a 80% win rate, against….
+- [Gates: The Part of a Trading Bot That Decides Not to Trade](https://marketflowresear.ch/articles/gates-the-part-of-a-bot-that-decides-not-to-trade/): A trading bot's model produces a number; its gate decides whether that number is worth a fee.
+- [Typhoon+: A Signal That Finds the Perfect Trader's Zones — and Still Loses Money](https://marketflowresear.ch/articles/typhoon-plus-a-signal-that-finds-the-zones-and-still-loses-money/): We drew the zones a perfect trader would use — 0.9% zigzag turns, a 0.15% band around each one — and found that the price sits inside them barely….
 
 ## Order-book research
 
