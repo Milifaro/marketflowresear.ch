@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- mfr-analytics:head -->
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -13,16 +15,14 @@
   </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NVD5LZ4GDB"></script>
 <!-- /mfr-analytics:head -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Market Flow Research</title>
-  <meta name="description" content="Independent research on crypto market microstructure. We study second-by-second order-book and order-flow data across major coins." />
+  <title>Market Flow Research — Order-Book Research &amp; Live Trading Bots</title>
+  <meta name="description" content="Second-by-second Binance order-book research: 80+ studies, an open BTC dataset and trading bots tested live. Research, not financial advice." />
 
   <link rel="canonical" href="https://marketflowresear.ch/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Market Flow Research" />
   <meta property="og:title" content="Market Flow Research" />
-  <meta property="og:description" content="Independent research on crypto market microstructure." />
+  <meta property="og:description" content="Second-by-second Binance order-book research: 80+ studies, an open BTC dataset and trading bots tested live. Research, not financial advice." />
   <meta property="og:url" content="https://marketflowresear.ch/" />
   <meta property="og:image" content="https://marketflowresear.ch/og.png" />
   <meta property="og:image:width" content="1200" />
@@ -30,27 +30,99 @@
   <meta property="og:image:alt" content="Market Flow Research — reading order flow, not the hype" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Market Flow Research" />
-  <meta name="twitter:description" content="Independent research on crypto market microstructure." />
+  <meta name="twitter:description" content="Second-by-second Binance order-book research: 80+ studies, an open BTC dataset and trading bots tested live. Research, not financial advice." />
   <meta name="twitter:image" content="https://marketflowresear.ch/og.png" />
 
   <script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
   {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Market Flow Research",
-    "url": "https://marketflowresear.ch/",
-    "description": "Independent research on crypto market microstructure. Second-by-second order-book and order-flow data across major coins.",
-    "inLanguage": ["en", "uk"],
-    "sameAs": [
-      "https://www.youtube.com/@mflowresearch",
-      "https://x.com/marketflow_rch",
-      "https://coinmarketcap.com/community/profile/marketflowresearch/",
-      "https://www.tradingview.com/u/MarketFlowResearch/"
-    ]
+   "@type": "WebSite",
+   "@id": "https://marketflowresear.ch/#site",
+   "name": "Market Flow Research",
+   "url": "https://marketflowresear.ch/",
+   "description": "Second-by-second Binance order-book research: 80+ studies, an open BTC dataset and trading bots tested live. Research, not financial advice.",
+   "inLanguage": [
+    "en",
+    "uk"
+   ],
+   "publisher": {
+    "@id": "https://marketflowresear.ch/#org"
+   }
+  },
+  {
+   "@type": "Organization",
+   "@id": "https://marketflowresear.ch/#org",
+   "name": "Market Flow Research",
+   "url": "https://marketflowresear.ch/",
+   "logo": {
+    "@type": "ImageObject",
+    "url": "https://marketflowresear.ch/logo.png",
+    "width": 512,
+    "height": 512
+   },
+   "sameAs": [
+    "https://www.youtube.com/@mflowresearch",
+    "https://x.com/marketflow_rch",
+    "https://coinmarketcap.com/community/profile/marketflowresearch/",
+    "https://www.tradingview.com/u/MarketFlowResearch/"
+   ]
+  },
+  {
+   "@type": "Dataset",
+   "@id": "https://marketflowresear.ch/#dataset",
+   "name": "BTC/USDT order book from Binance, one row per second, 14 Feb – 5 Aug 2026",
+   "description": "12,129,080 rows of second-by-second Binance BTC/USDT order-book data from 14 February to 5 August 2026, duplicate timestamps removed. Columns: timestamp, average price and the eight order-book features used throughout the research on marketflowresear.ch — resting liquidity on each side of the book, liquidity added and pulled on each side, and executed buy and sell volume.",
+   "url": "https://marketflowresear.ch/#dataset",
+   "creator": {
+    "@id": "https://marketflowresear.ch/#org"
+   },
+   "isAccessibleForFree": true,
+   "temporalCoverage": "2026-02-14/2026-08-05",
+   "keywords": [
+    "order book",
+    "bitcoin",
+    "BTC/USDT",
+    "Binance",
+    "market microstructure",
+    "limit order book"
+   ],
+   "distribution": [
+    {
+     "@type": "DataDownload",
+     "encodingFormat": "application/zip",
+     "name": "part 0 of 4",
+     "contentUrl": "https://marketflowresear.ch/data/BTC_1s_dataset.zip.part0"
+    },
+    {
+     "@type": "DataDownload",
+     "encodingFormat": "application/zip",
+     "name": "part 1 of 4",
+     "contentUrl": "https://marketflowresear.ch/data/BTC_1s_dataset.zip.part1"
+    },
+    {
+     "@type": "DataDownload",
+     "encodingFormat": "application/zip",
+     "name": "part 2 of 4",
+     "contentUrl": "https://marketflowresear.ch/data/BTC_1s_dataset.zip.part2"
+    },
+    {
+     "@type": "DataDownload",
+     "encodingFormat": "application/zip",
+     "name": "part 3 of 4",
+     "contentUrl": "https://marketflowresear.ch/data/BTC_1s_dataset.zip.part3"
+    }
+   ]
   }
+ ]
+}
   </script>
 
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230b0d12'/><path d='M14 66 L34 46 L48 58 L70 30 L86 30' fill='none' stroke='%2340e0a0' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon.ico" sizes="32x32" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="alternate" type="application/rss+xml" title="Market Flow Research" href="/feed.xml" />
 
   <style>
     :root{
@@ -136,6 +208,60 @@
     .foot{max-width:860px; margin:0 auto; padding:0 22px; color:var(--muted); font-size:13px; display:flex; flex-wrap:wrap; gap:10px; justify-content:space-between; align-items:center}
     .badge{display:inline-flex; align-items:center; gap:7px; border:1px solid var(--line); border-radius:999px; padding:5px 11px}
     .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+
+
+
+
+    /* mfr-home:css */
+    button.btn{font-family:inherit}
+    .jump{display:flex;flex-wrap:wrap;gap:8px 14px;justify-content:center;margin:22px 0 0;font-size:14px}
+    .jump a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line)}
+    .jump a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+    section.pinned{margin:46px 0 0;scroll-margin-top:16px}
+    .pgrid{display:grid;grid-template-columns:1fr;gap:16px}
+    @media(min-width:760px){.pgrid{grid-template-columns:1.3fr 1fr}}
+    .pcard{display:flex;flex-direction:column;gap:12px;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px;transition:border-color .15s,transform .15s,box-shadow .15s}
+    .pcard:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 14px 34px var(--shadow)}
+    .pcard.top{border-color:var(--accent);background:linear-gradient(135deg,var(--accent-dim),var(--panel))}
+    .ptag{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700}
+    .pcard h2{margin:0;font-size:25px;line-height:1.2}
+    .pcard p{margin:0;color:var(--muted);font-size:15px;line-height:1.55}
+    .pstats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+    .pstats div{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px 12px;min-width:0}
+    .pstats b{display:block;font-size:clamp(17px,4.6vw,23px);line-height:1.15}
+    @media(max-width:480px){.pstats{gap:6px}.pstats div{padding:8px}.pcard{padding:18px}}
+    .pstats span{display:block;font-size:12px;line-height:1.3;color:var(--muted);margin-top:3px}
+    .pcard .go{margin-top:auto;font-weight:700;color:var(--accent);font-size:15px}
+    .nfa-line{margin:14px 0 0;font-size:13px;color:var(--muted);text-align:center}
+    .dataset{margin:16px 0 0;padding:16px 18px;border:1px dashed var(--line);border-radius:14px;font-size:14px;line-height:1.6;color:var(--muted);scroll-margin-top:16px}
+    .dataset b{color:var(--ink)}
+    .dataset a{color:var(--accent)}
+    .dataset code{font-size:12px;word-break:break-all}
+    section.series{margin:60px 0 0;scroll-margin-top:16px}
+    .series .sh{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .series h2.st{font-size:26px;line-height:1.2;margin:0}
+    .series .sn{color:var(--muted);font-size:13px}
+    .series .sd{color:var(--muted);margin:6px 0 20px;font-size:15px}
+    details.more{margin-top:18px}
+    details.more summary{cursor:pointer;display:inline-block;padding:10px 16px;border:1px solid var(--line);border-radius:11px;background:var(--panel);font-weight:600;font-size:14px;list-style:none}
+    details.more summary::-webkit-details-marker{display:none}
+    details.more summary:hover{border-color:var(--accent)}
+    details.more[open] summary{margin-bottom:18px}
+    .thumb{background:#0d1117;padding:0}
+    .thumb img{object-fit:contain;padding:6px}
+    .thumb.empty{display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:13px;background:linear-gradient(135deg,var(--accent-dim),var(--panel))}
+    .cbody .tag{display:inline-block;margin:0 0 8px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 9px}
+    .cbody p{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .foot a{color:var(--muted)}
+    .pinbar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:flex;gap:16px;justify-content:center;align-items:center;padding:9px 14px calc(9px + env(safe-area-inset-bottom));background:var(--bg);border-top:1px solid var(--line);font-size:13px;line-height:1.3;box-shadow:0 -8px 24px rgba(0,0,0,.18)}
+    .pinbar a{color:var(--ink);text-decoration:none;font-weight:600;white-space:nowrap}
+    .pinbar a:hover{color:var(--accent)}
+    .pinbar .pl7{color:var(--accent)}
+    .pinbar .nfa{color:var(--muted);white-space:nowrap}
+    .pinbar .sep{color:var(--line)}
+    body{padding-bottom:58px}
+    @media(max-width:640px){.pinbar{gap:10px;font-size:12px}.pinbar .opt{display:none}}
+    /* /mfr-home:css */
   </style>
 </head>
 <body data-theme="dark">
@@ -146,7 +272,7 @@
         Market Flow Research
       </span>
       <div class="ctrls">
-        <span class="btn" id="themeBtn" title="Theme">🌙 <span id="themeLbl">Dark</span></span>
+        <button class="btn" id="themeBtn" type="button" title="Theme">🌙 <span id="themeLbl">Dark</span></button>
         <span class="btn" id="langBtn" title="Language">🌐 <span id="langLbl">EN</span> ▾</span>
         <div class="menu" id="langMenu">
           <button data-lang="en" aria-current="true">English</button>
@@ -171,836 +297,28 @@
       </nav>
     </header>
 
-    <section class="arts">
-      <div class="h2" data-i18n="latest">Latest research</div>
-      <div class="grid">
-
-        <a class="card" href="articles/bot-7-from-an-order-book-canvas-to-live-trading-every-result-every-trade/">
-          <div class="thumb"><img src="articles/bot-7-from-an-order-book-canvas-to-live-trading-every-result-every-trade/img/tb43_val_en.png" alt="BTC price over the validation month with the buy-only bot&#x27;s nine long trades, all closed at take-profit" loading="lazy"><span class="tag">Bot 7 overview</span></div>
-          <div class="cbody">
-            <h3>Bot 7 — From an Order-Book Canvas to Live Trading: Every Stretch, Every Result, Every Real Trade</h3>
-            <p>Bot 7 is the end of a long research line: a transformer reads 30 hours of BTC order book as one canvas and says how likely it is that this moment sits in a 2.3% bottom — or, in its second version, a 2.3% top. This article puts the whole path in one place: how the networks were trained, what each version made on training-period weeks it was not fitted on, on validation, on days nobody had looked at, and since it went live. All live trades so far are listed at the end, model and exchange side by side. As of 9 October 2026 08:20 UTC the record is three closed trades: two take-profits and one stop.</p>
-            <div class="date">9 October 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/the-pair-that-behaves-the-same-on-three-stretches-of-data/">
-          <div class="thumb"><img src="articles/the-pair-that-behaves-the-same-on-three-stretches-of-data/img/tb42_three_en.png" alt="Money of the five most consistent pairs on held-out, validation and test; the top pair makes 1087, 1147 and 1059" loading="lazy"><span class="tag">Same on three stretches</span></div>
-          <div class="cbody">
-            <h3>The Pair That Behaves the Same on Three Stretches of Data — How the Live Bot&#x27;s Networks Were Chosen</h3>
-            <p>Ranking 440 buy-and-sell pairs by money on the month they were picked on gives a list of lucky pairs. So we asked a different question: which pair behaves the same — same time in the market, same number of longs and shorts per day, same daily growth — on three stretches of BTC: held-out weeks from training, the validation month, and fourteen days after validation that no step of the selection had touched. Of 440 pairs, 180 traded on all three. The most consistent one, `BUY_l3` epoch 3 with `SELL_l2` epoch 17, made $1087, $1147 and $1059 on the three stretches. It became the live bot.</p>
-            <div class="date">9 October 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/one-account-two-networks-440-buy-and-sell-pairs-on-validation/">
-          <div class="thumb"><img src="articles/one-account-two-networks-440-buy-and-sell-pairs-on-validation/img/tb41_top_en.png" alt="Ten best buy-and-sell pairs on validation, from 1211 to 1236 dollars" loading="lazy"><span class="tag">Buy-and-sell bot</span></div>
-          <div class="cbody">
-            <h3>One Account, Two Networks — 440 Buy-and-Sell Pairs on Validation, and Why the Best Still Trails the Market</h3>
-            <p>A buy network and a sell network were put on one $1000 account under one set of rules: one trade per 2.3% zigzag leg, take-profit 1.9%, stop 2.5%, and a signal from the other side closes the position. Every one of the 22 &quot;potentially best&quot; buy networks was paired with every one of the 20 sell networks — 440 pairs — and each pair traded the full validation month. 438 of them ended in profit. The best made $1235.78, a gain of 23.6%. Buying and holding BTC over the same month made about 29%.</p>
-            <div class="date">9 October 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/picking-a-network-by-the-width-of-its-good-zone-not-its-best-point/">
-          <div class="thumb"><img src="articles/picking-a-network-by-the-width-of-its-good-zone-not-its-best-point/img/tb40_buy_en.png" alt="For buy networks, the widest-zone pick earns 28 to 155 dollars; in four families a much richer but narrow epoch is added" loading="lazy"><span class="tag">Potentially best networks</span></div>
-          <div class="cbody">
-            <h3>Picking a Network by the Width of Its Good Zone, Not Its Best Point — 42 &quot;Potentially Best&quot; Networks</h3>
-            <p>Every trained network becomes a signal through two knobs: the window W over which its probabilities are summed and the threshold θ that sum must reach. Pick the single best cell of that grid and you usually pick noise. So each of 450 buy candidates and 75 sell candidates was traded on a 72 × 50 grid of W and θ, and for each one we measured how wide the area is where profit stays within 90% of its best. In every loss family the network with the widest such zone was kept — plus, if another epoch earned more than twice as much, that one too. The result: 22 buy and 20 sell networks, all scored on the same validation month.</p>
-            <div class="date">9 October 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/teaching-the-network-to-see-tops-sell-pivots-on-btc/">
-          <div class="thumb"><img src="articles/teaching-the-network-to-see-tops-sell-pivots-on-btc/img/tb39_rarity_en.png" alt="Share of steps inside a top zone: 1.76% in training, 2.77% held-out, 1.18% in validation" loading="lazy"><span class="tag">Sell pivots</span></div>
-          <div class="cbody">
-            <h3>Teaching the Network to See Tops — Sell Pivots on BTC, One Change and Eighteen Training Runs</h3>
-            <p>The bottom-finding network that powers our buy-only bot was rebuilt for the other side of the market with exactly one change: the label is now a 2.3% top zone instead of a bottom zone. Same canvas, same split, same eighteen training runs with different loss functions. Tops turned out to be rarer and harder: on validation only 62 of 5,265 ten-minute steps sit in a top zone. Plain losses reached an F1 of 0.047–0.084 against a base of 0.023; the &quot;ladder&quot; target that accepts a two-hour neighbourhood reached 0.19–0.21 against 0.13. Fine-tuning further did not help, and one loss never fired at all.</p>
-            <div class="date">9 October 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/when-a-fake-buy-signal-is-really-a-deeper-bottom-rule-7-1/">
-          <div class="thumb"><img src="articles/when-a-fake-buy-signal-is-really-a-deeper-bottom-rule-7-1/img/tb38_fakes_en.png" alt="Rejected signals: 32 to 15 on validation and 36 to 0 on unseen days when rule 7.1 is added" loading="lazy"><span class="tag">Rule 7.1</span></div>
-          <div class="cbody">
-            <h3>When a &quot;Fake&quot; Buy Signal Is Really a Deeper Bottom — Rule 7.1, Tested on Validation and Unseen Days</h3>
-            <p>Our buy-only bot throws away a buy signal if price has not risen 2.3% since the previous signal — a repeat call inside the same dip is treated as fake. On the nine unseen days after validation that filter rejected 36 signals and left one trade. Rule 7.1 asks one more question before rejecting: did price, between the last peak and now, make a lower bottom within 1% of the current price? If so, the signal is real, and the take-profit is measured from that lower bottom. With the rule, fakes on unseen days fell from 36 to 0, trades rose from 1 to 3, and the result from $1008.45 to $1034.12.</p>
-            <div class="date">9 October 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/a-buy-only-bot-on-nine-days-it-never-saw/">
-          <div class="thumb"><img src="articles/a-buy-only-bot-on-nine-days-it-never-saw/img/tb37_fresh_en.png" alt="BTC price from 21 to 30 September 2026 with the bot&#x27;s three long trades drawn from entry to take-profit exit" loading="lazy"><span class="tag">Bot 7.0 on unseen days</span></div>
-          <div class="cbody">
-            <h3>A Buy-Only Bot on Nine Days It Never Saw — Three Take-Profits and a Draw With Buy &amp; Hold</h3>
-            <p>The buy-only bot from the previous study had one weakness we wrote down plainly: its window, threshold and stop were chosen on the same 38 validation days it was then scored on. So we froze it and let it walk through the days the data collector recorded after validation ended — 21 to 30 September 2026, nine days nobody had looked at. It opened three trades and closed all three at take-profit, no stop-outs: $1000 became $1032.92. Buying and holding over the same steps gave $1035.51. A clean run, and a draw with the market.</p>
-            <div class="date">9 October 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/from-a-canvas-of-the-leg-to-a-buy-only-bot-what-survived/">
-          <div class="thumb"><img src="articles/from-a-canvas-of-the-leg-to-a-buy-only-bot-what-survived/img/tb36_corr_en.png" alt="Correlation between refined signal windows of leg starts, leg ends, corrections and leg bodies across different legs" loading="lazy"><span class="tag">Canvas and the buy bot</span></div>
-          <div class="cbody">
-            <h3>From a Canvas of the Whole Leg to a Buy-Only Bot — What Survived, and What It Earned</h3>
-            <p>The last study of the series put a whole leg — and 50 rows on either side — onto one canvas and asked a network to mark pivots and corrections on it. On labelled windows it hit 38% of pivot zones; run live over the series, 5% of its pivot calls landed. A longer canvas, 160 hours on 100-second records, and windows of uniform length lifted precision to about 30%. Its best trick: 29% of pivots flagged a median 2.4 hours before the zigzag confirms them. The result became a paper-trading buy-only bot for BTC. On 38 days of validation it made +10.3% with eight trades and no stop-outs — while buying and holding made +36.6%, and its parameters were tuned on those same days.</p>
-            <div class="date">30 September 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/how-full-is-this-leg-a-network-that-finally-beats-the-counter/">
-          <div class="thumb"><img src="articles/how-full-is-this-leg-a-network-that-finally-beats-the-counter/img/tb35_counter_en.png" alt="Fullness AUC and share error of a counter, a network on the full leg canvas, and a network on its last 16 rows, on unseen weeks" loading="lazy"><span class="tag">Leg fullness</span></div>
-          <div class="cbody">
-            <h3>How Full Is This Leg? A Network That Finally Beats the Counter — by Reading Its Last Rows</h3>
-            <p>Give a network the unfinished leg — everything from the last confirmed pivot to now, as one fixed-size canvas — and ask how complete it is. For the first time in this series a model beats the simple counter of events since the pivot on unseen weeks: fullness AUC 0.77 against 0.70, error 0.18 against 0.24. The surprise is where the knowledge comes from: the last 16 rows of the canvas do as well as all 500. On a 30-second standard with sliding windows the gap widens (0.78 vs 0.62), and the network locates a pivot inside its window with AUC 0.96. What it still cannot do cleanly is call &quot;the leg is over&quot; live: nine of ten such signals miss.</p>
-            <div class="date">30 September 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/where-a-leg-really-ends-four-events-earlier-than-the-zigzag-says/">
-          <div class="thumb"><img src="articles/where-a-leg-really-ends-four-events-earlier-than-the-zigzag-says/img/tb34_anchor_en.png" alt="Strength and symmetry of the pivot signature for four ways of placing the leg boundary: EMA-10 pivot, open extreme, close extreme, oracle" loading="lazy"><span class="tag">Where a leg ends</span></div>
-          <div class="cbody">
-            <h3>Where a Leg Really Ends — Four Events Earlier Than the Zigzag Says</h3>
-            <p>We went looking for a unique, universal signature of a pivot in 531 legs of six coins. The book turned out to be a mirror — tops and bottoms read with one ruler once buyer and seller features swap. The zigzag&#x27;s pivot turned out to sit in the wrong place: the true boundary of a leg is the extreme of the closing price within ±25 events, four events earlier, and there the signature becomes symmetric and one event sharp. What we did not find is uniqueness: a 0.5% correction carries the same signature, weaker. The signature measures the strength of a turn — not whether the leg is over.</p>
-            <div class="date">30 September 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/can-the-networks-outputs-become-a-buy-sell-signal-a-simple-zigzag-says-no/">
-          <div class="thumb"><img src="articles/can-the-networks-outputs-become-a-buy-sell-signal-a-simple-zigzag-says-no/img/tb33_race_en.png" alt="Share of 60 validation reversals caught within 50 events by three combiners, a memory network, a same-frequency coin and a causal 1.2% zigzag" loading="lazy"><span class="tag">Buy / sell from networks</span></div>
-          <div class="cbody">
-            <h3>Can Our Networks&#x27; Outputs Become a Buy/Sell Signal? A Simple 1.2% Zigzag Says No</h3>
-            <p>Our networks each say something about a leg: it is ending, it is 80% done, this is a reversal zone. None says &quot;buy&quot; or &quot;sell&quot;. So we combined their outputs into one decision and raced it against three rivals: each channel alone, a coin with the same number of signals, and a causal 1.2% zigzag on the same price. The combination found 40% of reversals within ±50 events — where chance at that frequency finds 30%. The plain zigzag found 72%. With $1,000 on BTC, the networks ended level with the coin; the zigzag ended next to buy-and-hold. What the networks do know is where a reversal *was*.</p>
-            <div class="date">30 September 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/a-loss-ladder-for-five-trained-networks-and-the-win-that-was-a-dropout-bug/">
-          <div class="thumb"><img src="articles/a-loss-ladder-for-five-trained-networks-and-the-win-that-was-a-dropout-bug/img/tb32_ladder_en.png" alt="Change of each of five networks&#x27; fixed validation metric after the loss ladder, next to the measurement noise" loading="lazy"><span class="tag">Loss ladder</span></div>
-          <div class="cbody">
-            <h3>A Loss Ladder for Five Trained Networks — and the Biggest Win That Was a Dropout Bug</h3>
-            <p>We took five approved networks from this series and tried to improve them without retraining: change the loss function between epochs, raise the penalty step by step, keep an epoch only if a fixed metric on validation improves. 124 attempts, 6.9 machine hours. One network truly improved — the one whose own training had stopped too early — and it improved from a smaller learning rate, not a new loss. The spectacular result, +0.47 on the zone model, vanished when the saved weights were measured again in a separate process: the GPU backend had left dropout switched on during evaluation.</p>
-            <div class="date">30 September 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/correction-and-reversal-are-one-event-of-different-strength/">
-          <div class="thumb"><img src="articles/correction-and-reversal-are-one-event-of-different-strength/img/tb31_base_en.png" alt="Spread of the support-per-flow feature with no base, with the leg&#x27;s own mean removed, and with the previous leg&#x27;s mean removed, for up and down legs" loading="lazy"><span class="tag">One axis: normal → correction → pivot</span></div>
-          <div class="cbody">
-            <h3>A Correction and a Reversal Are One Event of Different Strength — What the Book Shows Inside a Leg</h3>
-            <p>Every leg of a zigzag holds its own common level in the order book, and removing it would make the unusual events stand out — if only it could be known in time. It cannot: the previous leg predicts it so poorly that subtracting it adds noise. What the book does show is a reversal zone of about 15 events with a clear signature — and the same signature, weaker, inside every correction. Normal event, correction, pivot: one axis. Models find the pivot zone at AUC 0.72–0.75 and put 8.5× the base rate in their most confident answers, but no memory, loss or penalty separates a pivot from a correction without breaking the correction channel.</p>
-            <div class="date">30 September 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/the-book-sees-the-edge-of-a-leg-not-its-end/">
-          <div class="thumb"><img src="articles/the-book-sees-the-edge-of-a-leg-not-its-end/img/tb30_profile_en.png" alt="Rank of three order-book features along the ten tenths of BTC zigzag legs, U-shaped for flow and price, inverted for book-per-flow" loading="lazy"><span class="tag">Edge, not end</span></div>
-          <div class="cbody">
-            <h3>The Book Sees the Edge of a Leg, Not Its End — Event by Event on BTC</h3>
-            <p>Event by event on BTC, every feature of our order-book class carries its place in the leg: a U-shaped profile that holds inside individual legs, with the same sign in 80% of them. But what it reads is the distance to a pivot, not the progress through the leg. It tells a real end of a leg from a shallow 0.5% correction (AUC 0.669), and loses that ability as the correction deepens — at 1.5% there is nothing. A detector of &quot;this is the tail of a leg&quot; lifts precision up to ×19 over the base, yet cannot tell a tail from a head. The book knows it is at an edge; it does not know which one.</p>
-            <div class="date">30 September 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/the-order-book-along-a-leg-slow-legs-thin-edges-and-a-signal-at-the-end/">
-          <div class="thumb"><img src="articles/the-order-book-along-a-leg-slow-legs-thin-edges-and-a-signal-at-the-end/img/tb29_profile_en.png" alt="Rank of four features of the order-book class along the ten tenths of a zigzag leg: U-shape for flow and price, inverted for book-per-flow" loading="lazy"><span class="tag">The class along the leg</span></div>
-          <div class="cbody">
-            <h3>The Order Book Along a Leg — Slow Legs, Thin Edges, and a Signal at the End That Beats Chance ×4.6</h3>
-            <p>We laid the seven features of our best order-book class along 554 zigzag legs of six coins. Every feature marks the edges of a leg, with the book thinning per unit of flow right before a pivot. The same features tell a short leg from a long one early — not the exact length, but its distribution. A memory network trained on &quot;the last 5% of the leg&quot; puts 23% of its loudest calls there, against 5% by chance. And the honest cost is written next to each number: detecting a new leg takes 12–16 events, a price-path detector still does better, and the zigzag labels themselves arrive late.</p>
-            <div class="date">30 September 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/a-leg-moves-at-its-edges-and-you-see-the-new-one-only-after-it-starts/">
-          <div class="thumb"><img src="articles/a-leg-moves-at-its-edges-and-you-see-the-new-one-only-after-it-starts/img/tb28_profile_en.png" alt="Share of the move of a 2.3% zigzag leg made in each of its ten tenths: large at both ends, small in the middle" loading="lazy"><span class="tag">Edges of the leg</span></div>
-          <div class="cbody">
-            <h3>A Leg Moves at Its Edges — and You See the New One Only After It Starts</h3>
-            <p>Split every 2.3% zigzag leg of six coins into tenths and measure where the price actually travels: 39% of the move happens in the first and last tenth, three times more per tenth than in the middle. The start of a leg reveals its direction and its volatility, never its length or its ending. A detector for &quot;a new leg has begun&quot; reaches 63% precision 21 events after the pivot and 98% after 31 — confirmation, not foresight. And twelve numbers about the price path beat every order-book class in the project at that task.</p>
-            <div class="date">30 September 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/the-pivot-zone-plus-minus-015-percent-seventeen-ways-to-describe-an-event/">
-          <div class="thumb"><img src="articles/the-pivot-zone-plus-minus-015-percent-seventeen-ways-to-describe-an-event/img/tb27_k_en.png" alt="AUC of recognising the ±0.15% pivot zone on unseen weeks for batches of 1 to 11 events" loading="lazy"><span class="tag">Pivot zone ±0.15%</span></div>
-          <div class="cbody">
-            <h3>The ±0.15% Pivot Zone — Seventeen Ways to Describe an Event, One Honest Ceiling of 0.70</h3>
-            <p>Near every 2.3% pivot, price lingers within 0.15% of the turning level for a while — a median of 11 events, about 38 minutes, 2% of the whole series. Is that stretch recognisable from the order book alone? We asked gradient boosting on every event of six coins, with batches of 1 to 11 events and all 17 event classes this project has built. The answer is a consistent &quot;a little&quot;: AUC 0.61–0.66 on the main class, 0.701 at best on raw book levels — and at a working threshold, 95 hits bought with 6,725 false signals.</p>
-            <div class="date">30 September 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/the-filter-that-would-lift-precision-to-93-percent-and-why-we-cannot-build-it/">
-          <div class="thumb"><img src="articles/the-filter-that-would-lift-precision-to-93-percent-and-why-we-cannot-build-it/img/tb26_ceiling_en.png" alt="Precision of pivot-confirmation signals after filtering by leg share, using the true share versus two causal estimates" loading="lazy"><span class="tag">The perfect filter we cannot build</span></div>
-          <div class="cbody">
-            <h3>The Filter That Would Lift Precision From 51% to 93% — and Why We Cannot Build It Yet</h3>
-            <p>Half of the reversal-confirmation signals are false, and they share one trait: they point into the middle of a leg. A filter that knows how far along its leg an event really is removes 45 of 49 false signals and not one true one — precision 51% → 92.7%. The catch is that &quot;how far along&quot; is only known in hindsight. Every causal estimator we built — trees, a memory network, ten loss functions, a 24-point grid — reaches an AUC of about 0.69 for &quot;this is the last tenth of the leg&quot;, where the filter needs something near 0.95. With that estimate, the filter cuts true signals as fast as false ones.</p>
-            <div class="date">30 September 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/can-a-memory-network-rebuild-context-from-the-raw-sequence/">
-          <div class="thumb"><img src="articles/can-a-memory-network-rebuild-context-from-the-raw-sequence/img/tb25_auc_en.png" alt="AUC of an LSTM confirming a pivot three events later, on the class alone, price context alone and both, on honest train scores and unseen weeks" loading="lazy"><span class="tag">Memory vs aggregates</span></div>
-          <div class="cbody">
-            <h3>Can a Memory Network Rebuild Context From the Raw Sequence? Not From the Order Book</h3>
-            <p>Trees won the reversal ladder with hand-made aggregates: five numbers about recent extremes over four look-back windows. A memory network should not need them — the price change of every event is already inside the class, and integrating it would rebuild the whole context. We gave an LSTM 60 events of raw class, of price context, and of both. The class alone reached an honest AUC of 0.77; price context alone, 0.965. Adding the class to price made it worse. And trees on five aggregates still found reversals two and a half times more precisely than the network.</p>
-            <div class="date">30 September 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/pivot-confirmation-on-three-unseen-weeks/">
-          <div class="thumb"><img src="articles/pivot-confirmation-on-three-unseen-weeks/img/tb24_prec_en.png" alt="Precision of the pivot-confirmation ladder at four delays on train and on three unseen weeks; zero where the threshold let nothing through" loading="lazy"><span class="tag">Held-out time</span></div>
-          <div class="cbody">
-            <h3>Pivot Confirmation on Three Unseen Weeks — Precision Holds, the Threshold Does Not</h3>
-            <p>The reversal ladder of the previous article was scored on a held-out coin — but in the same weeks it trained on. Here the models trained on everything up to 14 August 2026 and were scored on the three weeks after, six coins, with the threshold fixed in advance from honest training scores. Precision did not fall: 51% two and a half hours after a pivot, 73% after six hours, on 88–93 reversals. What broke instead was the threshold itself — at two rungs of the ladder the models went completely silent while their AUC stayed above 0.9.</p>
-            <div class="date">30 September 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/a-reversal-is-a-place-in-the-move-not-a-shape-in-the-book/">
-          <div class="thumb"><img src="articles/a-reversal-is-a-place-in-the-move-not-a-shape-in-the-book/img/tb23_pair_en.png" alt="Share of 600 legs where the five events at each end are stronger than the middle of the same leg, for five features, against a control" loading="lazy"><span class="tag">Where, not what</span></div>
-          <div class="cbody">
-            <h3>A Reversal Is a Place in the Move, Not a Shape in the Book — Five Causal Numbers Beat 62</h3>
-            <p>The edge of a leg really is different from its middle — in 85% of 600 legs, by a factor of about 3.8, with a coin-flip control at 0.51. Yet no single 10-event batch can be picked out of the whole dataset by its book numbers. Five tests later the reason is clear: what identifies a reversal is where you are in the move, not what the book looks like. Five causal numbers about recent extremes lift the hit rate 121-fold over the base; the 62 numbers of the class manage 3.8-fold and add nothing on top. Asked again every ten events with four look-back windows, &quot;was that a pivot?&quot; climbs from 26% after ten minutes to 71% after six hours.</p>
-            <div class="date">30 September 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/a-reversal-has-no-signature-of-its-own-in-the-order-book/">
-          <div class="thumb"><img src="articles/a-reversal-has-no-signature-of-its-own-in-the-order-book/img/tb22_ratio_en.png" alt="Median size of each feature in the batch around a reversal divided by the median of all 10-event stretches on BTC" loading="lazy"><span class="tag">No reversal signature</span></div>
-          <div class="cbody">
-            <h3>A Reversal Has No Signature of Its Own — One in Four Ordinary Stretches Looks Stronger</h3>
-            <p>Around a 2.3% pivot the order book changes in multiples: flow ratios two to five times bigger, book-per-flow ratios three to seventeen times smaller. That sounds like a fingerprint. It is not. One in four continuous 10-event stretches far from any pivot is stronger still, the strongest is 47 times stronger than the strongest reversal, and a neural network on all 630 numbers of a reversal batch reaches the same AUC as a straight line: about 0.70. The reversal is a shift of the same distribution, not a different kind of event.</p>
-            <div class="date">30 September 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/derivatives-of-the-order-book-reversals-leave-a-trace-not-a-warning/">
-          <div class="thumb"><img src="articles/derivatives-of-the-order-book-reversals-leave-a-trace-not-a-warning/img/tb21_batch_en.png" alt="AUC separating events near a 2.3% pivot from the rest of the leg for absolute derivatives of buy volume, price and resistance, on one event and on 20-event batches" loading="lazy"><span class="tag">Derivatives of the book</span></div>
-          <div class="cbody">
-            <h3>Derivatives of the Order Book — Reversals Leave a Trace, Not a Warning</h3>
-            <p>We rebuilt the basic event of this series from scratch: 210 seconds cut into ten 21-second blocks, book levels divided by the volume of their own block, then first derivatives from block to block — on six coins, 402,731 events. The new description sees reversals clearly: around a pivot there is more flow and a thinner book per unit of that flow. But almost all of it sits in the first tenth of the next leg. The book reacts to a reversal far more than it foretells one. The last class of the family, derivative over derivative, lifts a detector of the reversal zone to AUC 0.700 on fresh legs — and becomes the workhorse of every study that follows.</p>
-            <div class="date">30 September 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/change-the-question-not-the-network-leg-end-hazard/">
-          <div class="thumb"><img src="articles/change-the-question-not-the-network-leg-end-hazard/img/tb20_signal_en.png" alt="A perceptron guessing the leg tenth: a single counter of events since the leg start scores 0.56, the 60 order-book features score 0.29, at the random level" loading="lazy"><span class="tag">Ask what the data answers</span></div>
-          <div class="cbody">
-            <h3>Change the Question, Not the Network — &quot;Will the Leg End Soon?&quot; Scores 0.73 Where &quot;Which Tenth?&quot; Scored Nothing</h3>
-            <p>The memory network of the previous study learned to count instead of reading the market. We opened its loss function and found why: counting was the exact optimum. Then a plain perceptron settled it — the 60 order-book numbers of an event carry zero information about which tenth of the leg it sits in. They do carry information about something else: whether a pivot is close. Rebuilt around that question — four horizons, one monotone curve — the same data scores an average AUC of 0.73 across six coins. The order book shows the exhaustion of a move. It still does not show its direction.</p>
-            <div class="date">30 September 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/a-memory-network-that-learned-to-count-not-to-read/">
-          <div class="thumb"><img src="articles/a-memory-network-that-learned-to-count-not-to-read/img/tb19_labels_en.png" alt="Number of validation legs where the model&#x27;s end-of-leg signal fell inside the true end zone, for five label designs, against a simple median-length baseline" loading="lazy"><span class="tag">End of the leg</span></div>
-          <div class="cbody">
-            <h3>A Memory Network Asked &quot;Is the Leg Over?&quot; Learned to Count, Not to Read</h3>
-            <p>An LSTM with attention walked each 2.3% zigzag leg event by event and, at every step, said how far along the leg was. Across five label designs, one coin and then six, it never once placed its end-of-leg signal inside the last tenth of a fresh leg. What it learned was a clock: a steady count from the start of the leg. When the zigzag stopped handing it that start — memory reset only when the network itself called a pivot — it did not call a single one in 42,192 events.</p>
-            <div class="date">30 September 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/four-numbers-per-event-and-a-28-cell-answer/">
-          <div class="thumb"><img src="articles/four-numbers-per-event-and-a-28-cell-answer/img/tb18_raw_en.png" alt="Pearson correlation of four raw event features with the raw and the leg-smoothed 2.3% zigzag target on BTC train" loading="lazy"><span class="tag">Four numbers, 28 cells</span></div>
-          <div class="cbody">
-            <h3>Four Numbers per Event and a 28-Cell Answer — Where the Signal Really Came From</h3>
-            <p>The previous networks read each book feature through 13 exponential averages and topped out at a correlation of 0.29 with the leg target. Strip the averages away and the same features, raw per event, correlate at 0.09. So the link was made by the smoothing, not by the snapshot. We then gave a transformer six coins, 345,000 training windows and a new kind of output — 28 cells instead of one number — to stop it hiding in the middle. It stopped hiding. It did not start hitting: 5.4% of real pivot-zone signals, with false calls a day away.</p>
-            <div class="date">30 September 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/same-data-different-readout-transformer-vs-attention-query/">
-          <div class="thumb"><img src="articles/same-data-different-readout-transformer-vs-attention-query/img/tb17_readout_en.png" alt="Test MAE, output spread and precision of vertex calls for the transformer and the wattn attention network" loading="lazy"><span class="tag">Readout</span></div>
-          <div class="cbody">
-            <h3>Same Data, Different Readout — How a Transformer Fails Differently From an Attention Query</h3>
-            <p>We repeated the previous study exactly — same 2.3% zigzag target, same pivot zone, same loss, split and seed — and changed one thing: how the network reads its own sequence. Averaging the 13 steps instead of letting a learned query pick them cut the error from 0.554 to 0.476 and made &quot;vertex&quot; calls 44% precise instead of 3%. Tuning then turned the same model into a noisy caller again. And past the end of the dataset, both readouts lose the direction. The readout decides how a network is wrong, not whether it is right.</p>
-            <div class="date">30 September 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/a-network-that-found-the-pivot-zone-only-where-it-was-trained/">
-          <div class="thumb"><img src="articles/a-network-that-found-the-pivot-zone-only-where-it-was-trained/img/tb16_zone_en.png" alt="Share of pivot-zone events caught by the wattn network on train, validation, test and ten unseen days" loading="lazy"><span class="tag">Pivot zone net</span></div>
-          <div class="cbody">
-            <h3>A Network That Found the Pivot Zone — Only Where It Was Trained</h3>
-            <p>We asked an attention network to do one specific thing: tell when price is near the end of a 2.3% zigzag leg — within 10% of the pivot and no more than 40 events from it. On the weeks it trained on it caught 65% of those zones. On validation, 4%. On test, 3.8%. On ten days after the dataset ended, its correlation with the target turned negative. This is a measured negative result, and the measuring tool it produced — the pivot zone — is what we carry forward.</p>
-            <div class="date">30 September 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/six-networks-one-winner-with-53-parameters/">
-          <div class="thumb"><img src="articles/six-networks-one-winner-with-53-parameters/img/tb12_holdout_en.png" alt="Position of price in its 0.8% zigzag leg and the linear model&#x27;s output on 2,512 fresh events from 14 to 25 August 2026" loading="lazy"><span class="tag">Zigzag net</span></div>
-          <div class="cbody">
-            <h3>Six Networks Tried, the Winner Has 53 Parameters — Teaching a Model Where Price Sits in Its Leg</h3>
-            <p>Correlations said the slow order book knows roughly where price sits inside its zigzag leg. So we trained networks to say it out loud: a number from −1 (at the low pivot) to +1 (at the high pivot), from four book features under thirteen averages. Six families on the same data, a time split with five walk-forward windows — and the linear model with 53 parameters won. On the final test it beats the constant for the first time (MAE 0.438 vs 0.446, sign 55.1%); on eleven fresh days outside the dataset, sign 60.7% on 44 legs. Small, consistent — and the reason is a loss that pays attention to the edges of the leg.</p>
-            <div class="date">30 September 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/twelve-hours-of-order-book-state-and-the-direction-of-a-move/">
-          <div class="thumb"><img src="articles/twelve-hours-of-order-book-state-and-the-direction-of-a-move/img/tb11_raw_en.png" alt="Pearson correlation of four 200-event exponential averages with the direction of 2.3% and 0.8% zigzag moves on BTC" loading="lazy"><span class="tag">Slow book state</span></div>
-          <div class="cbody">
-            <h3>Twelve Hours of Order-Book State and the Direction of a Move — From 0.16 to 0.42</h3>
-            <p>Does the order book, averaged over about half a day, know which way the current move is going? We smoothed four book features with exponential averages on 52 horizons from 35 minutes to 58 hours and correlated them with the direction of 2.3% and 0.8% zigzag moves on 40,242 BTC events. The raw answer is weak (−0.16 at best). Three changes of question — a price feature instead of price, the position inside the leg instead of the direction, and a zigzag drawn on the same smoothing — lift the ceiling to 0.42. That is 17% of the variance, from a description that ignores the last hour entirely.</p>
-            <div class="date">30 September 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/predicting-the-next-phase-of-a-move-from-the-order-book/">
-          <div class="thumb"><img src="articles/predicting-the-next-phase-of-a-move-from-the-order-book/img/tb05_cohorts_en.png" alt="Number of BTC training events in each of the four zigzag phases: rising, pullback in a rise, falling, pullback in a fall" loading="lazy"><span class="tag">Next cohort</span></div>
-          <div class="cbody">
-            <h3>Predicting the Next Phase of a Move From the Order Book — 832 Window Sizes, One Honest Ceiling</h3>
-            <p>Every event of BTC&#x27;s order book sits in one of four phases of a zigzag: rising, a pullback inside a rise, falling, or a pullback inside a fall. We asked a closed-form linear model to name the phase of the next event from the N events before it — and tried every N from 2 to 833. The signal is real from N = 2, peaks at 0.418 accuracy on about one zigzag leg of history against a 0.377 baseline, and is essentially binary: up or down, the pullbacks go unseen. The labels of the past alone would score 0.976.</p>
-            <div class="date">30 September 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/a-leg-is-the-sum-of-its-events-size-beats-count/">
-          <div class="thumb"><img src="articles/a-leg-is-the-sum-of-its-events-size-beats-count/img/tb01_umap_en.png" alt="UMAP map of 24,150 BTC 210-second events: one continuous cloud, rising events on one side, falling on the other" loading="lazy"><span class="tag">Legs and events</span></div>
-          <div class="cbody">
-            <h3>A Leg Is the Sum of Its Events — and Size Beats Count</h3>
-            <p>We cut the price of six coins into 210-second events and into 2.3% zigzag legs, then asked the simplest question a direction model has to answer: how does a leg actually make its move? Over 712 legs and 409,998 events the answer is exact — the leg is the sum of its events (0.999 on clean legs) — and surprising: up legs are only 51.9% up-events. The move is carried by the size of events, not by how many point the right way.</p>
-            <div class="date">30 September 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/a-detector-for-corrections-inside-a-move/">
-          <div class="thumb"><img src="articles/a-detector-for-corrections-inside-a-move/img/zzlegs_numbers_en.png" alt="① Eight features become four ratios" loading="lazy"><span class="tag">Corrections, not exits</span></div>
-          <div class="cbody">
-            <h3>A Detector for Corrections Inside a Move — and Why It Took a New Way of Measuring</h3>
-            <p>We stopped measuring how loud the order book is and started measuring how much wall stands per unit of aggression — eight features collapsed into four ratios. On that new scale a class appears that we could not see before: corrections inside a move, 5,396 of them, events that already look like a reversal without being one. Three detectors find them at 0.94 precision on a held-out half, and an external 0.8% zigzag confirms the class survives after loudness is matched away (×1.69). For a bot, that is the difference between holding a trend and being shaken out of it.</p>
-            <div class="date">31 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/bot-6-line-61-nine-trades-eight-winners/">
-          <div class="thumb"><img src="articles/bot-6-line-61-nine-trades-eight-winners/img/61_equity_en.png" alt="Bot 6, Line 61: Nine Trades, Eight Winners, and Why We Are Not Celebrating" loading="lazy"><span class="tag">Line 61 live</span></div>
-          <div class="cbody">
-            <h3>Bot 6, Line 61: Nine Trades, Eight Winners, and Why We Are Not Celebrating</h3>
-            <p>Line 61 of Bot 6 holds one position at a time and has been live since 17 July 2026: 31 days, 9 closed trades, +11.81 USD on a 100 USD slot, win rate 89%. Its entry gate is agreement between two independent models plus a context check; its exits are a 2% target, a 4% stop and a hard 72-hour clock. This is the complete record, including the comparison with its twin line running the identical recipe — which is the part that keeps us honest.</p>
-            <div class="date">17 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/bot-6-line-60-a-bot-that-mostly-waits/">
-          <div class="thumb"><img src="articles/bot-6-line-60-a-bot-that-mostly-waits/img/60_equity_en.png" alt="Bot 6, Line 60: A Bot That Mostly Waits — and What the Clock Costs It" loading="lazy"><span class="tag">Line 60 live</span></div>
-          <div class="cbody">
-            <h3>Bot 6, Line 60: A Bot That Mostly Waits — and What the Clock Costs It</h3>
-            <p>Line 60 of Bot 6 holds one position at a time and has been live since 15 July 2026: 33 days, 9 closed trades, +0.68 USD on a 100 USD slot, win rate 44%. Its entry gate is agreement between two independent models plus a context check; its exits are a 2% target, a 4% stop and a hard 72-hour clock. This is the complete record, including the comparison with its twin line running the identical recipe — which is the part that keeps us honest.</p>
-            <div class="date">17 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/bot-4-forty-days-of-live-paper-trading/">
-          <div class="thumb"><img src="articles/bot-4-forty-days-of-live-paper-trading/img/bot4_equity_en.png" alt="Bot 4: What Forty Days of Live Paper Trading Actually Look Like" loading="lazy"><span class="tag">Bot 4 live</span></div>
-          <div class="cbody">
-            <h3>Bot 4: What Forty Days of Live Paper Trading Actually Look Like</h3>
-            <p>Bot 4 has been trading live on paper since 09 July 2026 — 40 days, 49 closed trades, +29.53 USD on 600 USD of capital, a 80% win rate, against +1.49% on average for buying and holding the same coins. This is the full record: the rules it never deviates from, every closed trade, the open positions right now, and the hourly referee that can hand the account to a freshly trained challenger — which has happened 4 times so far.</p>
-            <div class="date">17 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/gates-the-part-of-a-bot-that-decides-not-to-trade/">
-          <div class="thumb"><img src="articles/gates-the-part-of-a-bot-that-decides-not-to-trade/img/gates_tradeoff_en.png" alt="Gates: The Part of a Trading Bot That Decides Not to Trade" loading="lazy"><span class="tag">Gates</span></div>
-          <div class="cbody">
-            <h3>Gates: The Part of a Trading Bot That Decides Not to Trade</h3>
-            <p>A trading bot&#x27;s model produces a number; its gate decides whether that number is worth a fee. This article measures what gates actually cost. Demanding a signal persist two bars instead of one raises precision from 0.209 to 0.238 and throws away 25% of the opportunities. Bot 4 stacks four gates and still lands inside the noise across random seeds. Bot 6 gates on agreement between two models — and two live lines running that identical gate for a month finished +11.81 and +0.68 USD apart. Gates buy precision with coverage; nothing here is free.</p>
-            <div class="date">17 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/the-order-book-tells-you-how-far-never-which-way/">
-          <div class="thumb"><img src="articles/the-order-book-tells-you-how-far-never-which-way/img/volat_horizon_en.png" alt="The Order Book Tells You How Far, Never Which Way" loading="lazy"><span class="tag">How far, not which way</span></div>
-          <div class="cbody">
-            <h3>The Order Book Tells You How Far, Never Which Way</h3>
-            <p>We asked eight order-book features the same two questions at 16 horizons from one second to a day, on six coins: how far will the price move, and which way. Size answers — ρ 0.30 at a second, still 0.11 at an hour. Direction never does: -0.002 at a minute, -0.003 at a day. Then we bet real rules on both answers over 30 out-of-sample days: the volatility bet makes +4.97 bps a trade, the direction bet loses 5.95. This is the measurement that decides what our bots are allowed to bet on.</p>
-            <div class="date">17 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/typhoon-plus-a-signal-that-finds-the-zones-and-still-loses-money/">
-          <div class="thumb"><img src="articles/typhoon-plus-a-signal-that-finds-the-zones-and-still-loses-money/img/tplus_zones_en.png" alt="Typhoon+: A Signal That Finds the Perfect Trader&#x27;s Zones — and Still Loses Money" loading="lazy"><span class="tag">Typhoon+</span></div>
-          <div class="cbody">
-            <h3>Typhoon+: A Signal That Finds the Perfect Trader&#x27;s Zones — and Still Loses Money</h3>
-            <p>We drew the zones a perfect trader would use — 0.9% zigzag turns, a 0.15% band around each one — and found that the price sits inside them barely 3% of the time. A single gradient-boosting model, pooled over six coins, then finds 74% of those zones on days it never saw. It also fires false 86% of the time, leans mostly on price geometry rather than the order book, and loses 122% when traded plainly against 93% for buy &amp; hold. This is the article about a signal that finds the right places and still cannot pay the fee.</p>
-            <div class="date">17 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/we-taught-a-network-to-see-a-move-and-it-only-heard-how-loud-it-was/">
-          <div class="thumb"><img src="articles/we-taught-a-network-to-see-a-move-and-it-only-heard-how-loud-it-was/img/zznet_models_en.png" alt="We Taught a Network to See a Move. It Only Heard How Loud It Was." loading="lazy"><span class="tag">Moves, not noise</span></div>
-          <div class="cbody">
-            <h3>We Taught a Network to See a Move. It Only Heard How Loud It Was.</h3>
-            <p>We trained three networks on the same 56,263 order-book windows and learned two things we did not want to learn. A single number — how loud the window is — matches a convolutional network on all 1,680 of them (0.7575 against 0.7571). And once you match windows by that number, the inflow features that carried the whole model separate nothing at all. What does survive is small, directional, and points at a different kind of bot than the one we set out to build.</p>
-            <div class="date">15 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/a-recipe-not-a-result-how-we-clean-an-order-book-dataset/">
-          <div class="thumb"><img src="articles/a-recipe-not-a-result-how-we-clean-an-order-book-dataset/img/clean_chain_en.png" alt="A Recipe, Not a Result: How We Clean an Order-Book Dataset" loading="lazy"><span class="tag">Dataset cleaning recipe</span></div>
-          <div class="cbody">
-            <h3>A Recipe, Not a Result: How We Clean an Order-Book Dataset</h3>
-            <p>This is the least glamorous and most useful study of the series: not a finding, but a procedure. How to take a raw dataset of order-book windows and produce a clean one — 56,263 windows in, 31,212 out, 95% of the reversals still there — with every step checked, every trap written down, and the whole thing runnable on another coin by one command.</p>
-            <div class="date">14 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/throwing-away-a-third-of-the-data-and-keeping-the-reversals/">
-          <div class="thumb"><img src="articles/throwing-away-a-third-of-the-data-and-keeping-the-reversals/img/rev_keep_en.png" alt="Throwing Away a Third of the Data and Keeping 98% of the Reversals" loading="lazy"><span class="tag">The cleaned dataset</span></div>
-          <div class="cbody">
-            <h3>Throwing Away a Third of the Data and Keeping 98% of the Reversals</h3>
-            <p>If a third of your data provably contains almost nothing you are looking for, it should not be in the training set. We removed 18,744 of 56,263 windows — everything two independent definitions of &#x27;quiet&#x27; agree on — and kept 98.1% of all the reversal windows.</p>
-            <div class="date">14 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/twenty-five-weeks-twenty-five-rebuilds-which-clustering-survives/">
-          <div class="thumb"><img src="articles/twenty-five-weeks-twenty-five-rebuilds-which-clustering-survives/img/week_size_en.png" alt="Twenty-Five Weeks, Twenty-Five Rebuilds: Which Clustering Survives" loading="lazy"><span class="tag">Week by week</span></div>
-          <div class="cbody">
-            <h3>Twenty-Five Weeks, Twenty-Five Rebuilds: Which Clustering Survives</h3>
-            <p>A clustering that only exists once is a story, not a result. So we rebuilt it 25 times — every week of the dataset from scratch, its own PCA, its own UMAP, its own clusters — and compared each week with the answer found on the whole dataset. One of the two methods reproduces. The other does not, and it is the fashionable one.</p>
-            <div class="date">14 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/tops-hide-bottoms-do-not-the-asymmetry-we-did-not-expect/">
-          <div class="thumb"><img src="articles/tops-hide-bottoms-do-not-the-asymmetry-we-did-not-expect/img/down_k_en.png" alt="Tops Hide, Bottoms Don&#x27;t: an Asymmetry We Did Not Expect" loading="lazy"><span class="tag">The falling half</span></div>
-          <div class="cbody">
-            <h3>Tops Hide, Bottoms Don&#x27;t: an Asymmetry We Did Not Expect</h3>
-            <p>This is the mirror of the previous study: the fall from a top to a bottom, 27,180 windows, the same pipeline to the letter. The structure repeats — and one number does not. Tops hide from the order book four times more often than bottoms do.</p>
-            <div class="date">14 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/the-rising-half-of-a-move-what-the-order-book-looks-like/">
-          <div class="thumb"><img src="articles/the-rising-half-of-a-move-what-the-order-book-looks-like/img/up_k_en.png" alt="The Rising Half of a Move: What the Order Book Looks Like Between a Bottom and a Top" loading="lazy"><span class="tag">The rising half</span></div>
-          <div class="cbody">
-            <h3>The Rising Half of a Move: What the Order Book Looks Like Between a Bottom and a Top</h3>
-            <p>Half of every price move is a climb from a bottom to a top. We took only that half — 26,921 windows of the order book — and clustered it blind. The structure that comes out is the same one the whole dataset gives, which is good news: it means the classes are not an artefact of mixing rises and falls together.</p>
-            <div class="date">14 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/one-axis-again-clustering-order-book-windows-without-a-teacher/">
-          <div class="thumb"><img src="articles/one-axis-again-clustering-order-book-windows-without-a-teacher/img/all_axis_en.png" alt="One Axis, Again: Clustering 56,000 Order-Book Windows Without a Teacher" loading="lazy"><span class="tag">Classes without a teacher</span></div>
-          <div class="cbody">
-            <h3>One Axis, Again: Clustering 56,000 Order-Book Windows Without a Teacher</h3>
-            <p>Take 56,263 windows of the order book, 210 seconds each, eight features per second. Tell the algorithm nothing — not the price, not the time, not our own signals. Ask only one thing: does this pile of windows fall apart into groups by itself? It does, along exactly one axis, and that axis is not the one anybody hopes for.</p>
-            <div class="date">14 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/one-network-for-three-market-states/">
-          <div class="thumb"><img src="articles/one-network-for-three-market-states/img/pool_setup_en.png" alt="One Network for Three Market States: What a Pooled Reversal Model Learns" loading="lazy"><span class="tag">Pooled reversal model</span></div>
-          <div class="cbody">
-            <h3>One Network for Three Market States: What a Pooled Reversal Model Learns</h3>
-            <p>We trained one network on the events of three different market states at once — 55,929 events, 3,758 of which sit on a real turning point — and asked it a single question: is this event a reversal or an ordinary event of its own class? The answer is interesting in a way we did not plan: the model works, the validation set lies about which model is best, and an unsupervised split of the same pool finds classes that have nothing to do with reversals at all.</p>
-            <div class="date">14 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/three-classes-one-question-what-it-takes-to-separate-a-reversal/">
-          <div class="thumb"><img src="articles/three-classes-one-question-what-it-takes-to-separate-a-reversal/img/BTC_rn_all_lift_en.png" alt="Three Classes, One Question: What It Takes to Separate a Reversal" loading="lazy"><span class="tag">Separating the signal</span></div>
-          <div class="cbody">
-            <h3>Three Classes, One Question: What It Takes to Separate a Reversal</h3>
-            <p>Three market states, one question: can an order-book event that sits on a turning point be told apart from the ordinary events of its own class? This is the overview of that work — the three per-class studies side by side, every engine we tried in between, and the parts that hurt: a grid search that bought 0.02 AUC, a network on 1,680 numbers that lost to a single average, and a threshold that looked like 63% precision until it was asked to survive two months of new data, where it became 39%.</p>
-            <div class="date">13 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/class-2-the-middle-state-where-no-single-feature-wins/">
-          <div class="thumb"><img src="articles/class-2-the-middle-state-where-no-single-feature-wins/img/BTC_rn_mid_heat_en.png" alt="Class 2: the Middle State Where No Single Feature Wins" loading="lazy"><span class="tag">Class 2 reversals</span></div>
-          <div class="cbody">
-            <h3>Class 2: the Middle State Where No Single Feature Wins</h3>
-            <p>The **class 2** state fires on 21,704 windows of this dataset, and 1,961 of them (9.0%) sit on a turning point of price. This page asks one question and answers it with one frozen network: can a reversal be told apart from the ordinary events of its own class, and which of the eight order-book features carries that difference? Best single feature: `vol_buy` at 15.8% precision. Best set: 6 features at 23.5% precision and 23.6% recall, against a base rate of 9.0% — ×2.6.</p>
-            <div class="date">13 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/reversals-in-a-quiet-market-where-two-percent-of-events-hide/">
-          <div class="thumb"><img src="articles/reversals-in-a-quiet-market-where-two-percent-of-events-hide/img/BTC_rn_calm_heat_en.png" alt="Reversals in a Quiet Market: Where 2.5% of Events Hide" loading="lazy"><span class="tag">Calm reversals</span></div>
-          <div class="cbody">
-            <h3>Reversals in a Quiet Market: Where 2.5% of Events Hide</h3>
-            <p>The **calm** state fires on 29,303 windows of this dataset, and 739 of them (2.5%) sit on a turning point of price. This page asks one question and answers it with one frozen network: can a reversal be told apart from the ordinary events of its own class, and which of the eight order-book features carries that difference? Best single feature: `vol_buy` at 10.8% precision. Best set: 8 features at 14.9% precision and 15.3% recall, against a base rate of 2.5% — ×6.0.</p>
-            <div class="date">13 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/the-storm-class-which-order-book-feature-marks-a-reversal/">
-          <div class="thumb"><img src="articles/the-storm-class-which-order-book-feature-marks-a-reversal/img/BTC_rn_storm_heat_en.png" alt="The Storm Class: Which Order-Book Feature Marks a Reversal" loading="lazy"><span class="tag">Storm reversals</span></div>
-          <div class="cbody">
-            <h3>The Storm Class: Which Order-Book Feature Marks a Reversal</h3>
-            <p>The **storm** state fires on 5,249 windows of this dataset, and 1,085 of them (20.7%) sit on a turning point of price. This page asks one question and answers it with one frozen network: can a reversal be told apart from the ordinary events of its own class, and which of the eight order-book features carries that difference? Best single feature: `vol_buy` at 49.5% precision. Best set: 5 features at 54.1% precision and 50.0% recall, against a base rate of 20.7% — ×2.6.</p>
-            <div class="date">13 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/we-went-looking-for-the-dna-of-a-reversal-we-found-a-ceiling-instead/">
-          <div class="thumb"><img src="articles/we-went-looking-for-the-dna-of-a-reversal-we-found-a-ceiling-instead/img/BTC_signature_en.png" alt="We Went Looking for the DNA of a Reversal. We Found a Ceiling Instead." loading="lazy"><span class="tag">Reversal DNA</span></div>
-          <div class="cbody">
-            <h3>We Went Looking for the DNA of a Reversal. We Found a Ceiling Instead.</h3>
-            <p>An earlier study on this dataset (175 days of BTC) found 271 order-book events that sit exactly on the turning points of price, and showed that a model cannot separate them from the thousands of ordinary events of their own class. This study asks a narrower question: forget separating a reversal from its class — is there anything, on its own, that a reversal event&#x27;s 271 examples share? Nine different methods attack the question from nine angles: a two-condition threshold rule, a raw-vector kinship check, a full neural detector, a scan for the shortest useful slice of the window, four models on four quarters of it, one model on all of its 30-second slices at once, and three independent models — one per parent market state. Every method finds something real, reproducible, and well above every null control we built. None of them clears the bar a trading signal needs. The best operating point we found, buried inside the loudest of four market states, is right roughly one time in three.</p>
-            <div class="date">12 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/we-found-the-reversal-signal-machine-learning-could-not-tell-it-apart/">
-          <div class="thumb"><img src="articles/we-found-the-reversal-signal-machine-learning-could-not-tell-it-apart/img/BTC_legs_map_en.png" alt="We Found the Reversal Signal. Machine Learning Could Not Tell It Apart." loading="lazy"><span class="tag">Signals</span></div>
-          <div class="cbody">
-            <h3>We Found the Reversal Signal. Machine Learning Could Not Tell It Apart.</h3>
-            <p>A market moves in legs: a few percent one way, a turning point, then a few percent the other. This study asks whether the order book carries an event that marks the turn — and whether that event can be separated from the thousands of ordinary events of the same class. On 175 days of BTC the first half works: groups of signals pile up at turning points 3.7× more often than chance, every class shows the same reversal signature, and inside a storm the shape of the flows tells a top from a bottom where price itself says nothing. The second half does not. Every way we tried to learn &#x27;is this a reversal&#x27; landed on top of its own null control, and a class retrained with all reversal windows removed still fires on them — harder than on its ordinary events. The signal is real; the discriminator is not.</p>
-            <div class="date">9 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/sixteen-networks-one-working-answer/">
-          <div class="thumb"><img src="articles/sixteen-networks-one-working-answer/img/BTC_nets_storm_en.png" alt="Sixteen Networks, One Working Answer — and the Price Benchmark That Nearly Killed It" loading="lazy"><span class="tag">Nets</span></div>
-          <div class="cbody">
-            <h3>Sixteen Networks, One Working Answer — and the Price Benchmark That Nearly Killed It</h3>
-            <p>We trained sixteen one-class autoencoders on Bitcoin order-book windows: four market states, and inside each state one network per phase of the price move. Each network saw only its own kind of window and nothing else — no negative examples at all. One thing out of sixteen works: inside a storm you can tell a bottom reversal from a top one. On half the data that looked like AUC 0.6264; measured properly on all 800 events it is 0.5928. Then a one-line price benchmark scored 0.8548 on the same question. This article is about what survives that, and where it survives.</p>
-            <div class="date">8 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/does-the-phase-of-a-move-change-what-the-order-book-looks-like/">
-          <div class="thumb"><img src="articles/does-the-phase-of-a-move-change-what-the-order-book-looks-like/img/BTC_span_en.png" alt="Does the Phase of a Move Change What the Order Book Looks Like?" loading="lazy"><span class="tag">States</span></div>
-          <div class="cbody">
-            <h3>Does the Phase of a Move Change What the Order Book Looks Like?</h3>
-            <p>We have four detectors of market state and a map of where price is in its move — reversal zones and the legs between them. Laying one over the other answers a question that sounds simple and is not: does the phase of a move change what a market state looks like? On 171 days of BTC the answer splits. The count of events barely moves — each class fires roughly in proportion to how long the phase lasts. What moves is their strength, and only for the quiet classes. And in one narrow place the order book finally beats price: telling a top from a bottom inside a storm.</p>
-            <div class="date">7 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/the-autoencoder-that-lost-to-pca/">
-          <div class="thumb"><img src="articles/the-autoencoder-that-lost-to-pca/img/engines_en.png" alt="⑤ Eight compressions of the same windows, one rule" loading="lazy"><span class="tag">Autoencoder</span></div>
-          <div class="cbody">
-            <h3>Eight Ways to Compress 210 Seconds: the Autoencoder That Lost to PCA</h3>
-            <p>We cut 170 days of per-second Bitcoin order-book data into 50,143 back-to-back windows and pushed them through eight different compressions — PCA, a convolutional autoencoder, and six variants of both — to see whether a network finds market structure a linear method misses. It does not. Its raw stability is the best in the table and most of that stability survives when the data is shuffled into noise, which means it was never structure at all.</p>
-            <div class="date">6 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/two-poles-of-market-activity-found-on-six-coins/">
-          <div class="thumb"><img src="articles/two-poles-of-market-activity-found-on-six-coins/img/gap_en.png" alt="② Clustering always returns something — so we ran it on nothing" loading="lazy"><span class="tag">Market states</span></div>
-          <div class="cbody">
-            <h3>Two Poles of Market Activity, Found Without a Teacher on Six Coins</h3>
-            <p>We cut 122–141 days of per-second order-book data on 6 coins into 164,342 windows of 210 seconds, showed a clustering pipeline nothing but the eight order-book features, and asked whether the market falls into natural states. It does — two poles of flow activity with a wide grey zone between them — and the same pipeline run on shuffled data produces nothing, which is what makes the answer worth reporting. The walls turn out to be irrelevant to the split, and the autoencoder we brought in to beat PCA lost to it.</p>
-            <div class="date">6 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/four-market-states-found-twice-by-two-independent-pipelines/">
-          <div class="thumb"><img src="articles/four-market-states-found-twice-by-two-independent-pipelines/img/BTC_four_en.png" alt="⑩ Four states: what the algorithm says, what the model says" loading="lazy"><span class="tag">Replication</span></div>
-          <div class="cbody">
-            <h3>Four Market States, Found Twice by Two Independent Pipelines</h3>
-            <p>Four market states, found twice by two pipelines that share no code. We wrote our research recipe down as an executable diary, then wrote a second implementation from that text alone — different seed, different block split, different network initialisation — and ran it over the same 54,764 windows of BTC order-book data. The states came back: 93.0% of windows landed in the same one (ARI 0.7726), and two independently trained detectors fire on the same 98.5% of windows. Where both fire, the next hour&#x27;s price range is ×1.432 the median of the same day.</p>
-            <div class="date">6 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/local-tops-and-bottoms-what-four-trained-models-actually-see/">
-          <div class="thumb"><img src="articles/local-tops-and-bottoms-what-four-trained-models-actually-see/img/BTC_zones_en.png" alt="Local tops and bottoms in the order book: what four trained models actually see" loading="lazy"><span class="tag">Pivots</span></div>
-          <div class="cbody">
-            <h3>Local tops and bottoms in the order book: what four trained models actually see</h3>
-            <p>We marked every local top and bottom on 171 days of per-second Bitcoin order-book data — 734 of them, defined by a rule rather than by hand — and asked four trained market-state detectors whether they can see them. The zone itself is invisible. The moment of the extremum is not, and neither is &#x27;an extremum within the next hour&#x27;. But a plain price range from the same window beats the order book at both, and the honest edge turns out to live somewhere else entirely: in telling a top from a bottom when price itself has nothing to say.</p>
-            <div class="date">6 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/no-classes-in-the-order-book-only-one-state/">
-          <div class="thumb"><img src="articles/no-classes-in-the-order-book-only-one-state/img/BTC_map_en.png" alt="Windows in descriptor space, real data versus the shuffled null" loading="lazy"><span class="tag">Window classes</span></div>
-          <div class="cbody">
-            <h3>There Are No Classes in the Order Book — Only One State That Survives</h3>
-            <p>We locked a 210-second window to its own 1,680 numbers — eight order-book features, no norm, no price, no clock — and asked whether the market falls into classes. It does not: the gap statistic sits at 0.0017, silhouette matches noise, and at some K the shuffled null is more stable than the data. One state survives every check: 9.8% of windows where flows run hot and both walls thin out, followed by ×1.78 the usual hourly range.</p>
-            <div class="date">6 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/event-classes-found-without-a-teacher/">
-          <div class="thumb"><img src="articles/event-classes-found-without-a-teacher/img/BTC_map_en.png" alt="" loading="lazy"><span class="tag">Event classes</span></div>
-          <div class="cbody">
-            <h3>Event Classes Found Without a Teacher: 3 Survive, 60% Are Noise</h3>
-            <p>We asked the order book to sort its own events into classes — 2,786 events, eight features, no price and no human labels. Out of 512 configurations only 5 produced anything stable, 60% of events belong to no class at all, and the three that do exist raise volatility while leaving direction at a coin flip.</p>
-            <div class="date">3 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/the-alphabet-of-the-order-book-signal-states/">
-          <div class="thumb"><img src="articles/the-alphabet-of-the-order-book-signal-states/img/classify_en.png" alt="" loading="lazy"><span class="tag">Signals</span></div>
-          <div class="cbody">
-            <h3>The Alphabet of the Order Book: 6,561 Possible States, 333 Real Ones</h3>
-            <p>We described the order book as a single word: eight features, three states each. Of the 6,561 words that could exist, only 333 ever occur — and when we tested that alphabet out of sample, it described the market well and predicted it poorly.</p>
-            <div class="date">3 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/signal-standard-from-calm-to-calm-btc/">
-          <div class="thumb"><img src="articles/signal-standard-from-calm-to-calm-btc/img/BTC_overview_en.png" alt="" loading="lazy"><span class="tag">Signal standard · BTC</span></div>
-          <div class="cbody">
-            <h3>From Calm to Calm: a Standard for What Counts as a Signal (BTC)</h3>
-            <p>We stopped defining market signals with a stopwatch. A signal is a continuous departure from calm, bounded by calm on both sides — the market decides where it starts and ends. Here is the standard, applied second by second to 167 days of BTC, with every event classified and located on the price path.</p>
-            <div class="date">3 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/resistance-against-support/">
-          <div class="thumb"><img src="articles/resistance-against-support/img/cross_lag_en.png" alt="" loading="lazy"><span class="tag">Side vs side</span></div>
-          <div class="cbody">
-            <h3>Side Against Side: Resistance and Support Compared</h3>
-            <p>We put all six order-book features grouped into the resistance side and the support side into one study and asked how the pieces relate, which one leads, and what the combination predicts. Same boundary as always: it speaks about size, not side.</p>
-            <div class="date">4 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/flow-against-the-wall/">
-          <div class="thumb"><img src="articles/flow-against-the-wall/img/cross_interaction_en.png" alt="" loading="lazy"><span class="tag">Flow vs wall</span></div>
-          <div class="cbody">
-            <h3>Flow Against the Wall: When Volume Meets Resting Liquidity</h3>
-            <p>We put executed volume hitting the resting wall on the opposite side into one study and asked how the pieces relate, which one leads, and what the combination predicts. Same boundary as always: it speaks about size, not side.</p>
-            <div class="date">4 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/lifecycle-of-a-sell-wall/">
-          <div class="thumb"><img src="articles/lifecycle-of-a-sell-wall/img/cross_xcorr_en.png" alt="" loading="lazy"><span class="tag">Wall lifecycle</span></div>
-          <div class="cbody">
-            <h3>The Life of a Sell Wall: Standing, Growing, Thinning</h3>
-            <p>We put the three phases of the same sell-side wall — how much stands there, what arrives, what leaves into one study and asked how the pieces relate, which one leads, and what the combination predicts. Same boundary as always: it speaks about size, not side.</p>
-            <div class="date">4 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/executed-sell-volume-alone/">
-          <div class="thumb"><img src="articles/executed-sell-volume-alone/img/solo_peak_en.png" alt="" loading="lazy"><span class="tag">Sell volume</span></div>
-          <div class="cbody">
-            <h3>Executed Sell Volume, Measured Alone</h3>
-            <p>We isolated executed sell volume — one feature, no partner, no composite — and measured what it predicts second by second across six coins. The answer is the size of the next move, never its side.</p>
-            <div class="date">3 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/executed-buy-volume-alone/">
-          <div class="thumb"><img src="articles/executed-buy-volume-alone/img/solo_impact_en.png" alt="" loading="lazy"><span class="tag">Buy volume</span></div>
-          <div class="cbody">
-            <h3>Executed Buy Volume, Measured Alone</h3>
-            <p>We isolated executed buy volume — one feature, no partner, no composite — and measured what it predicts second by second across six coins. The answer is the size of the next move, never its side.</p>
-            <div class="date">3 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/drain-out-of-the-buy-wall/">
-          <div class="thumb"><img src="articles/drain-out-of-the-buy-wall/img/solo_autocorr_en.png" alt="" loading="lazy"><span class="tag">Buy drain</span></div>
-          <div class="cbody">
-            <h3>Drain Out of the Buy Wall: Liquidity Leaving Before the Move</h3>
-            <p>We isolated drain out of the buy wall — one feature, no partner, no composite — and measured what it predicts second by second across six coins. The answer is the size of the next move, never its side.</p>
-            <div class="date">3 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/build-up-into-the-buy-wall/">
-          <div class="thumb"><img src="articles/build-up-into-the-buy-wall/img/solo_dist_heat_BTC_en.png" alt="" loading="lazy"><span class="tag">Buy build-up</span></div>
-          <div class="cbody">
-            <h3>Build-Up Into the Buy Wall: What Arriving Liquidity Predicts</h3>
-            <p>We isolated build-up into the buy wall — one feature, no partner, no composite — and measured what it predicts second by second across six coins. The answer is the size of the next move, never its side.</p>
-            <div class="date">3 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/drain-out-of-the-sell-wall/">
-          <div class="thumb"><img src="articles/drain-out-of-the-sell-wall/img/solo_spikes_en.png" alt="" loading="lazy"><span class="tag">Sell drain</span></div>
-          <div class="cbody">
-            <h3>Drain Out of the Sell Wall: Liquidity Leaving Before the Move</h3>
-            <p>We isolated drain out of the sell wall — one feature, no partner, no composite — and measured what it predicts second by second across six coins. The answer is the size of the next move, never its side.</p>
-            <div class="date">3 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/build-up-into-the-sell-wall/">
-          <div class="thumb"><img src="articles/build-up-into-the-sell-wall/img/solo_timeline_BTC_en.png" alt="" loading="lazy"><span class="tag">Sell build-up</span></div>
-          <div class="cbody">
-            <h3>Build-Up Into the Sell Wall: What Arriving Liquidity Predicts</h3>
-            <p>We isolated build-up into the sell wall — one feature, no partner, no composite — and measured what it predicts second by second across six coins. The answer is the size of the next move, never its side.</p>
-            <div class="date">3 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/the-resting-buy-wall-alone/">
-          <div class="thumb"><img src="articles/the-resting-buy-wall-alone/img/solo_states_en.png" alt="" loading="lazy"><span class="tag">Buy wall</span></div>
-          <div class="cbody">
-            <h3>The Resting Buy Wall, Measured Alone</h3>
-            <p>We isolated the resting buy wall — one feature, no partner, no composite — and measured what it predicts second by second across six coins. The answer is the size of the next move, never its side.</p>
-            <div class="date">3 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/the-resting-sell-wall-alone/">
-          <div class="thumb"><img src="articles/the-resting-sell-wall-alone/img/solo_sweep_en.png" alt="" loading="lazy"><span class="tag">Sell wall</span></div>
-          <div class="cbody">
-            <h3>The Resting Sell Wall, Measured Alone</h3>
-            <p>We isolated the resting sell wall — one feature, no partner, no composite — and measured what it predicts second by second across six coins. The answer is the size of the next move, never its side.</p>
-            <div class="date">3 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/support-cycle-build-up-versus-drain/">
-          <div class="thumb"><img src="articles/support-cycle-build-up-versus-drain/img/autocorr_en.png" alt="" loading="lazy"><span class="tag">Support cycle</span></div>
-          <div class="cbody">
-            <h3>The Support Cycle: Liquidity Arriving vs Leaving</h3>
-            <p>We measured the same buy-side wall growing and thinning second by second across six coins, and asked the only question that matters: does it tell you anything about what happens next? It does — about size, not direction.</p>
-            <div class="date">3 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/resistance-cycle-build-up-versus-drain/">
-          <div class="thumb"><img src="articles/resistance-cycle-build-up-versus-drain/img/dist_heat_BTC_en.png" alt="" loading="lazy"><span class="tag">Resistance cycle</span></div>
-          <div class="cbody">
-            <h3>The Resistance Cycle: Liquidity Arriving vs Leaving</h3>
-            <p>We measured the same sell-side wall growing and thinning second by second across six coins, and asked the only question that matters: does it tell you anything about what happens next? It does — about size, not direction.</p>
-            <div class="date">3 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/wall-build-up-liquidity-arriving/">
-          <div class="thumb"><img src="articles/wall-build-up-liquidity-arriving/img/ep_behavior_BTC_en.png" alt="" loading="lazy"><span class="tag">Inflow</span></div>
-          <div class="cbody">
-            <h3>Liquidity Arriving: What a Growing Wall Says Next</h3>
-            <p>We measured fresh resting liquidity arriving into the book second by second across six coins, and asked the only question that matters: does it tell you anything about what happens next? It does — about size, not direction.</p>
-            <div class="date">3 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/wall-drain-liquidity-pulled-before-the-move/">
-          <div class="thumb"><img src="articles/wall-drain-liquidity-pulled-before-the-move/img/timeline_BTC_en.png" alt="" loading="lazy"><span class="tag">Drain</span></div>
-          <div class="cbody">
-            <h3>Liquidity Pulled: What Happens When a Wall Drains</h3>
-            <p>We measured resting liquidity being pulled away from the book second by second across six coins, and asked the only question that matters: does it tell you anything about what happens next? It does — about size, not direction.</p>
-            <div class="date">3 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/resting-walls-what-thick-liquidity-predicts/">
-          <div class="thumb"><img src="articles/resting-walls-what-thick-liquidity-predicts/img/storms_en.png" alt="" loading="lazy"><span class="tag">Walls</span></div>
-          <div class="cbody">
-            <h3>The Wall That Goes Quiet: What Resting Liquidity Predicts</h3>
-            <p>We measured resting limit liquidity sitting on both sides of the book second by second across six coins, and asked the only question that matters: does it tell you anything about what happens next? It does — about size, not direction.</p>
-            <div class="date">3 August 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/about-market-research-lab/">
-          <div class="thumb"><img src="articles/about-market-research-lab/img/dir_sweep_en.png" alt="" loading="lazy"><span class="tag">About</span></div>
-          <div class="cbody">
-            <h3>About Market Research Lab — What We Collect and Why</h3>
-            <p>Most market commentary is storytelling. We built something testable instead: 166 days of second-by-second order-book data across six coins, and a rule that nothing gets published unless it survives out-of-sample.</p>
-            <div class="date">29 July 2026</div>
-          </div>
-        </a>
-
-
-        <a class="card" href="articles/volume-is-fuel-not-steering-wheel/">
-          <div class="thumb"><img src="articles/volume-is-fuel-not-steering-wheel/img/vol_sweep_en.png" alt="" loading="lazy"><span class="tag">Volume</span></div>
-          <div class="cbody">
-            <h3>Volume Is the Fuel — Not the Steering Wheel</h3>
-            <p>Everyone asks whether volume pushes price up or down. We measured it second-by-second on six coins. The honest answer surprises people.</p>
-            <div class="date">25 July 2026</div>
-          </div>
-        </a>
-
-
-        <!-- РЕАЛЬНА СТАТТЯ: посилання на окрему сторінку -->
-        <a class="card" href="articles/order-flow-predicts-volatility/">
-          <div class="thumb"><span class="tag">Volatility</span></div>
-          <div class="cbody">
-            <h3>Order flow predicts how much, not which way</h3>
-            <p data-i18n="a1">Across six coins, flow surges line up with bigger moves — but not their direction. What that means for anyone trading the tape.</p>
-            <div class="date">15 July 2026</div>
-          </div>
-        </a>
-
+    <!-- mfr-home:body -->
+    <nav class="jump" aria-label="Sections"><a href="#bots">Live bots — every result</a> <a href="#bot7">The road to Bot 7</a> <a href="#book">Order-book research</a> <a href="#dataset">Open dataset</a> <a href="/mfr-digest.md">AI digest (.md)</a></nav>
+    <section class="pinned" id="start">
+      <div class="h2">Start here</div>
+      <div class="pgrid">
+      <a class="pcard top" href="articles/line-7-live-trading-report/">
+        <span class="ptag">📌 Pinned · live trading report</span>
+        <h2>All our bots have been tested live. The best one is Line 7.</h2>
+        <div class="pstats"><div><b>+5.44%</b><span>Line 7, 5 Oct – 28 Oct</span></div><div><b>−5.29%</b><span>BTC buy &amp; hold, same days</span></div><div><b>5 of 6</b><span>trades closed at take-profit</span></div></div>
+        <p>More than a dozen bots were built from this research. Line 7 — two small transformers that read 160 hours of order book as one picture — is the only one ahead of buy &amp; hold in live trading: +5.44% since 5 Oct while BTC moved −5.29%. Every trade is in the report.</p>
+        <span class="go">Read the Line 7 report →</span>
+      </a>
+      <a class="pcard" href="articles/how-to-read-this-site-in-five-minutes/">
+        <span class="ptag">📌 Pinned · start here</span>
+        <h2>How to read this site in 5 minutes</h2>
+        <p>83 studies in three series, how each article is built — and one Markdown file you can hand
+        to any AI to ask questions about all of them at once.</p>
+        <span class="go">Open the guide →</span>
+      </a>
       </div>
-    </section>
-  </div>
-
-  <footer>
-    <div class="foot" style="display:block;padding-bottom:14px">
+      <p class="nfa-line">Everything on this site is research, not financial advice.</p>
+      <div class="dataset" id="dataset">
       <b data-i18n="ds_t">Open dataset — BTC order book, one row per second</b><br>
       <span class="muted" data-i18n="ds_d">12,129,080 rows, 14 Feb – 5 Aug 2026, duplicate timestamps removed.
       Columns: timestamp, price_avg and the eight order-book features used throughout this research.
@@ -1013,12 +331,875 @@
       macOS/Linux: <code>cat BTC_1s_dataset.zip.part* &gt; BTC_1s_dataset.zip</code> ·
       Windows: <code>copy /b BTC_1s_dataset.zip.part0+...part3 BTC_1s_dataset.zip</code>.
       sha256 of the joined file: <code>18fdcb02848ac1ece7d5a0482c59de9992929995bd1bc82d2dce98f86fb364a2</code></span>
-    </div>
+      </div>
+    </section>
+
+    <section class="series" id="bots">
+      <div class="sh"><h2 class="st">Live bots — every result</h2><span class="sn">7 studies</span></div>
+      <p class="sd">Bots built from this research and run live: winners and losers, every trade.</p>
+      <div class="grid">
+        <a class="card" href="articles/line-7-live-trading-report/">
+          <div class="thumb"><img src="articles/line-7-live-trading-report/img/l7_equity_en.png" alt="Line 7 paper account from $10,000 to $10,544 against buy and hold falling 5.3% over the same days" width="1104" height="575" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Live report · Line 7</span>
+            <h3>Line 7: The Best of All Our Bots — Live Trading Report, Every Trade</h3>
+            <p>We have built and tested more than a dozen trading bots on the research published here. Line 7 is the only one ahead of buy &amp; hold in live trading: from 5 October to 28 October 2026 its paper account made +5.44% after costs while BTC fell 5.29% — 6 trades, 5 take-profits. Real positions on the exchange: +1.39 USDT. Six trades are not a track record; this report lists every one of them and is updated as trades close. Research, not financial advice.</p>
+            <div class="date">28 October 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/bot-7-from-an-order-book-canvas-to-live-trading-every-result-every-trade/">
+          <div class="thumb"><img src="articles/bot-7-from-an-order-book-canvas-to-live-trading-every-result-every-trade/img/tb43_val_en.png" alt="BTC price over the validation month with the buy-only bot&#x27;s nine long trades, all closed at take-profit" width="1104" height="575" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Bot 7 overview</span>
+            <h3>Bot 7 — From an Order-Book Canvas to Live Trading: Every Stretch, Every Result, Every Real Trade</h3>
+            <p>Bot 7 is the end of a long research line: a transformer reads 30 hours of BTC order book as one canvas and says how likely it is that this moment sits in a 2.3% bottom — or, in its second version, a 2.3% top. This article puts the whole path in one place: how the networks were trained, what each version made on training-period weeks it was not fitted on, on validation, on days nobody had looked at, and since it went live. All live trades so far are listed at the end, model and exchange side by side. As of 9 October 2026 08:20 UTC the record is three closed trades: two take-profits and one stop.</p>
+            <div class="date">9 October 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/bot-6-line-61-nine-trades-eight-winners/">
+          <div class="thumb"><img src="articles/bot-6-line-61-nine-trades-eight-winners/img/61_equity_en.png" alt="① One trade at a time: how line 61 works" width="1053" height="443" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Line 61 live</span>
+            <h3>Bot 6, Line 61: Nine Trades, Eight Winners, and Why We Are Not Celebrating</h3>
+            <p>Line 61 of Bot 6 holds one position at a time and has been live since 17 July 2026: 31 days, 9 closed trades, +11.81 USD on a 100 USD slot, win rate 89%. Its entry gate is agreement between two independent models plus a context check; its exits are a 2% target, a 4% stop and a hard 72-hour clock. This is the complete record, including the comparison with its twin line running the identical recipe — which is the part that keeps us honest.</p>
+            <div class="date">17 August 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/bot-6-line-60-a-bot-that-mostly-waits/">
+          <div class="thumb"><img src="articles/bot-6-line-60-a-bot-that-mostly-waits/img/60_equity_en.png" alt="① One trade at a time: how line 60 works" width="1053" height="443" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Line 60 live</span>
+            <h3>Bot 6, Line 60: A Bot That Mostly Waits — and What the Clock Costs It</h3>
+            <p>Line 60 of Bot 6 holds one position at a time and has been live since 15 July 2026: 33 days, 9 closed trades, +0.68 USD on a 100 USD slot, win rate 44%. Its entry gate is agreement between two independent models plus a context check; its exits are a 2% target, a 4% stop and a hard 72-hour clock. This is the complete record, including the comparison with its twin line running the identical recipe — which is the part that keeps us honest.</p>
+            <div class="date">17 August 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/bot-4-forty-days-of-live-paper-trading/">
+          <div class="thumb"><img src="articles/bot-4-forty-days-of-live-paper-trading/img/bot4_equity_en.png" alt="① The rules it has been playing by, unchanged" width="1056" height="443" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Bot 4 live</span>
+            <h3>Bot 4: What Forty Days of Live Paper Trading Actually Look Like</h3>
+            <p>Bot 4 has been trading live on paper since 09 July 2026 — 40 days, 49 closed trades, +29.53 USD on 600 USD of capital, a 80% win rate, against +1.49% on average for buying and holding the same coins. This is the full record: the rules it never deviates from, every closed trade, the open positions right now, and the hourly referee that can hand the account to a freshly trained challenger — which has happened 4 times so far.</p>
+            <div class="date">17 August 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/gates-the-part-of-a-bot-that-decides-not-to-trade/">
+          <div class="thumb"><img src="articles/gates-the-part-of-a-bot-that-decides-not-to-trade/img/gates_tradeoff_en.png" alt="① A gate buys precision with coverage" width="1157" height="501" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Gates</span>
+            <h3>Gates: The Part of a Trading Bot That Decides Not to Trade</h3>
+            <p>A trading bot&#x27;s model produces a number; its gate decides whether that number is worth a fee. This article measures what gates actually cost. Demanding a signal persist two bars instead of one raises precision from 0.209 to 0.238 and throws away 25% of the opportunities. Bot 4 stacks four gates and still lands inside the noise across random seeds. Bot 6 gates on agreement between two models — and two live lines running that identical gate for a month finished +11.81 and +0.68 USD apart. Gates buy precision with coverage; nothing here is free.</p>
+            <div class="date">17 August 2026</div>
+          </div>
+        </a>
+      </div>
+      <details class="more"><summary>Show all 7 →</summary>
+      <div class="grid">
+        <a class="card" href="articles/typhoon-plus-a-signal-that-finds-the-zones-and-still-loses-money/">
+          <div class="thumb"><img src="articles/typhoon-plus-a-signal-that-finds-the-zones-and-still-loses-money/img/tplus_zones_en.png" alt="① The zones a perfect trader would use" width="1088" height="466" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Typhoon+</span>
+            <h3>Typhoon+: A Signal That Finds the Perfect Trader&#x27;s Zones — and Still Loses Money</h3>
+            <p>We drew the zones a perfect trader would use — 0.9% zigzag turns, a 0.15% band around each one — and found that the price sits inside them barely 3% of the time. A single gradient-boosting model, pooled over six coins, then finds 74% of those zones on days it never saw. It also fires false 86% of the time, leans mostly on price geometry rather than the order book, and loses 122% when traded plainly against 93% for buy &amp; hold. This is the article about a signal that finds the right places and still cannot pay the fee.</p>
+            <div class="date">17 August 2026</div>
+          </div>
+        </a>
+      </div>
+      </details>
+    </section>
+
+    <section class="series" id="bot7">
+      <div class="sh"><h2 class="st">The road to Bot 7</h2><span class="sn">31 studies</span></div>
+      <p class="sd">One question at a time: from zigzag legs to a network that reads 160 hours of order book as one canvas.</p>
+      <div class="grid">
+        <a class="card" href="articles/the-pair-that-behaves-the-same-on-three-stretches-of-data/">
+          <div class="thumb"><img src="articles/the-pair-that-behaves-the-same-on-three-stretches-of-data/img/tb42_three_en.png" alt="Money of the five most consistent pairs on held-out, validation and test; the top pair makes 1087, 1147 and 1059" width="1104" height="575" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Same on three stretches</span>
+            <h3>The Pair That Behaves the Same on Three Stretches of Data — How the Live Bot&#x27;s Networks Were Chosen</h3>
+            <p>Ranking 440 buy-and-sell pairs by money on the month they were picked on gives a list of lucky pairs. So we asked a different question: which pair behaves the same — same time in the market, same number of longs and shorts per day, same daily growth — on three stretches of BTC: held-out weeks from training, the validation month, and fourteen days after validation that no step of the selection had touched. Of 440 pairs, 180 traded on all three. The most consistent one, BUY_l3 epoch 3 with SELL_l2 epoch 17, made $1087, $1147 and $1059 on the three stretches. It became the live bot.</p>
+            <div class="date">9 October 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/one-account-two-networks-440-buy-and-sell-pairs-on-validation/">
+          <div class="thumb"><img src="articles/one-account-two-networks-440-buy-and-sell-pairs-on-validation/img/tb41_top_en.png" alt="Ten best buy-and-sell pairs on validation, from 1211 to 1236 dollars" width="1104" height="667" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Buy-and-sell bot</span>
+            <h3>One Account, Two Networks — 440 Buy-and-Sell Pairs on Validation, and Why the Best Still Trails the Market</h3>
+            <p>A buy network and a sell network were put on one $1000 account under one set of rules: one trade per 2.3% zigzag leg, take-profit 1.9%, stop 2.5%, and a signal from the other side closes the position. Every one of the 22 &quot;potentially best&quot; buy networks was paired with every one of the 20 sell networks — 440 pairs — and each pair traded the full validation month. 438 of them ended in profit. The best made $1235.78, a gain of 23.6%. Buying and holding BTC over the same month made about 29%.</p>
+            <div class="date">9 October 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/picking-a-network-by-the-width-of-its-good-zone-not-its-best-point/">
+          <div class="thumb"><img src="articles/picking-a-network-by-the-width-of-its-good-zone-not-its-best-point/img/tb40_buy_en.png" alt="For buy networks, the widest-zone pick earns 28 to 155 dollars; in four families a much richer but narrow epoch is added" width="1104" height="763" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Potentially best networks</span>
+            <h3>Picking a Network by the Width of Its Good Zone, Not Its Best Point — 42 &quot;Potentially Best&quot; Networks</h3>
+            <p>Every trained network becomes a signal through two knobs: the window W over which its probabilities are summed and the threshold θ that sum must reach. Pick the single best cell of that grid and you usually pick noise. So each of 450 buy candidates and 75 sell candidates was traded on a 72 × 50 grid of W and θ, and for each one we measured how wide the area is where profit stays within 90% of its best. In every loss family the network with the widest such zone was kept — plus, if another epoch earned more than twice as much, that one too. The result: 22 buy and 20 sell networks, all scored on the same validation month.</p>
+            <div class="date">9 October 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/teaching-the-network-to-see-tops-sell-pivots-on-btc/">
+          <div class="thumb"><img src="articles/teaching-the-network-to-see-tops-sell-pivots-on-btc/img/tb39_rarity_en.png" alt="Share of steps inside a top zone: 1.76% in training, 2.77% held-out, 1.18% in validation" width="1104" height="575" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Sell pivots</span>
+            <h3>Teaching the Network to See Tops — Sell Pivots on BTC, One Change and Eighteen Training Runs</h3>
+            <p>The bottom-finding network that powers our buy-only bot was rebuilt for the other side of the market with exactly one change: the label is now a 2.3% top zone instead of a bottom zone. Same canvas, same split, same eighteen training runs with different loss functions. Tops turned out to be rarer and harder: on validation only 62 of 5,265 ten-minute steps sit in a top zone. Plain losses reached an F1 of 0.047–0.084 against a base of 0.023; the &quot;ladder&quot; target that accepts a two-hour neighbourhood reached 0.19–0.21 against 0.13. Fine-tuning further did not help, and one loss never fired at all.</p>
+            <div class="date">9 October 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/when-a-fake-buy-signal-is-really-a-deeper-bottom-rule-7-1/">
+          <div class="thumb"><img src="articles/when-a-fake-buy-signal-is-really-a-deeper-bottom-rule-7-1/img/tb38_fakes_en.png" alt="Rejected signals: 32 to 15 on validation and 36 to 0 on unseen days when rule 7.1 is added" width="1104" height="575" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Rule 7.1</span>
+            <h3>When a &quot;Fake&quot; Buy Signal Is Really a Deeper Bottom — Rule 7.1, Tested on Validation and Unseen Days</h3>
+            <p>Our buy-only bot throws away a buy signal if price has not risen 2.3% since the previous signal — a repeat call inside the same dip is treated as fake. On the nine unseen days after validation that filter rejected 36 signals and left one trade. Rule 7.1 asks one more question before rejecting: did price, between the last peak and now, make a lower bottom within 1% of the current price? If so, the signal is real, and the take-profit is measured from that lower bottom. With the rule, fakes on unseen days fell from 36 to 0, trades rose from 1 to 3, and the result from $1008.45 to $1034.12.</p>
+            <div class="date">9 October 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/a-buy-only-bot-on-nine-days-it-never-saw/">
+          <div class="thumb"><img src="articles/a-buy-only-bot-on-nine-days-it-never-saw/img/tb37_fresh_en.png" alt="BTC price from 21 to 30 September 2026 with the bot&#x27;s three long trades drawn from entry to take-profit exit" width="1104" height="575" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Bot 7.0 on unseen days</span>
+            <h3>A Buy-Only Bot on Nine Days It Never Saw — Three Take-Profits and a Draw With Buy &amp; Hold</h3>
+            <p>The buy-only bot from the previous study had one weakness we wrote down plainly: its window, threshold and stop were chosen on the same 38 validation days it was then scored on. So we froze it and let it walk through the days the data collector recorded after validation ended — 21 to 30 September 2026, nine days nobody had looked at. It opened three trades and closed all three at take-profit, no stop-outs: $1000 became $1032.92. Buying and holding over the same steps gave $1035.51. A clean run, and a draw with the market.</p>
+            <div class="date">9 October 2026</div>
+          </div>
+        </a>
+      </div>
+      <details class="more"><summary>Show all 31 →</summary>
+      <div class="grid">
+        <a class="card" href="articles/from-a-canvas-of-the-leg-to-a-buy-only-bot-what-survived/">
+          <div class="thumb"><img src="articles/from-a-canvas-of-the-leg-to-a-buy-only-bot-what-survived/img/tb36_corr_en.png" alt="Correlation between refined signal windows of leg starts, leg ends, corrections and leg bodies across different legs" width="1104" height="575" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Canvas and the buy bot</span>
+            <h3>From a Canvas of the Whole Leg to a Buy-Only Bot — What Survived, and What It Earned</h3>
+            <p>The last study of the series put a whole leg — and 50 rows on either side — onto one canvas and asked a network to mark pivots and corrections on it. On labelled windows it hit 38% of pivot zones; run live over the series, 5% of its pivot calls landed. A longer canvas, 160 hours on 100-second records, and windows of uniform length lifted precision to about 30%. Its best trick: 29% of pivots flagged a median 2.4 hours before the zigzag confirms them. The result became a paper-trading buy-only bot for BTC. On 38 days of validation it made +10.3% with eight trades and no stop-outs — while buying and holding made +36.6%, and its parameters were tuned on those same days.</p>
+            <div class="date">30 September 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/how-full-is-this-leg-a-network-that-finally-beats-the-counter/">
+          <div class="thumb"><img src="articles/how-full-is-this-leg-a-network-that-finally-beats-the-counter/img/tb35_counter_en.png" alt="Fullness AUC and share error of a counter, a network on the full leg canvas, and a network on its last 16 rows, on unseen weeks" width="1104" height="575" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Leg fullness</span>
+            <h3>How Full Is This Leg? A Network That Finally Beats the Counter — by Reading Its Last Rows</h3>
+            <p>Give a network the unfinished leg — everything from the last confirmed pivot to now, as one fixed-size canvas — and ask how complete it is. For the first time in this series a model beats the simple counter of events since the pivot on unseen weeks: fullness AUC 0.77 against 0.70, error 0.18 against 0.24. The surprise is where the knowledge comes from: the last 16 rows of the canvas do as well as all 500. On a 30-second standard with sliding windows the gap widens (0.78 vs 0.62), and the network locates a pivot inside its window with AUC 0.96. What it still cannot do cleanly is call &quot;the leg is over&quot; live: nine of ten such signals miss.</p>
+            <div class="date">30 September 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/where-a-leg-really-ends-four-events-earlier-than-the-zigzag-says/">
+          <div class="thumb"><img src="articles/where-a-leg-really-ends-four-events-earlier-than-the-zigzag-says/img/tb34_anchor_en.png" alt="Strength and symmetry of the pivot signature for four ways of placing the leg boundary: EMA-10 pivot, open extreme, close extreme, oracle" width="1104" height="575" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Where a leg ends</span>
+            <h3>Where a Leg Really Ends — Four Events Earlier Than the Zigzag Says</h3>
+            <p>We went looking for a unique, universal signature of a pivot in 531 legs of six coins. The book turned out to be a mirror — tops and bottoms read with one ruler once buyer and seller features swap. The zigzag&#x27;s pivot turned out to sit in the wrong place: the true boundary of a leg is the extreme of the closing price within ±25 events, four events earlier, and there the signature becomes symmetric and one event sharp. What we did not find is uniqueness: a 0.5% correction carries the same signature, weaker. The signature measures the strength of a turn — not whether the leg is over.</p>
+            <div class="date">30 September 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/can-the-networks-outputs-become-a-buy-sell-signal-a-simple-zigzag-says-no/">
+          <div class="thumb"><img src="articles/can-the-networks-outputs-become-a-buy-sell-signal-a-simple-zigzag-says-no/img/tb33_race_en.png" alt="Share of 60 validation reversals caught within 50 events by three combiners, a memory network, a same-frequency coin and a causal 1.2% zigzag" width="1104" height="575" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Buy / sell from networks</span>
+            <h3>Can Our Networks&#x27; Outputs Become a Buy/Sell Signal? A Simple 1.2% Zigzag Says No</h3>
+            <p>Our networks each say something about a leg: it is ending, it is 80% done, this is a reversal zone. None says &quot;buy&quot; or &quot;sell&quot;. So we combined their outputs into one decision and raced it against three rivals: each channel alone, a coin with the same number of signals, and a causal 1.2% zigzag on the same price. The combination found 40% of reversals within ±50 events — where chance at that frequency finds 30%. The plain zigzag found 72%. With $1,000 on BTC, the networks ended level with the coin; the zigzag ended next to buy-and-hold. What the networks do know is where a reversal was.</p>
+            <div class="date">30 September 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/a-loss-ladder-for-five-trained-networks-and-the-win-that-was-a-dropout-bug/">
+          <div class="thumb"><img src="articles/a-loss-ladder-for-five-trained-networks-and-the-win-that-was-a-dropout-bug/img/tb32_ladder_en.png" alt="Change of each of five networks&#x27; fixed validation metric after the loss ladder, next to the measurement noise" width="1104" height="575" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Loss ladder</span>
+            <h3>A Loss Ladder for Five Trained Networks — and the Biggest Win That Was a Dropout Bug</h3>
+            <p>We took five approved networks from this series and tried to improve them without retraining: change the loss function between epochs, raise the penalty step by step, keep an epoch only if a fixed metric on validation improves. 124 attempts, 6.9 machine hours. One network truly improved — the one whose own training had stopped too early — and it improved from a smaller learning rate, not a new loss. The spectacular result, +0.47 on the zone model, vanished when the saved weights were measured again in a separate process: the GPU backend had left dropout switched on during evaluation.</p>
+            <div class="date">30 September 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/correction-and-reversal-are-one-event-of-different-strength/">
+          <div class="thumb"><img src="articles/correction-and-reversal-are-one-event-of-different-strength/img/tb31_base_en.png" alt="Spread of the support-per-flow feature with no base, with the leg&#x27;s own mean removed, and with the previous leg&#x27;s mean removed, for up and down legs" width="1104" height="575" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">One axis: normal → correction → pivot</span>
+            <h3>A Correction and a Reversal Are One Event of Different Strength — What the Book Shows Inside a Leg</h3>
+            <p>Every leg of a zigzag holds its own common level in the order book, and removing it would make the unusual events stand out — if only it could be known in time. It cannot: the previous leg predicts it so poorly that subtracting it adds noise. What the book does show is a reversal zone of about 15 events with a clear signature — and the same signature, weaker, inside every correction. Normal event, correction, pivot: one axis. Models find the pivot zone at AUC 0.72–0.75 and put 8.5× the base rate in their most confident answers, but no memory, loss or penalty separates a pivot from a correction without breaking the correction channel.</p>
+            <div class="date">30 September 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/the-book-sees-the-edge-of-a-leg-not-its-end/">
+          <div class="thumb"><img src="articles/the-book-sees-the-edge-of-a-leg-not-its-end/img/tb30_profile_en.png" alt="Rank of three order-book features along the ten tenths of BTC zigzag legs, U-shaped for flow and price, inverted for book-per-flow" width="1104" height="575" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Edge, not end</span>
+            <h3>The Book Sees the Edge of a Leg, Not Its End — Event by Event on BTC</h3>
+            <p>Event by event on BTC, every feature of our order-book class carries its place in the leg: a U-shaped profile that holds inside individual legs, with the same sign in 80% of them. But what it reads is the distance to a pivot, not the progress through the leg. It tells a real end of a leg from a shallow 0.5% correction (AUC 0.669), and loses that ability as the correction deepens — at 1.5% there is nothing. A detector of &quot;this is the tail of a leg&quot; lifts precision up to ×19 over the base, yet cannot tell a tail from a head. The book knows it is at an edge; it does not know which one.</p>
+            <div class="date">30 September 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/the-order-book-along-a-leg-slow-legs-thin-edges-and-a-signal-at-the-end/">
+          <div class="thumb"><img src="articles/the-order-book-along-a-leg-slow-legs-thin-edges-and-a-signal-at-the-end/img/tb29_profile_en.png" alt="Rank of four features of the order-book class along the ten tenths of a zigzag leg: U-shape for flow and price, inverted for book-per-flow" width="1104" height="575" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">The class along the leg</span>
+            <h3>The Order Book Along a Leg — Slow Legs, Thin Edges, and a Signal at the End That Beats Chance ×4.6</h3>
+            <p>We laid the seven features of our best order-book class along 554 zigzag legs of six coins. Every feature marks the edges of a leg, with the book thinning per unit of flow right before a pivot. The same features tell a short leg from a long one early — not the exact length, but its distribution. A memory network trained on &quot;the last 5% of the leg&quot; puts 23% of its loudest calls there, against 5% by chance. And the honest cost is written next to each number: detecting a new leg takes 12–16 events, a price-path detector still does better, and the zigzag labels themselves arrive late.</p>
+            <div class="date">30 September 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/a-leg-moves-at-its-edges-and-you-see-the-new-one-only-after-it-starts/">
+          <div class="thumb"><img src="articles/a-leg-moves-at-its-edges-and-you-see-the-new-one-only-after-it-starts/img/tb28_profile_en.png" alt="Share of the move of a 2.3% zigzag leg made in each of its ten tenths: large at both ends, small in the middle" width="1104" height="575" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Edges of the leg</span>
+            <h3>A Leg Moves at Its Edges — and You See the New One Only After It Starts</h3>
+            <p>Split every 2.3% zigzag leg of six coins into tenths and measure where the price actually travels: 39% of the move happens in the first and last tenth, three times more per tenth than in the middle. The start of a leg reveals its direction and its volatility, never its length or its ending. A detector for &quot;a new leg has begun&quot; reaches 63% precision 21 events after the pivot and 98% after 31 — confirmation, not foresight. And twelve numbers about the price path beat every order-book class in the project at that task.</p>
+            <div class="date">30 September 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/the-pivot-zone-plus-minus-015-percent-seventeen-ways-to-describe-an-event/">
+          <div class="thumb"><img src="articles/the-pivot-zone-plus-minus-015-percent-seventeen-ways-to-describe-an-event/img/tb27_k_en.png" alt="AUC of recognising the ±0.15% pivot zone on unseen weeks for batches of 1 to 11 events" width="1104" height="575" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Pivot zone ±0.15%</span>
+            <h3>The ±0.15% Pivot Zone — Seventeen Ways to Describe an Event, One Honest Ceiling of 0.70</h3>
+            <p>Near every 2.3% pivot, price lingers within 0.15% of the turning level for a while — a median of 11 events, about 38 minutes, 2% of the whole series. Is that stretch recognisable from the order book alone? We asked gradient boosting on every event of six coins, with batches of 1 to 11 events and all 17 event classes this project has built. The answer is a consistent &quot;a little&quot;: AUC 0.61–0.66 on the main class, 0.701 at best on raw book levels — and at a working threshold, 95 hits bought with 6,725 false signals.</p>
+            <div class="date">30 September 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/the-filter-that-would-lift-precision-to-93-percent-and-why-we-cannot-build-it/">
+          <div class="thumb"><img src="articles/the-filter-that-would-lift-precision-to-93-percent-and-why-we-cannot-build-it/img/tb26_ceiling_en.png" alt="Precision of pivot-confirmation signals after filtering by leg share, using the true share versus two causal estimates" width="1104" height="575" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">The perfect filter we cannot build</span>
+            <h3>The Filter That Would Lift Precision From 51% to 93% — and Why We Cannot Build It Yet</h3>
+            <p>Half of the reversal-confirmation signals are false, and they share one trait: they point into the middle of a leg. A filter that knows how far along its leg an event really is removes 45 of 49 false signals and not one true one — precision 51% → 92.7%. The catch is that &quot;how far along&quot; is only known in hindsight. Every causal estimator we built — trees, a memory network, ten loss functions, a 24-point grid — reaches an AUC of about 0.69 for &quot;this is the last tenth of the leg&quot;, where the filter needs something near 0.95. With that estimate, the filter cuts true signals as fast as false ones.</p>
+            <div class="date">30 September 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/can-a-memory-network-rebuild-context-from-the-raw-sequence/">
+          <div class="thumb"><img src="articles/can-a-memory-network-rebuild-context-from-the-raw-sequence/img/tb25_auc_en.png" alt="AUC of an LSTM confirming a pivot three events later, on the class alone, price context alone and both, on honest train scores and unseen weeks" width="1104" height="575" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Memory vs aggregates</span>
+            <h3>Can a Memory Network Rebuild Context From the Raw Sequence? Not From the Order Book</h3>
+            <p>Trees won the reversal ladder with hand-made aggregates: five numbers about recent extremes over four look-back windows. A memory network should not need them — the price change of every event is already inside the class, and integrating it would rebuild the whole context. We gave an LSTM 60 events of raw class, of price context, and of both. The class alone reached an honest AUC of 0.77; price context alone, 0.965. Adding the class to price made it worse. And trees on five aggregates still found reversals two and a half times more precisely than the network.</p>
+            <div class="date">30 September 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/pivot-confirmation-on-three-unseen-weeks/">
+          <div class="thumb"><img src="articles/pivot-confirmation-on-three-unseen-weeks/img/tb24_prec_en.png" alt="Precision of the pivot-confirmation ladder at four delays on train and on three unseen weeks; zero where the threshold let nothing through" width="1104" height="575" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Held-out time</span>
+            <h3>Pivot Confirmation on Three Unseen Weeks — Precision Holds, the Threshold Does Not</h3>
+            <p>The reversal ladder of the previous article was scored on a held-out coin — but in the same weeks it trained on. Here the models trained on everything up to 14 August 2026 and were scored on the three weeks after, six coins, with the threshold fixed in advance from honest training scores. Precision did not fall: 51% two and a half hours after a pivot, 73% after six hours, on 88–93 reversals. What broke instead was the threshold itself — at two rungs of the ladder the models went completely silent while their AUC stayed above 0.9.</p>
+            <div class="date">30 September 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/a-reversal-is-a-place-in-the-move-not-a-shape-in-the-book/">
+          <div class="thumb"><img src="articles/a-reversal-is-a-place-in-the-move-not-a-shape-in-the-book/img/tb23_pair_en.png" alt="Share of 600 legs where the five events at each end are stronger than the middle of the same leg, for five features, against a control" width="1104" height="575" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Where, not what</span>
+            <h3>A Reversal Is a Place in the Move, Not a Shape in the Book — Five Causal Numbers Beat 62</h3>
+            <p>The edge of a leg really is different from its middle — in 85% of 600 legs, by a factor of about 3.8, with a coin-flip control at 0.51. Yet no single 10-event batch can be picked out of the whole dataset by its book numbers. Five tests later the reason is clear: what identifies a reversal is where you are in the move, not what the book looks like. Five causal numbers about recent extremes lift the hit rate 121-fold over the base; the 62 numbers of the class manage 3.8-fold and add nothing on top. Asked again every ten events with four look-back windows, &quot;was that a pivot?&quot; climbs from 26% after ten minutes to 71% after six hours.</p>
+            <div class="date">30 September 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/a-reversal-has-no-signature-of-its-own-in-the-order-book/">
+          <div class="thumb"><img src="articles/a-reversal-has-no-signature-of-its-own-in-the-order-book/img/tb22_ratio_en.png" alt="Median size of each feature in the batch around a reversal divided by the median of all 10-event stretches on BTC" width="1104" height="575" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">No reversal signature</span>
+            <h3>A Reversal Has No Signature of Its Own — One in Four Ordinary Stretches Looks Stronger</h3>
+            <p>Around a 2.3% pivot the order book changes in multiples: flow ratios two to five times bigger, book-per-flow ratios three to seventeen times smaller. That sounds like a fingerprint. It is not. One in four continuous 10-event stretches far from any pivot is stronger still, the strongest is 47 times stronger than the strongest reversal, and a neural network on all 630 numbers of a reversal batch reaches the same AUC as a straight line: about 0.70. The reversal is a shift of the same distribution, not a different kind of event.</p>
+            <div class="date">30 September 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/derivatives-of-the-order-book-reversals-leave-a-trace-not-a-warning/">
+          <div class="thumb"><img src="articles/derivatives-of-the-order-book-reversals-leave-a-trace-not-a-warning/img/tb21_batch_en.png" alt="AUC separating events near a 2.3% pivot from the rest of the leg for absolute derivatives of buy volume, price and resistance, on one event and on 20-event batches" width="1104" height="575" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Derivatives of the book</span>
+            <h3>Derivatives of the Order Book — Reversals Leave a Trace, Not a Warning</h3>
+            <p>We rebuilt the basic event of this series from scratch: 210 seconds cut into ten 21-second blocks, book levels divided by the volume of their own block, then first derivatives from block to block — on six coins, 402,731 events. The new description sees reversals clearly: around a pivot there is more flow and a thinner book per unit of that flow. But almost all of it sits in the first tenth of the next leg. The book reacts to a reversal far more than it foretells one. The last class of the family, derivative over derivative, lifts a detector of the reversal zone to AUC 0.700 on fresh legs — and becomes the workhorse of every study that follows.</p>
+            <div class="date">30 September 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/change-the-question-not-the-network-leg-end-hazard/">
+          <div class="thumb"><img src="articles/change-the-question-not-the-network-leg-end-hazard/img/tb20_signal_en.png" alt="A perceptron guessing the leg tenth: a single counter of events since the leg start scores 0.56, the 60 order-book features score 0.29, at the random level" width="1104" height="575" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Ask what the data answers</span>
+            <h3>Change the Question, Not the Network — &quot;Will the Leg End Soon?&quot; Scores 0.73 Where &quot;Which Tenth?&quot; Scored Nothing</h3>
+            <p>The memory network of the previous study learned to count instead of reading the market. We opened its loss function and found why: counting was the exact optimum. Then a plain perceptron settled it — the 60 order-book numbers of an event carry zero information about which tenth of the leg it sits in. They do carry information about something else: whether a pivot is close. Rebuilt around that question — four horizons, one monotone curve — the same data scores an average AUC of 0.73 across six coins. The order book shows the exhaustion of a move. It still does not show its direction.</p>
+            <div class="date">30 September 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/a-memory-network-that-learned-to-count-not-to-read/">
+          <div class="thumb"><img src="articles/a-memory-network-that-learned-to-count-not-to-read/img/tb19_labels_en.png" alt="Number of validation legs where the model&#x27;s end-of-leg signal fell inside the true end zone, for five label designs, against a simple median-length baseline" width="1104" height="575" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">End of the leg</span>
+            <h3>A Memory Network Asked &quot;Is the Leg Over?&quot; Learned to Count, Not to Read</h3>
+            <p>An LSTM with attention walked each 2.3% zigzag leg event by event and, at every step, said how far along the leg was. Across five label designs, one coin and then six, it never once placed its end-of-leg signal inside the last tenth of a fresh leg. What it learned was a clock: a steady count from the start of the leg. When the zigzag stopped handing it that start — memory reset only when the network itself called a pivot — it did not call a single one in 42,192 events.</p>
+            <div class="date">30 September 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/four-numbers-per-event-and-a-28-cell-answer/">
+          <div class="thumb"><img src="articles/four-numbers-per-event-and-a-28-cell-answer/img/tb18_raw_en.png" alt="Pearson correlation of four raw event features with the raw and the leg-smoothed 2.3% zigzag target on BTC train" width="1104" height="575" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Four numbers, 28 cells</span>
+            <h3>Four Numbers per Event and a 28-Cell Answer — Where the Signal Really Came From</h3>
+            <p>The previous networks read each book feature through 13 exponential averages and topped out at a correlation of 0.29 with the leg target. Strip the averages away and the same features, raw per event, correlate at 0.09. So the link was made by the smoothing, not by the snapshot. We then gave a transformer six coins, 345,000 training windows and a new kind of output — 28 cells instead of one number — to stop it hiding in the middle. It stopped hiding. It did not start hitting: 5.4% of real pivot-zone signals, with false calls a day away.</p>
+            <div class="date">30 September 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/same-data-different-readout-transformer-vs-attention-query/">
+          <div class="thumb"><img src="articles/same-data-different-readout-transformer-vs-attention-query/img/tb17_readout_en.png" alt="Test MAE, output spread and precision of vertex calls for the transformer and the wattn attention network" width="1104" height="575" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Readout</span>
+            <h3>Same Data, Different Readout — How a Transformer Fails Differently From an Attention Query</h3>
+            <p>We repeated the previous study exactly — same 2.3% zigzag target, same pivot zone, same loss, split and seed — and changed one thing: how the network reads its own sequence. Averaging the 13 steps instead of letting a learned query pick them cut the error from 0.554 to 0.476 and made &quot;vertex&quot; calls 44% precise instead of 3%. Tuning then turned the same model into a noisy caller again. And past the end of the dataset, both readouts lose the direction. The readout decides how a network is wrong, not whether it is right.</p>
+            <div class="date">30 September 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/a-network-that-found-the-pivot-zone-only-where-it-was-trained/">
+          <div class="thumb"><img src="articles/a-network-that-found-the-pivot-zone-only-where-it-was-trained/img/tb16_zone_en.png" alt="Share of pivot-zone events caught by the wattn network on train, validation, test and ten unseen days" width="1104" height="575" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Pivot zone net</span>
+            <h3>A Network That Found the Pivot Zone — Only Where It Was Trained</h3>
+            <p>We asked an attention network to do one specific thing: tell when price is near the end of a 2.3% zigzag leg — within 10% of the pivot and no more than 40 events from it. On the weeks it trained on it caught 65% of those zones. On validation, 4%. On test, 3.8%. On ten days after the dataset ended, its correlation with the target turned negative. This is a measured negative result, and the measuring tool it produced — the pivot zone — is what we carry forward.</p>
+            <div class="date">30 September 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/six-networks-one-winner-with-53-parameters/">
+          <div class="thumb"><img src="articles/six-networks-one-winner-with-53-parameters/img/tb12_holdout_en.png" alt="Position of price in its 0.8% zigzag leg and the linear model&#x27;s output on 2,512 fresh events from 14 to 25 August 2026" width="1104" height="575" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Zigzag net</span>
+            <h3>Six Networks Tried, the Winner Has 53 Parameters — Teaching a Model Where Price Sits in Its Leg</h3>
+            <p>Correlations said the slow order book knows roughly where price sits inside its zigzag leg. So we trained networks to say it out loud: a number from −1 (at the low pivot) to +1 (at the high pivot), from four book features under thirteen averages. Six families on the same data, a time split with five walk-forward windows — and the linear model with 53 parameters won. On the final test it beats the constant for the first time (MAE 0.438 vs 0.446, sign 55.1%); on eleven fresh days outside the dataset, sign 60.7% on 44 legs. Small, consistent — and the reason is a loss that pays attention to the edges of the leg.</p>
+            <div class="date">30 September 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/twelve-hours-of-order-book-state-and-the-direction-of-a-move/">
+          <div class="thumb"><img src="articles/twelve-hours-of-order-book-state-and-the-direction-of-a-move/img/tb11_raw_en.png" alt="Pearson correlation of four 200-event exponential averages with the direction of 2.3% and 0.8% zigzag moves on BTC" width="1104" height="575" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Slow book state</span>
+            <h3>Twelve Hours of Order-Book State and the Direction of a Move — From 0.16 to 0.42</h3>
+            <p>Does the order book, averaged over about half a day, know which way the current move is going? We smoothed four book features with exponential averages on 52 horizons from 35 minutes to 58 hours and correlated them with the direction of 2.3% and 0.8% zigzag moves on 40,242 BTC events. The raw answer is weak (−0.16 at best). Three changes of question — a price feature instead of price, the position inside the leg instead of the direction, and a zigzag drawn on the same smoothing — lift the ceiling to 0.42. That is 17% of the variance, from a description that ignores the last hour entirely.</p>
+            <div class="date">30 September 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/predicting-the-next-phase-of-a-move-from-the-order-book/">
+          <div class="thumb"><img src="articles/predicting-the-next-phase-of-a-move-from-the-order-book/img/tb05_cohorts_en.png" alt="Number of BTC training events in each of the four zigzag phases: rising, pullback in a rise, falling, pullback in a fall" width="1104" height="575" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Next cohort</span>
+            <h3>Predicting the Next Phase of a Move From the Order Book — 832 Window Sizes, One Honest Ceiling</h3>
+            <p>Every event of BTC&#x27;s order book sits in one of four phases of a zigzag: rising, a pullback inside a rise, falling, or a pullback inside a fall. We asked a closed-form linear model to name the phase of the next event from the N events before it — and tried every N from 2 to 833. The signal is real from N = 2, peaks at 0.418 accuracy on about one zigzag leg of history against a 0.377 baseline, and is essentially binary: up or down, the pullbacks go unseen. The labels of the past alone would score 0.976.</p>
+            <div class="date">30 September 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/a-leg-is-the-sum-of-its-events-size-beats-count/">
+          <div class="thumb"><img src="articles/a-leg-is-the-sum-of-its-events-size-beats-count/img/tb01_umap_en.png" alt="UMAP map of 24,150 BTC 210-second events: one continuous cloud, rising events on one side, falling on the other" width="1104" height="828" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Legs and events</span>
+            <h3>A Leg Is the Sum of Its Events — and Size Beats Count</h3>
+            <p>We cut the price of six coins into 210-second events and into 2.3% zigzag legs, then asked the simplest question a direction model has to answer: how does a leg actually make its move? Over 712 legs and 409,998 events the answer is exact — the leg is the sum of its events (0.999 on clean legs) — and surprising: up legs are only 51.9% up-events. The move is carried by the size of events, not by how many point the right way.</p>
+            <div class="date">30 September 2026</div>
+          </div>
+        </a>
+      </div>
+      </details>
+    </section>
+
+    <section class="series" id="book">
+      <div class="sh"><h2 class="st">Order-book research</h2><span class="sn">45 studies</span></div>
+      <p class="sd">What second-by-second order-book data can and cannot tell you: walls, drains, volume, market states, reversals.</p>
+      <div class="grid">
+        <a class="card" href="articles/a-detector-for-corrections-inside-a-move/">
+          <div class="thumb"><img src="articles/a-detector-for-corrections-inside-a-move/img/zzlegs_numbers_en.png" alt="① Eight features become four ratios" width="1097" height="492" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Corrections, not exits</span>
+            <h3>A Detector for Corrections Inside a Move — and Why It Took a New Way of Measuring</h3>
+            <p>We stopped measuring how loud the order book is and started measuring how much wall stands per unit of aggression — eight features collapsed into four ratios. On that new scale a class appears that we could not see before: corrections inside a move, 5,396 of them, events that already look like a reversal without being one. Three detectors find them at 0.94 precision on a held-out half, and an external 0.8% zigzag confirms the class survives after loudness is matched away (×1.69). For a bot, that is the difference between holding a trend and being shaken out of it.</p>
+            <div class="date">31 August 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/the-order-book-tells-you-how-far-never-which-way/">
+          <div class="thumb"><img src="articles/the-order-book-tells-you-how-far-never-which-way/img/volat_horizon_en.png" alt="① Two questions, sixteen horizons" width="1123" height="491" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">How far, not which way</span>
+            <h3>The Order Book Tells You How Far, Never Which Way</h3>
+            <p>We asked eight order-book features the same two questions at 16 horizons from one second to a day, on six coins: how far will the price move, and which way. Size answers — ρ 0.30 at a second, still 0.11 at an hour. Direction never does: -0.002 at a minute, -0.003 at a day. Then we bet real rules on both answers over 30 out-of-sample days: the volatility bet makes +4.97 bps a trade, the direction bet loses 5.95. This is the measurement that decides what our bots are allowed to bet on.</p>
+            <div class="date">17 August 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/we-taught-a-network-to-see-a-move-and-it-only-heard-how-loud-it-was/">
+          <div class="thumb"><img src="articles/we-taught-a-network-to-see-a-move-and-it-only-heard-how-loud-it-was/img/zznet_models_en.png" alt="① Three targets and an honest split" width="1313" height="474" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Moves, not noise</span>
+            <h3>We Taught a Network to See a Move. It Only Heard How Loud It Was.</h3>
+            <p>We trained three networks on the same 56,263 order-book windows and learned two things we did not want to learn. A single number — how loud the window is — matches a convolutional network on all 1,680 of them (0.7575 against 0.7571). And once you match windows by that number, the inflow features that carried the whole model separate nothing at all. What does survive is small, directional, and points at a different kind of bot than the one we set out to build.</p>
+            <div class="date">15 August 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/a-recipe-not-a-result-how-we-clean-an-order-book-dataset/">
+          <div class="thumb"><img src="articles/a-recipe-not-a-result-how-we-clean-an-order-book-dataset/img/clean_chain_en.png" alt="① The chain: four narrowings" width="1371" height="454" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Dataset cleaning recipe</span>
+            <h3>A Recipe, Not a Result: How We Clean an Order-Book Dataset</h3>
+            <p>This is the least glamorous and most useful study of the series: not a finding, but a procedure. How to take a raw dataset of order-book windows and produce a clean one — 56,263 windows in, 31,212 out, 95% of the reversals still there — with every step checked, every trap written down, and the whole thing runnable on another coin by one command.</p>
+            <div class="date">14 August 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/throwing-away-a-third-of-the-data-and-keeping-the-reversals/">
+          <div class="thumb"><img src="articles/throwing-away-a-third-of-the-data-and-keeping-the-reversals/img/rev_keep_en.png" alt="① What was removed, and what it cost" width="1371" height="454" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">The cleaned dataset</span>
+            <h3>Throwing Away a Third of the Data and Keeping 98% of the Reversals</h3>
+            <p>If a third of your data provably contains almost nothing you are looking for, it should not be in the training set. We removed 18,744 of 56,263 windows — everything two independent definitions of &#x27;quiet&#x27; agree on — and kept 98.1% of all the reversal windows.</p>
+            <div class="date">14 August 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/twenty-five-weeks-twenty-five-rebuilds-which-clustering-survives/">
+          <div class="thumb"><img src="articles/twenty-five-weeks-twenty-five-rebuilds-which-clustering-survives/img/week_size_en.png" alt="① Rebuilt, not scored" width="1256" height="428" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Week by week</span>
+            <h3>Twenty-Five Weeks, Twenty-Five Rebuilds: Which Clustering Survives</h3>
+            <p>A clustering that only exists once is a story, not a result. So we rebuilt it 25 times — every week of the dataset from scratch, its own PCA, its own UMAP, its own clusters — and compared each week with the answer found on the whole dataset. One of the two methods reproduces. The other does not, and it is the fashionable one.</p>
+            <div class="date">14 August 2026</div>
+          </div>
+        </a>
+      </div>
+      <details class="more"><summary>Show all 45 →</summary>
+      <div class="grid">
+        <a class="card" href="articles/tops-hide-bottoms-do-not-the-asymmetry-we-did-not-expect/">
+          <div class="thumb"><img src="articles/tops-hide-bottoms-do-not-the-asymmetry-we-did-not-expect/img/down_k_en.png" alt="① The mirror image of the previous study" width="1083" height="450" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">The falling half</span>
+            <h3>Tops Hide, Bottoms Don&#x27;t: an Asymmetry We Did Not Expect</h3>
+            <p>This is the mirror of the previous study: the fall from a top to a bottom, 27,180 windows, the same pipeline to the letter. The structure repeats — and one number does not. Tops hide from the order book four times more often than bottoms do.</p>
+            <div class="date">14 August 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/the-rising-half-of-a-move-what-the-order-book-looks-like/">
+          <div class="thumb"><img src="articles/the-rising-half-of-a-move-what-the-order-book-looks-like/img/up_k_en.png" alt="① Cutting the data by the geometry of the move" width="1083" height="450" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">The rising half</span>
+            <h3>The Rising Half of a Move: What the Order Book Looks Like Between a Bottom and a Top</h3>
+            <p>Half of every price move is a climb from a bottom to a top. We took only that half — 26,921 windows of the order book — and clustered it blind. The structure that comes out is the same one the whole dataset gives, which is good news: it means the classes are not an artefact of mixing rises and falls together.</p>
+            <div class="date">14 August 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/one-axis-again-clustering-order-book-windows-without-a-teacher/">
+          <div class="thumb"><img src="articles/one-axis-again-clustering-order-book-windows-without-a-teacher/img/all_axis_en.png" alt="① The method, and the three guards that make it mean something" width="1083" height="451" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Classes without a teacher</span>
+            <h3>One Axis, Again: Clustering 56,000 Order-Book Windows Without a Teacher</h3>
+            <p>Take 56,263 windows of the order book, 210 seconds each, eight features per second. Tell the algorithm nothing — not the price, not the time, not our own signals. Ask only one thing: does this pile of windows fall apart into groups by itself? It does, along exactly one axis, and that axis is not the one anybody hopes for.</p>
+            <div class="date">14 August 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/one-network-for-three-market-states/">
+          <div class="thumb"><img src="articles/one-network-for-three-market-states/img/pool_setup_en.png" alt="① One pool, three states, one subtraction" width="1257" height="427" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Pooled reversal model</span>
+            <h3>One Network for Three Market States: What a Pooled Reversal Model Learns</h3>
+            <p>We trained one network on the events of three different market states at once — 55,929 events, 3,758 of which sit on a real turning point — and asked it a single question: is this event a reversal or an ordinary event of its own class? The answer is interesting in a way we did not plan: the model works, the validation set lies about which model is best, and an unsupervised split of the same pool finds classes that have nothing to do with reversals at all.</p>
+            <div class="date">14 August 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/three-classes-one-question-what-it-takes-to-separate-a-reversal/">
+          <div class="thumb"><img src="articles/three-classes-one-question-what-it-takes-to-separate-a-reversal/img/BTC_rn_all_lift_en.png" alt="① Three classes and the ruler that makes them comparable" width="1256" height="457" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Separating the signal</span>
+            <h3>Three Classes, One Question: What It Takes to Separate a Reversal</h3>
+            <p>Three market states, one question: can an order-book event that sits on a turning point be told apart from the ordinary events of its own class? This is the overview of that work — the three per-class studies side by side, every engine we tried in between, and the parts that hurt: a grid search that bought 0.02 AUC, a network on 1,680 numbers that lost to a single average, and a threshold that looked like 63% precision until it was asked to survive two months of new data, where it became 39%.</p>
+            <div class="date">13 August 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/class-2-the-middle-state-where-no-single-feature-wins/">
+          <div class="thumb"><img src="articles/class-2-the-middle-state-where-no-single-feature-wins/img/BTC_rn_mid_heat_en.png" alt="① What a reversal looks like inside the class 2 class" width="1136" height="393" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Class 2 reversals</span>
+            <h3>Class 2: the Middle State Where No Single Feature Wins</h3>
+            <p>The class 2 state fires on 21,704 windows of this dataset, and 1,961 of them (9.0%) sit on a turning point of price. This page asks one question and answers it with one frozen network: can a reversal be told apart from the ordinary events of its own class, and which of the eight order-book features carries that difference? Best single feature: vol_buy at 15.8% precision. Best set: 6 features at 23.5% precision and 23.6% recall, against a base rate of 9.0% — ×2.6.</p>
+            <div class="date">13 August 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/reversals-in-a-quiet-market-where-two-percent-of-events-hide/">
+          <div class="thumb"><img src="articles/reversals-in-a-quiet-market-where-two-percent-of-events-hide/img/BTC_rn_calm_heat_en.png" alt="① What a reversal looks like inside the calm class" width="1136" height="393" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Calm reversals</span>
+            <h3>Reversals in a Quiet Market: Where 2.5% of Events Hide</h3>
+            <p>The calm state fires on 29,303 windows of this dataset, and 739 of them (2.5%) sit on a turning point of price. This page asks one question and answers it with one frozen network: can a reversal be told apart from the ordinary events of its own class, and which of the eight order-book features carries that difference? Best single feature: vol_buy at 10.8% precision. Best set: 8 features at 14.9% precision and 15.3% recall, against a base rate of 2.5% — ×6.0.</p>
+            <div class="date">13 August 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/the-storm-class-which-order-book-feature-marks-a-reversal/">
+          <div class="thumb"><img src="articles/the-storm-class-which-order-book-feature-marks-a-reversal/img/BTC_rn_storm_heat_en.png" alt="① What a reversal looks like inside the storm class" width="1136" height="393" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Storm reversals</span>
+            <h3>The Storm Class: Which Order-Book Feature Marks a Reversal</h3>
+            <p>The storm state fires on 5,249 windows of this dataset, and 1,085 of them (20.7%) sit on a turning point of price. This page asks one question and answers it with one frozen network: can a reversal be told apart from the ordinary events of its own class, and which of the eight order-book features carries that difference? Best single feature: vol_buy at 49.5% precision. Best set: 5 features at 54.1% precision and 50.0% recall, against a base rate of 20.7% — ×2.6.</p>
+            <div class="date">13 August 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/we-went-looking-for-the-dna-of-a-reversal-we-found-a-ceiling-instead/">
+          <div class="thumb"><img src="articles/we-went-looking-for-the-dna-of-a-reversal-we-found-a-ceiling-instead/img/BTC_signature_en.png" alt="① What we are looking for, and why it is a different question" width="1210" height="539" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Reversal DNA</span>
+            <h3>We Went Looking for the DNA of a Reversal. We Found a Ceiling Instead.</h3>
+            <p>An earlier study on this dataset (175 days of BTC) found 271 order-book events that sit exactly on the turning points of price, and showed that a model cannot separate them from the thousands of ordinary events of their own class. This study asks a narrower question: forget separating a reversal from its class — is there anything, on its own, that a reversal event&#x27;s 271 examples share? Nine different methods attack the question from nine angles: a two-condition threshold rule, a raw-vector kinship check, a full neural detector, a scan for the shortest useful slice of the window, four models on four quarters of it, one model on all of its 30-second slices at once, and three independent models — one per parent market state. Every method finds something real, reproducible, and well above every null control we built. None of them clears the bar a trading signal needs. The best operating point we found, buried inside the loudest of four market states, is right roughly one time in three.</p>
+            <div class="date">12 August 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/we-found-the-reversal-signal-machine-learning-could-not-tell-it-apart/">
+          <div class="thumb"><img src="articles/we-found-the-reversal-signal-machine-learning-could-not-tell-it-apart/img/BTC_legs_map_en.png" alt="① Legs, groups, and one rule that shapes everything" width="1276" height="674" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Signals</span>
+            <h3>We Found the Reversal Signal. Machine Learning Could Not Tell It Apart.</h3>
+            <p>A market moves in legs: a few percent one way, a turning point, then a few percent the other. This study asks whether the order book carries an event that marks the turn — and whether that event can be separated from the thousands of ordinary events of the same class. On 175 days of BTC the first half works: groups of signals pile up at turning points 3.7× more often than chance, every class shows the same reversal signature, and inside a storm the shape of the flows tells a top from a bottom where price itself says nothing. The second half does not. Every way we tried to learn &#x27;is this a reversal&#x27; landed on top of its own null control, and a class retrained with all reversal windows removed still fires on them — harder than on its ordinary events. The signal is real; the discriminator is not.</p>
+            <div class="date">9 August 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/sixteen-networks-one-working-answer/">
+          <div class="thumb"><img src="articles/sixteen-networks-one-working-answer/img/BTC_nets_storm_en.png" alt="① Sixteen networks that never saw a counter-example" width="2090" height="528" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Nets</span>
+            <h3>Sixteen Networks, One Working Answer — and the Price Benchmark That Nearly Killed It</h3>
+            <p>We trained sixteen one-class autoencoders on Bitcoin order-book windows: four market states, and inside each state one network per phase of the price move. Each network saw only its own kind of window and nothing else — no negative examples at all. One thing out of sixteen works: inside a storm you can tell a bottom reversal from a top one. On half the data that looked like AUC 0.6264; measured properly on all 800 events it is 0.5928. Then a one-line price benchmark scored 0.8548 on the same question. This article is about what survives that, and where it survives.</p>
+            <div class="date">8 August 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/does-the-phase-of-a-move-change-what-the-order-book-looks-like/">
+          <div class="thumb"><img src="articles/does-the-phase-of-a-move-change-what-the-order-book-looks-like/img/BTC_span_en.png" alt="① Two markings of the same time" width="1540" height="396" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">States</span>
+            <h3>Does the Phase of a Move Change What the Order Book Looks Like?</h3>
+            <p>We have four detectors of market state and a map of where price is in its move — reversal zones and the legs between them. Laying one over the other answers a question that sounds simple and is not: does the phase of a move change what a market state looks like? On 171 days of BTC the answer splits. The count of events barely moves — each class fires roughly in proportion to how long the phase lasts. What moves is their strength, and only for the quiet classes. And in one narrow place the order book finally beats price: telling a top from a bottom inside a storm.</p>
+            <div class="date">7 August 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/the-autoencoder-that-lost-to-pca/">
+          <div class="thumb"><img src="articles/the-autoencoder-that-lost-to-pca/img/grid_en.png" alt="② Nine configurations, and how little they mattered" width="1144" height="407" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Autoencoder</span>
+            <h3>Eight Ways to Compress 210 Seconds: the Autoencoder That Lost to PCA</h3>
+            <p>We cut 170 days of per-second Bitcoin order-book data into 50,143 back-to-back windows and pushed them through eight different compressions — PCA, a convolutional autoencoder, and six variants of both — to see whether a network finds market structure a linear method misses. It does not. Its raw stability is the best in the table and most of that stability survives when the data is shuffled into noise, which means it was never structure at all.</p>
+            <div class="date">6 August 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/two-poles-of-market-activity-found-on-six-coins/">
+          <div class="thumb"><img src="articles/two-poles-of-market-activity-found-on-six-coins/img/share_en.png" alt="① One question, and a deliberately blind input" width="1056" height="418" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Market states</span>
+            <h3>Two Poles of Market Activity, Found Without a Teacher on Six Coins</h3>
+            <p>We cut 122–141 days of per-second order-book data on 6 coins into 164,342 windows of 210 seconds, showed a clustering pipeline nothing but the eight order-book features, and asked whether the market falls into natural states. It does — two poles of flow activity with a wide grey zone between them — and the same pipeline run on shuffled data produces nothing, which is what makes the answer worth reporting. The walls turn out to be irrelevant to the split, and the autoencoder we brought in to beat PCA lost to it.</p>
+            <div class="date">6 August 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/local-tops-and-bottoms-what-four-trained-models-actually-see/">
+          <div class="thumb"><img src="articles/local-tops-and-bottoms-what-four-trained-models-actually-see/img/BTC_zones_en.png" alt="① What we marked, and why exactly this way" width="1540" height="1551" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Pivots</span>
+            <h3>Local tops and bottoms in the order book: what four trained models actually see</h3>
+            <p>We marked every local top and bottom on 171 days of per-second Bitcoin order-book data — 734 of them, defined by a rule rather than by hand — and asked four trained market-state detectors whether they can see them. The zone itself is invisible. The moment of the extremum is not, and neither is &#x27;an extremum within the next hour&#x27;. But a plain price range from the same window beats the order book at both, and the honest edge turns out to live somewhere else entirely: in telling a top from a bottom when price itself has nothing to say.</p>
+            <div class="date">6 August 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/four-market-states-found-twice-by-two-independent-pipelines/">
+          <div class="thumb"><img src="articles/four-market-states-found-twice-by-two-independent-pipelines/img/BTC_four_en.png" alt="⑩ Four states: what the algorithm says, what the model says" width="1430" height="1155" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Replication</span>
+            <h3>Four Market States, Found Twice by Two Independent Pipelines</h3>
+            <p>Four market states, found twice by two pipelines that share no code. We wrote our research recipe down as an executable diary, then wrote a second implementation from that text alone — different seed, different block split, different network initialisation — and ran it over the same 54,764 windows of BTC order-book data. The states came back: 93.0% of windows landed in the same one (ARI 0.7726), and two independently trained detectors fire on the same 98.5% of windows. Where both fire, the next hour&#x27;s price range is ×1.432 the median of the same day.</p>
+            <div class="date">6 August 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/no-classes-in-the-order-book-only-one-state/">
+          <div class="thumb"><img src="articles/no-classes-in-the-order-book-only-one-state/img/BTC_gap_en.png" alt="Does a partition compress the data better than noise?" width="1210" height="440" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Window classes</span>
+            <h3>There Are No Classes in the Order Book — Only One State That Survives</h3>
+            <p>We locked a 210-second window to its own 1,680 numbers — eight order-book features, no norm, no price, no clock — and asked whether the market falls into classes. It does not: the gap statistic sits at 0.0017, silhouette matches noise, and at some K the shuffled null is more stable than the data. One state survives every check: 9.8% of windows where flows run hot and both walls thin out, followed by ×1.78 the usual hourly range.</p>
+            <div class="date">5 August 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/event-classes-found-without-a-teacher/">
+          <div class="thumb"><img src="articles/event-classes-found-without-a-teacher/img/BTC_map_en.png" alt="Event map (UMAP-2D), coloured by discovered classes" width="990" height="770" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Event classes</span>
+            <h3>Event Classes Found Without a Teacher: 3 Survive, 60% Are Noise</h3>
+            <p>We asked the order book to sort its own events into classes — 2,786 events, eight features, no price and no human labels. Out of 512 configurations only 5 produced anything stable, 60% of events belong to no class at all, and the three that do exist raise volatility while leaving direction at a coin flip.</p>
+            <div class="date">3 August 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/the-alphabet-of-the-order-book-signal-states/">
+          <div class="thumb"><img src="articles/the-alphabet-of-the-order-book-signal-states/img/classify_en.png" alt="Signal types by frequency and forward behaviour" width="990" height="550" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Signals</span>
+            <h3>The Alphabet of the Order Book: 6,561 Possible States, 333 Real Ones</h3>
+            <p>We described the order book as a single word: eight features, three states each. Of the 6,561 words that could exist, only 333 ever occur — and when we tested that alphabet out of sample, it described the market well and predicted it poorly.</p>
+            <div class="date">3 August 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/signal-standard-from-calm-to-calm-btc/">
+          <div class="thumb"><img src="articles/signal-standard-from-calm-to-calm-btc/img/BTC_overview_en.png" alt="The whole dataset: price with all eight order-book features, and the two pair differences below" width="1430" height="1452" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Signal standard · BTC</span>
+            <h3>From Calm to Calm: a Standard for What Counts as a Signal (BTC)</h3>
+            <p>We stopped defining market signals with a stopwatch. A signal is a continuous departure from calm, bounded by calm on both sides — the market decides where it starts and ends. Here is the standard, applied second by second to 167 days of BTC, with every event classified and located on the price path.</p>
+            <div class="date">3 August 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/resistance-against-support/">
+          <div class="thumb"><img src="articles/resistance-against-support/img/cross_lag_en.png" alt="Lagged correlation between the features" width="1265" height="529" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Side vs side</span>
+            <h3>Side Against Side: Resistance and Support Compared</h3>
+            <p>We put all six order-book features grouped into the resistance side and the support side into one study and asked how the pieces relate, which one leads, and what the combination predicts. Same boundary as always: it speaks about size, not side.</p>
+            <div class="date">31 July 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/flow-against-the-wall/">
+          <div class="thumb"><img src="articles/flow-against-the-wall/img/cross_interaction_en.png" alt="Interaction 2×2: flow × wall" width="1035" height="529" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Flow vs wall</span>
+            <h3>Flow Against the Wall: When Volume Meets Resting Liquidity</h3>
+            <p>We put executed volume hitting the resting wall on the opposite side into one study and asked how the pieces relate, which one leads, and what the combination predicts. Same boundary as always: it speaks about size, not side.</p>
+            <div class="date">31 July 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/lifecycle-of-a-sell-wall/">
+          <div class="thumb"><img src="articles/lifecycle-of-a-sell-wall/img/cross_xcorr_en.png" alt="Cross-correlation between the features" width="747" height="621" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Wall lifecycle</span>
+            <h3>The Life of a Sell Wall: Standing, Growing, Thinning</h3>
+            <p>We put the three phases of the same sell-side wall — how much stands there, what arrives, what leaves into one study and asked how the pieces relate, which one leads, and what the combination predicts. Same boundary as always: it speaks about size, not side.</p>
+            <div class="date">31 July 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/executed-sell-volume-alone/">
+          <div class="thumb"><img src="articles/executed-sell-volume-alone/img/solo_peak_en.png" alt="Peak predictive window per coin" width="1265" height="529" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Sell volume</span>
+            <h3>Executed Sell Volume, Measured Alone</h3>
+            <p>We isolated executed sell volume — one feature, no partner, no composite — and measured what it predicts second by second across six coins. The answer is the size of the next move, never its side.</p>
+            <div class="date">31 July 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/executed-buy-volume-alone/">
+          <div class="thumb"><img src="articles/executed-buy-volume-alone/img/solo_impact_en.png" alt="Price impact per +1σ of executed buy volume" width="1265" height="529" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Buy volume</span>
+            <h3>Executed Buy Volume, Measured Alone</h3>
+            <p>We isolated executed buy volume — one feature, no partner, no composite — and measured what it predicts second by second across six coins. The answer is the size of the next move, never its side.</p>
+            <div class="date">31 July 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/drain-out-of-the-buy-wall/">
+          <div class="thumb"><img src="articles/drain-out-of-the-buy-wall/img/solo_autocorr_en.png" alt="Autocorrelation of drain out of the buy wall by timeframe" width="1265" height="529" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Buy drain</span>
+            <h3>Drain Out of the Buy Wall: Liquidity Leaving Before the Move</h3>
+            <p>We isolated drain out of the buy wall — one feature, no partner, no composite — and measured what it predicts second by second across six coins. The answer is the size of the next move, never its side.</p>
+            <div class="date">31 July 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/build-up-into-the-buy-wall/">
+          <div class="thumb"><img src="articles/build-up-into-the-buy-wall/img/solo_dist_heat_BTC_en.png" alt="Distribution of build-up into the buy wall across bands, BTC" width="1210" height="462" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Buy build-up</span>
+            <h3>Build-Up Into the Buy Wall: What Arriving Liquidity Predicts</h3>
+            <p>We isolated build-up into the buy wall — one feature, no partner, no composite — and measured what it predicts second by second across six coins. The answer is the size of the next move, never its side.</p>
+            <div class="date">31 July 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/drain-out-of-the-sell-wall/">
+          <div class="thumb"><img src="articles/drain-out-of-the-sell-wall/img/solo_spikes_en.png" alt="Spike-to-normal ratio for drain out of the sell wall" width="1265" height="529" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Sell drain</span>
+            <h3>Drain Out of the Sell Wall: Liquidity Leaving Before the Move</h3>
+            <p>We isolated drain out of the sell wall — one feature, no partner, no composite — and measured what it predicts second by second across six coins. The answer is the size of the next move, never its side.</p>
+            <div class="date">31 July 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/build-up-into-the-sell-wall/">
+          <div class="thumb"><img src="articles/build-up-into-the-sell-wall/img/solo_timeline_BTC_en.png" alt="Build-up into the sell wall states over a price window, BTC" width="1495" height="402" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Sell build-up</span>
+            <h3>Build-Up Into the Sell Wall: What Arriving Liquidity Predicts</h3>
+            <p>We isolated build-up into the sell wall — one feature, no partner, no composite — and measured what it predicts second by second across six coins. The answer is the size of the next move, never its side.</p>
+            <div class="date">31 July 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/the-resting-buy-wall-alone/">
+          <div class="thumb"><img src="articles/the-resting-buy-wall-alone/img/solo_states_en.png" alt="Behaviour of spike / normal / lull states" width="1495" height="529" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Buy wall</span>
+            <h3>The Resting Buy Wall, Measured Alone</h3>
+            <p>We isolated the resting buy wall — one feature, no partner, no composite — and measured what it predicts second by second across six coins. The answer is the size of the next move, never its side.</p>
+            <div class="date">31 July 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/the-resting-sell-wall-alone/">
+          <div class="thumb"><img src="articles/the-resting-sell-wall-alone/img/solo_sweep_en.png" alt="Link between the resting sell wall and the next move, by horizon" width="1495" height="552" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Sell wall</span>
+            <h3>The Resting Sell Wall, Measured Alone</h3>
+            <p>We isolated the resting sell wall — one feature, no partner, no composite — and measured what it predicts second by second across six coins. The answer is the size of the next move, never its side.</p>
+            <div class="date">31 July 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/support-cycle-build-up-versus-drain/">
+          <div class="thumb"><img src="articles/support-cycle-build-up-versus-drain/img/autocorr_en.png" alt="Lag-1 autocorrelation by timeframe" width="1265" height="529" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Support cycle</span>
+            <h3>The Support Cycle: Liquidity Arriving vs Leaving</h3>
+            <p>We measured the same buy-side wall growing and thinning second by second across six coins, and asked the only question that matters: does it tell you anything about what happens next? It does — about size, not direction.</p>
+            <div class="date">31 July 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/resistance-cycle-build-up-versus-drain/">
+          <div class="thumb"><img src="articles/resistance-cycle-build-up-versus-drain/img/dist_heat_BTC_en.png" alt="Distribution of seconds across bands, BTC" width="1210" height="792" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Resistance cycle</span>
+            <h3>The Resistance Cycle: Liquidity Arriving vs Leaving</h3>
+            <p>We measured the same sell-side wall growing and thinning second by second across six coins, and asked the only question that matters: does it tell you anything about what happens next? It does — about size, not direction.</p>
+            <div class="date">31 July 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/wall-build-up-liquidity-arriving/">
+          <div class="thumb"><img src="articles/wall-build-up-liquidity-arriving/img/ep_behavior_BTC_en.png" alt="Behaviour of spike / normal / lull episodes, BTC" width="1495" height="529" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Inflow</span>
+            <h3>Liquidity Arriving: What a Growing Wall Says Next</h3>
+            <p>We measured fresh resting liquidity arriving into the book second by second across six coins, and asked the only question that matters: does it tell you anything about what happens next? It does — about size, not direction.</p>
+            <div class="date">31 July 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/wall-drain-liquidity-pulled-before-the-move/">
+          <div class="thumb"><img src="articles/wall-drain-liquidity-pulled-before-the-move/img/timeline_BTC_en.png" alt="State sequence over a multi-day window, BTC" width="1495" height="402" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Drain</span>
+            <h3>Liquidity Pulled: What Happens When a Wall Drains</h3>
+            <p>We measured resting liquidity being pulled away from the book second by second across six coins, and asked the only question that matters: does it tell you anything about what happens next? It does — about size, not direction.</p>
+            <div class="date">31 July 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/resting-walls-what-thick-liquidity-predicts/">
+          <div class="thumb"><img src="articles/resting-walls-what-thick-liquidity-predicts/img/storms_en.png" alt="Clustering of extremes over time" width="1495" height="529" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Walls</span>
+            <h3>The Wall That Goes Quiet: What Resting Liquidity Predicts</h3>
+            <p>We measured resting limit liquidity sitting on both sides of the book second by second across six coins, and asked the only question that matters: does it tell you anything about what happens next? It does — about size, not direction.</p>
+            <div class="date">31 July 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/about-market-research-lab/">
+          <div class="thumb"><img src="articles/about-market-research-lab/img/dir_sweep_en.png" alt="Signed correlation of order-flow imbalance with price direction" width="1265" height="529" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">About</span>
+            <h3>About Market Research Lab — What We Collect and Why</h3>
+            <p>Most market commentary is storytelling. We built something testable instead: 166 days of second-by-second order-book data across six coins, and a rule that nothing gets published unless it survives out-of-sample.</p>
+            <div class="date">29 July 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/volume-is-fuel-not-steering-wheel/">
+          <div class="thumb"><img src="articles/volume-is-fuel-not-steering-wheel/img/vol_sweep_en.png" alt="Correlation of volume with the size of the next move, by horizon" width="1495" height="552" loading="lazy" decoding="async"></div>
+          <div class="cbody">
+            <span class="tag">Volume</span>
+            <h3>Volume Is the Fuel — Not the Steering Wheel</h3>
+            <p>We recorded the Binance order book every second for six coins over five months and ran eighteen tests on what volume really does. The through-line: volume tells you how big the next move is — almost never which way.</p>
+            <div class="date">25 July 2026</div>
+          </div>
+        </a>
+
+        <a class="card" href="articles/order-flow-predicts-volatility/">
+          <div class="thumb empty">Volatility</div>
+          <div class="cbody">
+            <span class="tag">Volatility</span>
+            <h3>Order flow predicts how much, not which way</h3>
+            <p>Across six coins, order-flow surges line up with bigger price moves — but not their direction. A walk-forward look at what the tape can and can&#x27;t tell you.</p>
+            <div class="date">15 July 2026</div>
+          </div>
+        </a>
+      </div>
+      </details>
+    </section>
+  </div>
+
+  <footer>
     <div class="foot">
       <span class="badge"><span class="dot"></span><span data-i18n="ai">AI-assisted research · human-reviewed</span></span>
-      <span>© <span id="yr">2026</span> Market Flow Research</span>
+      <span><a href="/feed.xml">RSS</a> · <a href="/llms.txt">llms.txt</a> · <a href="/mfr-digest.md">AI digest (.md)</a> · © <span id="yr">2026</span> Market Flow Research</span>
     </div>
   </footer>
+  <nav class="pinbar" aria-label="Pinned"><span class="nfa">⚠ Research, not financial advice</span><span class="sep opt">·</span><a class="pl7" href="/articles/line-7-live-trading-report/">Best bot: Line 7 →</a><span class="sep opt">·</span><a class="opt" href="/articles/how-to-read-this-site-in-five-minutes/">How to read this site</a><span class="sep opt">·</span><a class="opt" href="/mfr-digest.md">All studies as .md for AI</a></nav>
+<!-- /mfr-home:body -->
 
   <script>
     // ---- i18n (активні лише EN та UK; решта — disabled у меню) ----
@@ -1085,7 +1266,7 @@
     }catch(e){ applyLang("en"); }
   </script>
 <!-- mfr-analytics:body -->
-  <div id="mfr-consent" style="display:none;position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;max-width:560px;margin:0 auto;padding:12px 14px;border-radius:10px;background:#14171f;color:#e6e8ee;border:1px solid #2a2f3a;font:14px/1.4 system-ui,-apple-system,Segoe UI,sans-serif;box-shadow:0 6px 24px rgba(0,0,0,.35)">
+  <div id="mfr-consent" style="display:none;position:fixed;left:16px;right:16px;bottom:70px;z-index:9999;max-width:560px;margin:0 auto;padding:12px 14px;border-radius:10px;background:#14171f;color:#e6e8ee;border:1px solid #2a2f3a;font:14px/1.4 system-ui,-apple-system,Segoe UI,sans-serif;box-shadow:0 6px 24px rgba(0,0,0,.35)">
     We use Google Analytics cookies to count visits and see where readers come from. No ads, no selling of data.
     <div style="margin-top:10px;display:flex;gap:8px;justify-content:flex-end">
       <button type="button" data-c="denied" style="padding:6px 12px;border-radius:6px;border:1px solid #3a404d;background:transparent;color:#e6e8ee;cursor:pointer">Decline</button>

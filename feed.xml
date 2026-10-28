@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Market Flow Research</title>
+    <link>https://marketflowresear.ch/</link>
+    <atom:link href="https://marketflowresear.ch/feed.xml" rel="self" type="application/rss+xml" />
+    <description>Independent research on crypto market microstructure and trading bots tested live. Research, not financial advice.</description>
+    <language>en</language>
+    <lastBuildDate>Wed, 28 Oct 2026 09:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Line 7: The Best of All Our Bots — Live Trading Report, Every Trade</title>
+      <link>https://marketflowresear.ch/articles/line-7-live-trading-report/</link>
+      <guid isPermaLink="true">https://marketflowresear.ch/articles/line-7-live-trading-report/</guid>
+      <pubDate>Wed, 28 Oct 2026 09:00:00 +0000</pubDate>
+      <category>Live bots — every result</category>
+      <description>We have built and tested more than a dozen trading bots on the research published here. Line 7 is the only one ahead of buy &amp; hold in live trading: from 5 October to 28 October 2026 its paper account made +5.44% after costs while BTC fell 5.29% — 6 trades, 5 take-profits. Real positions on the exchange: +1.39 USDT. Six trades are not a track record; this report lists every one of them and is updated as trades close. Research, not financial advice.</description>
+    </item>
+    <item>
+      <title>How to Read This Site in Five Minutes — and Ask an AI About Every Study</title>
+      <link>https://marketflowresear.ch/articles/how-to-read-this-site-in-five-minutes/</link>
+      <guid isPermaLink="true">https://marketflowresear.ch/articles/how-to-read-this-site-in-five-minutes/</guid>
+      <pubDate>Wed, 28 Oct 2026 09:00:00 +0000</pubDate>
+      <category>Start here</category>
+      <description>This site holds 83 studies of second-by-second order-book data and the trading bots built from them. Reading it all takes days; this page gets you through it in five minutes — where to start, the main findings in eight lines, how each article is built — and gives you the whole site as one Markdown file you can hand to any AI and ask questions. Research, not financial advice.</description>
+    </item>
+    <item>
+      <title>Bot 7 — From an Order-Book Canvas to Live Trading: Every Stretch, Every Result, Every Real Trade</title>
+      <link>https://marketflowresear.ch/articles/bot-7-from-an-order-book-canvas-to-live-trading-every-result-every-trade/</link>
+      <guid isPermaLink="true">https://marketflowresear.ch/articles/bot-7-from-an-order-book-canvas-to-live-trading-every-result-every-trade/</guid>
+      <pubDate>Fri, 09 Oct 2026 09:00:00 +0000</pubDate>
+      <category>Live bots — every result</category>
+      <description>Bot 7 is the end of a long research line: a transformer reads 30 hours of BTC order book as one canvas and says how likely it is that this moment sits in a 2.3% bottom — or, in its second version, a 2.3% top. This article puts the whole path in one place: how the networks were trained, what each version made on training-period weeks it was not fitted on, on validation, on days nobody had looked at, and since it went live. All live trades so far are listed at the end, model and exchange side by side. As of 9 October 2026 08:20 UTC the record is three closed trades: two take-profits and one stop.</description>
+    </item>
+    <item>
+      <title>The Pair That Behaves the Same on Three Stretches of Data — How the Live Bot&#x27;s Networks Were Chosen</title>
+      <link>https://marketflowresear.ch/articles/the-pair-that-behaves-the-same-on-three-stretches-of-data/</link>
+      <guid isPermaLink="true">https://marketflowresear.ch/articles/the-pair-that-behaves-the-same-on-three-stretches-of-data/</guid>
+      <pubDate>Fri, 09 Oct 2026 09:00:00 +0000</pubDate>
+      <category>The road to Bot 7</category>
+      <description>Ranking 440 buy-and-sell pairs by money on the month they were picked on gives a list of lucky pairs. So we asked a different question: which pair behaves the same — same time in the market, same number of longs and shorts per day, same daily growth — on three stretches of BTC: held-out weeks from training, the validation month, and fourteen days after validation that no step of the selection had touched. Of 440 pairs, 180 traded on all three. The most consistent one, BUY_l3 epoch 3 with SELL_l2 epoch 17, made $1087, $1147 and $1059 on the three stretches. It became the live bot.</description>
+    </item>
+    <item>
+      <title>One Account, Two Networks — 440 Buy-and-Sell Pairs on Validation, and Why the Best Still Trails the Market</title>
+      <link>https://marketflowresear.ch/articles/one-account-two-networks-440-buy-and-sell-pairs-on-validation/</link>
+      <guid isPermaLink="true">https://marketflowresear.ch/articles/one-account-two-networks-440-buy-and-sell-pairs-on-validation/</guid>
+      <pubDate>Fri, 09 Oct 2026 09:00:00 +0000</pubDate>
+      <category>The road to Bot 7</category>
+      <description>A buy network and a sell network were put on one $1000 account under one set of rules: one trade per 2.3% zigzag leg, take-profit 1.9%, stop 2.5%, and a signal from the other side closes the position. Every one of the 22 &quot;potentially best&quot; buy networks was paired with every one of the 20 sell networks — 440 pairs — and each pair traded the full validation month. 438 of them ended in profit. The best made $1235.78, a gain of 23.6%. Buying and holding BTC over the same month made about 29%.</description>
+    </item>
+    <item>
+      <title>Picking a Network by the Width of Its Good Zone, Not Its Best Point — 42 &quot;Potentially Best&quot; Networks</title>
+      <link>https://marketflowresear.ch/articles/picking-a-network-by-the-width-of-its-good-zone-not-its-best-point/</link>
+      <guid isPermaLink="true">https://marketflowresear.ch/articles/picking-a-network-by-the-width-of-its-good-zone-not-its-best-point/</guid>
+      <pubDate>Fri, 09 Oct 2026 09:00:00 +0000</pubDate>
+      <category>The road to Bot 7</category>
+      <description>Every trained network becomes a signal through two knobs: the window W over which its probabilities are summed and the threshold θ that sum must reach. Pick the single best cell of that grid and you usually pick noise. So each of 450 buy candidates and 75 sell candidates was traded on a 72 × 50 grid of W and θ, and for each one we measured how wide the area is where profit stays within 90% of its best. In every loss family the network with the widest such zone was kept — plus, if another epoch earned more than twice as much, that one too. The result: 22 buy and 20 sell networks, all scored on the same validation month.</description>
+    </item>
+    <item>
+      <title>Teaching the Network to See Tops — Sell Pivots on BTC, One Change and Eighteen Training Runs</title>
+      <link>https://marketflowresear.ch/articles/teaching-the-network-to-see-tops-sell-pivots-on-btc/</link>
+      <guid isPermaLink="true">https://marketflowresear.ch/articles/teaching-the-network-to-see-tops-sell-pivots-on-btc/</guid>
+      <pubDate>Fri, 09 Oct 2026 09:00:00 +0000</pubDate>
+      <category>The road to Bot 7</category>
+      <description>The bottom-finding network that powers our buy-only bot was rebuilt for the other side of the market with exactly one change: the label is now a 2.3% top zone instead of a bottom zone. Same canvas, same split, same eighteen training runs with different loss functions. Tops turned out to be rarer and harder: on validation only 62 of 5,265 ten-minute steps sit in a top zone. Plain losses reached an F1 of 0.047–0.084 against a base of 0.023; the &quot;ladder&quot; target that accepts a two-hour neighbourhood reached 0.19–0.21 against 0.13. Fine-tuning further did not help, and one loss never fired at all.</description>
+    </item>
+    <item>
+      <title>When a &quot;Fake&quot; Buy Signal Is Really a Deeper Bottom — Rule 7.1, Tested on Validation and Unseen Days</title>
+      <link>https://marketflowresear.ch/articles/when-a-fake-buy-signal-is-really-a-deeper-bottom-rule-7-1/</link>
+      <guid isPermaLink="true">https://marketflowresear.ch/articles/when-a-fake-buy-signal-is-really-a-deeper-bottom-rule-7-1/</guid>
+      <pubDate>Fri, 09 Oct 2026 09:00:00 +0000</pubDate>
+      <category>The road to Bot 7</category>
+      <description>Our buy-only bot throws away a buy signal if price has not risen 2.3% since the previous signal — a repeat call inside the same dip is treated as fake. On the nine unseen days after validation that filter rejected 36 signals and left one trade. Rule 7.1 asks one more question before rejecting: did price, between the last peak and now, make a lower bottom within 1% of the current price? If so, the signal is real, and the take-profit is measured from that lower bottom. With the rule, fakes on unseen days fell from 36 to 0, trades rose from 1 to 3, and the result from $1008.45 to $1034.12.</description>
+    </item>
+    <item>
+      <title>A Buy-Only Bot on Nine Days It Never Saw — Three Take-Profits and a Draw With Buy &amp; Hold</title>
+      <link>https://marketflowresear.ch/articles/a-buy-only-bot-on-nine-days-it-never-saw/</link>
+      <guid isPermaLink="true">https://marketflowresear.ch/articles/a-buy-only-bot-on-nine-days-it-never-saw/</guid>
+      <pubDate>Fri, 09 Oct 2026 09:00:00 +0000</pubDate>
+      <category>The road to Bot 7</category>
+      <description>The buy-only bot from the previous study had one weakness we wrote down plainly: its window, threshold and stop were chosen on the same 38 validation days it was then scored on. So we froze it and let it walk through the days the data collector recorded after validation ended — 21 to 30 September 2026, nine days nobody had looked at. It opened three trades and closed all three at take-profit, no stop-outs: $1000 became $1032.92. Buying and holding over the same steps gave $1035.51. A clean run, and a draw with the market.</description>
+    </item>
+    <item>
+      <title>From a Canvas of the Whole Leg to a Buy-Only Bot — What Survived, and What It Earned</title>
+      <link>https://marketflowresear.ch/articles/from-a-canvas-of-the-leg-to-a-buy-only-bot-what-survived/</link>
+      <guid isPermaLink="true">https://marketflowresear.ch/articles/from-a-canvas-of-the-leg-to-a-buy-only-bot-what-survived/</guid>
+      <pubDate>Wed, 30 Sep 2026 09:00:00 +0000</pubDate>
+      <category>The road to Bot 7</category>
+      <description>The last study of the series put a whole leg — and 50 rows on either side — onto one canvas and asked a network to mark pivots and corrections on it. On labelled windows it hit 38% of pivot zones; run live over the series, 5% of its pivot calls landed. A longer canvas, 160 hours on 100-second records, and windows of uniform length lifted precision to about 30%. Its best trick: 29% of pivots flagged a median 2.4 hours before the zigzag confirms them. The result became a paper-trading buy-only bot for BTC. On 38 days of validation it made +10.3% with eight trades and no stop-outs — while buying and holding made +36.6%, and its parameters were tuned on those same days.</description>
+    </item>
+    <item>
+      <title>How Full Is This Leg? A Network That Finally Beats the Counter — by Reading Its Last Rows</title>
+      <link>https://marketflowresear.ch/articles/how-full-is-this-leg-a-network-that-finally-beats-the-counter/</link>
+      <guid isPermaLink="true">https://marketflowresear.ch/articles/how-full-is-this-leg-a-network-that-finally-beats-the-counter/</guid>
+      <pubDate>Wed, 30 Sep 2026 09:00:00 +0000</pubDate>
+      <category>The road to Bot 7</category>
+      <description>Give a network the unfinished leg — everything from the last confirmed pivot to now, as one fixed-size canvas — and ask how complete it is. For the first time in this series a model beats the simple counter of events since the pivot on unseen weeks: fullness AUC 0.77 against 0.70, error 0.18 against 0.24. The surprise is where the knowledge comes from: the last 16 rows of the canvas do as well as all 500. On a 30-second standard with sliding windows the gap widens (0.78 vs 0.62), and the network locates a pivot inside its window with AUC 0.96. What it still cannot do cleanly is call &quot;the leg is over&quot; live: nine of ten such signals miss.</description>
+    </item>
+    <item>
+      <title>Where a Leg Really Ends — Four Events Earlier Than the Zigzag Says</title>
+      <link>https://marketflowresear.ch/articles/where-a-leg-really-ends-four-events-earlier-than-the-zigzag-says/</link>
+      <guid isPermaLink="true">https://marketflowresear.ch/articles/where-a-leg-really-ends-four-events-earlier-than-the-zigzag-says/</guid>
+      <pubDate>Wed, 30 Sep 2026 09:00:00 +0000</pubDate>
+      <category>The road to Bot 7</category>
+      <description>We went looking for a unique, universal signature of a pivot in 531 legs of six coins. The book turned out to be a mirror — tops and bottoms read with one ruler once buyer and seller features swap. The zigzag&#x27;s pivot turned out to sit in the wrong place: the true boundary of a leg is the extreme of the closing price within ±25 events, four events earlier, and there the signature becomes symmetric and one event sharp. What we did not find is uniqueness: a 0.5% correction carries the same signature, weaker. The signature measures the strength of a turn — not whether the leg is over.</description>
+    </item>
+    <item>
+      <title>Can Our Networks&#x27; Outputs Become a Buy/Sell Signal? A Simple 1.2% Zigzag Says No</title>
+      <link>https://marketflowresear.ch/articles/can-the-networks-outputs-become-a-buy-sell-signal-a-simple-zigzag-says-no/</link>
+      <guid isPermaLink="true">https://marketflowresear.ch/articles/can-the-networks-outputs-become-a-buy-sell-signal-a-simple-zigzag-says-no/</guid>
+      <pubDate>Wed, 30 Sep 2026 09:00:00 +0000</pubDate>
+      <category>The road to Bot 7</category>
+      <description>Our networks each say something about a leg: it is ending, it is 80% done, this is a reversal zone. None says &quot;buy&quot; or &quot;sell&quot;. So we combined their outputs into one decision and raced it against three rivals: each channel alone, a coin with the same number of signals, and a causal 1.2% zigzag on the same price. The combination found 40% of reversals within ±50 events — where chance at that frequency finds 30%. The plain zigzag found 72%. With $1,000 on BTC, the networks ended level with the coin; the zigzag ended next to buy-and-hold. What the networks do know is where a reversal was.</description>
+    </item>
+    <item>
+      <title>A Loss Ladder for Five Trained Networks — and the Biggest Win That Was a Dropout Bug</title>
+      <link>https://marketflowresear.ch/articles/a-loss-ladder-for-five-trained-networks-and-the-win-that-was-a-dropout-bug/</link>
+      <guid isPermaLink="true">https://marketflowresear.ch/articles/a-loss-ladder-for-five-trained-networks-and-the-win-that-was-a-dropout-bug/</guid>
+      <pubDate>Wed, 30 Sep 2026 09:00:00 +0000</pubDate>
+      <category>The road to Bot 7</category>
+      <description>We took five approved networks from this series and tried to improve them without retraining: change the loss function between epochs, raise the penalty step by step, keep an epoch only if a fixed metric on validation improves. 124 attempts, 6.9 machine hours. One network truly improved — the one whose own training had stopped too early — and it improved from a smaller learning rate, not a new loss. The spectacular result, +0.47 on the zone model, vanished when the saved weights were measured again in a separate process: the GPU backend had left dropout switched on during evaluation.</description>
+    </item>
+    <item>
+      <title>A Correction and a Reversal Are One Event of Different Strength — What the Book Shows Inside a Leg</title>
+      <link>https://marketflowresear.ch/articles/correction-and-reversal-are-one-event-of-different-strength/</link>
+      <guid isPermaLink="true">https://marketflowresear.ch/articles/correction-and-reversal-are-one-event-of-different-strength/</guid>
+      <pubDate>Wed, 30 Sep 2026 09:00:00 +0000</pubDate>
+      <category>The road to Bot 7</category>
+      <description>Every leg of a zigzag holds its own common level in the order book, and removing it would make the unusual events stand out — if only it could be known in time. It cannot: the previous leg predicts it so poorly that subtracting it adds noise. What the book does show is a reversal zone of about 15 events with a clear signature — and the same signature, weaker, inside every correction. Normal event, correction, pivot: one axis. Models find the pivot zone at AUC 0.72–0.75 and put 8.5× the base rate in their most confident answers, but no memory, loss or penalty separates a pivot from a correction without breaking the correction channel.</description>
+    </item>
+    <item>
+      <title>The Book Sees the Edge of a Leg, Not Its End — Event by Event on BTC</title>
+      <link>https://marketflowresear.ch/articles/the-book-sees-the-edge-of-a-leg-not-its-end/</link>
+      <guid isPermaLink="true">https://marketflowresear.ch/articles/the-book-sees-the-edge-of-a-leg-not-its-end/</guid>
+      <pubDate>Wed, 30 Sep 2026 09:00:00 +0000</pubDate>
+      <category>The road to Bot 7</category>
+      <description>Event by event on BTC, every feature of our order-book class carries its place in the leg: a U-shaped profile that holds inside individual legs, with the same sign in 80% of them. But what it reads is the distance to a pivot, not the progress through the leg. It tells a real end of a leg from a shallow 0.5% correction (AUC 0.669), and loses that ability as the correction deepens — at 1.5% there is nothing. A detector of &quot;this is the tail of a leg&quot; lifts precision up to ×19 over the base, yet cannot tell a tail from a head. The book knows it is at an edge; it does not know which one.</description>
+    </item>
+    <item>
+      <title>The Order Book Along a Leg — Slow Legs, Thin Edges, and a Signal at the End That Beats Chance ×4.6</title>
+      <link>https://marketflowresear.ch/articles/the-order-book-along-a-leg-slow-legs-thin-edges-and-a-signal-at-the-end/</link>
+      <guid isPermaLink="true">https://marketflowresear.ch/articles/the-order-book-along-a-leg-slow-legs-thin-edges-and-a-signal-at-the-end/</guid>
+      <pubDate>Wed, 30 Sep 2026 09:00:00 +0000</pubDate>
+      <category>The road to Bot 7</category>
+      <description>We laid the seven features of our best order-book class along 554 zigzag legs of six coins. Every feature marks the edges of a leg, with the book thinning per unit of flow right before a pivot. The same features tell a short leg from a long one early — not the exact length, but its distribution. A memory network trained on &quot;the last 5% of the leg&quot; puts 23% of its loudest calls there, against 5% by chance. And the honest cost is written next to each number: detecting a new leg takes 12–16 events, a price-path detector still does better, and the zigzag labels themselves arrive late.</description>
+    </item>
+    <item>
+      <title>A Leg Moves at Its Edges — and You See the New One Only After It Starts</title>
+      <link>https://marketflowresear.ch/articles/a-leg-moves-at-its-edges-and-you-see-the-new-one-only-after-it-starts/</link>
+      <guid isPermaLink="true">https://marketflowresear.ch/articles/a-leg-moves-at-its-edges-and-you-see-the-new-one-only-after-it-starts/</guid>
+      <pubDate>Wed, 30 Sep 2026 09:00:00 +0000</pubDate>
+      <category>The road to Bot 7</category>
+      <description>Split every 2.3% zigzag leg of six coins into tenths and measure where the price actually travels: 39% of the move happens in the first and last tenth, three times more per tenth than in the middle. The start of a leg reveals its direction and its volatility, never its length or its ending. A detector for &quot;a new leg has begun&quot; reaches 63% precision 21 events after the pivot and 98% after 31 — confirmation, not foresight. And twelve numbers about the price path beat every order-book class in the project at that task.</description>
+    </item>
+    <item>
+      <title>The ±0.15% Pivot Zone — Seventeen Ways to Describe an Event, One Honest Ceiling of 0.70</title>
+      <link>https://marketflowresear.ch/articles/the-pivot-zone-plus-minus-015-percent-seventeen-ways-to-describe-an-event/</link>
+      <guid isPermaLink="true">https://marketflowresear.ch/articles/the-pivot-zone-plus-minus-015-percent-seventeen-ways-to-describe-an-event/</guid>
+      <pubDate>Wed, 30 Sep 2026 09:00:00 +0000</pubDate>
+      <category>The road to Bot 7</category>
+      <description>Near every 2.3% pivot, price lingers within 0.15% of the turning level for a while — a median of 11 events, about 38 minutes, 2% of the whole series. Is that stretch recognisable from the order book alone? We asked gradient boosting on every event of six coins, with batches of 1 to 11 events and all 17 event classes this project has built. The answer is a consistent &quot;a little&quot;: AUC 0.61–0.66 on the main class, 0.701 at best on raw book levels — and at a working threshold, 95 hits bought with 6,725 false signals.</description>
+    </item>
+    <item>
+      <title>The Filter That Would Lift Precision From 51% to 93% — and Why We Cannot Build It Yet</title>
+      <link>https://marketflowresear.ch/articles/the-filter-that-would-lift-precision-to-93-percent-and-why-we-cannot-build-it/</link>
+      <guid isPermaLink="true">https://marketflowresear.ch/articles/the-filter-that-would-lift-precision-to-93-percent-and-why-we-cannot-build-it/</guid>
+      <pubDate>Wed, 30 Sep 2026 09:00:00 +0000</pubDate>
+      <category>The road to Bot 7</category>
+      <description>Half of the reversal-confirmation signals are false, and they share one trait: they point into the middle of a leg. A filter that knows how far along its leg an event really is removes 45 of 49 false signals and not one true one — precision 51% → 92.7%. The catch is that &quot;how far along&quot; is only known in hindsight. Every causal estimator we built — trees, a memory network, ten loss functions, a 24-point grid — reaches an AUC of about 0.69 for &quot;this is the last tenth of the leg&quot;, where the filter needs something near 0.95. With that estimate, the filter cuts true signals as fast as false ones.</description>
+    </item>
+    <item>
+      <title>Can a Memory Network Rebuild Context From the Raw Sequence? Not From the Order Book</title>
+      <link>https://marketflowresear.ch/articles/can-a-memory-network-rebuild-context-from-the-raw-sequence/</link>
+      <guid isPermaLink="true">https://marketflowresear.ch/articles/can-a-memory-network-rebuild-context-from-the-raw-sequence/</guid>
+      <pubDate>Wed, 30 Sep 2026 09:00:00 +0000</pubDate>
+      <category>The road to Bot 7</category>
+      <description>Trees won the reversal ladder with hand-made aggregates: five numbers about recent extremes over four look-back windows. A memory network should not need them — the price change of every event is already inside the class, and integrating it would rebuild the whole context. We gave an LSTM 60 events of raw class, of price context, and of both. The class alone reached an honest AUC of 0.77; price context alone, 0.965. Adding the class to price made it worse. And trees on five aggregates still found reversals two and a half times more precisely than the network.</description>
+    </item>
+    <item>
+      <title>Pivot Confirmation on Three Unseen Weeks — Precision Holds, the Threshold Does Not</title>
+      <link>https://marketflowresear.ch/articles/pivot-confirmation-on-three-unseen-weeks/</link>
+      <guid isPermaLink="true">https://marketflowresear.ch/articles/pivot-confirmation-on-three-unseen-weeks/</guid>
+      <pubDate>Wed, 30 Sep 2026 09:00:00 +0000</pubDate>
+      <category>The road to Bot 7</category>
+      <description>The reversal ladder of the previous article was scored on a held-out coin — but in the same weeks it trained on. Here the models trained on everything up to 14 August 2026 and were scored on the three weeks after, six coins, with the threshold fixed in advance from honest training scores. Precision did not fall: 51% two and a half hours after a pivot, 73% after six hours, on 88–93 reversals. What broke instead was the threshold itself — at two rungs of the ladder the models went completely silent while their AUC stayed above 0.9.</description>
+    </item>
+    <item>
+      <title>A Reversal Is a Place in the Move, Not a Shape in the Book — Five Causal Numbers Beat 62</title>
+      <link>https://marketflowresear.ch/articles/a-reversal-is-a-place-in-the-move-not-a-shape-in-the-book/</link>
+      <guid isPermaLink="true">https://marketflowresear.ch/articles/a-reversal-is-a-place-in-the-move-not-a-shape-in-the-book/</guid>
+      <pubDate>Wed, 30 Sep 2026 09:00:00 +0000</pubDate>
+      <category>The road to Bot 7</category>
+      <description>The edge of a leg really is different from its middle — in 85% of 600 legs, by a factor of about 3.8, with a coin-flip control at 0.51. Yet no single 10-event batch can be picked out of the whole dataset by its book numbers. Five tests later the reason is clear: what identifies a reversal is where you are in the move, not what the book looks like. Five causal numbers about recent extremes lift the hit rate 121-fold over the base; the 62 numbers of the class manage 3.8-fold and add nothing on top. Asked again every ten events with four look-back windows, &quot;was that a pivot?&quot; climbs from 26% after ten minutes to 71% after six hours.</description>
+    </item>
+    <item>
+      <title>A Reversal Has No Signature of Its Own — One in Four Ordinary Stretches Looks Stronger</title>
+      <link>https://marketflowresear.ch/articles/a-reversal-has-no-signature-of-its-own-in-the-order-book/</link>
+      <guid isPermaLink="true">https://marketflowresear.ch/articles/a-reversal-has-no-signature-of-its-own-in-the-order-book/</guid>
+      <pubDate>Wed, 30 Sep 2026 09:00:00 +0000</pubDate>
+      <category>The road to Bot 7</category>
+      <description>Around a 2.3% pivot the order book changes in multiples: flow ratios two to five times bigger, book-per-flow ratios three to seventeen times smaller. That sounds like a fingerprint. It is not. One in four continuous 10-event stretches far from any pivot is stronger still, the strongest is 47 times stronger than the strongest reversal, and a neural network on all 630 numbers of a reversal batch reaches the same AUC as a straight line: about 0.70. The reversal is a shift of the same distribution, not a different kind of event.</description>
+    </item>
+    <item>
+      <title>Derivatives of the Order Book — Reversals Leave a Trace, Not a Warning</title>
+      <link>https://marketflowresear.ch/articles/derivatives-of-the-order-book-reversals-leave-a-trace-not-a-warning/</link>
+      <guid isPermaLink="true">https://marketflowresear.ch/articles/derivatives-of-the-order-book-reversals-leave-a-trace-not-a-warning/</guid>
+      <pubDate>Wed, 30 Sep 2026 09:00:00 +0000</pubDate>
+      <category>The road to Bot 7</category>
+      <description>We rebuilt the basic event of this series from scratch: 210 seconds cut into ten 21-second blocks, book levels divided by the volume of their own block, then first derivatives from block to block — on six coins, 402,731 events. The new description sees reversals clearly: around a pivot there is more flow and a thinner book per unit of that flow. But almost all of it sits in the first tenth of the next leg. The book reacts to a reversal far more than it foretells one. The last class of the family, derivative over derivative, lifts a detector of the reversal zone to AUC 0.700 on fresh legs — and becomes the workhorse of every study that follows.</description>
+    </item>
+    <item>
+      <title>Change the Question, Not the Network — &quot;Will the Leg End Soon?&quot; Scores 0.73 Where &quot;Which Tenth?&quot; Scored Nothing</title>
+      <link>https://marketflowresear.ch/articles/change-the-question-not-the-network-leg-end-hazard/</link>
+      <guid isPermaLink="true">https://marketflowresear.ch/articles/change-the-question-not-the-network-leg-end-hazard/</guid>
+      <pubDate>Wed, 30 Sep 2026 09:00:00 +0000</pubDate>
+      <category>The road to Bot 7</category>
+      <description>The memory network of the previous study learned to count instead of reading the market. We opened its loss function and found why: counting was the exact optimum. Then a plain perceptron settled it — the 60 order-book numbers of an event carry zero information about which tenth of the leg it sits in. They do carry information about something else: whether a pivot is close. Rebuilt around that question — four horizons, one monotone curve — the same data scores an average AUC of 0.73 across six coins. The order book shows the exhaustion of a move. It still does not show its direction.</description>
+    </item>
+    <item>
+      <title>A Memory Network Asked &quot;Is the Leg Over?&quot; Learned to Count, Not to Read</title>
+      <link>https://marketflowresear.ch/articles/a-memory-network-that-learned-to-count-not-to-read/</link>
+      <guid isPermaLink="true">https://marketflowresear.ch/articles/a-memory-network-that-learned-to-count-not-to-read/</guid>
+      <pubDate>Wed, 30 Sep 2026 09:00:00 +0000</pubDate>
+      <category>The road to Bot 7</category>
+      <description>An LSTM with attention walked each 2.3% zigzag leg event by event and, at every step, said how far along the leg was. Across five label designs, one coin and then six, it never once placed its end-of-leg signal inside the last tenth of a fresh leg. What it learned was a clock: a steady count from the start of the leg. When the zigzag stopped handing it that start — memory reset only when the network itself called a pivot — it did not call a single one in 42,192 events.</description>
+    </item>
+    <item>
+      <title>Four Numbers per Event and a 28-Cell Answer — Where the Signal Really Came From</title>
+      <link>https://marketflowresear.ch/articles/four-numbers-per-event-and-a-28-cell-answer/</link>
+      <guid isPermaLink="true">https://marketflowresear.ch/articles/four-numbers-per-event-and-a-28-cell-answer/</guid>
+      <pubDate>Wed, 30 Sep 2026 09:00:00 +0000</pubDate>
+      <category>The road to Bot 7</category>
+      <description>The previous networks read each book feature through 13 exponential averages and topped out at a correlation of 0.29 with the leg target. Strip the averages away and the same features, raw per event, correlate at 0.09. So the link was made by the smoothing, not by the snapshot. We then gave a transformer six coins, 345,000 training windows and a new kind of output — 28 cells instead of one number — to stop it hiding in the middle. It stopped hiding. It did not start hitting: 5.4% of real pivot-zone signals, with false calls a day away.</description>
+    </item>
+    <item>
+      <title>Same Data, Different Readout — How a Transformer Fails Differently From an Attention Query</title>
+      <link>https://marketflowresear.ch/articles/same-data-different-readout-transformer-vs-attention-query/</link>
+      <guid isPermaLink="true">https://marketflowresear.ch/articles/same-data-different-readout-transformer-vs-attention-query/</guid>
+      <pubDate>Wed, 30 Sep 2026 09:00:00 +0000</pubDate>
+      <category>The road to Bot 7</category>
+      <description>We repeated the previous study exactly — same 2.3% zigzag target, same pivot zone, same loss, split and seed — and changed one thing: how the network reads its own sequence. Averaging the 13 steps instead of letting a learned query pick them cut the error from 0.554 to 0.476 and made &quot;vertex&quot; calls 44% precise instead of 3%. Tuning then turned the same model into a noisy caller again. And past the end of the dataset, both readouts lose the direction. The readout decides how a network is wrong, not whether it is right.</description>
+    </item>
+    <item>
+      <title>A Network That Found the Pivot Zone — Only Where It Was Trained</title>
+      <link>https://marketflowresear.ch/articles/a-network-that-found-the-pivot-zone-only-where-it-was-trained/</link>
+      <guid isPermaLink="true">https://marketflowresear.ch/articles/a-network-that-found-the-pivot-zone-only-where-it-was-trained/</guid>
+      <pubDate>Wed, 30 Sep 2026 09:00:00 +0000</pubDate>
+      <category>The road to Bot 7</category>
+      <description>We asked an attention network to do one specific thing: tell when price is near the end of a 2.3% zigzag leg — within 10% of the pivot and no more than 40 events from it. On the weeks it trained on it caught 65% of those zones. On validation, 4%. On test, 3.8%. On ten days after the dataset ended, its correlation with the target turned negative. This is a measured negative result, and the measuring tool it produced — the pivot zone — is what we carry forward.</description>
+    </item>
+    <item>
+      <title>Six Networks Tried, the Winner Has 53 Parameters — Teaching a Model Where Price Sits in Its Leg</title>
+      <link>https://marketflowresear.ch/articles/six-networks-one-winner-with-53-parameters/</link>
+      <guid isPermaLink="true">https://marketflowresear.ch/articles/six-networks-one-winner-with-53-parameters/</guid>
+      <pubDate>Wed, 30 Sep 2026 09:00:00 +0000</pubDate>
+      <category>The road to Bot 7</category>
+      <description>Correlations said the slow order book knows roughly where price sits inside its zigzag leg. So we trained networks to say it out loud: a number from −1 (at the low pivot) to +1 (at the high pivot), from four book features under thirteen averages. Six families on the same data, a time split with five walk-forward windows — and the linear model with 53 parameters won. On the final test it beats the constant for the first time (MAE 0.438 vs 0.446, sign 55.1%); on eleven fresh days outside the dataset, sign 60.7% on 44 legs. Small, consistent — and the reason is a loss that pays attention to the edges of the leg.</description>
+    </item>
+    <item>
+      <title>Twelve Hours of Order-Book State and the Direction of a Move — From 0.16 to 0.42</title>
+      <link>https://marketflowresear.ch/articles/twelve-hours-of-order-book-state-and-the-direction-of-a-move/</link>
+      <guid isPermaLink="true">https://marketflowresear.ch/articles/twelve-hours-of-order-book-state-and-the-direction-of-a-move/</guid>
+      <pubDate>Wed, 30 Sep 2026 09:00:00 +0000</pubDate>
+      <category>The road to Bot 7</category>
+      <description>Does the order book, averaged over about half a day, know which way the current move is going? We smoothed four book features with exponential averages on 52 horizons from 35 minutes to 58 hours and correlated them with the direction of 2.3% and 0.8% zigzag moves on 40,242 BTC events. The raw answer is weak (−0.16 at best). Three changes of question — a price feature instead of price, the position inside the leg instead of the direction, and a zigzag drawn on the same smoothing — lift the ceiling to 0.42. That is 17% of the variance, from a description that ignores the last hour entirely.</description>
+    </item>
+    <item>
+      <title>Predicting the Next Phase of a Move From the Order Book — 832 Window Sizes, One Honest Ceiling</title>
+      <link>https://marketflowresear.ch/articles/predicting-the-next-phase-of-a-move-from-the-order-book/</link>
+      <guid isPermaLink="true">https://marketflowresear.ch/articles/predicting-the-next-phase-of-a-move-from-the-order-book/</guid>
+      <pubDate>Wed, 30 Sep 2026 09:00:00 +0000</pubDate>
+      <category>The road to Bot 7</category>
+      <description>Every event of BTC&#x27;s order book sits in one of four phases of a zigzag: rising, a pullback inside a rise, falling, or a pullback inside a fall. We asked a closed-form linear model to name the phase of the next event from the N events before it — and tried every N from 2 to 833. The signal is real from N = 2, peaks at 0.418 accuracy on about one zigzag leg of history against a 0.377 baseline, and is essentially binary: up or down, the pullbacks go unseen. The labels of the past alone would score 0.976.</description>
+    </item>
+    <item>
+      <title>A Leg Is the Sum of Its Events — and Size Beats Count</title>
+      <link>https://marketflowresear.ch/articles/a-leg-is-the-sum-of-its-events-size-beats-count/</link>
+      <guid isPermaLink="true">https://marketflowresear.ch/articles/a-leg-is-the-sum-of-its-events-size-beats-count/</guid>
+      <pubDate>Wed, 30 Sep 2026 09:00:00 +0000</pubDate>
+      <category>The road to Bot 7</category>
+      <description>We cut the price of six coins into 210-second events and into 2.3% zigzag legs, then asked the simplest question a direction model has to answer: how does a leg actually make its move? Over 712 legs and 409,998 events the answer is exact — the leg is the sum of its events (0.999 on clean legs) — and surprising: up legs are only 51.9% up-events. The move is carried by the size of events, not by how many point the right way.</description>
+    </item>
+    <item>
+      <title>A Detector for Corrections Inside a Move — and Why It Took a New Way of Measuring</title>
+      <link>https://marketflowresear.ch/articles/a-detector-for-corrections-inside-a-move/</link>
+      <guid isPermaLink="true">https://marketflowresear.ch/articles/a-detector-for-corrections-inside-a-move/</guid>
+      <pubDate>Mon, 31 Aug 2026 09:00:00 +0000</pubDate>
+      <category>Order-book research</category>
+      <description>We stopped measuring how loud the order book is and started measuring how much wall stands per unit of aggression — eight features collapsed into four ratios. On that new scale a class appears that we could not see before: corrections inside a move, 5,396 of them, events that already look like a reversal without being one. Three detectors find them at 0.94 precision on a held-out half, and an external 0.8% zigzag confirms the class survives after loudness is matched away (×1.69). For a bot, that is the difference between holding a trend and being shaken out of it.</description>
+    </item>
+    <item>
+      <title>Bot 6, Line 61: Nine Trades, Eight Winners, and Why We Are Not Celebrating</title>
+      <link>https://marketflowresear.ch/articles/bot-6-line-61-nine-trades-eight-winners/</link>
+      <guid isPermaLink="true">https://marketflowresear.ch/articles/bot-6-line-61-nine-trades-eight-winners/</guid>
+      <pubDate>Mon, 17 Aug 2026 09:00:00 +0000</pubDate>
+      <category>Live bots — every result</category>
+      <description>Line 61 of Bot 6 holds one position at a time and has been live since 17 July 2026: 31 days, 9 closed trades, +11.81 USD on a 100 USD slot, win rate 89%. Its entry gate is agreement between two independent models plus a context check; its exits are a 2% target, a 4% stop and a hard 72-hour clock. This is the complete record, including the comparison with its twin line running the identical recipe — which is the part that keeps us honest.</description>
+    </item>
+    <item>
+      <title>Bot 6, Line 60: A Bot That Mostly Waits — and What the Clock Costs It</title>
+      <link>https://marketflowresear.ch/articles/bot-6-line-60-a-bot-that-mostly-waits/</link>
+      <guid isPermaLink="true">https://marketflowresear.ch/articles/bot-6-line-60-a-bot-that-mostly-waits/</guid>
+      <pubDate>Mon, 17 Aug 2026 09:00:00 +0000</pubDate>
+      <category>Live bots — every result</category>
+      <description>Line 60 of Bot 6 holds one position at a time and has been live since 15 July 2026: 33 days, 9 closed trades, +0.68 USD on a 100 USD slot, win rate 44%. Its entry gate is agreement between two independent models plus a context check; its exits are a 2% target, a 4% stop and a hard 72-hour clock. This is the complete record, including the comparison with its twin line running the identical recipe — which is the part that keeps us honest.</description>
+    </item>
+    <item>
+      <title>Bot 4: What Forty Days of Live Paper Trading Actually Look Like</title>
+      <link>https://marketflowresear.ch/articles/bot-4-forty-days-of-live-paper-trading/</link>
+      <guid isPermaLink="true">https://marketflowresear.ch/articles/bot-4-forty-days-of-live-paper-trading/</guid>
+      <pubDate>Mon, 17 Aug 2026 09:00:00 +0000</pubDate>
+      <category>Live bots — every result</category>
+      <description>Bot 4 has been trading live on paper since 09 July 2026 — 40 days, 49 closed trades, +29.53 USD on 600 USD of capital, a 80% win rate, against +1.49% on average for buying and holding the same coins. This is the full record: the rules it never deviates from, every closed trade, the open positions right now, and the hourly referee that can hand the account to a freshly trained challenger — which has happened 4 times so far.</description>
+    </item>
+    <item>
+      <title>Gates: The Part of a Trading Bot That Decides Not to Trade</title>
+      <link>https://marketflowresear.ch/articles/gates-the-part-of-a-bot-that-decides-not-to-trade/</link>
+      <guid isPermaLink="true">https://marketflowresear.ch/articles/gates-the-part-of-a-bot-that-decides-not-to-trade/</guid>
+      <pubDate>Mon, 17 Aug 2026 09:00:00 +0000</pubDate>
+      <category>Live bots — every result</category>
+      <description>A trading bot&#x27;s model produces a number; its gate decides whether that number is worth a fee. This article measures what gates actually cost. Demanding a signal persist two bars instead of one raises precision from 0.209 to 0.238 and throws away 25% of the opportunities. Bot 4 stacks four gates and still lands inside the noise across random seeds. Bot 6 gates on agreement between two models — and two live lines running that identical gate for a month finished +11.81 and +0.68 USD apart. Gates buy precision with coverage; nothing here is free.</description>
+    </item>
+    <item>
+      <title>The Order Book Tells You How Far, Never Which Way</title>
+      <link>https://marketflowresear.ch/articles/the-order-book-tells-you-how-far-never-which-way/</link>
+      <guid isPermaLink="true">https://marketflowresear.ch/articles/the-order-book-tells-you-how-far-never-which-way/</guid>
+      <pubDate>Mon, 17 Aug 2026 09:00:00 +0000</pubDate>
+      <category>Order-book research</category>
+      <description>We asked eight order-book features the same two questions at 16 horizons from one second to a day, on six coins: how far will the price move, and which way. Size answers — ρ 0.30 at a second, still 0.11 at an hour. Direction never does: -0.002 at a minute, -0.003 at a day. Then we bet real rules on both answers over 30 out-of-sample days: the volatility bet makes +4.97 bps a trade, the direction bet loses 5.95. This is the measurement that decides what our bots are allowed to bet on.</description>
+    </item>
+  </channel>
+</rss>

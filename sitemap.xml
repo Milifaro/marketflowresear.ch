@@ -2,334 +2,342 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://marketflowresear.ch/</loc>
-    <lastmod>2026-07-15</lastmod>
-  </url>
-  <url>
-    <loc>https://marketflowresear.ch/articles/order-flow-predicts-volatility/</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/volume-is-fuel-not-steering-wheel/</loc>
-    <lastmod>2026-07-25</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/about-market-research-lab/</loc>
-    <lastmod>2026-07-29</lastmod>
-  </url>
-  <url>
-    <loc>https://marketflowresear.ch/articles/resting-walls-what-thick-liquidity-predicts/</loc>
-    <lastmod>2026-07-31</lastmod>
-  </url>
-  <url>
-    <loc>https://marketflowresear.ch/articles/wall-drain-liquidity-pulled-before-the-move/</loc>
-    <lastmod>2026-07-31</lastmod>
-  </url>
-  <url>
-    <loc>https://marketflowresear.ch/articles/wall-build-up-liquidity-arriving/</loc>
-    <lastmod>2026-07-31</lastmod>
-  </url>
-  <url>
-    <loc>https://marketflowresear.ch/articles/resistance-cycle-build-up-versus-drain/</loc>
-    <lastmod>2026-07-31</lastmod>
-  </url>
-  <url>
-    <loc>https://marketflowresear.ch/articles/support-cycle-build-up-versus-drain/</loc>
-    <lastmod>2026-07-31</lastmod>
-  </url>
-  <url>
-    <loc>https://marketflowresear.ch/articles/the-resting-sell-wall-alone/</loc>
-    <lastmod>2026-07-31</lastmod>
-  </url>
-  <url>
-    <loc>https://marketflowresear.ch/articles/the-resting-buy-wall-alone/</loc>
-    <lastmod>2026-07-31</lastmod>
-  </url>
-  <url>
-    <loc>https://marketflowresear.ch/articles/build-up-into-the-sell-wall/</loc>
-    <lastmod>2026-07-31</lastmod>
-  </url>
-  <url>
-    <loc>https://marketflowresear.ch/articles/drain-out-of-the-sell-wall/</loc>
-    <lastmod>2026-07-31</lastmod>
-  </url>
-  <url>
-    <loc>https://marketflowresear.ch/articles/build-up-into-the-buy-wall/</loc>
-    <lastmod>2026-07-31</lastmod>
-  </url>
-  <url>
-    <loc>https://marketflowresear.ch/articles/drain-out-of-the-buy-wall/</loc>
-    <lastmod>2026-07-31</lastmod>
-  </url>
-  <url>
-    <loc>https://marketflowresear.ch/articles/executed-buy-volume-alone/</loc>
-    <lastmod>2026-07-31</lastmod>
-  </url>
-  <url>
-    <loc>https://marketflowresear.ch/articles/executed-sell-volume-alone/</loc>
-    <lastmod>2026-07-31</lastmod>
-  </url>
-  <url>
-    <loc>https://marketflowresear.ch/articles/lifecycle-of-a-sell-wall/</loc>
-    <lastmod>2026-07-31</lastmod>
-  </url>
-  <url>
-    <loc>https://marketflowresear.ch/articles/flow-against-the-wall/</loc>
-    <lastmod>2026-07-31</lastmod>
-  </url>
-  <url>
-    <loc>https://marketflowresear.ch/articles/resistance-against-support/</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/signal-standard-from-calm-to-calm-btc/</loc>
-    <lastmod>2026-08-03</lastmod>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://marketflowresear.ch/articles/resting-walls-what-thick-liquidity-predicts/</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://marketflowresear.ch/articles/wall-drain-liquidity-pulled-before-the-move/</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://marketflowresear.ch/articles/wall-build-up-liquidity-arriving/</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://marketflowresear.ch/articles/resistance-cycle-build-up-versus-drain/</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://marketflowresear.ch/articles/support-cycle-build-up-versus-drain/</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://marketflowresear.ch/articles/the-resting-sell-wall-alone/</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://marketflowresear.ch/articles/the-resting-buy-wall-alone/</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://marketflowresear.ch/articles/build-up-into-the-sell-wall/</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://marketflowresear.ch/articles/drain-out-of-the-sell-wall/</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://marketflowresear.ch/articles/build-up-into-the-buy-wall/</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://marketflowresear.ch/articles/drain-out-of-the-buy-wall/</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://marketflowresear.ch/articles/executed-buy-volume-alone/</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://marketflowresear.ch/articles/executed-sell-volume-alone/</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://marketflowresear.ch/articles/lifecycle-of-a-sell-wall/</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://marketflowresear.ch/articles/flow-against-the-wall/</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://marketflowresear.ch/articles/resistance-against-support/</loc>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/the-alphabet-of-the-order-book-signal-states/</loc>
-    <lastmod>2026-08-03</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/event-classes-found-without-a-teacher/</loc>
-    <lastmod>2026-08-03</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/no-classes-in-the-order-book-only-one-state/</loc>
-    <lastmod>2026-08-05</lastmod>
-  </url>
-  <url>
-    <loc>https://marketflowresear.ch/articles/local-tops-and-bottoms-what-four-trained-models-actually-see/</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/four-market-states-found-twice-by-two-independent-pipelines/</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://marketflowresear.ch/articles/local-tops-and-bottoms-what-four-trained-models-actually-see/</loc>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/two-poles-of-market-activity-found-on-six-coins/</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/the-autoencoder-that-lost-to-pca/</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/does-the-phase-of-a-move-change-what-the-order-book-looks-like/</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/sixteen-networks-one-working-answer/</loc>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/we-found-the-reversal-signal-machine-learning-could-not-tell-it-apart/</loc>
-    <lastmod>2026-08-09</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/we-went-looking-for-the-dna-of-a-reversal-we-found-a-ceiling-instead/</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/the-storm-class-which-order-book-feature-marks-a-reversal/</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/reversals-in-a-quiet-market-where-two-percent-of-events-hide/</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/class-2-the-middle-state-where-no-single-feature-wins/</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/three-classes-one-question-what-it-takes-to-separate-a-reversal/</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/one-network-for-three-market-states/</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/one-axis-again-clustering-order-book-windows-without-a-teacher/</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/the-rising-half-of-a-move-what-the-order-book-looks-like/</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/tops-hide-bottoms-do-not-the-asymmetry-we-did-not-expect/</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/twenty-five-weeks-twenty-five-rebuilds-which-clustering-survives/</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/throwing-away-a-third-of-the-data-and-keeping-the-reversals/</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/a-recipe-not-a-result-how-we-clean-an-order-book-dataset/</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/we-taught-a-network-to-see-a-move-and-it-only-heard-how-loud-it-was/</loc>
-    <lastmod>2026-08-15</lastmod>
-  </url>
-  <url>
-    <loc>https://marketflowresear.ch/articles/typhoon-plus-a-signal-that-finds-the-zones-and-still-loses-money/</loc>
-    <lastmod>2026-08-17</lastmod>
-  </url>
-  <url>
-    <loc>https://marketflowresear.ch/articles/the-order-book-tells-you-how-far-never-which-way/</loc>
-    <lastmod>2026-08-17</lastmod>
-  </url>
-  <url>
-    <loc>https://marketflowresear.ch/articles/gates-the-part-of-a-bot-that-decides-not-to-trade/</loc>
-    <lastmod>2026-08-17</lastmod>
-  </url>
-  <url>
-    <loc>https://marketflowresear.ch/articles/bot-4-forty-days-of-live-paper-trading/</loc>
-    <lastmod>2026-08-17</lastmod>
-  </url>
-  <url>
-    <loc>https://marketflowresear.ch/articles/bot-6-line-60-a-bot-that-mostly-waits/</loc>
-    <lastmod>2026-08-17</lastmod>
-  </url>
-  <url>
-    <loc>https://marketflowresear.ch/articles/bot-6-line-61-nine-trades-eight-winners/</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/a-detector-for-corrections-inside-a-move/</loc>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://marketflowresear.ch/articles/typhoon-plus-a-signal-that-finds-the-zones-and-still-loses-money/</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://marketflowresear.ch/articles/the-order-book-tells-you-how-far-never-which-way/</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://marketflowresear.ch/articles/gates-the-part-of-a-bot-that-decides-not-to-trade/</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://marketflowresear.ch/articles/bot-4-forty-days-of-live-paper-trading/</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://marketflowresear.ch/articles/bot-6-line-60-a-bot-that-mostly-waits/</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://marketflowresear.ch/articles/bot-6-line-61-nine-trades-eight-winners/</loc>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/a-leg-is-the-sum-of-its-events-size-beats-count/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/predicting-the-next-phase-of-a-move-from-the-order-book/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/twelve-hours-of-order-book-state-and-the-direction-of-a-move/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/six-networks-one-winner-with-53-parameters/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/a-network-that-found-the-pivot-zone-only-where-it-was-trained/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/same-data-different-readout-transformer-vs-attention-query/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/four-numbers-per-event-and-a-28-cell-answer/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/a-memory-network-that-learned-to-count-not-to-read/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/change-the-question-not-the-network-leg-end-hazard/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/derivatives-of-the-order-book-reversals-leave-a-trace-not-a-warning/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/a-reversal-has-no-signature-of-its-own-in-the-order-book/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/a-reversal-is-a-place-in-the-move-not-a-shape-in-the-book/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/pivot-confirmation-on-three-unseen-weeks/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/can-a-memory-network-rebuild-context-from-the-raw-sequence/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/the-filter-that-would-lift-precision-to-93-percent-and-why-we-cannot-build-it/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/the-pivot-zone-plus-minus-015-percent-seventeen-ways-to-describe-an-event/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/a-leg-moves-at-its-edges-and-you-see-the-new-one-only-after-it-starts/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/the-order-book-along-a-leg-slow-legs-thin-edges-and-a-signal-at-the-end/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/the-book-sees-the-edge-of-a-leg-not-its-end/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/correction-and-reversal-are-one-event-of-different-strength/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/a-loss-ladder-for-five-trained-networks-and-the-win-that-was-a-dropout-bug/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/can-the-networks-outputs-become-a-buy-sell-signal-a-simple-zigzag-says-no/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/where-a-leg-really-ends-four-events-earlier-than-the-zigzag-says/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/how-full-is-this-leg-a-network-that-finally-beats-the-counter/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/from-a-canvas-of-the-leg-to-a-buy-only-bot-what-survived/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/a-buy-only-bot-on-nine-days-it-never-saw/</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/when-a-fake-buy-signal-is-really-a-deeper-bottom-rule-7-1/</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/teaching-the-network-to-see-tops-sell-pivots-on-btc/</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/picking-a-network-by-the-width-of-its-good-zone-not-its-best-point/</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/one-account-two-networks-440-buy-and-sell-pairs-on-validation/</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/the-pair-that-behaves-the-same-on-three-stretches-of-data/</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://marketflowresear.ch/articles/bot-7-from-an-order-book-canvas-to-live-trading-every-result-every-trade/</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://marketflowresear.ch/articles/line-7-live-trading-report/</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://marketflowresear.ch/articles/how-to-read-this-site-in-five-minutes/</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://marketflowresear.ch/articles/order-flow-predicts-volatility/</loc>
+    <lastmod>2026-10-28</lastmod>
   </url>
 </urlset>
