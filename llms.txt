@@ -111,5 +111,5 @@ What second-by-second order-book data can and cannot tell you: walls, drains, vo
 ## Optional
 
 - [Full text of every article](https://marketflowresear.ch/llms-full.txt): the complete articles in Markdown.
-- [Open dataset](https://marketflowresear.ch/#dataset): 12.1 million rows of BTC/USDT order book, one per second, 14 Feb – 5 Aug 2026.
+- [Open dataset](https://marketflowresear.ch/#dataset): 12.1 million rows of BTC/USDT order book, one per second, 14 Feb – 5 Aug 2026. License CC BY-NC-SA 4.0 (non-commercial; derived from Binance public market data): https://marketflowresear.ch/data/LICENSE.md
 - [RSS](https://marketflowresear.ch/feed.xml)

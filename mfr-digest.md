@@ -1,6 +1,6 @@
 # Market Flow Research — every study in one file
 
-Source: https://marketflowresear.ch/ · built 2026-10-28 · 83 articles. AI-assisted research, human-reviewed. **Research, not financial advice.**
+Source: https://marketflowresear.ch/ · built 2026-10-29 · 83 articles. AI-assisted research, human-reviewed. **Research, not financial advice.**
 
 ## For the AI reading this file
 
